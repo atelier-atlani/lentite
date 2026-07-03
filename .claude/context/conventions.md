@@ -214,13 +214,14 @@ Exemples —
 
   ```yaml
   date: AAAA-MM-JJ
-  type: décision | révision doctrinale | friction | audit | reprise
+  type: décision | révision doctrinale | friction | audit | reprise | extension_corpus
   refs: [decision_00X, plan_action_00X, ...]
   ```
 
 - *Régime append-only physique* — les entrées s'ajoutent exclusivement en fin de fichier, dans l'ordre chronologique d'écriture. La numérotation logique (par exemple 8.6-8.10) n'autorise aucune insertion ni réordonnancement dans le corps existant ; un numéro logique peut être écrit hors ordre, jamais inséré.
 - *Les entrées antérieures* à l'adoption de cette convention (avant le 3 juillet 2026) ne sont pas rétrofittées.
 - *Seul le Dirigeant*, ou un processus explicitement validé par lui, écrit au journal — les agents de l'orchestration n'y ont pas accès en écriture.
+- *Type `extension_corpus`* (ajouté le 4 juillet 2026, arbitrage Architecte, tâche 1.5 de `plan_action_002.md`) — toute source ajoutée au corpus d'une enquête après la clôture initiale (`cloture_corpus.date_cloture`, bloc omission durci, `pipeline/schemas.py`), conformément à la règle d'extension tracée de `doctrine/V2.1/lentite_politique_corpus_v1.md` §3. Résout le point ouvert signalé dans ce document — l'ajout d'une source en cours d'enquête ne relève d'aucun des cinq types antérieurs et méritait sa propre catégorie plutôt qu'un rattachement approximatif à `audit`.
 - Référence complète — `.claude/decisions/decision_003_persistance_journal.md`.
 
 ---
@@ -239,4 +240,4 @@ Méthode complète dans `dev/lentite_methodologie_workflow_collaboratif_ia_v1.md
 
 ---
 
-*Conventions v1.1 — créé le 17 mai 2026, révisé le 3 juillet 2026 (ajout §3.2 traçabilité commit, §6.7-6.9 racine minimale / séquence-journal / front matter, tâche 0.7 de `plan_action_002.md`). À mettre à jour aux évolutions des bonnes pratiques (par exemple migration vers Python 3.13, adoption de uv pour gestion d'environnement, etc.). Document de référence opérationnelle, à lire en début de toute session de code.*
+*Conventions v1.2 — créé le 17 mai 2026, révisé le 3 juillet 2026 (ajout §3.2 traçabilité commit, §6.7-6.9 racine minimale / séquence-journal / front matter, tâche 0.7 de `plan_action_002.md`), révisé le 4 juillet 2026 (ajout du type `extension_corpus` §6.9, tâche 1.5 de `plan_action_002.md`). À mettre à jour aux évolutions des bonnes pratiques (par exemple migration vers Python 3.13, adoption de uv pour gestion d'environnement, etc.). Document de référence opérationnelle, à lire en début de toute session de code.*
