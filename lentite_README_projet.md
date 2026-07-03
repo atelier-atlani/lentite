@@ -42,6 +42,7 @@ lentite/
 ├── lentite_README_projet.md           ← ce fichier
 ├── LICENSE                            ← AGPL-3.0 (licence par défaut du dépôt)
 ├── LICENSES/                          ← AGPL-3.0, Apache-2.0, CC-BY-SA-4.0 (textes intégraux)
+├── requirements.txt                   ← dépendances Python épinglées (pydantic, PyYAML)
 ├── doctrine/                          ← couches A, B, C
 │   ├── V2/                            ← obsolète, conservée par discipline du journal
 │   └── V2.1/                          ← canonique courante
@@ -71,7 +72,7 @@ lentite/
 
 Couches distinctes — doctrine, analyses, pipeline, dev, gouvernance, coordination/journal, archives. Chacune avec sa discipline propre. La doctrine est versionnée par majeure et mineure ; les analyses référencent la doctrine sans la dupliquer ; le pipeline est code Python + YAML, isolable et exécutable ; le journal trace les évolutions ; les archives conservent les strates génétiques du projet sans les faire concourir avec le canon courant.
 
-**Racine minimale.** Depuis la tâche 0.7 de `plan_action_002.md`, seuls `README`, `LICENSE`, `LICENSES/` et des répertoires sont admis à la racine — convention inscrite à `conventions.md` §6.7. Aucun document de travail, aucune copie, aucun fichier orphelin n'y séjourne.
+**Racine minimale.** Depuis la tâche 0.7 de `plan_action_002.md`, seuls `README`, `LICENSE`, `LICENSES/`, `requirements.txt` et des répertoires sont admis à la racine — convention inscrite à `conventions.md` §6.7 (exception `requirements.txt` ajoutée au lot 0-bis, correctif onboarding). Aucun document de travail, aucune copie, aucun fichier orphelin n'y séjourne.
 
 ---
 
@@ -130,9 +131,54 @@ Le YAML M03-M correspondant à la version 3 acteurs a été retiré de `pipeline
 
 **Localisation.** `pipeline/`. Lire `pipeline/lentite_README_projet.md` pour usage détaillé (document hérité, non encore resynchronisé — voir avertissement en section 9).
 
-**Pré-requis.** Python 3.11+, Pydantic 2.13+, PyYAML.
+### 6.1 Environnement
 
-**Composants.**
+**Pré-requis.** Python **≥ 3.10 strictement requis, 3.11 recommandé** — le code (`schemas.py`) utilise la syntaxe d'union `X | None` (PEP 604), qui échoue sous Python 3.9. Pydantic et PyYAML sont épinglés dans `requirements.txt` à la racine.
+
+**(a) Vérification préalable — toujours commencer par ça.**
+
+```bash
+python3 --version
+```
+
+Si la sortie est `Python 3.10.x` ou plus récent, passez directement à l'installation (c). Si elle est inférieure à 3.10 (notamment `Python 3.9.x`), lisez (b) d'abord.
+
+**(b) Si `python3 --version` affiche moins de 3.10.** Le `python3` par défaut sur macOS (fourni par les Xcode Command Line Tools) est très souvent une version 3.9, indépendamment de toute version plus récente installée par ailleurs (Homebrew, pyenv, python.org). Deux options :
+
+- *Nommer l'interpréteur explicitement*, s'il est déjà installé — remplacer `python3` par `python3.11` dans toutes les commandes qui suivent.
+- *Créer un environnement virtuel avec le bon interpréteur*, si `python3.11` n'est pas trouvé :
+
+  ```bash
+  python3.11 -m venv .venv && source .venv/bin/activate
+  ```
+
+  Une fois activé, `python3` dans ce shell pointe vers l'interpréteur du venv (3.11) — les commandes de ce README fonctionnent alors sans modification pour la durée de la session shell.
+
+**(c) Installation des dépendances.**
+
+```bash
+python3.11 -m pip install -r requirements.txt
+```
+
+Utiliser la forme `python -m pip` (et non `pip` ou `pip3` seuls) — elle élimine à la fois l'ambiguïté entre les commandes `pip`/`pip3` (qui peuvent ne pas exister ou pointer vers des interpréteurs différents selon la machine) et la dépendance à un flag d'installation non portable (`--break-system-packages`, absent des versions de pip antérieures à la PEP 668). Adapter `python3.11` en `python3` si l'étape (a) a confirmé une version ≥ 3.10, ou l'omettre si un venv est déjà activé (b).
+
+**(d) Vérification rapide de l'environnement — « ça marche si… ».**
+
+```bash
+python3.11 -c "import pydantic, yaml; print(pydantic.VERSION)"
+```
+
+Si cette commande imprime un numéro de version sans erreur, l'environnement est prêt pour la validation. Toute erreur ici (module introuvable, `SyntaxError`) doit être résolue avant de passer à la validation elle-même — elle ne le sera pas spontanément par la commande de validation, dont les erreurs sont moins lisibles.
+
+**(e) Triage d'erreur.** Si `python3 pipeline/validate_m03.py ...` échoue avec une traceback se terminant par :
+
+```
+TypeError: unsupported operand type(s) for |: 'type' and 'NoneType'
+```
+
+— ce n'est **pas** un bug du pipeline ni un problème de fichier YAML. C'est le symptôme exact d'un interpréteur Python < 3.10 utilisé malgré (a)-(c). Revenir à (a), vérifier quel `python3` a effectivement exécuté la commande.
+
+### 6.2 Composants
 
 — `schemas.py` (modèles Pydantic v2 selon gabarit v2.1 section 11) + `schemas_m03.py` (extension M03 v2.1 section 11). Licence Apache 2.0.
 
@@ -142,12 +188,14 @@ Le YAML M03-M correspondant à la version 3 acteurs a été retiré de `pipeline
 
 — `analyses/*.yaml` (douze YAML d'analyses M01-M/M03-M validés, CC BY-SA 4.0) + `tests/*.yaml` (trois YAML défaillants délibérément, Apache 2.0, validation que les contraintes mordent).
 
-**Usage actuellement disponible.**
+### 6.3 Usage actuellement disponible
 
 ```bash
 # Validation d'une analyse M03 (seul validateur CLI opérationnel à ce jour)
-python3 pipeline/validate_m03.py pipeline/analyses/m03_retraites_octobre_2025_4acteurs_v2_1.yaml
+python3.11 pipeline/validate_m03.py pipeline/analyses/m03_retraites_octobre_2025_4acteurs_v2_1.yaml
 ```
+
+(Remplacer `python3.11` par `python3` si l'étape 6.1(a) a confirmé une version ≥ 3.10, ou par l'interpréteur du venv actif.)
 
 Il n'existe à ce jour ni option `--all` ni validateur M01 CLI — ces capacités sont prévues en séquence 2 de `plan_action_002.md` (`validate.py`, `graph_builder.py`, audits en CLI, orchestrateur).
 
@@ -235,7 +283,7 @@ Les cinq décisions structurantes de codage (orchestration, persistance graphe, 
 
 **Si vous voulez voir des analyses concrètes** — commencer par `analyses/m01/lentite_analyse_fabius_v2_1.md` (cas sobre) pour la lisibilité, puis `analyses/cas_jouets/lentite_cas_jouet_4_ciotti_v2_1.md` (cas adversarial) pour la complexité, puis `analyses/m03/lentite_m03_application_retraites_octobre_2025_4acteurs_v2_1.md` pour l'application comparative.
 
-**Si vous voulez exécuter le pipeline** — aller dans `pipeline/`, installer les dépendances (`pip install --break-system-packages pydantic pyyaml`), puis valider une analyse M03 (`python3 pipeline/validate_m03.py pipeline/analyses/<fichier>.yaml`). Le validateur M01 n'est pas encore disponible.
+**Si vous voulez exécuter le pipeline** — vérifier d'abord `python3 --version` (≥ 3.10 requis, voir §6.1), installer les dépendances (`python3.11 -m pip install -r requirements.txt`), puis valider une analyse M03 (`python3.11 pipeline/validate_m03.py pipeline/analyses/<fichier>.yaml`). Le validateur M01 n'est pas encore disponible.
 
 **Si vous voulez critiquer la doctrine** — examiner les fixtures `analyses/cas_jouets/` et les tests négatifs `pipeline/tests/`. Les contraintes mordantes sont documentées dans le pipeline.
 
@@ -259,7 +307,7 @@ Les cinq décisions structurantes de codage (orchestration, persistance graphe, 
 
 **Discipline anti-cumul des documents de coordination.** Les documents de coordination sont conservés à l'unité, pas empilés en versions successives.
 
-**Discipline de racine minimale** (`conventions.md` §6.7, depuis juillet 2026). Seuls `README`, `LICENSE`, `LICENSES/` et des répertoires à la racine.
+**Discipline de racine minimale** (`conventions.md` §6.7, depuis juillet 2026). Seuls `README`, `LICENSE`, `LICENSES/`, `requirements.txt` et des répertoires à la racine.
 
 ---
 
