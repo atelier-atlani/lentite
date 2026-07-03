@@ -552,4 +552,30 @@ refs: [plan_action_002]
 
 ---
 
+```yaml
+date: 2026-07-04
+type: audit
+refs: [plan_action_002]
+```
+
+### Clôture de la séquence 1 (durcissement du gabarit) — critère de sortie satisfait
+
+*Constat.* Le critère de sortie de la séquence 1 (`plan_action_002.md` §4 — « suite de tests complète verte, positifs et négatifs, corpus intégralement revalidé ») est satisfait. Bilan de la séquence — 1.1 bloc omission durci (quatre champs obligatoires sur `Omission`, `pipeline/schemas.py`) ; 1.2 bitemporalité minimale (`date_fait`/`date_connaissance` sur `Vulnerability`, `Omission`, `DiscourseActGap`, `ObservableEffect`, validation conditionnelle sur `gabarit_version`) ; 1.3 politique de corpus v1 (`doctrine/V2.1/lentite_politique_corpus_v1.md`) ; 1.4 grille de calibration v1 (`doctrine/V2.1/lentite_calibration_confiance_v1.md`) ; 1.5 revalidation intégrale — les 12 YAML du corpus (10 M01 amendés individuellement + 2 M03 inchangés) valident sous `gabarit_version=2.1-durci-seq1`, et les 5 tests négatifs (3 préexistants + 2 nouveaux tâches 1.1/1.2) sont rejetés comme attendu. Deux arbitrages Architecte intégrés en 1.5 — (a) type `extension_corpus` ajouté à `conventions.md` §6.9 ; (b) `journal/lentite_journal_m01.md` créé, résolvant le vide signalé en 1.3/1.4 sur le journal méthodologique de M01 (gabarit v2.1 §16).
+
+*Frictions ouvertes* (aucune ne bloque la clôture — consignées pour suite, aucune ne relève d'une révision doctrinale à chaud, moratoire respecté) :
+
+— *Bande faible de la grille de calibration (1.4) non couverte.* Les trois cas-étalons 1/5/6 ne produisent aucune hypothèse dominante sous 0,40 — candidate v2.2 post-moratoire, extension par cas-jouet supplémentaire calibré pour une dominance faible.
+
+— *Terminologie « établi » (degré de confidence) vs « fait établi » (statut épistémique).* Risque de confusion prévenu par un avertissement explicite dans `lentite_calibration_confiance_v1.md` §1, mais reste une ambiguïté de surface entre deux documents — candidate v2.2 post-moratoire pour clarification dans le gabarit lui-même si le besoin se confirme à l'usage.
+
+— *M03 non durci.* `schemas_m03.py` ne porte ni `gabarit_version` ni champs bitemporels — les deux YAML M03 du corpus valident sans amendement parce qu'aucune contrainte nouvelle ne s'y applique, pas parce qu'ils ont été vérifiés sous un gabarit durci équivalent. Question ouverte non tranchée depuis le lot {1.1–1.2}, non résolue ici.
+
+— *Asymétrie de datation.* Sur 57 champs `date_fait` amendés en 1.5, 21 portent une date réelle et 36 `non_documente` — les faits ponctuels médiatisés (votes, décisions de justice) sont systématiquement datés, les faits diffus (perceptions, cohésions, narrations) presque jamais. Donnée nouvelle documentée dans `journal/lentite_journal_m01.md`, candidate à un futur `typology_audit`.
+
+— *Écart au §9 du plan (rappel, non résolu par cette clôture).* La séquence 0 reste non formellement close (re-test d'onboarding par un tiers indépendant toujours dû, cf. entrée de friction précédente). La clôture de la séquence 1 ne referme pas cet écart, qui est indépendant et reste ouvert.
+
+*Conséquence.* Séquence 1 close. Séquence 2 (prototype pipeline — `validate.py` M01, `graph_builder.py`, audits, orchestrateur, étalonnage) peut commencer, sous réserve de la même discipline de lots qu'en séquence 1. Le point séquence 0 / écart §9 reste distinct et non résolu — à traiter indépendamment de l'avancement de la séquence 2.
+
+---
+
 *Journal v1.0 — édité le 17 mai 2026. Prochaine révision attendue après extension M03 à 4 acteurs et nouvelles analyses substantielles. Document de mémoire institutionnelle, pas de récit. Pour la doctrine, lire charte et gabarit. Pour les analyses, lire les fichiers correspondants.*
