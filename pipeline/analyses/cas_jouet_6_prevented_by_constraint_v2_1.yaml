@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: CC-BY-SA-4.0
 method_id: M01_ANALYSE_RHETORIQUE
 method_version: "2.1"
+gabarit_version: "2.1-durci-seq1"
 analysis_id: M01_CAS_JOUET_6_PREVENTED_BY_CONSTRAINT_FICTIF_v2_1
 execution_date: 2026-05-17
 execution_mode: applicable_complete
@@ -87,6 +88,8 @@ discourse_action_gaps_on_thematic_objects:
     observation_window: "8 février 2024 - 1er juillet 2024 (fenêtre déclarée)"
     observation: "Le projet de loi a été voté par le Parlement le 28 mai 2024 conformément à l'annonce. La disposition centrale a été censurée par le Conseil constitutionnel le 18 juin 2024 sur la base de l'article 65 de la Constitution garantissant l'indépendance de la magistrature. La modification structurelle annoncée n'est pas en vigueur au 1er juillet 2024 et ne l'a pas été depuis. Aucune réforme alternative engagée."
     constraint_named: "décision du Conseil constitutionnel n° 2024-XYZ DC du 18 juin 2024 censurant la disposition centrale de la loi adoptée le 28 mai 2024 sur la base de l'article 65 de la Constitution (indépendance de la magistrature)"
+    date_fait: 2024-06-18  # décision du Conseil constitutionnel — fait constitutif du pattern prevented_by_constraint
+    date_connaissance: 2026-05-17
 
 observable_effects_on_targeted_objects: []
 
