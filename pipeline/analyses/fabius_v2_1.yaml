@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: CC-BY-SA-4.0
 method_id: M01_ANALYSE_RHETORIQUE
 method_version: "2.1"
+gabarit_version: "2.1-durci-seq1"
 analysis_id: M01_FABIUS_VOEUX_CONSEIL_CONSTITUTIONNEL_20240108_v2_1
 execution_date: 2026-05-17
 execution_mode: applicable_complete
@@ -185,28 +186,42 @@ discourse_action_gaps_on_thematic_objects:
     pattern_type: observed_as_announced
     observation_window: "janvier 2024 - mars 2025 (mandat Fabius)"
     observation: "doctrine pratiquée dans la jurisprudence ultérieure, sans glissement vers évaluation d'opportunité politique"
+    date_fait: non_documente  # amendement 1.5 — pratique jurisprudentielle continue, pas un fait daté au jour près
+    date_connaissance: 2026-05-17
   - thematic_object_id: OT2
     declared: "décision Conseil constitutionnel sur loi immigration le 25 janvier 2024"
     pattern_type: observed_as_announced
     observation_window: "8-25 janvier 2024"
     observation: "décision 2023-863 DC rendue le 25 janvier 2024, censurant 32 articles sur 86"
+    date_fait: 2024-01-25
+    date_connaissance: 2026-05-17
 
 observable_effects_on_targeted_objects:
   - targeted_object_id: OV1
     effect_type: amplification_doctrinale_partielle_contestation_politique_sans_rupture_institutionnelle
     description: "pas de remise en cause institutionnelle majeure"
+    date_fait: non_documente  # amendement 1.5 — pas de jour précis dans l'analyse source
+    date_connaissance: 2026-05-17
   - targeted_object_id: OV2
     effect_type: amplification_memorielle_non_anticipable
     description: "décès Badinter 1 mois après le discours, Panthéon octobre 2025"
+    date_fait: non_documente  # amendement 1.5 — "1 mois après" est une approximation relative, pas une date calendaire dans le texte source ; pas de reconstruction par calcul (discipline aucune invention)
+    date_connaissance: 2026-05-17
   - targeted_object_id: OV3
     effect_type: amplification_du_cadre_interpretatif
     description: "décision commentée dans le cadre juridique posé par Fabius"
+    date_fait: non_documente  # amendement 1.5 — pas de jour précis
+    date_connaissance: 2026-05-17
   - targeted_object_id: OV4
     effect_type: ignorement_institutionnel_a_effet_incertain
     description: "aucun acte spécifique de l'exécutif documentable"
+    date_fait: non_documente  # amendement 1.5 — absence continue, pas un fait daté
+    date_connaissance: 2026-05-17
   - targeted_object_id: OV5
     effect_type: consolidation_observee
     description: "mandat poursuivi jusqu'en mars 2025"
+    date_fait: non_documente  # amendement 1.5 — "mars 2025" sans jour précis
+    date_connaissance: 2026-05-17
 
 historiographies:
   - mobilized: "tradition de l'État de droit en démocratie libérale"
