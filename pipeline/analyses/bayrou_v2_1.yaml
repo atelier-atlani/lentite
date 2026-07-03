@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: CC-BY-SA-4.0
 method_id: M01_ANALYSE_RHETORIQUE
 method_version: "2.1"
+gabarit_version: "2.1-durci-seq1"
 analysis_id: M01_BAYROU_DPG_20250114_v2_1
 execution_date: 2026-05-17
 execution_mode: applicable_complete
@@ -216,35 +217,45 @@ discourse_action_gaps_on_thematic_objects:
     observation_window: "14 janvier - 20 février 2025"
     observation: "rapport remis 20 février 2025 soit 5 semaines après l'annonce. Procédure tenue. Mais prémisse de Bayrou (déficit caché 55 Mds) invalidée par le rapport - Cour estime déficit à 15 Mds en 2035 (6,6 Mds en 2025). Désaveu cinglant pour l'hôte de Matignon selon presse."
     source_reference: "rapport Cour des comptes 20 février 2025"
+    date_fait: 2025-02-20
+    date_connaissance: 2026-05-17
   - thematic_object_id: OT1
     declared: "conclave entre partenaires sociaux 4 mois pour améliorer la réforme"
     pattern_type: observed_otherwise
     observation_window: "février-juin 2025"
     observation: "conclave organisé sur 4 mois. Bilan conférence de presse 26 juin 2025 - pas d'accord formel, identification de points de convergence et divergence. Bayrou souligne les progrès. La procédure tient, l'objectif d'accord paritaire n'est pas atteint sous la forme annoncée."
     source_reference: "conférence de presse Matignon 26 juin 2025"
+    date_fait: 2025-06-26
+    date_connaissance: 2026-05-17
   - thematic_object_id: OT2
     declared: "effort collectivités ramené de 5 à 2,2 milliards"
     pattern_type: observed_as_announced
     observation_window: "janvier-février 2025"
     observation: "PLF 2025 adopté en février 2025 avec montant proche de l'annonce"
+    date_fait: non_documente  # amendement 1.5 — "février 2025" sans jour précis dans l'analyse source
+    date_connaissance: 2026-05-17
   - thematic_object_id: OT3
     declared: "banque de la démocratie pour financer les partis politiques"
     pattern_type: never_observed
     observation_window: "14 janvier 2025 - mai 2026"
     observation: "Pas de trace d'institution créée à mai 2026. Bayrou censuré 9 septembre 2025. Pas d'avancement sous Lecornu. Pas de motivation publique invoquée pour expliquer l'abandon."
+    date_fait: non_documente  # amendement 1.5 — absence continue, pas un fait daté au jour près
+    date_connaissance: 2026-05-17
   - thematic_object_id: OT3
     declared: "évolution constitutionnelle pour la Corse fin 2025"
     pattern_type: never_observed
     observation_window: "14 janvier - 31 décembre 2025 (fenêtre close)"
     observation: "Pas de révision constitutionnelle aboutie. Aucune procédure de Congrès convoquée. Fenêtre déclarée close depuis 5 mois à mai 2026. Pas de motivation publique invoquée. Pattern prévisible compte tenu arithmétique parlementaire (3/5 du Parlement réuni en Congrès non atteignables)."
+    date_fait: non_documente  # amendement 1.5 — absence continue, pas un fait daté au jour près
+    date_connaissance: 2026-05-17
 
 observable_effects_on_targeted_objects:
-  - {targeted_object_id: OV1, effect_type: confirmation_institutionnelle, description: "motion de censure rejetée le 16 janvier 2025"}
-  - {targeted_object_id: OV2, effect_type: amplification_partielle, description: "PS non-censure jusqu'en mai puis pression accrue jusqu'à sortie septembre 2025"}
-  - {targeted_object_id: OV3, effect_type: confirmation_institutionnelle, description: "pas de crise majeure des marchés sur la séquence Bayrou"}
-  - {targeted_object_id: OV4, effect_type: contestation, description: "image homme du dialogue contestée par désaveu cinglant Cour des comptes sur déficit 55 Mds - presse parle de désaveu"}
-  - {targeted_object_id: OV5, effect_type: ignorement, description: "positions radicales gauche et droite maintiennent leur audience indépendamment"}
-  - {targeted_object_id: OV6, effect_type: amplification_partielle, description: "8 mois de gouvernement Bayrou puis censure 9 septembre 2025 - pattern provisoirement classé en amplification_partielle, à examiner en typology_audit pour éventuelle extension typologie sur amplification temporaire terminée par chute si pattern se confirme sur autres cas PM minoritaires"}
+  - {targeted_object_id: OV1, effect_type: confirmation_institutionnelle, description: "motion de censure rejetée le 16 janvier 2025", date_fait: 2025-01-16, date_connaissance: 2026-05-17}
+  - {targeted_object_id: OV2, effect_type: amplification_partielle, description: "PS non-censure jusqu'en mai puis pression accrue jusqu'à sortie septembre 2025", date_fait: non_documente, date_connaissance: 2026-05-17}
+  - {targeted_object_id: OV3, effect_type: confirmation_institutionnelle, description: "pas de crise majeure des marchés sur la séquence Bayrou", date_fait: non_documente, date_connaissance: 2026-05-17}
+  - {targeted_object_id: OV4, effect_type: contestation, description: "image homme du dialogue contestée par désaveu cinglant Cour des comptes sur déficit 55 Mds - presse parle de désaveu", date_fait: 2025-02-20, date_connaissance: 2026-05-17}
+  - {targeted_object_id: OV5, effect_type: ignorement, description: "positions radicales gauche et droite maintiennent leur audience indépendamment", date_fait: non_documente, date_connaissance: 2026-05-17}
+  - {targeted_object_id: OV6, effect_type: amplification_partielle, description: "8 mois de gouvernement Bayrou puis censure 9 septembre 2025 - pattern provisoirement classé en amplification_partielle, à examiner en typology_audit pour éventuelle extension typologie sur amplification temporaire terminée par chute si pattern se confirme sur autres cas PM minoritaires", date_fait: 2025-09-09, date_connaissance: 2026-05-17}
 
 historiographies:
   - mobilized: "tradition centriste-MoDem du dialogue institutionnel"
