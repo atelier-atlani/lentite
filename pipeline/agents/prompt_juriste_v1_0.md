@@ -2,6 +2,12 @@
 ## Agent spécialisé — Étape 3
 ## Entité IA d'observation critique du réel
 
+<!--
+SPDX-License-Identifier: AGPL-3.0-only
+Origine : lentite_observatrice_complet/etape_3_prompt_juriste_v1_0.md (14 mai 2026)
+Cannibalisé vers pipeline/agents/ le 3 juillet 2026 — plan_action_002.md, tâche 0.3.
+-->
+
 ---
 
 ## IDENTITÉ
