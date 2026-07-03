@@ -520,4 +520,20 @@ refs: [plan_action_002]
 
 ---
 
+```yaml
+date: 2026-07-03
+type: friction
+refs: [plan_action_002]
+```
+
+### Écart au §9 du plan — séquence 1 ouverte par anticipation, séquence 0 non formellement close
+
+*Constat.* La séquence 0 de `plan_action_002.md` n'est pas formellement close au sens strict de son critère de sortie (§3 — « test d'onboarding à froid réussi, un tiers — instance Claude vierge — clone, lit le seul README, et parvient à valider une analyse existante sans autre aide »). L'entrée « Revalidation du test d'onboarding à froid — succès » ci-dessus le signalait déjà en nuance — la revalidation a été exécutée par la même instance ayant produit le correctif 0-bis, pas par un tiers réellement indépendant. Un re-test d'onboarding à froid, mené par un tiers ou une instance véritablement vierge, reste dû après le correctif 0-bis pour clore formellement la séquence 0.
+
+Malgré cela, le lot {1.1–1.2} de la séquence 1 a été exécuté et commité (voir entrée « reprise » précédente) avant cette clôture formelle. C'est un écart explicite à la discipline d'exécution du plan (§9 — « Une séquence à la fois, dans l'ordre. La séquence 1 ne commence pas avant le critère de sortie de la 0 »).
+
+*Conséquence.* Écart assumé et tracé sur instruction du Dirigeant, plutôt que dissimulé — conforme à la discipline « toute friction au journal » (§9 du plan). Séquence 0 reste ouverte jusqu'à un test d'onboarding à froid mené par un tiers véritablement indépendant de l'instance ayant produit le correctif. Séquence 1 se poursuit par anticipation ; sa propre clôture (tâche 1.5) est de toute façon postérieure à ce point. Aucune décision structurante n'est affectée par cet écart — le travail déjà produit et validé sur la séquence 1 (12/12 YAML + tests négatifs 1.1/1.2) reste en l'état ; seule la séquentialité stricte du plan n'a pas été respectée.
+
+---
+
 *Journal v1.0 — édité le 17 mai 2026. Prochaine révision attendue après extension M03 à 4 acteurs et nouvelles analyses substantielles. Document de mémoire institutionnelle, pas de récit. Pour la doctrine, lire charte et gabarit. Pour les analyses, lire les fichiers correspondants.*
