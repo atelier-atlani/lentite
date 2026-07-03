@@ -116,6 +116,29 @@ class OmissionLevel(str, Enum):
     INTENTIONAL_PROVEN = "intentional_proven"
 
 
+class ExplicationInnocenteStatut(str, Enum):
+    """Bloc omission durci (plan_action_002 séquence 1, tâche 1.1) — statut
+    d'examen d'une explication innocente alternative à une omission assertée."""
+
+    EXAMINEE = "examinee"
+    ECARTEE = "ecartee"
+    RETENUE = "retenue"
+
+
+class GabaritVersion(str, Enum):
+    """Champ de version de gabarit de l'analyse (plan_action_002 séquence 1,
+    tâche 1.2) — distinct de `method_version` (version de la méthode M01/M03).
+
+    Bascule la validation conditionnelle de la bitemporalité minimale.
+    "2.1" — gabarit souple existant, bitemporalité optionnelle (`non_renseigne`
+    accepté). "2.1-durci-seq1" — gabarit durci par plan_action_002 séquence 1,
+    bitemporalité obligatoire sur les assertions couvertes par ce durcissement.
+    """
+
+    V2_1 = "2.1"
+    V2_1_DURCI_SEQ1 = "2.1-durci-seq1"
+
+
 class ConsensusLevel(str, Enum):
     """Section 5.8 — quatre niveaux de consensus historiographique."""
 
@@ -182,6 +205,13 @@ class UpstreamElementType(str, Enum):
 
 Confidence = Annotated[float, Field(ge=0.0, le=1.0)]
 """Confidence entre 0.0 et 1.0."""
+
+
+NON_RENSEIGNE: Literal["non_renseigne"] = "non_renseigne"
+"""Sentinelle explicite de bitemporalité non renseignée (tâche 1.2, plan_action_002 séquence 1)."""
+
+BitemporalDate = date | Literal["non_renseigne"]
+"""Type d'un champ bitemporel — date réelle ou sentinelle `non_renseigne`."""
 
 
 class BorrowedTerm(BaseModel):
@@ -292,6 +322,8 @@ class DiscourseActGap(BaseModel):
     constraint_named: str | None = None
     public_motivation_invoked: str | None = None
     source_reference: str | None = None
+    date_fait: BitemporalDate = NON_RENSEIGNE
+    date_connaissance: BitemporalDate = NON_RENSEIGNE
 
     @model_validator(mode="after")
     def validate_pattern_constraints(self) -> "DiscourseActGap":
@@ -316,6 +348,8 @@ class ObservableEffect(BaseModel):
     effect_type: ObservableEffectType
     description: str
     source_reference: str | None = None
+    date_fait: BitemporalDate = NON_RENSEIGNE
+    date_connaissance: BitemporalDate = NON_RENSEIGNE
 
 
 # ----------------------------------------------------------------------------
@@ -337,10 +371,42 @@ class Vulnerability(BaseModel):
     charitable_alternative: str | None = None
     hidden_premises: list[str] = Field(default_factory=list)
     defeaters: list[str] = Field(default_factory=list)
+    date_fait: BitemporalDate = NON_RENSEIGNE
+    date_connaissance: BitemporalDate = NON_RENSEIGNE
+
+
+class Opportunite(BaseModel):
+    """Opportunité d'agir datée — bloc omission durci (tâche 1.1, plan_action_002 séquence 1)."""
+
+    description: str = Field(min_length=1)
+    date: date
+
+
+class ClotureCorpus(BaseModel):
+    """Déclaration du corpus dans lequel l'absence est constatée, avec sa date
+    de clôture — bloc omission durci (tâche 1.1, plan_action_002 séquence 1)."""
+
+    corpus_declare: str = Field(min_length=1)
+    date_cloture: date
+
+
+class ExplicationInnocente(BaseModel):
+    """Alternative innocente examinée pour une omission assertée — bloc omission
+    durci (tâche 1.1, plan_action_002 séquence 1)."""
+
+    description: str = Field(min_length=1)
+    statut: ExplicationInnocenteStatut
 
 
 class Omission(BaseModel):
-    """Omission — section 5.5."""
+    """Omission — section 5.5, bloc durci par plan_action_002 séquence 1 tâche 1.1.
+
+    Contrainte 1.1 — toute assertion d'omission exige quatre champs obligatoires :
+    `pouvoir_agir` (référence documentée à la compétence/capacité d'agir),
+    `opportunite` (datée), `cloture_corpus` (corpus + date de clôture dans lequel
+    l'absence est constatée), `explications_innocentes` (au moins une alternative
+    examinée).
+    """
 
     missing_element: str
     level: OmissionLevel
@@ -348,6 +414,12 @@ class Omission(BaseModel):
     evidence_of_expected_knowledge: str | None = None
     confidence: Confidence
     confidence_applies_to: Literal[ConfidenceAppliesTo.INFERENCE] = ConfidenceAppliesTo.INFERENCE
+    pouvoir_agir: str = Field(min_length=1)
+    opportunite: Opportunite
+    cloture_corpus: ClotureCorpus
+    explications_innocentes: list[ExplicationInnocente] = Field(min_length=1)
+    date_fait: BitemporalDate = NON_RENSEIGNE
+    date_connaissance: BitemporalDate = NON_RENSEIGNE
 
 
 class InferredFunction(BaseModel):
@@ -530,6 +602,7 @@ class M01Analysis(BaseModel):
 
     method_id: str
     method_version: str
+    gabarit_version: GabaritVersion = GabaritVersion.V2_1
     analysis_id: str
     execution_date: date
     execution_mode: ExecutionMode
@@ -590,6 +663,45 @@ class M01Analysis(BaseModel):
 
         return self
 
+    @model_validator(mode="after")
+    def validate_bitemporal_when_durci(self) -> "M01Analysis":
+        """Bitemporalité minimale (tâche 1.2, plan_action_002 séquence 1).
+
+        Si gabarit_version=2.1-durci-seq1, date_fait et date_connaissance sont
+        obligatoires (différents de la sentinelle non_renseigne) sur toute
+        assertion couverte par ce durcissement — vulnérabilités, omissions,
+        écarts discours/acte, effets observables.
+        """
+        if self.gabarit_version != GabaritVersion.V2_1_DURCI_SEQ1:
+            return self
+
+        missing: list[str] = []
+        for unit in self.units:
+            for i, vuln in enumerate(unit.argumentative_vulnerabilities):
+                if NON_RENSEIGNE in (vuln.date_fait, vuln.date_connaissance):
+                    missing.append(f"units[{unit.unit_id}].argumentative_vulnerabilities[{i}]")
+            for i, omission in enumerate(unit.omissions):
+                if NON_RENSEIGNE in (omission.date_fait, omission.date_connaissance):
+                    missing.append(f"units[{unit.unit_id}].omissions[{i}]")
+        for gap in self.discourse_action_gaps_on_thematic_objects:
+            if NON_RENSEIGNE in (gap.date_fait, gap.date_connaissance):
+                missing.append(
+                    f"discourse_action_gaps_on_thematic_objects[{gap.thematic_object_id}]"
+                )
+        for effect in self.observable_effects_on_targeted_objects:
+            if NON_RENSEIGNE in (effect.date_fait, effect.date_connaissance):
+                missing.append(
+                    f"observable_effects_on_targeted_objects[{effect.targeted_object_id}]"
+                )
+
+        if missing:
+            raise ValueError(
+                "gabarit_version=2.1-durci-seq1 requires date_fait and date_connaissance "
+                "on every covered assertion (plan_action_002 séquence 1 tâche 1.2) — "
+                f"non_renseigne left on: {missing}"
+            )
+        return self
+
 
 # ============================================================================
 # EXPORTS
@@ -607,6 +719,8 @@ __all__ = [
     "EpistemicRegime",
     "VulnerabilityLevel",
     "OmissionLevel",
+    "ExplicationInnocenteStatut",
+    "GabaritVersion",
     "ConsensusLevel",
     "MobilizationType",
     "HypothesisStatus",
@@ -625,6 +739,9 @@ __all__ = [
     "ObservableEffect",
     "Vulnerability",
     "Omission",
+    "Opportunite",
+    "ClotureCorpus",
+    "ExplicationInnocente",
     "InferredFunction",
     "Unit",
     "Historiography",
@@ -637,6 +754,9 @@ __all__ = [
     "NullResults",
     "CharityReconstruction",
     "BorrowedTerm",
+    # Bitemporalité (tâche 1.2)
+    "NON_RENSEIGNE",
+    "BitemporalDate",
     # Racine
     "M01Analysis",
 ]

@@ -1,0 +1,61 @@
+# SPDX-License-Identifier: Apache-2.0
+method_id: M01_ANALYSE_RHETORIQUE
+method_version: "2.1"
+gabarit_version: "2.1-durci-seq1"
+analysis_id: M01_TEST_NEGATIF_BITEMPORALITE_MANQUANTE_GABARIT_DURCI
+execution_date: 2026-07-03
+execution_mode: applicable_complete
+
+source:
+  text_id: TEST_NEGATIF_005
+  provenance: "test interne — YAML volontairement défaillant"
+  integrity_status: certified
+
+enonciation:
+  speaker:
+    id: TEST_SPEAKER
+    name: "Test Speaker"
+    role_at_date: "fonction test"
+  date: 2025-10-14
+  place: "lieu test"
+  primary_audience: "audience test"
+  channel: "canal test"
+  genre: "genre test"
+  affective_charge: low
+  ethical_charge: low
+  thematic_objects:
+    - object_id: OT1
+      label: "objet thématique test"
+      efficiency_status: efficient
+      efficiency_justification: "test"
+  targeted_objects: []
+
+# CONTRAINTE 1.2 VIOLÉE — gabarit_version=2.1-durci-seq1 mais date_fait/date_connaissance
+# laissés à leur défaut non_renseigne sur une vulnérabilité asserée.
+units:
+  - unit_id: U1
+    text_span: "segment test"
+    argumentative_vulnerabilities:
+      - type: "sophisme test"
+        level: certain
+        confidence: 0.8
+        confidence_applies_to: inference
+        # date_fait / date_connaissance: NON RENSEIGNÉS — devrait déclencher erreur
+        # sous gabarit_version=2.1-durci-seq1 (plan_action_002 séquence 1 tâche 1.2)
+
+epistemic_synthesis:
+  competing_hypotheses:
+    - label: "hypothèse 1 intentionnelle"
+      type: intentional
+      confidence: 0.6
+      confidence_applies_to: hypothesis
+    - label: "hypothèse 2 non intentionnelle"
+      type: non_intentional
+      confidence: 0.4
+      confidence_applies_to: hypothesis
+    - label: "hypothèse 3 non intentionnelle"
+      type: non_intentional
+      confidence: 0.3
+      confidence_applies_to: hypothesis
+  hypothesis_gap: 0.2
+  hypothesis_status: zone_of_indetermination

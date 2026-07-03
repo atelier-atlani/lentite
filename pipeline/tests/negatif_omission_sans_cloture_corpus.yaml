@@ -1,0 +1,65 @@
+# SPDX-License-Identifier: Apache-2.0
+method_id: M01_ANALYSE_RHETORIQUE
+method_version: "2.1"
+analysis_id: M01_TEST_NEGATIF_OMISSION_SANS_CLOTURE_CORPUS
+execution_date: 2026-07-03
+execution_mode: applicable_complete
+
+source:
+  text_id: TEST_NEGATIF_004
+  provenance: "test interne — YAML volontairement défaillant"
+  integrity_status: certified
+
+enonciation:
+  speaker:
+    id: TEST_SPEAKER
+    name: "Test Speaker"
+    role_at_date: "fonction test"
+  date: 2025-10-14
+  place: "lieu test"
+  primary_audience: "audience test"
+  channel: "canal test"
+  genre: "genre test"
+  affective_charge: low
+  ethical_charge: low
+  thematic_objects:
+    - object_id: OT1
+      label: "objet thématique test"
+      efficiency_status: efficient
+      efficiency_justification: "test"
+  targeted_objects: []
+
+# CONTRAINTE 1.1 VIOLÉE — omission sans cloture_corpus (champ obligatoire manquant)
+units:
+  - unit_id: U1
+    text_span: "segment test"
+    omissions:
+      - missing_element: "élément test manquant"
+        level: structural
+        why_expected: "attendu du fait du contexte test"
+        confidence: 0.7
+        pouvoir_agir: "compétence documentée test — locuteur en charge du dossier"
+        opportunite:
+          description: "occasion test d'aborder l'élément manquant"
+          date: 2025-10-10
+        explications_innocentes:
+          - description: "alternative innocente test examinée"
+            statut: ecartee
+        # cloture_corpus: MANQUANT — devrait déclencher erreur ciblée
+
+epistemic_synthesis:
+  competing_hypotheses:
+    - label: "hypothèse 1 intentionnelle"
+      type: intentional
+      confidence: 0.6
+      confidence_applies_to: hypothesis
+    - label: "hypothèse 2 non intentionnelle"
+      type: non_intentional
+      confidence: 0.4
+      confidence_applies_to: hypothesis
+    - label: "hypothèse 3 non intentionnelle"
+      type: non_intentional
+      confidence: 0.3
+      confidence_applies_to: hypothesis
+  hypothesis_gap: 0.2
+  hypothesis_status: zone_of_indetermination
