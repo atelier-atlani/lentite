@@ -390,4 +390,90 @@ refs: [plan_action_001, plan_action_002, decision_001, decision_002, decision_00
 
 ---
 
+```yaml
+date: 2026-07-03
+type: reprise
+refs: [plan_action_002, decision_001, decision_004]
+```
+
+### Cannibalisation d'`observatrice_complet/` — statut cannibalisé + archivé
+
+*Constat.* Exécution de la tâche 0.3 de `plan_action_002.md` (lot {0.3-0.7}). Sur les vingt fichiers du prototype `lentite_observatrice_complet/` (13-14 mai 2026), cinq prompts réutilisables ont été extraits vers `pipeline/agents/` — contradicteur (v1.1) et quatre analystes spécialisés (discours v1.1, économiste v1.1, juriste v1.0, sociologue v1.0), chacun conforme à la décision 001 (prompts versionnés en fichiers, jamais en dur dans le code) et à la décision 004 (SPDX `AGPL-3.0-only`, périmètre moteur/orchestration). Les quinze fichiers restants (définition du projet, protocoles d'observation/interaction/consultation, prompt système v1.2, architecture technique, MVP, schémas de données, mémoire, briefing, test loi immigration 2024) ont été déplacés vers `archives/observatrice_complet_2026-05/` — strate génétique datée, non cannibalisée. Le répertoire `lentite_observatrice_complet/` est vidé et retiré.
+
+*Conséquence.* Statut du prototype — cannibalisé (prompts) + archivé (reste). Les cinq prompts extraits ne sont pas encore adaptés à la doctrine v2.1.1 ni aux schémas durcis de la séquence 1 — adaptation prévue tâche 2.5 de `plan_action_002.md`, hors périmètre du présent lot. Voir `pipeline/agents/` et `archives/observatrice_complet_2026-05/`.
+
+---
+
+```yaml
+date: 2026-07-03
+type: friction
+refs: [plan_action_002]
+```
+
+### Friction — suppression du journal obsolète à la racine, avec récupération de contenu non dupliqué
+
+*Constat.* `lentite_journal.md` à la racine (17 mai 2026, 20,9 Ko) était une version figée du journal, non nommée « copie » et donc hors du périmètre littéral de la tâche 0.2 (purge des copies), mais manifestement dépassée par `journal/lentite_journal.md` — seul journal canonique actif, tenu à jour depuis. Signalé par l'Implementer à l'issue du lot {0.1-0.2} sans suppression unilatérale ; arbitrage rendu par l'Architecte (adressé comme addendum (a) à l'exécution du lot {0.3-0.7}) — suppression du fichier racine.
+
+*Vérification avant suppression.* Comparaison section par section entre le fichier racine et `journal/lentite_journal.md` avant destruction. Les deux fichiers divergent au-delà d'un simple décalage temporel — le fichier racine contient trois entrées absentes du journal canonique — section 3.9 (« Division durable de la gauche post-rupture NUPES »), section 3.10 (« Régime adversarial — pattern d'effets observables asymétriques »), toutes deux révélées par l'application M03 v2.1 à quatre acteurs, et section 8.5 (« Choix de la méthodologie de codage en phases »). Ce contenu est récupéré ci-dessous avant suppression du fichier — voir les trois entrées de récupération qui suivent immédiatement.
+
+*Conséquence.* `lentite_journal.md` supprimé de la racine après récupération du contenu non dupliqué. Journal canonique unique confirmé — `journal/lentite_journal.md`.
+
+---
+
+```yaml
+date: 2026-07-03
+type: révision doctrinale
+refs: [plan_action_002]
+```
+
+### 3.9 (récupéré) Division durable de la gauche post-rupture NUPES
+
+*Note de récupération.* Entrée retrouvée dans `lentite_journal.md` (racine, 17 mai 2026) lors de sa suppression, absente de `journal/lentite_journal.md`. Appendue ici en régime append-only, numérotation logique d'origine conservée (3.9) sans réordonnancement du corps existant.
+
+*Révélée par* — application M03 v2.1 à 4 acteurs (mai 2026), spécifiquement par la divergence Vallaud-Panot sur la proposition P1 (suspension comme victoire vs comme leurre).
+
+*Énoncé.* La gauche post-rupture NUPES est structurellement divisée entre stratégie réformiste (Vallaud-PS-CFDT — conquête sociale par négociation, paritarisme) et stratégie rupturiste (Panot-LFI-base militante — rupture institutionnelle, 6ème République, refus du paritarisme). La rupture NUPES de 2024 est rentabilisée politiquement par chaque camp — le PS reconstruit sa lisibilité « conquête sociale par négociation », LFI reconstruit sa lisibilité « rupture institutionnelle exclusive ». La division est durable jusqu'à 2027 selon la trajectoire observable à mai 2026.
+
+*Implication méthodologique.* Pattern à éprouver sur d'autres séquences politiques 2026-2027. La division pourrait soit s'approfondir (deux candidatures présidentielles distinctes en 2027) soit se résorber (union tactique de second tour). Les effets observables à venir départageront.
+
+*Inférence formalisée.* Confidence 0,70 dans la synthèse épistémique de M03 v2.1 à 4 acteurs. Promue de simple observation à hypothèse concurrente formelle parce qu'elle prédit des effets observables vérifiables.
+
+---
+
+```yaml
+date: 2026-07-03
+type: révision doctrinale
+refs: [plan_action_002]
+```
+
+### 3.10 (récupéré) Régime adversarial — pattern d'effets observables asymétriques
+
+*Note de récupération.* Entrée retrouvée dans `lentite_journal.md` (racine, 17 mai 2026) lors de sa suppression, absente de `journal/lentite_journal.md`. Appendue ici en régime append-only, numérotation logique d'origine conservée (3.10) sans réordonnancement du corps existant.
+
+*Révélée par* — confirmation transversale du pattern sur deux cas (Ciotti et Panot) dans M03 v2.1 à 4 acteurs.
+
+*Énoncé.* Le régime adversarial (`applicable_vigilance_adversariale`) produit des effets observables systématiquement asymétriques — visibilité médiatique et positionnement politique obtenus (effet `amplification` sur OV_B chez Ciotti et Panot), objets thématiques principaux non atteints (motion rejetée, Bardella non nommé, destitution non aboutie). La rhétorique adversariale fonctionne sur le positionnement, pas sur l'efficacité parlementaire.
+
+*Inférence formalisée.* Confidence 0,65 dans la synthèse épistémique de M03 v2.1 à 4 acteurs. À éprouver sur d'autres applications M03 (autres séquences politiques, autres acteurs adversariaux).
+
+---
+
+```yaml
+date: 2026-07-03
+type: décision
+refs: [plan_action_002]
+```
+
+### 8.5 (récupéré) Choix de la méthodologie de codage en phases
+
+*Note de récupération.* Entrée retrouvée dans `lentite_journal.md` (racine, 17 mai 2026) lors de sa suppression, absente de `journal/lentite_journal.md`. Appendue ici en régime append-only, numérotation logique d'origine conservée (8.5) sans réordonnancement du corps existant.
+
+*Décision.* Codage en cinq phases avec critères d'acceptation explicites (mai 2026). Phase 0 préparation avec cinq décisions structurantes à prendre avant codage substantiel. *Motif* — le pipeline existant valide les YAML, le système opérationnel complet (production automatique d'analyses à partir de textes sources) demande architecture multi-agents et persistance avancée non encore codées. La méthodologie de codage formalise la séquence rigoureuse.
+
+*Alternatives examinées.* (a) Codage direct d'un MVP complet — rejeté, risque de réécriture si décisions architecturales mauvaises. (b) Phase de R&D ouverte sans méthodologie — rejeté, risque de dette technique et de divergence doctrinale. (c) Méthodologie en phases avec décisions structurantes en amont — retenu. Cohérent avec la discipline rigoureuse du projet.
+
+*Conséquence.* Document de méthodologie de codage produit comme nouveau volet de l'architecture du projet (couche méthodologique de développement, distincte des couches doctrinale et opérationnelle) — `lentite_methodologie_codage_v1.md`, déplacé vers `dev/` en tâche 0.3-0.7 (addendum c) du présent plan.
+
+---
+
 *Journal v1.0 — édité le 17 mai 2026. Prochaine révision attendue après extension M03 à 4 acteurs et nouvelles analyses substantielles. Document de mémoire institutionnelle, pas de récit. Pour la doctrine, lire charte et gabarit. Pour les analyses, lire les fichiers correspondants.*
