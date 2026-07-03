@@ -1,5 +1,7 @@
 # M03 v2.1 — Application sur séquence retraites octobre 2025 (à quatre acteurs)
 
+*Licence : CC BY-SA 4.0.*
+
 *Extension à quatre acteurs de l'application M03 v2.1 sur la séquence retraites octobre 2025. Lecornu, Ciotti, Vallaud, Panot. Test décisif à l'échelle 4 acteurs de la doctrine v2.1 sur cas comparative substantiel. Document autoportant — remplace la version à trois acteurs (conservée dans le journal du projet par discipline) comme référence canonique courante.*
 
 ---

@@ -1,5 +1,7 @@
 # Cas-jouet 4 v2.1 — Analyse Ciotti (rejeu)
 
+*Licence : CC BY-SA 4.0.*
+
 *Rejeu du cas-jouet 4 Ciotti selon le standard v2.1. Test de validation simultanée des trois corrections introduites par la révision : lisibilité humaine, efficience stratifiée par objet, chaînes causales amont et aval. Remplace `lentite_cas_jouet_4_ciotti_v2.md` comme référence canonique.*
 
 ---

@@ -1,5 +1,7 @@
 # Analyse Panot v2.1 — Réponse à la DPG Lecornu 14 octobre 2025
 
+*Licence : CC BY-SA 4.0.*
+
 *Analyse M01 v2.1 du discours de Mathilde Panot, présidente du groupe La France insoumise à l'Assemblée nationale, en réponse à la déclaration de politique générale de Sébastien Lecornu le 14 octobre 2025. Quatrième acteur de la séquence retraites octobre 2025 après Lecornu v2.1, Ciotti v2.1 et Vallaud v2.1. Matière première pour l'extension de M03 v2.1 application à quatre acteurs.*
 
 ---

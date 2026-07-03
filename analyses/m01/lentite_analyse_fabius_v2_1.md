@@ -1,5 +1,7 @@
 # Cas-jouet 2 v2.1 — Analyse Fabius (rejeu)
 
+*Licence : CC BY-SA 4.0.*
+
 *Rejeu du cas-jouet 2 Fabius selon le standard v2.1. Test de validation de la doctrine sur cas non-adversarial — locuteur efficient sur l'objet thématique, discours sobre, mode dégradé. Remplace `lentite_analyse_fabius_v2.md` comme référence canonique.*
 
 ---

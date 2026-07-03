@@ -1,5 +1,7 @@
 # Analyse Barnier v2.1 — DPG du 1er octobre 2024
 
+*Licence : CC BY-SA 4.0.*
+
 *Analyse M01 v2.1 du discours de Michel Barnier, Premier ministre, lors de sa déclaration de politique générale à l'Assemblée nationale le 1er octobre 2024. Septième analyse M01 sur cas réel. Pré-requis indispensable à l'extension M03 v2.1 sur séquence Bayrou-Barnier-Lecornu. Unique cas dans le corpus M01 où l'acteur a été censuré dans la fenêtre observable (4 décembre 2024).*
 
 ---

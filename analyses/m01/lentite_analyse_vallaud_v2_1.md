@@ -1,5 +1,7 @@
 # Analyse Vallaud v2.1 — Réponse à la DPG Lecornu 14 octobre 2025
 
+*Licence : CC BY-SA 4.0.*
+
 *Analyse M01 v2.1 du discours de Boris Vallaud, président du groupe Socialistes et apparentés à l'Assemblée nationale, en réponse à la déclaration de politique générale de Sébastien Lecornu le 14 octobre 2025. Troisième acteur de la séquence retraites octobre 2025 après Lecornu v2.1 et Ciotti v2.1 — matière première pour l'application M03 v2.1.*
 
 ---

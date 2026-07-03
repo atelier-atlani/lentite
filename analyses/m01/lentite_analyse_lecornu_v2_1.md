@@ -1,5 +1,7 @@
 # Cas-jouet 3 v2.1 — Analyse Lecornu (rejeu)
 
+*Licence : CC BY-SA 4.0.*
+
 *Rejeu du cas-jouet 3 Lecornu selon le standard v2.1. Test de validation sur troisième régime — cas substantiel mode complet, locuteur efficient, bloc V.3 plein et substantiel. Remplace `lentite_analyse_lecornu_v2.md` comme référence canonique.*
 
 ---

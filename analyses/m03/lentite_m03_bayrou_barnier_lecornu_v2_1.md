@@ -1,5 +1,7 @@
 # M03 v2.1 — Application sur séquence Bayrou-Barnier-Lecornu
 
+*Licence : CC BY-SA 4.0.*
+
 *Application M03 v2.1 sur séquence Bayrou-Barnier-Lecornu — trois PM minoritaires successifs entre septembre 2024 et mai 2026. Test critique direct de la découverte 3.11 (procéduralisation insuffisante pour pérenniser PM minoritaire) et enrichissement attendu vers typologie ternaire des stratégies de PM minoritaire. Production qui consolide la doctrine v2.1 sur cas comparatif structurel.*
 
 ---

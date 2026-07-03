@@ -1,5 +1,7 @@
 # Cas-jouets M01 v2.1 — Cas 1, Cas 5 et Cas 6
 
+*Licence : CC BY-SA 4.0.*
+
 *Fixtures de test calibrées pour validation transversale de la méthode M01 v2.1 sur les trois cas-jouets canoniques manquants du gabarit v2.1 section 14. Construits comme tests de robustesse de la doctrine — réponse rigoureuse à la critique externe sur la zone d'indétermination, qui sera validée structurellement si ces cas calibrés tombent eux aussi en zone d'indétermination, infirmée si l'écart hypothèses dominante / deuxième dépasse 0,4 (dominance claire) sur le cas 1 simple. Les cas 5 et 6 testent l'identification correcte des patterns temporels `never_observed` et `prevented_by_constraint`.*
 
 ---

@@ -1,5 +1,7 @@
 # M03 v2.1 — Application sur la séquence retraites octobre 2025
 
+*Licence : CC BY-SA 4.0.*
+
 **Statut — supersédée par version 4 acteurs, juillet 2026.** Référence canonique courante sur cette séquence : `analyses/m03/lentite_m03_application_retraites_octobre_2025_4acteurs_v2_1.md` (Lecornu/Ciotti/Vallaud/Panot). Document conservé pour traçabilité, discipline anti-cumul (conventions.md §6.1). Le YAML M03-M correspondant (`pipeline/analyses/m03_retraites_octobre_2025_v2_1.yaml`) a été retiré du pipeline le 3 juillet 2026 — seul le YAML 4 acteurs y est maintenu.
 
 *Première application réelle de M03 v2.1 — analyse comparative multi-acteurs Lecornu / Ciotti / Vallaud sur la séquence politique du 6 au 16 octobre 2025 et ses effets observables à mai 2026. Test décisif transversal de la doctrine v2.1 sur cas comparative. Exploite les trois analyses M01 v2.1 individuelles préalablement produites.*

@@ -1,5 +1,7 @@
 # Analyse Bayrou v2.1 — DPG du 14 janvier 2025
 
+*Licence : CC BY-SA 4.0.*
+
 *Analyse M01 v2.1 du discours de François Bayrou, Premier ministre, lors de sa déclaration de politique générale à l'Assemblée nationale le 14 janvier 2025. Sixième analyse M01 sur cas réel. Test de la doctrine v2.1 hors séquence retraites octobre 2025 — sur la séquence parlementaire 2024-2025 antérieure. Vise la consolidation par généralisation des découvertes méthodologiques inscrites au journal général.*
 
 ---
