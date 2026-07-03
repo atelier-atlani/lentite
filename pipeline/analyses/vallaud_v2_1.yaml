@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: CC-BY-SA-4.0
 method_id: M01_ANALYSE_RHETORIQUE
 method_version: "2.1"
+gabarit_version: "2.1-durci-seq1"
 analysis_id: M01_VALLAUD_REPONSE_DPG_LECORNU_20251014_v2_1
 execution_date: 2026-05-17
 execution_mode: applicable_degraded
@@ -203,33 +204,49 @@ discourse_action_gaps_on_thematic_objects:
     pattern_type: observed_otherwise
     observation_window: "14-16 octobre 2025"
     observation: "consigne globalement respectée mais 5-8 frondeurs ont voté la motion de gauche selon les sources ; aucune motion PS déposée. Motion rejetée."
+    date_fait: 2025-10-16
+    date_connaissance: 2026-05-17
   - thematic_object_id: OT2
     declared: "lecture politique de la séquence comme victoire socialiste"
     pattern_type: observed_otherwise
     observation_window: "14 octobre 2025 - mai 2026"
     observation: "narration victoire diffusée dans le camp PS-CFDT mais contestée par Mélenchon, Bompard, Bardella, Retailleau. Pas de consensus public."
+    date_fait: non_documente  # amendement 1.5 — narration continue sur la fenêtre, pas de jour précis
+    date_connaissance: 2026-05-17
   - thematic_object_id: OT3
     declared: "sanction du gouvernement lors du débat budgétaire si engagements non tenus"
     pattern_type: observed_otherwise
     observation_window: "octobre 2025 - février 2026"
     observation: "Lecornu a tenu l'engagement 1 (suspension votée) et rompu l'engagement 2 (49.3 utilisé sur PLF en janvier 2026). PS n'a pas rejoint la motion de censure de gauche sur 49.3 (manquait 19 voix). Sanction promise s'est traduite par votes critiques et amendements mais pas par censure."
+    date_fait: 2026-01-19  # sourcé dans analyses/m01/lentite_analyse_vallaud_v2_1.md §"Engagement 3" — "renié le 19 janvier 2026 sur le PLF 2026" (jour absent du YAML, présent dans le document d'analyse correspondant)
+    date_connaissance: 2026-05-17
 
 observable_effects_on_targeted_objects:
   - targeted_object_id: OV1
     effect_type: amplification
     description: "positionnement pivot confirmé toute la séquence"
+    date_fait: non_documente  # amendement 1.5 — constat continu sur toute la séquence
+    date_connaissance: 2026-05-17
   - targeted_object_id: OV2
     effect_type: amplification_partielle
     description: "cohésion globalement maintenue avec tension interne et défections limitées"
+    date_fait: non_documente  # amendement 1.5 — pas de jour précis
+    date_connaissance: 2026-05-17
   - targeted_object_id: OV3
     effect_type: contestation
     description: "revendication victoire largement contestée par opposants tous bords"
+    date_fait: non_documente  # amendement 1.5 — pas de jour précis
+    date_connaissance: 2026-05-17
   - targeted_object_id: OV4
     effect_type: confirmation_institutionnelle
     description: "alliance PS-CFDT consolidée"
+    date_fait: non_documente  # amendement 1.5 — consolidation continue, pas un jour unique
+    date_connaissance: 2026-05-17
   - targeted_object_id: OV5
     effect_type: ignorement
     description: "préemption sans effet sur la critique LFI"
+    date_fait: non_documente  # amendement 1.5 — pas de jour précis
+    date_connaissance: 2026-05-17
 
 historiographies:
   - mobilized: "tradition social-démocrate de la conquête sociale par négociation"
