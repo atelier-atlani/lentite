@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: CC-BY-SA-4.0
 method_id: M01_ANALYSE_RHETORIQUE
 method_version: "2.1"
+gabarit_version: "2.1-durci-seq1"
 analysis_id: M01_LECORNU_DPG_20251014_v2_1
 execution_date: 2026-05-17
 execution_mode: applicable_complete
@@ -136,6 +137,8 @@ discourse_action_gaps_on_thematic_objects:
     observation_window: "octobre - novembre 2025"
     observation: "suspension votée le 12 novembre 2025 par 255 voix pour 146 contre. PLFSS 2026 adopté décembre 2025 avec la mesure intégrée. Bénéficiaires : 3,5 millions de Français des générations 1964-1968."
     source_reference: "vote AN 12 novembre 2025"
+    date_fait: 2025-11-12
+    date_connaissance: 2026-05-17
   - thematic_object_id: OT2
     declared: "renoncement à l'article 49.3 sur le budget 2026"
     pattern_type: broken_explicitly
@@ -143,22 +146,32 @@ discourse_action_gaps_on_thematic_objects:
     observation: "PLFSS 2026 adopté sans 49.3 en décembre 2025 (engagement initialement tenu). PLF 2026 adopté par 49.3 le 19 janvier 2026 — engagement rompu publiquement. Trois recours au 49.3 (recettes, dépenses, ensemble) en janvier-février 2026. Budget 2026 finalement adopté en février 2026 par cette voie."
     public_motivation_invoked: "Lecornu a annoncé le 19 janvier 2026 engager la responsabilité du gouvernement après 350 heures de débat parlementaire, invoquant l'impossibilité de faire voter le budget par majorité. Citation du PM : 'force est de constater [...] que le calendrier n'a pas été complètement respecté'. La motion de censure de gauche déposée en réaction a été rejetée en manquant de 19 voix."
     source_reference: "Conseil des ministres 19 janvier 2026, info.gouv.fr"
+    date_fait: 2026-01-19
+    date_connaissance: 2026-05-17
   - thematic_object_id: OT3
     declared: "programme de méthode — gouvernement de mission, partage du pouvoir avec le Parlement"
     pattern_type: partially_observed
     observation_window: "octobre 2025 - mai 2026"
     observation: "méthode appliquée pour PLFSS 2026 (débat parlementaire, compromis avec PS, adoption par vote). Méthode contredite pour PLF 2026 (49.3, fermeture du débat). Le programme de méthode a tenu partiellement et a été révisé sous contrainte."
+    date_fait: non_documente  # amendement 1.5 — pattern mixte sur deux textes budgétaires, pas un fait daté unique
+    date_connaissance: 2026-05-17
 
 observable_effects_on_targeted_objects:
   - targeted_object_id: OV1
     effect_type: confirmation_institutionnelle
     description: "motion de censure du 16 octobre rejetée, gouvernement Lecornu II maintenu jusqu'à mai 2026"
+    date_fait: 2025-10-16
+    date_connaissance: 2026-05-17
   - targeted_object_id: OV2
     effect_type: amplification
     description: "suspension votée 12 novembre 2025, PS allié sur le vote retraites mais sans alignement sur le 49.3 du PLF"
+    date_fait: 2025-11-12
+    date_connaissance: 2026-05-17
   - targeted_object_id: OV3
     effect_type: amplification_partielle
     description: "pas de crise majeure des marchés sur la séquence, mais déficit annoncé à la limite supérieure de l'engagement"
+    date_fait: non_documente  # amendement 1.5 — constat continu sur toute la séquence, pas un jour unique
+    date_connaissance: 2026-05-17
 
 historiographies:
   - mobilized: "Vème République parlementarisée (Vedel, Carcassonne, Beaud, Rosanvallon)"
