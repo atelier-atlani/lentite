@@ -476,4 +476,18 @@ refs: [plan_action_002]
 
 ---
 
+```yaml
+date: 2026-07-03
+type: friction
+refs: [plan_action_002]
+```
+
+### Friction — échec du test d'onboarding à froid sur l'environnement Python
+
+*Constat.* Test d'onboarding à froid exécuté (clone propre de `atelier-atlani/lentite`, lecture du seul README, tentative de validation d'une analyse YAML en suivant uniquement ses instructions — critère de sortie de la séquence 0, `plan_action_002.md` §3). Résultat — **échec**. Deux blocages distincts. (1) La commande d'installation documentée (`pip install --break-system-packages pydantic pyyaml`) échoue — `pip` n'existe pas comme commande sur macOS (seul `pip3`), et l'option `--break-system-packages` n'est pas reconnue par la version de pip installée. (2) Une fois l'installation improvisée, la commande de validation documentée échoue avec une traceback opaque (`TypeError: unsupported operand type(s) for |: 'type' and 'NoneType'`) — cause réelle : le `python3` par défaut sur macOS (Xcode Command Line Tools) est 3.9.6, incompatible avec la syntaxe d'union `X | None` (PEP 604) utilisée par `schemas.py`, alors que le README annonce « Python 3.11+ » sans indiquer de vérification préalable ni de conduite à tenir si `python3` résout vers une version insuffisante.
+
+*Conséquence.* Correctif immédiat — lot 0-bis. `requirements.txt` ajouté à la racine (versions épinglées, confirmées fonctionnelles — `pydantic==2.13.4`, `PyYAML==6.0.3`). Section README réécrite (§6.1 Environnement) — vérification préalable `python3 --version`, branche explicite si < 3.10 (interpréteur nommé ou venv), installation via `python -m pip install -r requirements.txt` (élimine l'ambiguïté pip/pip3 et le flag non portable), commande de vérification rapide, et triage d'erreur explicite pour la traceback `TypeError ... 'type' and 'NoneType'`. Toutes les commandes revérifiées end-to-end après réécriture. `conventions.md` §6.7 amendé pour admettre `requirements.txt` à la racine minimale. Le test d'onboarding à froid n'a pas été rejoué intégralement après correctif (pas de nouveau clone tiers) — statut de la séquence 0 sur ce critère précis : correctif appliqué et vérifié localement, revalidation externe encore à faire.
+
+---
+
 *Journal v1.0 — édité le 17 mai 2026. Prochaine révision attendue après extension M03 à 4 acteurs et nouvelles analyses substantielles. Document de mémoire institutionnelle, pas de récit. Pour la doctrine, lire charte et gabarit. Pour les analyses, lire les fichiers correspondants.*
