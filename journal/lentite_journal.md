@@ -504,4 +504,20 @@ refs: [plan_action_002]
 
 ---
 
+```yaml
+date: 2026-07-03
+type: reprise
+refs: [plan_action_002]
+```
+
+### Lot {1.1–1.2} de la séquence 1 — bloc omission durci et bitemporalité minimale
+
+*Constat.* Exécution des tâches 1.1 et 1.2 de `plan_action_002.md` séquence 1 (durcissement du gabarit couche B). 1.1 — le modèle `Omission` de `pipeline/schemas.py` exige désormais quatre champs obligatoires : `pouvoir_agir` (référence documentée à la compétence/capacité d'agir), `opportunite` (datée), `cloture_corpus` (déclaration du corpus + date de clôture), `explications_innocentes` (au moins une alternative examinée, statut examinée/écartée/retenue). 1.2 — champs `date_fait`/`date_connaissance` (défaut explicite `non_renseigne`) ajoutés sur quatre modèles d'assertion (`Vulnerability`, `Omission`, `DiscourseActGap`, `ObservableEffect`) ; nouveau champ `gabarit_version` sur `M01Analysis` rendant ces deux champs obligatoires quand sa valeur est `2.1-durci-seq1`. Un test négatif par tâche ajouté à `pipeline/tests/`, les deux rejetés avec erreur ciblée. Les 12 YAML existants et les 3 tests négatifs préexistants revalident sans modification ni régression (vérification manuelle — la revalidation formelle du corpus reste celle de la tâche 1.5).
+
+*Frictions signalées, non arbitrées silencieusement* (détail dans `.claude/logs/log_session_002_lot_1.1-1.2.md`) — le plan ne liste pas explicitement les modèles couverts par « toute assertion » en 1.2 (périmètre retenu — les quatre modèles ci-dessus, cohérent avec le qualificatif « minimale ») ; `schemas_m03.py` non modifié faute d'équivalent `Omission` dans M03 et d'instruction explicite du plan pour 1.2 sur ce fichier ; le nom `gabarit_version=2.1-durci-seq1` a été choisi distinct des numéros de version mineure réels de la doctrine (`2.1`, `2.1.1`) pour ne pas laisser croire à une révision de doctrine — moratoire respecté.
+
+*Conséquence.* Séquence 1 non close — restent 1.3 (politique de corpus), 1.4 (grille de calibration), 1.5 (revalidation intégrale du corpus + entrée journal de synthèse de clôture de séquence, seule entrée qui portera le critère de sortie §4 du plan). Commits `cafaff8` (schéma) et `4efa2c4` (note de lot) poussés sur `origin/main`.
+
+---
+
 *Journal v1.0 — édité le 17 mai 2026. Prochaine révision attendue après extension M03 à 4 acteurs et nouvelles analyses substantielles. Document de mémoire institutionnelle, pas de récit. Pour la doctrine, lire charte et gabarit. Pour les analyses, lire les fichiers correspondants.*
