@@ -1,0 +1,120 @@
+method_id: M01_ANALYSE_RHETORIQUE
+method_version: "2.1"
+analysis_id: M01_CAS_JOUET_5_NEVER_OBSERVED_FICTIF_v2_1
+execution_date: 2026-05-17
+execution_mode: applicable_complete
+execution_mode_note: "cas-jouet fictif construit pour fixture de test - critère décisif identification pattern never_observed"
+
+source:
+  text_id: CAS_JOUET_5_LEVEQUE_FICTIF
+  provenance: "cas-jouet fictif construit comme fixture de test - non-réel"
+  integrity_status: certified
+
+enonciation:
+  speaker:
+    id: MARC_LEVEQUE_FICTIF
+    name: "Marc Lévêque (fictif)"
+    role_at_date: "Premier ministre (gouvernement fictif)"
+  date: 2023-09-12
+  place: "Assemblée nationale (fictif)"
+  primary_audience: "Assemblée nationale"
+  secondary_audiences:
+    - "opinion publique"
+    - "magistrature"
+  channel: "tribune parlementaire + diffusion télévisuelle (fictif)"
+  political_sequence: "fictif - investiture du gouvernement"
+  genre: "déclaration de politique générale - engagement de transparence"
+  affective_charge: medium
+  ethical_charge: low
+  thematic_objects:
+    - object_id: OT1
+      label: "création d'une commission d'enquête indépendante sur marchés publics défense"
+      efficiency_status: efficient
+      efficiency_justification: "le PM dispose du pouvoir réglementaire propre pour créer une commission par décret"
+  targeted_objects:
+    - object_id: OV1
+      label: "consolidation symbolique de l'engagement de transparence du nouveau gouvernement"
+      inference_confidence: 0.80
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "formule solennelle d'engagement"
+        - "position du discours dans la DPG"
+      efficiency_status: efficient
+      efficiency_justification: "acte performatif d'engagement public"
+
+charity_reconstruction:
+  content: |
+    L'engagement d'un nouveau gouvernement à créer une commission d'enquête indépendante sur les
+    marchés publics dans un domaine sensible relève d'une démarche démocratique de transparence
+    bien établie dans la tradition républicaine française. La précision de l'engagement (président
+    magistrat Cour des comptes, rapport public, fenêtre temporelle de cent jours) signale une
+    intention sérieuse de mise en œuvre. L'engagement est compatible avec la pratique gouvernementale.
+  borrowed_terms_handled: []
+
+upstream_causal_chain:
+  elements:
+    - element_label: "investiture du nouveau gouvernement (fictif)"
+      type: trigger_event
+      source_reference: "fictif - contexte construit"
+      confidence: 0.95
+      confidence_applies_to: inference
+    - element_label: "tradition républicaine des engagements de transparence en DPG"
+      type: context
+      source_reference: "pratique gouvernementale française documentée"
+      confidence: 0.90
+      confidence_applies_to: inference
+
+downstream_causal_chains:
+  - targeted_object_id: OV1
+    plausible_consequences:
+      - consequence_label: "consolidation symbolique de la légitimité du nouveau gouvernement"
+        confidence: 0.65
+        confidence_applies_to: inference
+        defeaters:
+          - "la non-réalisation de l'engagement peut produire l'effet inverse a posteriori"
+          - "la consolidation dépend de la réception parlementaire et médiatique"
+        observable_to_date: "fictif - engagement non réalisé"
+
+discourse_action_gaps_on_thematic_objects:
+  - thematic_object_id: OT1
+    declared: "création d'une commission d'enquête indépendante présidée par un magistrat de la Cour des comptes, avec rapport public au plus tard le 31 mars 2024"
+    pattern_type: never_observed
+    observation_window: "12 septembre 2023 - 31 mars 2024 (fenêtre déclarée) - étendue jusqu'à 18 mai 2024 (démission)"
+    observation: "Aucune commission créée. Aucun rapport publié. Aucune communication publique du locuteur ou de son successeur n'a justifié ou commenté l'abandon de l'engagement. Aucune contrainte institutionnelle (vote parlementaire bloquant, décision judiciaire) documentable. La fenêtre temporelle est close à la date d'analyse (15 mars 2025)."
+
+observable_effects_on_targeted_objects: []
+
+historiographies: []
+
+epistemic_synthesis:
+  established_facts:
+    - "Engagement annoncé 12 septembre 2023 en DPG (fictif)"
+    - "Fenêtre temporelle déclarée close au 31 mars 2024 (étendue au 18 mai 2024 démission)"
+    - "Aucune commission créée dans la fenêtre"
+    - "Aucune motivation publique invoquée par le locuteur ou son successeur"
+    - "Aucune contrainte institutionnelle documentable"
+  competing_hypotheses:
+    - label: "abandon délibéré de l'engagement par calcul politique (révélations inopportunes anticipées)"
+      type: intentional
+      confidence: 0.40
+      confidence_applies_to: hypothesis
+    - label: "conflits administratifs internes entre cabinets et ministère de la Défense empêchant la concrétisation"
+      type: non_intentional
+      confidence: 0.55
+      confidence_applies_to: hypothesis
+    - label: "inertie bureaucratique - la chaîne décisionnelle s'est étirée jusqu'à la démission sans déclenchement formel"
+      type: non_intentional
+      confidence: 0.45
+      confidence_applies_to: hypothesis
+    - label: "convention du genre engagement de DPG qui produit des annonces dont une fraction n'est pas tenue par défaut"
+      type: non_intentional
+      confidence: 0.35
+      confidence_applies_to: hypothesis
+  hypothesis_gap: 0.1
+  hypothesis_status: zone_of_indetermination
+
+null_results:
+  fallacies_certain: 0
+  fallacies_probable_or_possible: 0
+  intentional_omissions_proved: 0
+  modal_shifts_detected: []

@@ -1,0 +1,294 @@
+method_id: M01_ANALYSE_RHETORIQUE
+method_version: "2.1"
+analysis_id: M01_VALLAUD_REPONSE_DPG_LECORNU_20251014_v2_1
+execution_date: 2026-05-17
+execution_mode: applicable_degraded
+execution_mode_note: "verbatim partiel accessible par citations convergentes (~40-50% du discours). Plafonnement de confidence à 0,85."
+
+source:
+  text_id: VALLAUD_REPONSE_DPG_LECORNU_20251014
+  provenance: "citations convergentes LCP, Public Sénat, France Info, presse politique 14-15 octobre 2025"
+  integrity_status: partial
+
+enonciation:
+  speaker:
+    id: BORIS_VALLAUD
+    name: "Boris Vallaud"
+    role_at_date: "Président du groupe Socialistes et apparentés à l'Assemblée nationale, député des Landes"
+  date: 2025-10-14
+  place: "Assemblée nationale, Paris"
+  primary_audience: "Sébastien Lecornu et députés"
+  secondary_audiences:
+    - "députés socialistes (cohésion du groupe)"
+    - "organisations syndicales (CFDT principalement)"
+    - "opinion publique sensible aux retraites"
+    - "autres groupes de gauche (préemption LFI)"
+  channel: "tribune parlementaire + diffusion télévisuelle"
+  political_sequence: "octobre 2025 — Lecornu II, motions de censure, négociation PS-gouvernement"
+  genre: "réponse à DPG par président de groupe pivot"
+  affective_charge: medium
+  ethical_charge: low
+  thematic_objects:
+    - object_id: OT1
+      label: "non-vote de la motion de censure UDR-RN et LFI par le PS, non-dépôt de motion PS"
+      efficiency_status: efficient
+      efficiency_justification: "la consigne de groupe est sous contrôle du président de groupe"
+    - object_id: OT2
+      label: "lecture politique de la séquence comme victoire socialiste sur les retraites"
+      efficiency_status: efficient
+      efficiency_justification: "le PS contrôle sa propre narration"
+    - object_id: OT3
+      label: "affirmation de la position d'opposition continuée et de la vigilance budgétaire"
+      efficiency_status: efficient
+      efficiency_justification: "déclaration performative du président de groupe"
+  targeted_objects:
+    - object_id: OV1
+      label: "positionnement du PS comme acteur pivot pré-2027"
+      inference_confidence: 0.80
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "U6 pari risqué assumé publiquement"
+        - "U7 maîtres d'une sanction"
+        - "structure du discours en position avant-dernier orateur"
+      efficiency_status: efficient
+      efficiency_justification: "l'acte performatif positionne effectivement"
+    - object_id: OV2
+      label: "cohésion interne du groupe PS face aux frondeurs"
+      inference_confidence: 0.75
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "U6 en sommes-nous capables"
+        - "U6 il nous en coûte"
+        - "invocation grandes figures socialistes"
+      efficiency_status: efficient_partiel
+      efficiency_justification: "consigne posée mais 5-8 frondeurs ont voté la censure du 16 octobre"
+    - object_id: OV3
+      label: "revendication de la suspension comme victoire socialiste-syndicale"
+      inference_confidence: 0.85
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "U2 nous prenons cette suspension comme une victoire"
+        - "U3 reconnaissance du combat mené par les organisations syndicales"
+        - "U4 fissure dans le dogme macroniste"
+      efficiency_status: efficient
+      efficiency_justification: "cadrage rhétorique sous contrôle"
+    - object_id: OV4
+      label: "maintien et consolidation de l'alliance PS-CFDT"
+      inference_confidence: 0.75
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "U3 attribution aux organisations syndicales"
+        - "reprise textuelle CFDT par Lecornu mentionnée"
+      efficiency_status: efficient
+      efficiency_justification: "engagement public confirme l'alliance"
+    - object_id: OV5
+      label: "préemption symbolique du discours LFI PS sauveur de Macron"
+      inference_confidence: 0.65
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "U6 anticipation de la critique"
+        - "U2-U4 cadrage en victoire pour court-circuiter la critique"
+      efficiency_status: efficient_partiel
+      efficiency_justification: "préempte le cadre mais réception dépend des acteurs LFI"
+    - object_id: OV6
+      label: "préparation de la présidentielle 2027 sur la doctrine sociale-démocrate retrouvée"
+      inference_confidence: 0.60
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "invocation grandes figures socialistes"
+        - "alliance syndicale réaffirmée"
+        - "registre du pari assumé responsable"
+      efficiency_status: non_efficient
+      efficiency_justification: "dépend de l'évolution sur 18 mois"
+
+upstream_causal_chain:
+  elements:
+    - element_label: "position PS sur les retraites depuis 2023 (opposition à la réforme Borne)"
+      type: prior_position
+      source_reference: "prises de position et propositions de loi du groupe PS"
+      confidence: 0.90
+      confidence_applies_to: inference
+    - element_label: "négociations PS-Lecornu I et II depuis septembre 2025"
+      type: prior_negotiation
+      source_reference: "couverture médiatique de la séquence"
+      confidence: 0.90
+      confidence_applies_to: inference
+    - element_label: "précédent janvier 2025 — 8 députés PS frondeurs sur motion LFI"
+      type: context
+      source_reference: "votes parlementaires documentés"
+      confidence: 0.85
+      confidence_applies_to: inference
+    - element_label: "position CFDT depuis 2023 demandant la suspension"
+      type: prior_position
+      source_reference: "communications CFDT, communiqués officiels"
+      confidence: 0.95
+      confidence_applies_to: inference
+    - element_label: "programme PS 2022 sur les retraites"
+      type: prior_position
+      source_reference: "programme et résolutions du congrès"
+      confidence: 0.90
+      confidence_applies_to: inference
+    - element_label: "conjoncture parlementaire — PS pivot pour la non-censure"
+      type: context
+      source_reference: "arithmétique parlementaire publique"
+      confidence: 0.95
+      confidence_applies_to: inference
+    - element_label: "stratégie Faure sur le positionnement social-démocrate du PS"
+      type: prior_position
+      source_reference: "déclarations publiques d'Olivier Faure"
+      confidence: 0.80
+      confidence_applies_to: inference
+
+downstream_causal_chains:
+  - targeted_object_id: OV1
+    plausible_consequences:
+      - consequence_label: "reconnaissance publique du rôle central du PS dans la dynamique parlementaire"
+        confidence: 0.80
+        confidence_applies_to: inference
+        defeaters:
+          - "la visibilité peut être contestée par LFI"
+          - "le rôle pivot dépend du maintien de la conjoncture parlementaire"
+        observable_to_date: "PS effectivement acteur pivot toute la séquence — non-censure 16 oct, suspension 12 nov, PLFSS déc, non-censure 49.3 PLF janvier 2026"
+  - targeted_object_id: OV2
+    plausible_consequences:
+      - consequence_label: "ralliement de la majorité du groupe sur la consigne avec marge de frondeurs limitée"
+        confidence: 0.70
+        confidence_applies_to: inference
+        defeaters:
+          - "la cohésion dépend de la pression militante extérieure pour censurer"
+          - "certains députés privilégient leur conviction personnelle (historique janvier 2025)"
+        observable_to_date: "consigne globalement respectée mais Faure a dû intervenir publiquement ; 5-8 frondeurs sur motion 16 octobre"
+  - targeted_object_id: OV3
+    plausible_consequences:
+      - consequence_label: "appropriation publique du mérite politique de la suspension"
+        confidence: 0.80
+        confidence_applies_to: inference
+        defeaters:
+          - "le gouvernement Lecornu peut contester l'attribution exclusive"
+          - "le RN et LFI peuvent disputer la qualification en réduisant à temporisation"
+        observable_to_date: "revendication victoire largement contestée par Mélenchon, Bompard, Bardella, Retailleau"
+  - targeted_object_id: OV4
+    plausible_consequences:
+      - consequence_label: "confirmation publique de l'axe stratégique social-démocrate-syndical"
+        confidence: 0.75
+        confidence_applies_to: inference
+        defeaters:
+          - "la CFDT peut conserver son indépendance d'évaluation"
+          - "d'autres syndicats (CGT) peuvent contester la lecture en victoire"
+        observable_to_date: "CFDT a reconnu la suspension comme aboutissement de sa demande ; partenariat consolidé"
+  - targeted_object_id: OV5
+    plausible_consequences:
+      - consequence_label: "limitation de l'efficacité de la critique LFI"
+        confidence: 0.60
+        confidence_applies_to: inference
+        defeaters:
+          - "la critique LFI ne reconnaît pas le cadre préempté"
+          - "l'opinion publique peut adopter la lecture LFI sur la durée"
+        observable_to_date: "Mélenchon et Bompard ont contesté la lecture PS dans la foulée ; narration sauveur de Macron circule"
+  - targeted_object_id: OV6
+    plausible_consequences:
+      - consequence_label: "reconstruction de la lisibilité du PS comme parti de la conquête sociale par négociation"
+        confidence: 0.55
+        confidence_applies_to: inference
+        defeaters:
+          - "la trajectoire 2026 peut épuiser le bénéfice politique avant 2027"
+          - "la dynamique LFI ou Glucksmann peut absorber l'espace politique"
+          - "la séquence présidentielle dépend de paramètres extérieurs au PS"
+        observable_to_date: "visibilité parlementaire maintenue ; transformation en dynamique présidentielle à vérifier"
+
+discourse_action_gaps_on_thematic_objects:
+  - thematic_object_id: OT1
+    declared: "le groupe PS ne vote pas la motion de censure du 16 octobre 2025 et n'en dépose pas"
+    pattern_type: observed_otherwise
+    observation_window: "14-16 octobre 2025"
+    observation: "consigne globalement respectée mais 5-8 frondeurs ont voté la motion de gauche selon les sources ; aucune motion PS déposée. Motion rejetée."
+  - thematic_object_id: OT2
+    declared: "lecture politique de la séquence comme victoire socialiste"
+    pattern_type: observed_otherwise
+    observation_window: "14 octobre 2025 - mai 2026"
+    observation: "narration victoire diffusée dans le camp PS-CFDT mais contestée par Mélenchon, Bompard, Bardella, Retailleau. Pas de consensus public."
+  - thematic_object_id: OT3
+    declared: "sanction du gouvernement lors du débat budgétaire si engagements non tenus"
+    pattern_type: observed_otherwise
+    observation_window: "octobre 2025 - février 2026"
+    observation: "Lecornu a tenu l'engagement 1 (suspension votée) et rompu l'engagement 2 (49.3 utilisé sur PLF en janvier 2026). PS n'a pas rejoint la motion de censure de gauche sur 49.3 (manquait 19 voix). Sanction promise s'est traduite par votes critiques et amendements mais pas par censure."
+
+observable_effects_on_targeted_objects:
+  - targeted_object_id: OV1
+    effect_type: amplification
+    description: "positionnement pivot confirmé toute la séquence"
+  - targeted_object_id: OV2
+    effect_type: amplification_partielle
+    description: "cohésion globalement maintenue avec tension interne et défections limitées"
+  - targeted_object_id: OV3
+    effect_type: contestation
+    description: "revendication victoire largement contestée par opposants tous bords"
+  - targeted_object_id: OV4
+    effect_type: confirmation_institutionnelle
+    description: "alliance PS-CFDT consolidée"
+  - targeted_object_id: OV5
+    effect_type: ignorement
+    description: "préemption sans effet sur la critique LFI"
+
+historiographies:
+  - mobilized: "tradition social-démocrate de la conquête sociale par négociation"
+    mobilization_type: thematic_explicit
+    consensus_level_mobilized: contested
+    competing: "tradition radicale de la rupture (Mélenchon, Bompard)"
+    consensus_level_competing: contested
+  - mobilized: "doctrine du parlementarisme constructif"
+    mobilization_type: thematic_explicit
+    consensus_level_mobilized: contested
+    competing: "tradition de la radicalité d'opposition par censure"
+    consensus_level_competing: contested
+  - mobilized: "continuité historique socialiste (grandes figures)"
+    mobilization_type: thematic_explicit
+    consensus_level_mobilized: strong_consensus
+  - mobilized: "doctrine du paritarisme syndical"
+    mobilization_type: thematic_explicit
+    consensus_level_mobilized: strong_consensus
+
+epistemic_synthesis:
+  established_facts:
+    - "Discours prononcé 14 octobre 2025 Assemblée nationale"
+    - "Annonce non-vote motion + non-dépôt motion PS"
+    - "Qualification suspension comme victoire et fissure dans le dogme macroniste"
+    - "Invocation grandes figures socialistes"
+    - "Engagement vigilance budgétaire"
+    - "Motion de censure du 16 octobre rejetée"
+    - "Cinq à huit députés PS ont voté la motion de gauche selon les sources"
+    - "Suspension retraites votée 12 novembre 2025"
+    - "PS n'a pas rejoint motion de censure sur 49.3 du PLF janvier 2026"
+  inferences:
+    - label: "le discours fonctionne comme acte de négociation publique aboutie"
+      confidence: 0.85
+      confidence_applies_to: inference
+      premise: "la suspension est l'offre Lecornu et la non-censure est la contrepartie PS"
+    - label: "le cadre interprétatif mobilisé est cohérent et structurant"
+      confidence: 0.80
+      confidence_applies_to: inference
+  competing_hypotheses:
+    - label: "acte de négociation politique aboutie pour suspension contre non-censure avec positionnement pivot 2027"
+      type: intentional
+      confidence: 0.85
+      confidence_applies_to: hypothesis
+    - label: "acte de reconstruction du PS comme parti de la conquête sociale responsable distinct de LFI"
+      type: intentional
+      confidence: 0.70
+      confidence_applies_to: hypothesis
+    - label: "acte de cohésion interne face aux frondeurs et au courant militant pro-censure"
+      type: non_intentional_or_moderate
+      confidence: 0.55
+      confidence_applies_to: hypothesis
+    - label: "convention du genre réponse à DPG par président de groupe pivot"
+      type: non_intentional
+      confidence: 0.40
+      confidence_applies_to: hypothesis
+  hypothesis_gap: 0.15
+  hypothesis_status: zone_of_indetermination
+
+null_results:
+  fallacies_certain: 0
+  fallacies_probable_or_possible: 3
+  intentional_omissions_proved: 0
+  modal_shifts_detected: []

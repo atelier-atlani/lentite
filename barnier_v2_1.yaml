@@ -1,0 +1,330 @@
+method_id: M01_ANALYSE_RHETORIQUE
+method_version: "2.1"
+analysis_id: M01_BARNIER_DPG_20241001_v2_1
+execution_date: 2026-05-17
+execution_mode: applicable_complete
+execution_mode_note: "verbatim accessible par info.gouv.fr + vie-publique.fr + citations convergentes presse. Charge éthique low. Mode adversarial non requis."
+
+source:
+  text_id: BARNIER_DPG_20241001
+  provenance: "info.gouv.fr DPG du Premier ministre 1er octobre 2024 + vie-publique.fr + presse convergente"
+  integrity_status: certified
+
+enonciation:
+  speaker:
+    id: MICHEL_BARNIER
+    name: "Michel Barnier"
+    role_at_date: "Premier ministre"
+  date: 2024-10-01
+  place: "Assemblée nationale, Paris"
+  primary_audience: "Assemblée nationale - groupes pouvant fournir soutien ou abstention"
+  secondary_audiences:
+    - "Sénat (lecture parallèle)"
+    - "partenaires sociaux"
+    - "Commission européenne et marchés financiers"
+    - "opinion publique"
+  channel: "tribune parlementaire + diffusion télévisuelle"
+  political_sequence: "post-dissolution juin 2024 - crise budgétaire automne 2024 - coalition LR-macroniste minoritaire"
+  genre: "déclaration de politique générale (article 50-1)"
+  affective_charge: medium
+  ethical_charge: low
+  thematic_objects:
+    - object_id: OT1
+      label: "Budget 2025 - retour déficit à 5% PIB en 2025, sous 3% en 2029, deux tiers par réduction dépenses"
+      efficiency_status: efficient
+      efficiency_justification: "le PM porte PLF et PLFSS soumis au vote ou 49.3"
+    - object_id: OT2
+      label: "aménagements raisonnables retraites confiés aux partenaires sociaux sans procédure formalisée"
+      efficiency_status: efficient_partiel
+      efficiency_justification: "dépend des partenaires sociaux non convoqués formellement sous Barnier"
+    - object_id: OT3
+      label: "sécurité immigration ordre républicain - plan préfets, maîtrise migratoire"
+      efficiency_status: efficient
+      efficiency_justification: "mesures réglementaires + projets de loi sous contrôle"
+    - object_id: OT4
+      label: "politiques sectorielles dont Smic +2% 1er novembre, santé, logement, livret industrie"
+      efficiency_status: efficient
+      efficiency_justification: "mesures budgétaires et réglementaires"
+    - object_id: OT5
+      label: "réformes institutionnelles ouvertes - scrutin proportionnel, Nouvelle-Calédonie, fin de vie"
+      efficiency_status: efficient_partiel
+      efficiency_justification: "proportionnelle demande loi organique, NC demande accord"
+  targeted_objects:
+    - object_id: OV1
+      label: "survie immédiate face motion censure éventuelle sur PLFSS et PLF 2025"
+      inference_confidence: 0.85
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "absence de vote de confiance demandé"
+        - "concessions ciblées dans le discours"
+        - "péroraison rassembleuse"
+      efficiency_status: efficient_partiel
+      efficiency_justification: "dépend des votes parlementaires"
+    - object_id: OV2
+      label: "cohésion bloc central LR-macroniste par fermeté budgétaire commune"
+      inference_confidence: 0.80
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "trajectoire 5% en 2025"
+        - "registre gaulliste classique"
+        - "appel rassembleur"
+      efficiency_status: efficient_partiel
+      efficiency_justification: "cohésion non garantie face aux pressions internes possibles"
+    - object_id: OV3
+      label: "préserver négociation avec PS ou RN par concessions ciblées - fermeté pour RN, social pour PS"
+      inference_confidence: 0.75
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "concession Smic + aménagements retraites pour PS"
+        - "fermeté immigration et sécurité pour RN"
+      efficiency_status: efficient_partiel
+      efficiency_justification: "calcul stratégique sous contrôle mais réception oppositions non garantie"
+    - object_id: OV4
+      label: "positionnement Barnier figure gaullienne européenne dignité institutionnelle"
+      inference_confidence: 0.75
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "registre gaulliste-LR"
+        - "trajectoire personnelle négociateur Brexit"
+        - "péroraison institutionnelle"
+      efficiency_status: efficient
+      efficiency_justification: "construction ethos sous contrôle"
+    - object_id: OV5
+      label: "disqualification implicite positions de rupture NFP et RN"
+      inference_confidence: 0.55
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "registre du compromis institutionnel"
+        - "refus implicite abrogation retraites"
+      efficiency_status: efficient_partiel
+      efficiency_justification: "cadrage rhétorique sous contrôle effet politique non garanti"
+    - object_id: OV6
+      label: "crédibilité budgétaire vis-à-vis Commission européenne et marchés"
+      inference_confidence: 0.80
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "trajectoire 5% puis 3%"
+        - "engagement explicite réduction déficit"
+        - "registre européen-technicien"
+      efficiency_status: efficient_partiel
+      efficiency_justification: "signal politique sous contrôle réaction marchés non garantie"
+
+charity_reconstruction:
+  content: |
+    La situation budgétaire et institutionnelle exige un gouvernement de fermeté qui prenne ses
+    responsabilités face à la dégradation des comptes publics et à la fragmentation parlementaire
+    post-dissolution. Doctrine économique - réduction de la double dette budgétaire et écologique.
+    Deux tiers par réduction des dépenses, un tiers par contribution exceptionnelle. Sur les
+    retraites, aménagements raisonnables sans procédure formalisée. Sur la sécurité et l'immigration,
+    fermeté assumée. Méthode globale d'écoute respect dialogue, arbitrage de fond à droite.
+  borrowed_terms_handled:
+    - {term: "argent magique", handling: quoted}
+    - {term: "tout gratuit", handling: attributed}
+    - {term: "aménagements raisonnables et justes", handling: attributed}
+    - {term: "double dette", handling: reformulated_neutral}
+    - {term: "maîtrise de l'immigration", handling: attributed}
+
+upstream_causal_chain:
+  elements:
+    - element_label: "dissolution Assemblée nationale par Macron 9 juin 2024"
+      type: trigger_event
+      source_reference: "décret présidentiel"
+      confidence: 0.95
+      confidence_applies_to: inference
+    - element_label: "résultats législatives juin-juillet 2024 Assemblée tripartite sans majorité"
+      type: context
+      source_reference: "résultats officiels"
+      confidence: 0.95
+      confidence_applies_to: inference
+    - element_label: "deux mois tentatives formation gouvernementale - refus Castets NFP"
+      type: trigger_event
+      source_reference: "déclarations Élysée et actualité"
+      confidence: 0.90
+      confidence_applies_to: inference
+    - element_label: "trajectoire personnelle Barnier gaulliste-LR ancien Commissaire européen négociateur Brexit"
+      type: prior_position
+      source_reference: "biographie publique"
+      confidence: 0.95
+      confidence_applies_to: inference
+    - element_label: "dégradation finances publiques 2024 - déficit dépassant 6%, pression Commission européenne"
+      type: context
+      source_reference: "Bercy + Commission"
+      confidence: 0.95
+      confidence_applies_to: inference
+    - element_label: "pratique PM minoritaires Borne Attal - pas de vote de confiance, recours possible 49.3"
+      type: context
+      source_reference: "pratique gouvernementale 2022-2024"
+      confidence: 0.95
+      confidence_applies_to: inference
+
+downstream_causal_chains:
+  - targeted_object_id: OV1
+    plausible_consequences:
+      - consequence_label: "non-vote ou abstention suffisante pour éviter 289 voix censure"
+        confidence: 0.55
+        confidence_applies_to: inference
+        defeaters:
+          - "convergence possible motions PS et RN sur PLFSS 49.3"
+          - "concessions ciblées peuvent être jugées insuffisantes par les deux camps simultanément"
+        observable_to_date: "gouvernement Barnier censuré 4 décembre 2024 par 331 voix - conséquence anticipée invalidée"
+  - targeted_object_id: OV2
+    plausible_consequences:
+      - consequence_label: "maintien cohésion LR-macroniste autour PLF/PLFSS"
+        confidence: 0.75
+        confidence_applies_to: inference
+        defeaters:
+          - "divergences possibles sur fiscalité"
+          - "divergences possibles sur ampleur coupes"
+        observable_to_date: "cohésion globale tenue 3 mois jusqu'à censure non déclenchée par défection interne"
+  - targeted_object_id: OV3
+    plausible_consequences:
+      - consequence_label: "abstention ou non-vote d'une des deux oppositions pivots"
+        confidence: 0.60
+        confidence_applies_to: inference
+        defeaters:
+          - "convergence PS-RN sur censure possible malgré divergences doctrinales"
+          - "calcul stratégique d'oppositions peut viser chute du gouvernement comme objectif partagé"
+        observable_to_date: "convergence PS-RN sur censure - échec stratégique du calcul de division des oppositions"
+  - targeted_object_id: OV4
+    plausible_consequences:
+      - consequence_label: "consolidation image Barnier figure gaullienne européenne"
+        confidence: 0.65
+        confidence_applies_to: inference
+        defeaters:
+          - "chute après 3 mois affaiblit trace politique"
+          - "perte d'efficacité gouvernementale décrédibilise figure de l'efficacité technique"
+        observable_to_date: "image conservée comme figure dignité institutionnelle perdante"
+  - targeted_object_id: OV5
+    plausible_consequences:
+      - consequence_label: "limitation audience politique positions rupture NFP et RN"
+        confidence: 0.50
+        confidence_applies_to: inference
+        defeaters:
+          - "positions de rupture maintiennent leur audience indépendamment"
+          - "chute gouvernement Barnier peut au contraire renforcer narratives rupture"
+        observable_to_date: "pas d'effet visible documentable sur cette dimension"
+  - targeted_object_id: OV6
+    plausible_consequences:
+      - consequence_label: "pas de crise majeure marchés ou Commission européenne"
+        confidence: 0.80
+        confidence_applies_to: inference
+        defeaters:
+          - "censure peut produire réaction négative court terme"
+          - "absence budget 2025 peut alerter marchés"
+        observable_to_date: "pas de crise majeure documentée pendant séquence Barnier - transition vers Bayrou sans rupture institutionnelle"
+
+discourse_action_gaps_on_thematic_objects:
+  - thematic_object_id: OT1
+    declared: "Budget 2025 déficit 5% PIB"
+    pattern_type: never_observed
+    observation_window: "1er octobre - 4 décembre 2024 (fenêtre close par censure)"
+    observation: "Gouvernement censuré 4 décembre 2024 avant adoption PLF 2025. PLFSS rejeté par motion. Loi spéciale décembre 2024 pour continuité. PLF 2025 adopté février 2025 sous Bayrou avec trajectoire modifiée. Candidat sous-catégorie typology_audit - never_observed_by_actor_removal (perte capacité d'action de l'acteur avant fenêtre observation, distinct de never_observed standard pour silence stratégique)."
+    source_reference: "vote censure 4 décembre 2024 + adoption PLF 2025 sous Bayrou"
+  - thematic_object_id: OT2
+    declared: "aménagements raisonnables retraites confiés aux partenaires sociaux"
+    pattern_type: observed_by_other_actor
+    observation_window: "octobre 2024 - juin 2025"
+    observation: "Pas de procédure formalisée engagée sous Barnier (3 mois insuffisants). Conclave entre partenaires sociaux engagé par Bayrou février-juin 2025 à niveau plus structuré que ce que Barnier avait annoncé. Engagement transmis et transformé par PM suivant."
+    source_reference: "conférence presse Matignon 26 juin 2025"
+  - thematic_object_id: OT3
+    declared: "plan d'action sécurité piloté par préfets"
+    pattern_type: not_yet_observed
+    observation_window: "octobre - décembre 2024 (fenêtre courte)"
+    observation: "Fenêtre 3 mois insuffisante pour observation complète. Quelques actions documentées (renforcement présence visible). Interruption par chute gouvernement avant aboutissement."
+    source_reference: "documentation gouvernementale sécurité octobre-décembre 2024"
+  - thematic_object_id: OT4
+    declared: "Smic revalorisé +2% au 1er novembre 2024"
+    pattern_type: observed_as_announced
+    observation_window: "1er octobre - 1er novembre 2024"
+    observation: "Revalorisation effective au 1er novembre 2024 par décret. Seul engagement substantiel du discours Barnier tenu intégralement."
+    source_reference: "décret revalorisation Smic novembre 2024"
+  - thematic_object_id: OT5
+    declared: "ouverture réflexion sur scrutin proportionnel"
+    pattern_type: never_observed
+    observation_window: "octobre 2024 - mai 2026"
+    observation: "Pas de procédure substantielle engagée sous Barnier ni sous Bayrou ni sous Lecornu. Engagement à seuil sous-déterminé sans actualisation."
+    source_reference: "absence documentaire de procédure réformiste"
+
+observable_effects_on_targeted_objects:
+  - {targeted_object_id: OV1, effect_type: contestation_forte, description: "motion de censure votée 4 décembre 2024 par 331 voix - première censure depuis 1962. Premier cas dans corpus M01 où conséquence anticipée principale invalidée par les faits."}
+  - {targeted_object_id: OV2, effect_type: confirmation_institutionnelle, description: "cohésion LR-macroniste tenue 3 mois sans défection interne déclenchant la chute - censure provoquée par convergence externe PS-RN"}
+  - {targeted_object_id: OV3, effect_type: contestation_forte, description: "convergence PS-RN sur censure - échec stratégique du calcul de division des oppositions par concessions ciblées"}
+  - {targeted_object_id: OV4, effect_type: amplification, description: "image Barnier conservée comme figure dignité institutionnelle perdante - posture respectée même dans défaite, pas de fuite vers ressorts populistes"}
+  - {targeted_object_id: OV5, effect_type: ignorement, description: "NFP et RN maintiennent leur audience - pas d'effet visible"}
+  - {targeted_object_id: OV6, effect_type: confirmation_institutionnelle, description: "pas de crise majeure marchés ou Commission - transition vers Bayrou sans rupture institutionnelle - crédibilité budgétaire européenne préservée"}
+
+historiographies:
+  - mobilized: "tradition gaulliste classique autorité d'État et compromis institutionnel"
+    mobilization_type: thematic_explicit
+    consensus_level_mobilized: contested
+    competing: "tradition souverainiste-nationaliste (RN), tradition socialiste de la conquête sociale (NFP), tradition centriste-MoDem"
+    consensus_level_competing: contested
+  - mobilized: "doctrine européenne de la discipline budgétaire"
+    mobilization_type: thematic_explicit
+    consensus_level_mobilized: contested
+    competing: "doctrine dépense publique comme levier transition (NFP, partiellement EELV)"
+    consensus_level_competing: contested
+  - mobilized: "doctrine du paritarisme syndical - mobilisation déclarative sans actualisation procédurale"
+    mobilization_type: thematic_explicit
+    consensus_level_mobilized: strong_consensus
+  - mobilized: "tradition parlementarisme constructif - écoute, respect, dialogue"
+    mobilization_type: thematic_explicit
+    consensus_level_mobilized: contested
+    competing: "doctrine de la confrontation parlementaire"
+    consensus_level_competing: contested
+
+epistemic_synthesis:
+  established_facts:
+    - "DPG prononcée 1er octobre 2024 à l'Assemblée nationale"
+    - "Annonce budget 2025 déficit 5% PIB - deux tiers par dépenses, un tiers par recettes"
+    - "Annonce aménagements raisonnables retraites confiés aux partenaires sociaux"
+    - "Annonce Smic +2% au 1er novembre 2024"
+    - "Annonces sécurité immigration ordre républicain"
+    - "Annonces sectorielles et institutionnelles diverses"
+    - "Pas de vote de confiance demandé"
+    - "Motion de censure votée 4 décembre 2024 par 331 voix - première censure depuis 1962"
+    - "Bayrou nommé 13 décembre 2024 en remplacement"
+    - "Smic revalorisé au 1er novembre 2024 comme annoncé"
+    - "Pas d'adoption PLF 2025 sous Barnier - loi spéciale décembre 2024 puis PLF février 2025 sous Bayrou"
+    - "Conclave retraites organisé par Bayrou février-juin 2025 - reprise et extension engagement Barnier"
+  inferences:
+    - label: "discours fonctionne comme acte de gouvernement minoritaire qui privilégie fermeté substantive avec concessions ciblées - distinct des stratégies procéduralisation (Bayrou) et concession substantielle (Lecornu)"
+      confidence: 0.85
+      confidence_applies_to: inference
+      premise: "comparaison structurelle avec DPG Bayrou janvier 2025 et DPG Lecornu octobre 2025 sur même position institutionnelle révèle typologie ternaire"
+    - label: "stratégie cohérente avec trajectoire gaullienne-européenne du locuteur - fermeté technique sur principes, art du compromis sur modalités"
+      confidence: 0.80
+      confidence_applies_to: inference
+    - label: "chute après 3 mois résulte de convergence opposante PS-RN anticipée mais non évitable par concessions ciblées offertes"
+      confidence: 0.75
+      confidence_applies_to: inference
+  competing_hypotheses:
+    - label: "stratégie fermeté budgétaire avec acceptation risque censure pour positionner durablement doctrine droite gaullienne dans séquence présidentielle 2027"
+      type: intentional
+      confidence: 0.75
+      confidence_applies_to: hypothesis
+    - label: "calcul de tenir jusqu'au vote du budget en évitant motion censure par concessions ciblées - fermeté pour RN, social pour PS"
+      type: intentional
+      confidence: 0.80
+      confidence_applies_to: hypothesis
+    - label: "convention du genre DPG de PM nommé sans majorité claire dans coalition LR-macroniste contraignant fermeté de droite avec ouvertures cosmétiques"
+      type: non_intentional
+      confidence: 0.55
+      confidence_applies_to: hypothesis
+    - label: "héritage doctrinal RPR-LR-européen Barnier négociateur Brexit Commissaire européen privilégiant fermeté technique sur art compromis politique souple"
+      type: non_intentional
+      confidence: 0.55
+      confidence_applies_to: hypothesis
+  hypothesis_gap: 0.05
+  hypothesis_status: zone_of_indetermination
+  red_team_objections:
+    - "confidence 0.80 sur hypothèse B présuppose lucidité stratégique de Barnier sur possible non-convergence PS-RN - lecture charitable basculerait vers C ou D"
+    - "frontière entre A et B partiellement artificielle - positionnement doctrine et calcul division oppositions sont compatibles"
+
+null_results:
+  fallacies_certain: 0
+  fallacies_probable_or_possible: 2
+  intentional_omissions_proved: 0
+  modal_shifts_detected: []
+  ethical_content_not_neutralized:
+    enabled: false

@@ -1,0 +1,126 @@
+method_id: M01_ANALYSE_RHETORIQUE
+method_version: "2.1"
+analysis_id: M01_CAS_JOUET_6_PREVENTED_BY_CONSTRAINT_FICTIF_v2_1
+execution_date: 2026-05-17
+execution_mode: applicable_complete
+execution_mode_note: "cas-jouet fictif construit pour fixture de test - critère décisif identification pattern prevented_by_constraint avec nomination de la contrainte"
+
+source:
+  text_id: CAS_JOUET_6_RENARD_FICTIF
+  provenance: "cas-jouet fictif construit comme fixture de test - non-réel"
+  integrity_status: certified
+
+enonciation:
+  speaker:
+    id: CLAIRE_RENARD_FICTIF
+    name: "Claire Renard (fictif)"
+    role_at_date: "Ministre de la Justice (gouvernement fictif)"
+  date: 2024-02-08
+  place: "salle de presse ministère de la Justice (fictif)"
+  primary_audience: "presse"
+  secondary_audiences:
+    - "opinion publique"
+    - "magistrature"
+    - "Parlement"
+  channel: "conférence de presse + diffusion (fictif)"
+  political_sequence: "fictif - présentation projet de loi réforme CSM"
+  genre: "conférence de presse de présentation de projet de loi"
+  affective_charge: medium
+  ethical_charge: low
+  thematic_objects:
+    - object_id: OT1
+      label: "réforme du CSM avec nomination directe de la moitié des membres par le Président de la République"
+      efficiency_status: efficient_partiel
+      efficiency_justification: "la ministre peut présenter le texte et faire voter le Parlement, mais la réalisation effective dépend aussi du Conseil constitutionnel saisi"
+  targeted_objects:
+    - object_id: OV1
+      label: "consolidation politique de la position ministérielle sur la réforme institutionnelle"
+      inference_confidence: 0.75
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "formule solennelle d'engagement temporel"
+        - "présentation publique du projet de loi"
+      efficiency_status: efficient
+      efficiency_justification: "acte performatif de positionnement public"
+
+charity_reconstruction:
+  content: |
+    Une réforme du Conseil supérieur de la magistrature peut être motivée par des objectifs
+    démocratiques légitimes - notamment la restauration de la confiance des citoyens dans la justice.
+    La nomination directe par le Président de la République peut être présentée comme un acte de
+    démocratisation (le Président élu au suffrage universel direct comme garant de l'intérêt général).
+    L'engagement d'une mise en œuvre rapide est cohérent avec une volonté de portage politique
+    déterminé de la réforme.
+  borrowed_terms_handled:
+    - term: "restaurer la confiance"
+      handling: attributed
+
+upstream_causal_chain:
+  elements:
+    - element_label: "programme de réforme institutionnelle du gouvernement (fictif)"
+      type: prior_position
+      source_reference: "fictif - programme construit"
+      confidence: 0.90
+      confidence_applies_to: inference
+    - element_label: "contexte de débat public sur l'indépendance de la justice (fictif)"
+      type: context
+      source_reference: "fictif - contexte construit"
+      confidence: 0.85
+      confidence_applies_to: inference
+
+downstream_causal_chains:
+  - targeted_object_id: OV1
+    plausible_consequences:
+      - consequence_label: "consolidation politique de la ministre sur le portage de réformes institutionnelles"
+        confidence: 0.60
+        confidence_applies_to: inference
+        defeaters:
+          - "une censure constitutionnelle ultérieure peut affaiblir la position au lieu de la consolider"
+          - "le portage politique dépend du soutien gouvernemental ultérieur"
+        observable_to_date: "fictif - censure constitutionnelle observée 18 juin 2024 ; ministre maintenue en fonction"
+
+discourse_action_gaps_on_thematic_objects:
+  - thematic_object_id: OT1
+    declared: "modification structurelle du CSM avec nomination directe par le Président de la République, effective avant le 1er juillet 2024"
+    pattern_type: prevented_by_constraint
+    observation_window: "8 février 2024 - 1er juillet 2024 (fenêtre déclarée)"
+    observation: "Le projet de loi a été voté par le Parlement le 28 mai 2024 conformément à l'annonce. La disposition centrale a été censurée par le Conseil constitutionnel le 18 juin 2024 sur la base de l'article 65 de la Constitution garantissant l'indépendance de la magistrature. La modification structurelle annoncée n'est pas en vigueur au 1er juillet 2024 et ne l'a pas été depuis. Aucune réforme alternative engagée."
+    constraint_named: "décision du Conseil constitutionnel n° 2024-XYZ DC du 18 juin 2024 censurant la disposition centrale de la loi adoptée le 28 mai 2024 sur la base de l'article 65 de la Constitution (indépendance de la magistrature)"
+
+observable_effects_on_targeted_objects: []
+
+historiographies: []
+
+epistemic_synthesis:
+  established_facts:
+    - "Engagement annoncé 8 février 2024 en conférence de presse (fictif)"
+    - "Projet de loi voté par Parlement le 28 mai 2024"
+    - "Décision Conseil constitutionnel du 18 juin 2024 censurant la disposition centrale"
+    - "Modification structurelle annoncée non en vigueur au 1er juillet 2024 ni depuis"
+    - "Aucune réforme alternative engagée"
+    - "Ministre maintenue en fonction après la censure"
+  competing_hypotheses:
+    - label: "la ministre a pris l'engagement en connaissant le risque constitutionnel et a porté le projet en pariant sur une décision favorable"
+      type: intentional
+      confidence: 0.50
+      confidence_applies_to: hypothesis
+    - label: "la ministre a pris l'engagement en sous-estimant ou en ignorant le risque constitutionnel (défaut de pilotage juridique du cabinet)"
+      type: intentional
+      confidence: 0.40
+      confidence_applies_to: hypothesis
+    - label: "calcul stratégique d'usage du Conseil constitutionnel comme bouclier - portage du projet en sachant qu'il serait censuré"
+      type: non_intentional_or_moderate
+      confidence: 0.30
+      confidence_applies_to: hypothesis
+    - label: "convention du genre annonce de réforme institutionnelle qui produit des engagements à l'aveugle du risque constitutionnel"
+      type: non_intentional
+      confidence: 0.35
+      confidence_applies_to: hypothesis
+  hypothesis_gap: 0.1
+  hypothesis_status: zone_of_indetermination
+
+null_results:
+  fallacies_certain: 0
+  fallacies_probable_or_possible: 1
+  intentional_omissions_proved: 0
+  modal_shifts_detected: []

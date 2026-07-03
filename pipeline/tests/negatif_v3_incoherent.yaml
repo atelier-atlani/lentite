@@ -1,0 +1,59 @@
+method_id: M01_ANALYSE_RHETORIQUE
+method_version: "2.1"
+analysis_id: M01_TEST_NEGATIF_V3_INCOHERENT
+execution_date: 2026-05-17
+execution_mode: applicable_complete
+
+source:
+  text_id: TEST_NEGATIF_002
+  provenance: "test interne — YAML volontairement défaillant"
+  integrity_status: certified
+
+enonciation:
+  speaker:
+    id: TEST_SPEAKER
+    name: "Test Speaker"
+    role_at_date: "fonction test"
+  date: 2025-10-14
+  place: "lieu test"
+  primary_audience: "audience test"
+  channel: "canal test"
+  genre: "genre test"
+  affective_charge: low
+  ethical_charge: low
+  thematic_objects:
+    # TOUS LES OBJETS THÉMATIQUES SONT NON_EFFICIENT
+    - object_id: OT1
+      label: "objet thématique 1 sur lequel le locuteur n'a pas le pouvoir d'agir"
+      efficiency_status: non_efficient
+      efficiency_justification: "le locuteur n'est pas en position d'agir sur cet objet"
+    - object_id: OT2
+      label: "objet thématique 2 sur lequel le locuteur n'a pas le pouvoir d'agir"
+      efficiency_status: non_efficient
+      efficiency_justification: "idem"
+  targeted_objects: []
+
+# CONTRAINTE V2.1 VIOLÉE — V.3 NON VIDE alors que tous les objets thématiques sont non_efficient
+discourse_action_gaps_on_thematic_objects:
+  - thematic_object_id: OT1
+    declared: "engagement que le locuteur n'a pas le pouvoir de tenir"
+    pattern_type: never_observed
+    observation_window: "fenêtre test close"
+    observation: "non observé"
+
+epistemic_synthesis:
+  competing_hypotheses:
+    - label: "hypothèse 1"
+      type: intentional
+      confidence: 0.6
+      confidence_applies_to: hypothesis
+    - label: "hypothèse 2"
+      type: non_intentional
+      confidence: 0.4
+      confidence_applies_to: hypothesis
+    - label: "hypothèse 3"
+      type: non_intentional
+      confidence: 0.3
+      confidence_applies_to: hypothesis
+  hypothesis_gap: 0.2
+  hypothesis_status: zone_of_indetermination

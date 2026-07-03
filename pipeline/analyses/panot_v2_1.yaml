@@ -1,0 +1,311 @@
+method_id: M01_ANALYSE_RHETORIQUE
+method_version: "2.1"
+analysis_id: M01_PANOT_REPONSE_DPG_LECORNU_20251014_v2_1
+execution_date: 2026-05-17
+execution_mode: applicable_vigilance_adversariale
+execution_mode_note: "vigilance adversariale activée — charge affective high, attaques personnelles cumulées contre Macron, dramatisation institutionnelle, verbatim partiel par citations convergentes. Plafonnement de confidence à 0,85 sur inférences globales."
+
+source:
+  text_id: PANOT_REPONSE_DPG_LECORNU_20251014
+  provenance: "citations convergentes LCP, Public Sénat, Pravda France, presse politique 14-16 octobre 2025"
+  integrity_status: partial
+
+enonciation:
+  speaker:
+    id: MATHILDE_PANOT
+    name: "Mathilde Panot"
+    role_at_date: "Présidente du groupe La France insoumise à l'Assemblée nationale"
+  date: 2025-10-14
+  place: "Assemblée nationale, Paris"
+  primary_audience: "Sébastien Lecornu et députés"
+  secondary_audiences:
+    - "base militante LFI (face à la non-censure possible PS)"
+    - "Parti socialiste (cible préemptive de la critique sauveur de Macron)"
+    - "électorat gauche radicale (préparation présidentielle 2027)"
+    - "opinion publique sensible à la rupture institutionnelle"
+  channel: "tribune parlementaire + diffusion télévisuelle"
+  political_sequence: "octobre 2025 - Lecornu II, motions de censure, séquence post-rupture NUPES"
+  genre: "réponse à DPG par présidente de groupe opposition radicale"
+  affective_charge: high
+  ethical_charge: low
+  thematic_objects:
+    - object_id: OT1
+      label: "annonce vote motion de censure LFI et appel à la chute du gouvernement Lecornu II"
+      efficiency_status: non_efficient
+      efficiency_justification: "manque 18 voix au vote effectif du 16 octobre 2025, dépend du vote PS et autres groupes"
+    - object_id: OT2
+      label: "appel à la démission ou destitution d'Emmanuel Macron"
+      efficiency_status: non_efficient
+      efficiency_justification: "procédure constitutionnelle complexe, motion de destitution précédente déclarée irrecevable"
+    - object_id: OT3
+      label: "revendication de la rupture exclusive comme position politique LFI"
+      efficiency_status: efficient
+      efficiency_justification: "acte performatif de positionnement, sous contrôle du locuteur"
+  targeted_objects:
+    - object_id: OV1
+      label: "positionnement de LFI comme seule force d'opposition rupturiste"
+      inference_confidence: 0.85
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "U3 nous seuls sommes capables d'une rupture"
+        - "U3 c'est une rupture totale"
+        - "ethos exclusif construit"
+      efficiency_status: efficient
+      efficiency_justification: "acte performatif de positionnement sous contrôle"
+    - object_id: OV2
+      label: "disqualification politique préempte du PS (préparation narration sauveur de Macron)"
+      inference_confidence: 0.80
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "U2 le débat sur le décalage de la réforme est un leurre"
+        - "position du discours dans la séquence des réponses (Panot avant Vallaud)"
+      efficiency_status: efficient
+      efficiency_justification: "acte rhétorique de préemption sous contrôle"
+    - object_id: OV3
+      label: "disqualification du RN sur l'irrecevabilité de la motion de destitution précédente"
+      inference_confidence: 0.70
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "U6 imputation du fait du RN"
+      efficiency_status: efficient
+      efficiency_justification: "acte rhétorique de séparation sous contrôle"
+    - object_id: OV4
+      label: "préparation présidentielle 2027 (candidature insoumise)"
+      inference_confidence: 0.55
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "revendication rupture exclusive"
+        - "appel à destitution comme programme"
+        - "dramatisation institutionnelle continue"
+      efficiency_status: non_efficient
+      efficiency_justification: "dépend des dynamiques politiques sur 18 mois"
+    - object_id: OV5
+      label: "mobilisation de la base militante LFI face à la non-censure PS possible"
+      inference_confidence: 0.65
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "maximalisme de U5 censure-loi-spéciale-destitution"
+        - "U7 appel à résistance populaire"
+      efficiency_status: efficient_partiel
+      efficiency_justification: "réception dépend de la base militante et des relais"
+    - object_id: OV6
+      label: "disqualification globale de la séquence macroniste comme illégitimité institutionnelle"
+      inference_confidence: 0.75
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "U1 président aux abois"
+        - "U4 mandat pour rien"
+        - "U5 compte à rebours du départ"
+      efficiency_status: efficient
+      efficiency_justification: "cadrage rhétorique sous contrôle"
+
+charity_reconstruction:
+  content: |
+    La séquence politique d'octobre 2025 confirme l'épuisement du second mandat d'Emmanuel Macron.
+    La nomination de Sébastien Lecornu, démissionnaire huit jours plus tôt, comme Premier ministre
+    à nouveau, illustre l'impasse institutionnelle du présidentialisme actuel. Le gouvernement
+    Lecornu II propose une suspension de la réforme des retraites qui n'est qu'un "leurre" — la
+    réforme reprendrait son cours en 2028. La voie de sortie démocratique passe par la censure
+    immédiate du gouvernement, le vote d'une loi spéciale pour reconduire les budgets, puis la
+    démission ou la destitution du Président. La France insoumise est la seule force politique
+    cohérente sur cette ligne de rupture.
+  borrowed_terms_handled:
+    - term: "rupture totale"
+      handling: quoted
+    - term: "leurre"
+      handling: quoted
+    - term: "président aux abois"
+      handling: attributed
+    - term: "résistance populaire"
+      handling: attributed
+
+upstream_causal_chain:
+  elements:
+    - element_label: "position LFI sur les retraites depuis 2023 - demande d'abrogation"
+      type: prior_position
+      source_reference: "prises de position publiques LFI"
+      confidence: 0.95
+      confidence_applies_to: inference
+    - element_label: "motion de destitution précédente déclarée irrecevable par bureau Assemblée"
+      type: trigger_event
+      source_reference: "actualité parlementaire 2025"
+      confidence: 0.90
+      confidence_applies_to: inference
+    - element_label: "rupture NUPES 2024 - éclatement de l'alliance avec PS, Verts, communistes"
+      type: prior_position
+      source_reference: "actualité politique documentée"
+      confidence: 0.90
+      confidence_applies_to: inference
+    - element_label: "stratégie Mélenchon-Bompard sur destitution présidentielle depuis été 2024"
+      type: prior_position
+      source_reference: "communications LFI et Mélenchon"
+      confidence: 0.85
+      confidence_applies_to: inference
+    - element_label: "fragmentation parlementaire post-dissolution juin 2024"
+      type: context
+      source_reference: "arithmétique parlementaire publique"
+      confidence: 0.95
+      confidence_applies_to: inference
+    - element_label: "échec NUPES motion juin 2023 sur réforme retraites - 9 voix manquantes"
+      type: context
+      source_reference: "votes parlementaires documentés"
+      confidence: 0.90
+      confidence_applies_to: inference
+
+downstream_causal_chains:
+  - targeted_object_id: OV1
+    plausible_consequences:
+      - consequence_label: "consolidation identité politique LFI sur ligne rupture, distinction du PS sur méthode du compromis"
+        confidence: 0.75
+        confidence_applies_to: inference
+        defeaters:
+          - "la revendication exclusive peut être contestée par d'autres formations de gauche radicale (PCF, EELV)"
+          - "la position rupturiste peut être perçue comme isolement plutôt que cohérence"
+        observable_to_date: "revendication contestée par PS qui parle aussi de fissure dans le dogme macroniste"
+  - targeted_object_id: OV2
+    plausible_consequences:
+      - consequence_label: "limitation politique de la lecture PS de la suspension comme victoire en posant cadre concurrent leurre"
+        confidence: 0.70
+        confidence_applies_to: inference
+        defeaters:
+          - "la préemption peut être ignorée par le PS qui pose son propre cadre"
+          - "l'opinion publique peut adopter la lecture PS sur la durée si la suspension est tenue"
+          - "la disqualification peut renforcer la solidarité interne du groupe PS"
+        observable_to_date: "narration sauveur de Macron diffusée largement dans camp gauche radicale post-16 octobre ; 7 députés PS ont voté contre la consigne"
+  - targeted_object_id: OV3
+    plausible_consequences:
+      - consequence_label: "séparation publique de LFI et du RN dans l'opposition radicale, prévention amalgame extrême-gauche/extrême-droite"
+        confidence: 0.60
+        confidence_applies_to: inference
+        defeaters:
+          - "le RN ne reconnaît pas l'imputation et peut maintenir la coalition par convergence d'objet visé"
+          - "la coalition de vote (RN soutenant motion LFI) contredit la séparation rhétorique"
+        observable_to_date: "RN a voté la motion LFI le 16 octobre 2025 - séparation rhétorique ignorée par coalition tactique"
+  - targeted_object_id: OV4
+    plausible_consequences:
+      - consequence_label: "positionnement LFI sur ligne rupture pour candidature présidentielle insoumise 2027"
+        confidence: 0.55
+        confidence_applies_to: inference
+        defeaters:
+          - "la trajectoire 2026 peut épuiser le bénéfice politique avant 2027"
+          - "la dynamique d'union de la gauche peut absorber l'espace politique"
+          - "l'autonomie LFI peut produire un isolement électoral"
+        observable_to_date: "effet trop précoce pour observation complète à mai 2026"
+  - targeted_object_id: OV5
+    plausible_consequences:
+      - consequence_label: "maintien de l'engagement militant indépendamment de l'échec parlementaire"
+        confidence: 0.70
+        confidence_applies_to: inference
+        defeaters:
+          - "la déception peut produire démobilisation plutôt que radicalisation"
+          - "la base peut percevoir le maximalisme comme posture sans débouché"
+        observable_to_date: "motion à 271 voix dépasse le périmètre strict LFI - mobilisation effective au-delà de la base stricte ; mais 5 députés Verts/communistes n'ont pas voté"
+  - targeted_object_id: OV6
+    plausible_consequences:
+      - consequence_label: "amplification de la critique systémique du macronisme dans le débat public"
+        confidence: 0.75
+        confidence_applies_to: inference
+        defeaters:
+          - "la critique peut être perçue comme excessive et désamorcée par les institutions"
+          - "le socle macroniste peut consolider sa cohésion face à l'attaque"
+        observable_to_date: "narration circule dans camp gauche radicale, contestée par socle macroniste ; Macron en fonction à mai 2026, calendrier 2027 non modifié"
+
+discourse_action_gaps_on_thematic_objects:
+  - thematic_object_id: OT1
+    declared: "vote de la motion de censure LFI entraînant la chute du gouvernement Lecornu II"
+    pattern_type: never_observed
+    observation_window: "13-16 octobre 2025 (fenêtre close)"
+    observation: "Motion votée le 16 octobre 2025 avec 271 voix pour, manquant de 18 voix pour les 289 requises. Procédure tenue, objectif politique non atteint. Gouvernement maintenu à mai 2026."
+    source_reference: "vote AN 16 octobre 2025"
+  - thematic_object_id: OT2
+    declared: "démission ou destitution du Président de la République"
+    pattern_type: not_yet_observed
+    observation_window: "mandat présidentiel 2022-2027 (non clos à la date d'analyse)"
+    observation: "Macron en fonction à mai 2026. Aucune procédure de destitution aboutie. Motion de destitution précédente irrecevable. Pas de nouvelle motion déposée à la connaissance de l'analyste dans la fenêtre observable. Pattern peut basculer en never_observed après élection présidentielle 2027 si aucune destitution n'aboutit d'ici là."
+
+observable_effects_on_targeted_objects:
+  - targeted_object_id: OV1
+    effect_type: amplification_limitee_avec_contestation
+    description: "revendication exclusive contestée par PS qui revendique aussi la fissure dans le dogme macroniste"
+  - targeted_object_id: OV2
+    effect_type: amplification
+    description: "narration sauveur de Macron diffusée largement dans camp gauche radicale post-16 octobre ; sept députés PS ont voté contre la consigne"
+  - targeted_object_id: OV3
+    effect_type: ignorement
+    description: "RN a voté la motion LFI - disqualification rhétorique ignorée par convergence d'objet visé sur OV_F"
+  - targeted_object_id: OV5
+    effect_type: amplification_partielle
+    description: "motion à 271 voix dépasse le périmètre strict LFI ; tensions internes documentées (5 défections Verts/communistes)"
+  - targeted_object_id: OV6
+    effect_type: amplification_partielle
+    description: "narration compte à rebours diffusée dans gauche radicale, Macron en fonction à mai 2026, calendrier 2027 non modifié par dramatisation"
+
+historiographies:
+  - mobilized: "tradition radicale de la rupture institutionnelle"
+    mobilization_type: thematic_explicit
+    consensus_level_mobilized: contested
+    competing: "tradition social-démocrate de la conquête sociale par négociation (Vallaud)"
+    consensus_level_competing: contested
+  - mobilized: "tradition de la résistance populaire (référence implicite Résistance 1940-1944)"
+    mobilization_type: thematic_explicit
+    consensus_level_mobilized: contested
+    competing: "tradition du parlementarisme constructif"
+    consensus_level_competing: contested
+  - mobilized: "doctrine de la sortie de la Vème République (mouvement 6ème République, courant Mélenchon depuis 2012)"
+    mobilization_type: thematic_explicit
+    consensus_level_mobilized: marginal
+    competing: "tradition gaullienne et tradition Vème République parlementarisée"
+    consensus_level_competing: strong_consensus
+
+epistemic_synthesis:
+  established_facts:
+    - "Discours prononcé 14 octobre 2025 Assemblée nationale en réponse à DPG Lecornu"
+    - "Annonce vote motion de censure LFI co-signée ultramarins/communistes/écologistes/insoumis"
+    - "Qualification de la suspension comme leurre"
+    - "Revendication rupture exclusive nous seuls"
+    - "Programme procédural censure-loi spéciale-destitution"
+    - "Imputation au RN de l'irrecevabilité de la motion de destitution précédente"
+    - "Appel à résistance populaire post-vote"
+    - "Motion votée 16 octobre 2025 - 271 voix pour, rejetée à 18 voix"
+    - "Sept députés PS ont voté la motion contre la consigne"
+    - "Cinq députés Verts/communistes n'ont pas voté"
+    - "Macron en fonction à mai 2026"
+  inferences:
+    - label: "le discours fonctionne comme acte de positionnement politique exclusif sur la ligne rupture"
+      confidence: 0.85
+      confidence_applies_to: inference
+      premise: "revendication explicite nous seuls + maximalisme procédural"
+    - label: "le cadrage en leurre préempte le discours Vallaud et cherche à délégitimer le compromis CFDT-PS-gouvernement"
+      confidence: 0.80
+      confidence_applies_to: inference
+    - label: "la séparation rhétorique LFI-RN par imputation contredit la coalition de vote ultérieure"
+      confidence: 0.70
+      confidence_applies_to: inference
+  competing_hypotheses:
+    - label: "positionnement de LFI comme seule force d'opposition rupturiste pour préparation présidentielle 2027 et disqualification stratégique du PS"
+      type: intentional
+      confidence: 0.85
+      confidence_applies_to: hypothesis
+    - label: "disqualification stratégique du PS pour récupération électorale à gauche (rupture NUPES rentabilisée)"
+      type: intentional
+      confidence: 0.70
+      confidence_applies_to: hypothesis
+    - label: "expression sincère de conviction radicale sur l'urgence institutionnelle (destitution, rupture totale, sortie de la Vème République)"
+      type: non_intentional_or_moderate
+      confidence: 0.55
+      confidence_applies_to: hypothesis
+    - label: "convention du genre réponse à DPG par opposition radicale qui impose maximalisme et dramatisation institutionnelle"
+      type: non_intentional
+      confidence: 0.40
+      confidence_applies_to: hypothesis
+  hypothesis_gap: 0.15
+  hypothesis_status: zone_of_indetermination
+  red_team_objections:
+    - "la confidence 0.85 sur l'hypothèse A présuppose la rationalité stratégique de la communication LFI ; un autre lecteur pourrait considérer que la radicalité du discours dépasse le calcul stratégique et relève partiellement de C (expression sincère)"
+    - "la frontière entre A et B est glissante - le positionnement rupturiste et la disqualification du PS sont enchâssés, leur distinction analytique est partiellement artificielle"
+
+null_results:
+  fallacies_certain: 0
+  fallacies_probable_or_possible: 4
+  intentional_omissions_proved: 0
+  modal_shifts_detected: []

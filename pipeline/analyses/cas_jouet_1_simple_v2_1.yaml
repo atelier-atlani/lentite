@@ -1,0 +1,134 @@
+method_id: M01_ANALYSE_RHETORIQUE
+method_version: "2.1"
+analysis_id: M01_CAS_JOUET_1_SIMPLE_FICTIF_v2_1
+execution_date: 2026-05-17
+execution_mode: applicable_complete
+execution_mode_note: "cas-jouet fictif construit pour fixture de test - critère décisif sophisme certain + omission structurelle"
+
+source:
+  text_id: CAS_JOUET_1_DURANT_FICTIF
+  provenance: "cas-jouet fictif construit comme fixture de test - non-réel"
+  integrity_status: certified
+
+enonciation:
+  speaker:
+    id: ANNE_DURANT_FICTIF
+    name: "Anne Durant (fictif)"
+    role_at_date: "Ministre du Travail (gouvernement fictif)"
+  date: 2025-03-15
+  place: "ministère du Travail (fictif)"
+  primary_audience: "presse"
+  secondary_audiences:
+    - "opinion publique"
+    - "partenaires sociaux"
+  channel: "point presse ministériel + diffusion"
+  political_sequence: "fictif - séquence de défense de bilan post-publication des chiffres du chômage"
+  genre: "point presse de bilan ministériel"
+  affective_charge: medium
+  ethical_charge: low
+  thematic_objects:
+    - object_id: OT1
+      label: "défense du bilan de politique de l'emploi du ministère"
+      efficiency_status: efficient
+      efficiency_justification: "la ministre est en charge effective de la politique de l'emploi"
+  targeted_objects:
+    - object_id: OV1
+      label: "consolidation de sa position politique personnelle dans le gouvernement"
+      inference_confidence: 0.80
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "défense énergique du bilan personnel"
+        - "annonce d'extension à venir"
+      efficiency_status: efficient
+      efficiency_justification: "le cadrage de la narration est sous contrôle"
+    - object_id: OV2
+      label: "préemption symbolique des critiques d'opposition"
+      inference_confidence: 0.75
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "formule explicite sur les critiques infondées"
+        - "désignation des opposants"
+      efficiency_status: efficient
+      efficiency_justification: "acte performatif de préemption rhétorique"
+
+charity_reconstruction:
+  content: |
+    Le taux de chômage à 6,8% confirme une trajectoire favorable de l'emploi en France. Les trois
+    réformes structurelles portées par le ministère depuis dix-huit mois (simplification du contrat
+    d'embauche, réforme de l'assurance chômage, plan d'investissement compétences) constituent un
+    ensemble cohérent susceptible d'avoir contribué à cette baisse. La défense politique de ce
+    bilan est un acte légitime d'une ministre en exercice qui prépare des extensions à venir.
+  borrowed_terms_handled: []
+
+upstream_causal_chain:
+  elements:
+    - element_label: "publication des chiffres du chômage le matin même"
+      type: trigger_event
+      source_reference: "communiqué institut statistiques fictif"
+      confidence: 0.95
+      confidence_applies_to: inference
+    - element_label: "convention du genre point presse ministériel de bilan"
+      type: context
+      source_reference: "pratique gouvernementale documentée"
+      confidence: 0.90
+      confidence_applies_to: inference
+
+downstream_causal_chains:
+  - targeted_object_id: OV1
+    plausible_consequences:
+      - consequence_label: "consolidation de l'image publique de la ministre"
+        confidence: 0.70
+        confidence_applies_to: inference
+        defeaters:
+          - "la couverture médiatique peut révéler les facteurs concurrents non mentionnés"
+          - "les opposants peuvent reformuler le cadre de lecture"
+        observable_to_date: "test fictif - effets non testés"
+
+discourse_action_gaps_on_thematic_objects: []
+# V.3 vide - le discours ne contient pas d'engagement temporel précis sur l'objet thématique
+# (l'annonce d'approfondissement à venir n'est pas un engagement vérifiable au sens du gabarit)
+
+observable_effects_on_targeted_objects: []
+
+historiographies: []
+
+epistemic_synthesis:
+  established_facts:
+    - "Discours prononcé 15 mars 2025 (fictif)"
+    - "Attribution causale explicite des chiffres aux trois réformes"
+    - "Baisse du chômage commencée 6 mois avant la prise de fonction (source fictive)"
+    - "Études fictives identifiant facteur exogène dominant (reprise européenne)"
+    - "Une des trois mesures citées adoptée par le gouvernement précédent"
+  inferences:
+    - label: "le discours mobilise une attribution causale formellement défaillante (post hoc ergo propter hoc)"
+      confidence: 0.90
+      confidence_applies_to: inference
+      premise: "chronologie publiquement documentable"
+    - label: "le discours omet structurellement les facteurs causaux concurrents documentés"
+      confidence: 0.85
+      confidence_applies_to: inference
+  competing_hypotheses:
+    - label: "instrumentalisation délibérée de la baisse pour consolider le bilan et préempter les critiques"
+      type: intentional
+      confidence: 0.85
+      confidence_applies_to: hypothesis
+    - label: "croyance sincère mais erronée de la ministre dans l'efficacité de ses propres réformes (biais de confirmation)"
+      type: non_intentional
+      confidence: 0.35
+      confidence_applies_to: hypothesis
+    - label: "convention du genre point presse de bilan qui impose la formulation d'attribution causale"
+      type: non_intentional
+      confidence: 0.30
+      confidence_applies_to: hypothesis
+    - label: "calcul stratégique d'extension - la ministre prépare l'argumentation pour des mesures à venir"
+      type: non_intentional_or_moderate
+      confidence: 0.45
+      confidence_applies_to: hypothesis
+  hypothesis_gap: 0.4
+  hypothesis_status: uncertain_dominance
+
+null_results:
+  fallacies_certain: 1
+  fallacies_probable_or_possible: 2
+  intentional_omissions_proved: 0
+  modal_shifts_detected: []

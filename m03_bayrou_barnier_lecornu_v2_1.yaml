@@ -1,0 +1,241 @@
+method_id: M03_ANALYSE_COMPARATIVE_MULTI_ACTEURS
+method_version: "2.1"
+analysis_id: M03_BAYROU_BARNIER_LECORNU_v2_1
+execution_date: 2026-05-17
+execution_mode: applicable_complete
+
+controversy:
+  object: "Stratégie de gouvernement minoritaire face à fragmentation parlementaire post-dissolution juin 2024 - survie politique, méthode budgétaire, doctrine de la concession aux pivots oppositionnels"
+  temporal_sequence: "Septembre 2024 - mai 2026 - trois PM successifs"
+  date_range: [2024-09-05, 2026-05-17]
+
+actors:
+  - actor_id: MICHEL_BARNIER
+    name: "Michel Barnier"
+    role_at_date: "Premier ministre (5 sept - 4 déc 2024, 3 mois, censuré)"
+    m01_analysis_id: M01_BARNIER_DPG_20241001_v2_1
+    execution_mode_on_m01: applicable_complete
+    efficiency_by_dimension:
+      - {dimension_label: "fermeté budgétaire substantive", efficiency_status: efficient, justification: "le PM porte PLF/PLFSS"}
+      - {dimension_label: "aménagements retraites par partenaires sociaux", efficiency_status: efficient_partiel, justification: "dépend partenaires sociaux non convoqués formellement sous Barnier"}
+  - actor_id: FRANCOIS_BAYROU
+    name: "François Bayrou"
+    role_at_date: "Premier ministre (13 déc 2024 - 9 sept 2025, 9 mois, censuré)"
+    m01_analysis_id: M01_BAYROU_DPG_20250114_v2_1
+    execution_mode_on_m01: applicable_complete
+    efficiency_by_dimension:
+      - {dimension_label: "procéduralisation par mission flash et conclave", efficiency_status: efficient, justification: "le PM peut commander mission et organiser conclave"}
+      - {dimension_label: "concession substantive sur retraites", efficiency_status: non_efficient, justification: "Bayrou a refusé la concession substantive - stratégie procédurale assumée"}
+  - actor_id: SEBASTIEN_LECORNU
+    name: "Sébastien Lecornu"
+    role_at_date: "Premier ministre (5 oct 2025 - en fonction à mai 2026, 7+ mois)"
+    m01_analysis_id: M01_LECORNU_DPG_20251014_v2_1
+    execution_mode_on_m01: applicable_complete
+    efficiency_by_dimension:
+      - {dimension_label: "annonce suspension retraites concession substantielle", efficiency_status: efficient, justification: "PM peut proposer et faire voter par Parlement"}
+      - {dimension_label: "engagement renoncement 49.3", efficiency_status: efficient, justification: "engagement unilatéral du PM - rompu broken_explicitly 19 janvier 2026"}
+
+structuring_propositions:
+  - {proposition_id: P1, label: "La méthode de réouverture du dossier retraites doit être substantielle plutôt que procédurale"}
+  - {proposition_id: P2, label: "L'article 49.3 doit être renoncé sur le budget 2026"}
+  - {proposition_id: P3, label: "Le gouvernement minoritaire est légitime sans concession structurelle aux opposants pivots"}
+  - {proposition_id: P4, label: "La concertation paritaire avec les partenaires sociaux est suffisante pour traiter les controverses sociales"}
+  - {proposition_id: P5, label: "La trajectoire budgétaire (déficit 5% en 2025, sous 3% en 2029) est non-négociable face à la fragmentation parlementaire"}
+  - {proposition_id: P6, label: "La fermeté immigration et sécurité est une concession structurelle au RN pour éviter convergence avec gauche"}
+
+epistemic_position_matrix:
+  - {actor: MICHEL_BARNIER, proposition: P1, regime: refutes, confidence: 0.80, note: "aménagements ciblés sans suspension"}
+  - {actor: MICHEL_BARNIER, proposition: P2, regime: refutes_implicitly, confidence: 0.85, note: "recours au 49.3 sur PLFSS"}
+  - {actor: MICHEL_BARNIER, proposition: P3, regime: Asserts, confidence: 0.85}
+  - {actor: MICHEL_BARNIER, proposition: P4, regime: Asserts, confidence: 0.65, note: "mobilisation déclarative sans procédure formalisée"}
+  - {actor: MICHEL_BARNIER, proposition: P5, regime: Asserts_with_K_claim, confidence: 0.85}
+  - {actor: MICHEL_BARNIER, proposition: P6, regime: Asserts, confidence: 0.80}
+  - {actor: FRANCOIS_BAYROU, proposition: P1, regime: refutes, confidence: 0.80, note: "procédure sans suspension"}
+  - {actor: FRANCOIS_BAYROU, proposition: P2, regime: silent, confidence: 0.80}
+  - {actor: FRANCOIS_BAYROU, proposition: P3, regime: ambiguous_B_silent, confidence: 0.70}
+  - {actor: FRANCOIS_BAYROU, proposition: P4, regime: Asserts, confidence: 0.85, note: "mobilisation procédurale par conclave 4 mois"}
+  - {actor: FRANCOIS_BAYROU, proposition: P5, regime: Asserts, confidence: 0.75, note: "avec aménagements"}
+  - {actor: FRANCOIS_BAYROU, proposition: P6, regime: silent, confidence: 0.80}
+  - {actor: SEBASTIEN_LECORNU, proposition: P1, regime: Asserts_with_K_claim, confidence: 0.90, note: "suspension annoncée et votée"}
+  - {actor: SEBASTIEN_LECORNU, proposition: P2, regime: Asserts, confidence: 0.90, note: "rompu broken_explicitly 19 janvier 2026"}
+  - {actor: SEBASTIEN_LECORNU, proposition: P3, regime: refutes, confidence: 0.80, note: "concession substantielle annoncée"}
+  - {actor: SEBASTIEN_LECORNU, proposition: P4, regime: refutes, confidence: 0.70, note: "court-circuit législatif sans paritarisme structurant"}
+  - {actor: SEBASTIEN_LECORNU, proposition: P5, regime: ambiguous_B_silent, confidence: 0.65, note: "concession sur retraites pèse"}
+  - {actor: SEBASTIEN_LECORNU, proposition: P6, regime: silent, confidence: 0.80}
+
+targeted_objects_matrix:
+  - {actor: MICHEL_BARNIER, object: OV_A, label: "survie immédiate du gouvernement", status: aimed, confidence: 0.85, efficiency: non_efficient, grounded_in: [M01_BARNIER_DPG_20241001_v2_1]}
+  - {actor: MICHEL_BARNIER, object: OV_B, label: "positionnement pré-présidentiel 2027", status: aimed, confidence: 0.75, efficiency: efficient_partiel, grounded_in: [M01_BARNIER_DPG_20241001_v2_1]}
+  - {actor: MICHEL_BARNIER, object: OV_C, label: "maîtrise budgétaire et crédibilité Commission européenne", status: aimed, confidence: 0.80, efficiency: efficient_partiel, grounded_in: [M01_BARNIER_DPG_20241001_v2_1]}
+  - {actor: MICHEL_BARNIER, object: OV_D, label: "cohésion coalition LR-macroniste", status: aimed, confidence: 0.80, efficiency: efficient, grounded_in: [M01_BARNIER_DPG_20241001_v2_1]}
+  - {actor: MICHEL_BARNIER, object: OV_E, label: "détacher PS de motion censure par concession", status: aimed, confidence: 0.75, efficiency: non_efficient, grounded_in: [M01_BARNIER_DPG_20241001_v2_1]}
+  - {actor: MICHEL_BARNIER, object: OV_F, label: "alliance/concertation syndicats CFDT pivot", status: aimed, confidence: 0.55, efficiency: efficient_partiel, grounded_in: [M01_BARNIER_DPG_20241001_v2_1]}
+  - {actor: MICHEL_BARNIER, object: OV_G, label: "disqualification implicite positions rupture", status: aimed, confidence: 0.55, efficiency: non_efficient, grounded_in: [M01_BARNIER_DPG_20241001_v2_1]}
+  - {actor: FRANCOIS_BAYROU, object: OV_A, status: aimed, confidence: 0.85, efficiency: efficient_partiel, grounded_in: [M01_BAYROU_DPG_20250114_v2_1]}
+  - {actor: FRANCOIS_BAYROU, object: OV_B, status: aimed, confidence: 0.65, efficiency: efficient_partiel, grounded_in: [M01_BAYROU_DPG_20250114_v2_1]}
+  - {actor: FRANCOIS_BAYROU, object: OV_C, status: aimed, confidence: 0.75, efficiency: efficient_partiel, grounded_in: [M01_BAYROU_DPG_20250114_v2_1]}
+  - {actor: FRANCOIS_BAYROU, object: OV_D, status: aimed, confidence: 0.70, efficiency: efficient_partiel, grounded_in: [M01_BAYROU_DPG_20250114_v2_1]}
+  - {actor: FRANCOIS_BAYROU, object: OV_E, status: aimed, confidence: 0.80, efficiency: efficient_partiel, grounded_in: [M01_BAYROU_DPG_20250114_v2_1]}
+  - {actor: FRANCOIS_BAYROU, object: OV_F, status: aimed, confidence: 0.75, efficiency: efficient_partiel, grounded_in: [M01_BAYROU_DPG_20250114_v2_1]}
+  - {actor: FRANCOIS_BAYROU, object: OV_G, status: aimed, confidence: 0.55, efficiency: non_efficient, grounded_in: [M01_BAYROU_DPG_20250114_v2_1]}
+  - {actor: SEBASTIEN_LECORNU, object: OV_A, status: aimed, confidence: 0.85, efficiency: efficient_partiel, grounded_in: [M01_LECORNU_DPG_20251014_v2_1]}
+  - {actor: SEBASTIEN_LECORNU, object: OV_B, status: aimed, confidence: 0.55, efficiency: efficient_partiel, grounded_in: [M01_LECORNU_DPG_20251014_v2_1]}
+  - {actor: SEBASTIEN_LECORNU, object: OV_C, status: aimed, confidence: 0.65, efficiency: efficient_partiel, grounded_in: [M01_LECORNU_DPG_20251014_v2_1]}
+  - {actor: SEBASTIEN_LECORNU, object: OV_D, status: aimed, confidence: 0.70, efficiency: efficient_partiel, grounded_in: [M01_LECORNU_DPG_20251014_v2_1]}
+  - {actor: SEBASTIEN_LECORNU, object: OV_E, status: aimed, confidence: 0.85, efficiency: efficient, grounded_in: [M01_LECORNU_DPG_20251014_v2_1]}
+  - {actor: SEBASTIEN_LECORNU, object: OV_F, status: aimed, confidence: 0.70, efficiency: efficient, grounded_in: [M01_LECORNU_DPG_20251014_v2_1]}
+  - {actor: SEBASTIEN_LECORNU, object: OV_G, status: aimed, confidence: 0.55, efficiency: non_efficient, grounded_in: [M01_LECORNU_DPG_20251014_v2_1]}
+
+cross_matrix_salient_cases:
+  - type: convergence_proposition_divergence_aim
+    actors_involved: [MICHEL_BARNIER, FRANCOIS_BAYROU, SEBASTIEN_LECORNU]
+    description: "Divergence frontale sur P1 méthode retraites avec convergence sur objet visé OV_F CFDT pivot - Barnier-Bayrou refusent suspension, Lecornu l'annonce, mais les trois mobilisent paritarisme syndical"
+    analytical_reading: "La doctrine paritariste est compatible avec plusieurs stratégies méthodologiques distinctes. CFDT pivot transversal flexible dans son mode d'engagement."
+  - type: unanticipated_convergence
+    actors_involved: [MICHEL_BARNIER, FRANCOIS_BAYROU, SEBASTIEN_LECORNU]
+    description: "Pattern transversal de corrélation inverse concession-durée confirmé sur trois cas - Barnier 0 concession substantive 3 mois, Bayrou procédural 9 mois, Lecornu substantiel 7+ mois"
+    analytical_reading: "La concession substantielle au PS pivot est condition nécessaire pour pérenniser gouvernement minoritaire à terme moyen dans la séquence française 2024-2026."
+  - type: convergence_aim_divergence_proposition
+    actors_involved: [MICHEL_BARNIER, FRANCOIS_BAYROU, SEBASTIEN_LECORNU]
+    description: "Typologie ternaire des stratégies de PM minoritaire émergente - frontalité substantive (Barnier), procéduralisation (Bayrou), concession substantielle (Lecornu)"
+    analytical_reading: "Trois stratégies distinctes documentées empiriquement. Chaque PM successif apprend de la chute du précédent - processus d'apprentissage adaptatif sous contrainte parlementaire constante."
+  - type: unanticipated_convergence
+    actors_involved: [MICHEL_BARNIER, FRANCOIS_BAYROU, SEBASTIEN_LECORNU]
+    description: "Convergence non assumée sur OV_F entre méthodes opposées sur P1 - les trois PM mobilisent CFDT comme pivot transversal de légitimation malgré méthodes opposées"
+    analytical_reading: "Convergence non assumée par les PM eux-mêmes (chacun présente sa méthode comme distincte et supérieure) mais opérationnellement active dans la trajectoire."
+  - type: tactical_coalition
+    actors_involved: [MICHEL_BARNIER, FRANCOIS_BAYROU, SEBASTIEN_LECORNU]
+    description: "Pattern de transmission d'objet thématique entre PM (observed_by_other_actor) - engagement Barnier OT2 transmis transformé par Bayrou (conclave), engagement Bayrou OT1 court-circuité par Lecornu (suspension)"
+    analytical_reading: "Premier cas dans corpus M01 où pattern documenté à trois niveaux successifs. Transmission inter-PM avec transformation méthodologique."
+  - type: convergence_aim_divergence_proposition
+    actors_involved: [MICHEL_BARNIER, FRANCOIS_BAYROU, SEBASTIEN_LECORNU]
+    description: "Asymétrie d'efficience sur OV_E selon degré concession - Barnier non_efficient (convergence PS-RN censure), Bayrou efficient_partiel (PS non-censure 8 mois puis sortie), Lecornu efficient (suspension votée 255 voix)"
+    analytical_reading: "L'efficience sur l'objet visé central de la séquence est strictement corrélée au degré de concession méthodologique."
+  - type: unanticipated_convergence
+    actors_involved: [MICHEL_BARNIER, FRANCOIS_BAYROU, SEBASTIEN_LECORNU]
+    description: "Distinction analytique candidate - mobilisation déclarative (Barnier) / procédurale (Bayrou) / court-circuit législatif (Lecornu) du cadre paritariste"
+    analytical_reading: "Trois modes d'actualisation du même cadre. Enrichissement de la découverte 3.2 du journal - la flexibilité d'actualisation est plus grande que documentée."
+
+interpretive_frames:
+  - frame_label: "gaulliste-LR classique"
+    empirical_grounding: ["tradition gaulliste", "doctrine européenne du compromis institutionnel", "héritage RPR-LR"]
+    consensus_level: contested
+    mobilizing_actors: [MICHEL_BARNIER]
+  - frame_label: "centriste-MoDem du dialogue"
+    empirical_grounding: ["doctrine MoDem depuis 1998", "tradition centriste française", "philosophie du dialogue"]
+    consensus_level: contested
+    mobilizing_actors: [FRANCOIS_BAYROU]
+  - frame_label: "macronisme gestionnaire-pragmatique"
+    empirical_grounding: ["doctrine macroniste depuis 2017", "productions Institut Montaigne", "philosophie transformation par compromis"]
+    consensus_level: contested
+    mobilizing_actors: [SEBASTIEN_LECORNU]
+  - frame_label: "paritarisme syndical"
+    empirical_grounding: ["tradition CNR / préambule 1946", "jurisprudence Conseil constitutionnel sur dialogue social"]
+    consensus_level: strong_consensus
+    mobilizing_actors: [MICHEL_BARNIER, FRANCOIS_BAYROU, SEBASTIEN_LECORNU]
+  - frame_label: "européen de la discipline budgétaire"
+    empirical_grounding: ["engagements de stabilité européens", "doctrine Commission européenne", "tradition allemande de discipline budgétaire"]
+    consensus_level: contested
+    mobilizing_actors: [MICHEL_BARNIER, FRANCOIS_BAYROU, SEBASTIEN_LECORNU]
+  - frame_label: "parlementarisme constructif"
+    empirical_grounding: ["doctrine constitutionnaliste Vedel Carcassonne", "pratique parlementaire allemande", "productions Terra Nova sur coalitions"]
+    consensus_level: contested
+    mobilizing_actors: [MICHEL_BARNIER, FRANCOIS_BAYROU, SEBASTIEN_LECORNU]
+
+arena_structure:
+  nodes: [MICHEL_BARNIER, FRANCOIS_BAYROU, SEBASTIEN_LECORNU, PS_Faure_Vallaud, RN_Le_Pen_Bardella, LFI_Melenchon_Panot, CFDT, Commission_europeenne, marches_financiers]
+  edges:
+    - {source: MICHEL_BARNIER, target: PS_Faure_Vallaud, relation: offer_concession, source_citation: "DPG Barnier U3 aménagements ciblés retraites + U5 Smic"}
+    - {source: MICHEL_BARNIER, target: RN_Le_Pen_Bardella, relation: offer_concession, source_citation: "DPG Barnier U4 fermeté immigration et sécurité"}
+    - {source: PS_Faure_Vallaud, target: MICHEL_BARNIER, relation: opposes, source_citation: "motion socialiste 4 décembre 2024 - convergence censure"}
+    - {source: RN_Le_Pen_Bardella, target: MICHEL_BARNIER, relation: opposes, source_citation: "vote motion 4 décembre 2024 - convergence censure"}
+    - {source: FRANCOIS_BAYROU, target: PS_Faure_Vallaud, relation: offer_concession, source_citation: "DPG Bayrou U3-U4 mission flash + conclave - concession procédurale"}
+    - {source: FRANCOIS_BAYROU, target: CFDT, relation: alliance_affirmation, source_citation: "conclave 4 mois - alliance procédurale"}
+    - {source: SEBASTIEN_LECORNU, target: PS_Faure_Vallaud, relation: offer_concession, source_citation: "DPG Lecornu U7 suspension retraites - concession substantielle"}
+    - {source: SEBASTIEN_LECORNU, target: CFDT, relation: lexical_borrowing, source_citation: "DPG Lecornu reprise formule CFDT aucun relèvement de l'âge"}
+
+comparative_downstream_chains:
+  - actor: MICHEL_BARNIER
+    observable_effects:
+      - {object: OV_A, effect: contestation_forte, description: "censure 4 décembre 2024 par 331 voix - première censure depuis 1962"}
+      - {object: OV_E, effect: contestation_forte, description: "convergence PS-RN sur censure - échec stratégique calcul division oppositions"}
+      - {object: OV_F, effect: confirmation_institutionnelle, description: "mobilisation déclarative paritarisme tenue mais non actualisée"}
+  - actor: FRANCOIS_BAYROU
+    observable_effects:
+      - {object: OV_A, effect: amplification_partielle, description: "8 mois de gouvernement puis censure 9 septembre 2025"}
+      - {object: OV_E, effect: amplification_partielle, description: "PS non-censure jusqu'en mai 2025 puis durcissement progressif jusqu'à sortie septembre 2025"}
+      - {object: OV_F, effect: confirmation_institutionnelle, description: "CFDT a accepté conclave - procédure aboutie même sans accord formel"}
+  - actor: SEBASTIEN_LECORNU
+    observable_effects:
+      - {object: OV_A, effect: confirmation_institutionnelle, description: "en fonction à mai 2026 - 7+ mois"}
+      - {object: OV_E, effect: confirmation_institutionnelle, description: "suspension votée 255 voix 12 novembre 2025 - PS non-censure malgré broken_explicitly 49.3 janvier 2026"}
+      - {object: OV_F, effect: confirmation_institutionnelle, description: "CFDT a accepté suspension - concession substantielle satisfaisante"}
+
+asymmetries_of_benefit:
+  - effect_label: "Censure Barnier 4 décembre 2024"
+    actors_benefiting: [FRANCOIS_BAYROU, PS_Faure_Vallaud, RN_Le_Pen_Bardella, Macron_transition]
+    actors_not_benefiting: [MICHEL_BARNIER, cohesion_LR_fissuree]
+  - effect_label: "Conclave Bayrou février-juin 2025 sans accord"
+    actors_benefiting: [SEBASTIEN_LECORNU, CGT_refus_paritarisme]
+    actors_not_benefiting: [FRANCOIS_BAYROU, CFDT_procedure_sans_aboutissement]
+  - effect_label: "Désaveu Cour des comptes Bayrou 20 février 2025 - déficit 55 Mds invalidé"
+    actors_benefiting: [credibilite_institutionnelle, opposition_gauche]
+    actors_not_benefiting: [FRANCOIS_BAYROU, partenaires_sociaux_conclave_base_alteree]
+  - effect_label: "Suspension Lecornu votée 12 novembre 2025"
+    actors_benefiting: [SEBASTIEN_LECORNU, CFDT, BORIS_VALLAUD, beneficiaires_materiels_retraites]
+    actors_not_benefiting: [ERIC_CIOTTI, MATHILDE_PANOT, trajectoire_budgetaire_5pct]
+  - effect_label: "Rupture explicite 49.3 Lecornu 19 janvier 2026"
+    actors_benefiting: [ERIC_CIOTTI, MATHILDE_PANOT]
+    actors_not_benefiting: [SEBASTIEN_LECORNU, BORIS_VALLAUD]
+  - effect_label: "Apprentissage séquentiel inter-PM"
+    actors_benefiting: [SEBASTIEN_LECORNU_en_place_actuel]
+    actors_not_benefiting: [doctrine_frontalite_substantive_invalidee, doctrine_proceduralisation_pure_invalidee]
+
+invalidated_predictions:
+  - {actor: MICHEL_BARNIER, predicted: "calcul de division PS-RN par concessions ciblées", observation_to_date: "convergence PS-RN sur censure 4 décembre 2024", pattern_type: never_observed}
+  - {actor: MICHEL_BARNIER, predicted: "adoption PLF 2025 avec trajectoire déficit 5%", observation_to_date: "PLF 2025 adopté sous Bayrou avec trajectoire modifiée", pattern_type: never_observed}
+  - {actor: FRANCOIS_BAYROU, predicted: "déficit caché à 55 milliards révélé par Cour des comptes", observation_to_date: "Cour valide estimation COR à 15 Mds en 2035", pattern_type: never_observed}
+  - {actor: FRANCOIS_BAYROU, predicted: "conclave aboutissant à accord paritaire", observation_to_date: "bilan 26 juin 2025 sans accord formel", pattern_type: observed_otherwise}
+  - {actor: FRANCOIS_BAYROU, predicted: "évolution constitutionnelle Corse fin 2025", observation_to_date: "pas de révision aboutie à mai 2026", pattern_type: never_observed}
+  - {actor: SEBASTIEN_LECORNU, predicted: "renoncement au 49.3 sur PLF 2026", observation_to_date: "rupture explicite 19 janvier 2026 avec motivation publique 350h débat", pattern_type: broken_explicitly}
+
+epistemic_synthesis:
+  competing_hypotheses:
+    - {label: "Typologie ternaire structurelle au régime parlementaire minoritaire post-dissolution 2024", type: non_intentional, confidence: 0.75}
+    - {label: "Trajectoire contextuelle française 2024-2026 - typologie spécifique à séquence post-dissolution Macron non généralisable", type: non_intentional, confidence: 0.70}
+    - {label: "Apprentissage adaptatif explicite - chaque PM choisit consciemment sa stratégie par contraste avec précédent", type: intentional, confidence: 0.65}
+    - {label: "Effet de méthode propre à chaque locuteur reflète cadre doctrinal pas stratégie comparative", type: non_intentional, confidence: 0.60}
+    - {label: "Effet de la position dans la séquence - premier PM pose doctrine, deuxième gère transition, troisième consolide", type: non_intentional, confidence: 0.50}
+  hypothesis_gap: 0.05
+  hypothesis_status: zone_of_indetermination
+
+null_results:
+  factual_disagreements_K_K: 0
+  stable_lasting_coalitions: 0
+  dominant_interpretive_frame: null
+  what_the_controversy_states_correctly:
+    - "fragmentation parlementaire durable"
+    - "PS pivot critique pour non-censure"
+    - "CFDT pivot transversal flexible - confirmé à trois modes d'actualisation"
+    - "engagements PM minoritaires structurellement vulnérables à invalidation"
+    - "méthodes gouvernement minoritaire ont coûts politiques différenciés corrélés au degré de concession substantielle"
+    - "typologie ternaire des stratégies de PM minoritaire confirmée empiriquement"
+  non_convergent_indices:
+    - "écart hypothèses A-B à 0.05 - typologie structurelle vs contextuelle co-explicatives"
+    - "départage A/B demande extension comparative hors France"
+
+invisible_and_revision:
+  invisible_from_this_post:
+    - "délibérations internes des cabinets PM successifs"
+    - "négociations off-the-record avec PS et CFDT"
+    - "calculs personnels de chaque PM sur sa stratégie"
+    - "doctrine économique implicite de la Commission européenne dans la pression"
+  revision_conditions:
+    - "évolution Lecornu 2026-2027 (chute éventuelle ou survie présidentielle)"
+    - "comparaison Sánchez Espagne 2018-2024 (gouvernement minoritaire par concessions multiples)"
+    - "extension à autres séquences historiques françaises (Rocard 1988-1991, Juppé 1995-1996)"
+    - "premier audit hypothesis_gap_audit après 11-21 analyses supplémentaires"
+  next_methods_recommended:
+    - "M04 triangulation historiographique sur doctrine gouvernement minoritaire en régime parlementaire européen"
+    - "M06 analyse contrefactuelle scénarios alternatifs Barnier"
+    - "Extension M03 à séquence Sánchez Espagne test de généralisation hors France"

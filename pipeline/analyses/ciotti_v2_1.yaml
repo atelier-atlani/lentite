@@ -1,0 +1,217 @@
+method_id: M01_ANALYSE_RHETORIQUE
+method_version: "2.1"
+analysis_id: M01_CIOTTI_REPONSE_DPG_LECORNU_20251014_v2_1
+execution_date: 2026-05-17
+execution_mode: applicable_vigilance_adversariale
+execution_mode_note: "vigilance adversariale activée — polyphonie, charge affective high, charge éthique medium. Plafonnement de confidence sur inférences globales à 0,85."
+
+source:
+  text_id: CIOTTI_REPONSE_DPG_LECORNU_20251014
+  provenance: "Assemblée nationale, compte rendu officiel 14 octobre 2025"
+  integrity_status: certified
+
+enonciation:
+  speaker:
+    id: ERIC_CIOTTI
+    name: "Éric Ciotti"
+    role_at_date: "Président du groupe UDR à l'Assemblée nationale"
+  date: 2025-10-14
+  place: "Assemblée nationale, Paris"
+  primary_audience: "députés"
+  secondary_audiences:
+    - "électorat UDR-RN"
+    - "électorat LR potentiellement détachable"
+    - "opinion publique perspective 2027"
+  channel: "tribune parlementaire + diffusion télévisuelle + transcription officielle"
+  political_sequence: "octobre 2025 — démission Lecornu I, Lecornu II, motions de censure"
+  genre: "réponse à DPG par président de groupe d'opposition"
+  affective_charge: high
+  ethical_charge: medium
+  thematic_objects:
+    - object_id: OT1
+      label: "critique du gouvernement Lecornu II et de la pratique macroniste"
+      efficiency_status: non_efficient
+      efficiency_justification: "Ciotti n'a pas le pouvoir d'agir sur la composition du gouvernement ou sur la pratique macroniste"
+    - object_id: OT2
+      label: "annonce du vote de la motion de censure UDR-RN"
+      efficiency_status: non_efficient
+      efficiency_justification: "Ciotti signe la motion mais la majorité requise dépend des autres groupes ; objet inséparable de la dynamique parlementaire collective"
+  targeted_objects:
+    - object_id: OV1
+      label: "positionnement électoral 2027"
+      inference_confidence: 0.80
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "annonce explicite Bardella à Matignon"
+        - "rhétorique de l'alternance inéluctable"
+      efficiency_status: efficient
+      efficiency_justification: "l'acte de parole positionne effectivement le locuteur et son groupe"
+    - object_id: OV2
+      label: "consolidation publique de l'alliance UDR-RN"
+      inference_confidence: 0.75
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "U7 union des patriotes"
+        - "co-signature motion avec Le Pen"
+      efficiency_status: efficient_partiel
+      efficiency_justification: "Ciotti négocie publiquement l'alliance ; le succès dépend aussi du RN"
+    - object_id: OV3
+      label: "légitimation de la trajectoire personnelle post-exclusion LR"
+      inference_confidence: 0.60
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "tonalité critique vis-à-vis de Wauquiez en U6"
+      efficiency_status: efficient
+      efficiency_justification: "le locuteur contrôle sa propre narration"
+    - object_id: OV4
+      label: "mobilisation de l'électorat conservateur-nationaliste"
+      inference_confidence: 0.70
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "thématique déclin national"
+        - "U9 submersion migratoire"
+      efficiency_status: non_efficient
+      efficiency_justification: "la mobilisation dépend des relais médiatiques et de la réception"
+    - object_id: OV5
+      label: "tentative d'érosion de la coalition LR-macronie"
+      inference_confidence: 0.55
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "U6 critique de Wauquiez par référence Arendt"
+      efficiency_status: non_efficient
+      efficiency_justification: "dépend des décisions des LR"
+
+charity_reconstruction:
+  content: |
+    Le gouvernement Lecornu II illustre une crise politique inédite sous la Vème République,
+    dont les responsabilités sont à chercher dans la pratique macroniste depuis 2017. Le bilan
+    macroniste comporte des éléments substantiels et documentables qui constituent la base
+    objective du diagnostic critique. La pratique politique contemporaine, qui maintient un
+    gouvernement minoritaire par compromis tactiques avec une fraction du PS, contredit
+    ce que le locuteur considère comme l'esprit originel de la Vème République.
+  borrowed_terms_handled:
+    - term: "submersion migratoire"
+      handling: reformulated_neutral
+    - term: "patriotes"
+      handling: attributed
+
+upstream_causal_chain:
+  elements:
+    - element_label: "exclusion Ciotti des LR juin 2024"
+      type: prior_position
+      source_reference: "couverture médiatique 2024"
+      confidence: 0.90
+      confidence_applies_to: inference
+    - element_label: "alliance UDR-RN formalisée depuis 2024"
+      type: prior_position
+      source_reference: "communiqués officiels UDR"
+      confidence: 0.90
+      confidence_applies_to: inference
+    - element_label: "séquence Lecornu I démission + Lecornu II 12 octobre 2025"
+      type: trigger_event
+      source_reference: "actualité parlementaire"
+      confidence: 0.90
+      confidence_applies_to: inference
+
+downstream_causal_chains:
+  - targeted_object_id: OV1
+    plausible_consequences:
+      - consequence_label: "visibilité accrue du locuteur dans l'arène d'opposition"
+        confidence: 0.75
+        confidence_applies_to: inference
+        defeaters:
+          - "la visibilité dépend de la couverture médiatique non garantie"
+          - "la visibilité peut servir le RN davantage que l'UDR si l'alliance est asymétrique"
+        observable_to_date: "visibilité médiatique confirmée dans la presse politique nationale"
+  - targeted_object_id: OV2
+    plausible_consequences:
+      - consequence_label: "renforcement de la lisibilité publique de l'alliance UDR-RN"
+        confidence: 0.80
+        confidence_applies_to: inference
+        defeaters:
+          - "le RN peut dominer la dynamique commune au détriment de l'UDR"
+          - "l'alliance peut être contestée par les électorats respectifs"
+        observable_to_date: "co-signature motion de censure 13 octobre 2025 + vote conjoint le 16 octobre"
+
+discourse_action_gaps_on_thematic_objects: []
+# V.3 VIDE MOTIVÉ — Ciotti non-efficient sur les objets thématiques (gabarit v2.1 section 9.5)
+
+observable_effects_on_targeted_objects:
+  - targeted_object_id: OV1
+    effect_type: amplification
+    description: "visibilité médiatique du discours confirmée"
+  - targeted_object_id: OV2
+    effect_type: contestation
+    description: "vote conjoint UDR-RN 16 octobre 2025 mais motion rejetée — la chute du gouvernement annoncée n'est pas produite"
+  - targeted_object_id: OV3
+    effect_type: confirmation_institutionnelle
+    description: "rôle confirmé de président UDR à mai 2026"
+  - targeted_object_id: OV4
+    effect_type: amplification_partielle_asymetrique
+    description: "bénéfice principalement au RN selon sondages publics"
+  - targeted_object_id: OV5
+    effect_type: contestation
+    description: "ligne LR maintenue, pas de bascule"
+
+historiographies:
+  - mobilized: "gaullienne orthodoxe"
+    mobilization_type: thematic_explicit
+    consensus_level_mobilized: strong_consensus
+    competing: "parlementaire-démocratique (Vedel, Carcassonne, Beaud)"
+    consensus_level_competing: contested
+  - mobilized: "déclin national"
+    mobilization_type: thematic_explicit
+    consensus_level_mobilized: contested
+    competing: "lecture indicateurs positifs (Todd, Cusset, Compagnon)"
+    consensus_level_competing: contested
+  - mobilized: "grand remplacement (Camus, Zemmour)"
+    mobilization_type: lexical_marginal
+    consensus_level_mobilized: marginal
+    competing: null
+    consensus_level_competing: null
+
+epistemic_synthesis:
+  established_facts:
+    - "Discours prononcé 14 oct 2025 Assemblée nationale"
+    - "Annonce vote motion de censure UDR-RN"
+    - "Qualification Lecornu PM le plus faible + Macron pire président"
+    - "Annonce remplacement par Bardella imminent"
+    - "Motion de censure UDR-RN du 16 oct 2025 rejetée"
+    - "Lecornu II resté en fonction à mai 2026"
+  competing_hypotheses:
+    - label: "positionnement pré-présidentiel pour préparer l'électorat"
+      type: intentional
+      confidence: 0.80
+      confidence_applies_to: hypothesis
+    - label: "consolidation alliance UDR-RN par convergence rhétorique"
+      type: intentional
+      confidence: 0.65
+      confidence_applies_to: hypothesis
+    - label: "expression sincère de conviction sur la gravité de la séquence"
+      type: non_intentional
+      confidence: 0.55
+      confidence_applies_to: hypothesis
+    - label: "auto-positionnement personnel post-exclusion LR"
+      type: non_intentional
+      confidence: 0.45
+      confidence_applies_to: hypothesis
+    - label: "effet du genre réponse-à-DPG d'opposition"
+      type: non_intentional
+      confidence: 0.35
+      confidence_applies_to: hypothesis
+  hypothesis_gap: 0.15
+  hypothesis_status: zone_of_indetermination
+
+null_results:
+  fallacies_certain: 0
+  fallacies_probable_or_possible: 14
+  intentional_omissions_proved: 0
+  modal_shifts_detected:
+    - U5_bucher_erige
+    - U9_submersion_migratoire
+  ethical_content_not_neutralized:
+    enabled: true
+    activation_reason: "charge éthique medium avec emprunts lexicaux disqualifiés et attaques personnelles cumulées"
+    elements_signaled:
+      - "emprunt lexical à cadre du grand remplacement par submersion migratoire (U9)"
+      - "attaques personnelles cumulées contre le président de la République"

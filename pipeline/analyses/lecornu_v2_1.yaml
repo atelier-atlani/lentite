@@ -1,0 +1,216 @@
+method_id: M01_ANALYSE_RHETORIQUE
+method_version: "2.1"
+analysis_id: M01_LECORNU_DPG_20251014_v2_1
+execution_date: 2026-05-17
+execution_mode: applicable_complete
+
+source:
+  text_id: LECORNU_DPG_20251014
+  provenance: "Assemblée nationale, info.gouv.fr — DPG 14 octobre 2025"
+  integrity_status: certified
+
+enonciation:
+  speaker:
+    id: SEBASTIEN_LECORNU
+    name: "Sébastien Lecornu"
+    role_at_date: "Premier ministre depuis le 12 octobre 2025 (Lecornu II)"
+  date: 2025-10-14
+  place: "Assemblée nationale, Paris"
+  primary_audience: "Assemblée nationale"
+  secondary_audiences:
+    - "Sénat"
+    - "classe politique"
+    - "partenaires sociaux"
+    - "marchés financiers"
+    - "opinion publique"
+  channel: "tribune parlementaire + diffusion télévisuelle"
+  political_sequence: "crise gouvernementale octobre 2025 — Lecornu II après démission de Lecornu I"
+  genre: "déclaration de politique générale (article 50-1)"
+  affective_charge: medium
+  ethical_charge: low
+  thematic_objects:
+    - object_id: OT1
+      label: "annonce de la suspension de la réforme des retraites de 2023 jusqu'à présidentielle 2027"
+      efficiency_status: efficient
+      efficiency_justification: "le PM peut faire voter la suspension par le Parlement, sa proposition est performative"
+    - object_id: OT2
+      label: "renoncement à l'article 49.3 sur le budget"
+      efficiency_status: efficient
+      efficiency_justification: "l'engagement du PM est unilatéral et institutionnellement contraignant"
+    - object_id: OT3
+      label: "programme de méthode du gouvernement (gouvernement de mission, partage du pouvoir)"
+      efficiency_status: efficient
+      efficiency_justification: "le PM dirige son gouvernement et fixe sa méthode"
+  targeted_objects:
+    - object_id: OV1
+      label: "survie immédiate du gouvernement face à la motion de censure"
+      inference_confidence: 0.85
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "annonce explicite de la suspension comme gage au PS"
+        - "renoncement au 49.3 comme gage à l'opposition large"
+      efficiency_status: efficient_partiel
+      efficiency_justification: "dépend aussi du vote PS"
+    - object_id: OV2
+      label: "détacher le PS de la coalition de censure"
+      inference_confidence: 0.80
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "reprise textuelle de la demande CFDT"
+        - "suspension retraites comme demande explicite du PS"
+      efficiency_status: efficient_partiel
+      efficiency_justification: "l'offre est sous contrôle, le vote PS ne l'est pas"
+    - object_id: OV3
+      label: "maintenir la confiance des marchés financiers"
+      inference_confidence: 0.75
+      inference_confidence_applies_to: inference
+      grounded_in:
+        - "engagement déficit sous 5% PIB"
+        - "compensation par économies annoncées"
+      efficiency_status: efficient_partiel
+      efficiency_justification: "le signal politique est sous contrôle, la réaction ne l'est pas"
+
+charity_reconstruction:
+  content: |
+    L'Assemblée nationale issue de la dissolution de juin 2024 est fragmentée — aucun bloc
+    politique n'a la majorité absolue, et les compromis stables sont difficiles. La poursuite
+    de cette trajectoire mènerait à la paralysie budgétaire et institutionnelle. Le rôle d'un
+    gouvernement de mission est de proposer des concessions méthodologiques (renonciation au 49.3,
+    ouverture au débat parlementaire) et substantielles (suspension de la réforme des retraites
+    jusqu'en 2028) suffisantes pour permettre une stabilité minimale jusqu'à l'élection présidentielle,
+    sans pour autant renoncer aux exigences de fond (maîtrise de la dépense publique, déficit sous 5%).
+  borrowed_terms_handled:
+    - term: "rupture"
+      handling: attributed
+    - term: "ouverture"
+      handling: attributed
+
+upstream_causal_chain:
+  elements:
+    - element_label: "démission Lecornu I le 6 octobre 2025 (gouvernement éphémère)"
+      type: trigger_event
+      source_reference: "actualité gouvernementale"
+      confidence: 0.95
+      confidence_applies_to: inference
+    - element_label: "fragmentation parlementaire post-dissolution juin 2024"
+      type: context
+      source_reference: "résultats législatives 2024"
+      confidence: 0.95
+      confidence_applies_to: inference
+    - element_label: "demande PS-CFDT de suspension de la réforme depuis 2023"
+      type: prior_negotiation
+      source_reference: "communications PS et CFDT"
+      confidence: 0.90
+      confidence_applies_to: inference
+    - element_label: "échecs gouvernementaux antérieurs (Barnier censuré, Bayrou démissionnaire)"
+      type: context
+      source_reference: "votes parlementaires 2024-2025"
+      confidence: 0.95
+      confidence_applies_to: inference
+
+downstream_causal_chains:
+  - targeted_object_id: OV1
+    plausible_consequences:
+      - consequence_label: "non-vote ou abstention du PS sur la motion de censure du 16 octobre"
+        confidence: 0.80
+        confidence_applies_to: inference
+        defeaters:
+          - "des frondeurs PS peuvent voter contre la consigne"
+          - "le PS peut juger la suspension insuffisante et déposer sa propre motion"
+        observable_to_date: "motion rejetée le 16 octobre 2025"
+  - targeted_object_id: OV2
+    plausible_consequences:
+      - consequence_label: "alignement du groupe socialiste sur la non-censure"
+        confidence: 0.75
+        confidence_applies_to: inference
+        defeaters:
+          - "Boris Vallaud peut faire le choix de la censure malgré la suspension"
+          - "la direction PS n'a pas le contrôle absolu du groupe"
+        observable_to_date: "Vallaud a annoncé la non-censure le 14 octobre 2025"
+
+discourse_action_gaps_on_thematic_objects:
+  - thematic_object_id: OT1
+    declared: "suspension de la réforme des retraites de 2023 jusqu'à janvier 2028"
+    pattern_type: observed_as_announced
+    observation_window: "octobre - novembre 2025"
+    observation: "suspension votée le 12 novembre 2025 par 255 voix pour 146 contre. PLFSS 2026 adopté décembre 2025 avec la mesure intégrée. Bénéficiaires : 3,5 millions de Français des générations 1964-1968."
+    source_reference: "vote AN 12 novembre 2025"
+  - thematic_object_id: OT2
+    declared: "renoncement à l'article 49.3 sur le budget 2026"
+    pattern_type: broken_explicitly
+    observation_window: "octobre 2025 - février 2026"
+    observation: "PLFSS 2026 adopté sans 49.3 en décembre 2025 (engagement initialement tenu). PLF 2026 adopté par 49.3 le 19 janvier 2026 — engagement rompu publiquement. Trois recours au 49.3 (recettes, dépenses, ensemble) en janvier-février 2026. Budget 2026 finalement adopté en février 2026 par cette voie."
+    public_motivation_invoked: "Lecornu a annoncé le 19 janvier 2026 engager la responsabilité du gouvernement après 350 heures de débat parlementaire, invoquant l'impossibilité de faire voter le budget par majorité. Citation du PM : 'force est de constater [...] que le calendrier n'a pas été complètement respecté'. La motion de censure de gauche déposée en réaction a été rejetée en manquant de 19 voix."
+    source_reference: "Conseil des ministres 19 janvier 2026, info.gouv.fr"
+  - thematic_object_id: OT3
+    declared: "programme de méthode — gouvernement de mission, partage du pouvoir avec le Parlement"
+    pattern_type: partially_observed
+    observation_window: "octobre 2025 - mai 2026"
+    observation: "méthode appliquée pour PLFSS 2026 (débat parlementaire, compromis avec PS, adoption par vote). Méthode contredite pour PLF 2026 (49.3, fermeture du débat). Le programme de méthode a tenu partiellement et a été révisé sous contrainte."
+
+observable_effects_on_targeted_objects:
+  - targeted_object_id: OV1
+    effect_type: confirmation_institutionnelle
+    description: "motion de censure du 16 octobre rejetée, gouvernement Lecornu II maintenu jusqu'à mai 2026"
+  - targeted_object_id: OV2
+    effect_type: amplification
+    description: "suspension votée 12 novembre 2025, PS allié sur le vote retraites mais sans alignement sur le 49.3 du PLF"
+  - targeted_object_id: OV3
+    effect_type: amplification_partielle
+    description: "pas de crise majeure des marchés sur la séquence, mais déficit annoncé à la limite supérieure de l'engagement"
+
+historiographies:
+  - mobilized: "Vème République parlementarisée (Vedel, Carcassonne, Beaud, Rosanvallon)"
+    mobilization_type: thematic_explicit
+    consensus_level_mobilized: contested
+    competing: "Vème République gaullienne orthodoxe (présidentialisme dominant)"
+    consensus_level_competing: strong_consensus
+  - mobilized: "tradition du compromis démocratique (références allemandes, scandinaves)"
+    mobilization_type: thematic_explicit
+    consensus_level_mobilized: contested
+    competing: "tradition jacobine de la décision verticale"
+    consensus_level_competing: contested
+
+epistemic_synthesis:
+  established_facts:
+    - "DPG prononcée 14 octobre 2025 à l'Assemblée nationale"
+    - "Annonce suspension réforme retraites jusqu'en 2028"
+    - "Annonce renoncement au 49.3 sur le budget"
+    - "Annonce conférence retraites avec partenaires sociaux"
+    - "Motion de censure du 16 octobre 2025 rejetée"
+    - "Suspension retraites votée 12 novembre 2025 (255 voix pour, 146 contre)"
+    - "PLFSS 2026 adopté décembre 2025 grâce aux voix socialistes"
+    - "PLF 2026 adopté par 49.3 en février 2026 — engagement rompu"
+  inferences:
+    - label: "le discours fonctionne comme acte de négociation publique avec le PS"
+      confidence: 0.85
+      confidence_applies_to: inference
+      premise: "la suspension est l'offre centrale qui sécurise la survie du gouvernement"
+    - label: "le renoncement au 49.3 est concession méthodologique réelle initialement, révisée sous contrainte parlementaire"
+      confidence: 0.80
+      confidence_applies_to: inference
+  competing_hypotheses:
+    - label: "acte de négociation politique aboutie pour suspension contre non-censure"
+      type: intentional
+      confidence: 0.85
+      confidence_applies_to: hypothesis
+    - label: "stratégie à horizon présidentiel 2027 pour gérer la séquence 2026 sans rupture institutionnelle"
+      type: intentional
+      confidence: 0.65
+      confidence_applies_to: hypothesis
+    - label: "convention du genre DPG de gouvernement minoritaire qui impose des concessions"
+      type: non_intentional
+      confidence: 0.50
+      confidence_applies_to: hypothesis
+    - label: "préoccupation authentique sur la paralysie institutionnelle"
+      type: non_intentional_or_moderate
+      confidence: 0.45
+      confidence_applies_to: hypothesis
+  hypothesis_gap: 0.20
+  hypothesis_status: zone_of_indetermination
+
+null_results:
+  fallacies_certain: 0
+  fallacies_probable_or_possible: 5
+  intentional_omissions_proved: 0
+  modal_shifts_detected: []
