@@ -536,4 +536,20 @@ Malgré cela, le lot {1.1–1.2} de la séquence 1 a été exécuté et commité
 
 ---
 
+```yaml
+date: 2026-07-03
+type: reprise
+refs: [plan_action_002]
+```
+
+### Lot {1.3–1.4} de la séquence 1 — politique de corpus et grille de calibration
+
+*Constat.* Exécution des tâches 1.3 et 1.4 de `plan_action_002.md` séquence 1. 1.3 — nouveau document `doctrine/V2.1/lentite_politique_corpus_v1.md` (CC BY 4.0) : typologie à cinq types de sources (officielle, journalistique, statistique, militante, académique) avec fiabilité déclarée par type, règle d'extension tracée, articulation explicite avec `cloture_corpus` du bloc omission durci (tâche 1.1). 1.4 — nouveau document `doctrine/V2.1/lentite_calibration_confiance_v1.md` (CC BY 4.0) : grille à quatre degrés (faible/modéré/fort/établi) sur le score `confidence` existant, cas-jouets 1/5/6 promus cas-étalons avec leurs valeurs réelles vérifiées contre `lentite_cas_jouets_1_5_6_v2_1.md`, protocole inter-annotateurs spécifié (non exécuté, conformément au plan). Aucune modification aux documents doctrinaux existants ni au code — moratoire respecté, ce sont deux documents nouveaux.
+
+*Frictions signalées, non arbitrées silencieusement* (détail dans `.claude/logs/log_session_002_lot_1.3-1.4.md`) — risque de confusion entre le degré qualitatif « établi » de la grille 1.4 et le statut épistémique « fait établi » de la charte, prévenu par un avertissement terminologique explicite dans le nouveau document ; aucun type de front matter existant (`conventions.md` §6.9) ne nomme le cas « source ajoutée en cours d'enquête » de la règle d'extension 1.3 — `audit` retenu par défaut, point signalé comme ouvert ; les trois cas-étalons 1/5/6 ne couvrent pas la bande « faible » de la grille (aucune valeur < 0,40) ; le « journal méthodologique de M01 » référencé par le gabarit section 16 n'existe pas comme fichier séparé dans le dépôt, seul `journal/lentite_journal.md` est instancié.
+
+*Conséquence.* Séquence 1 non close — reste 1.5 (revalidation intégrale du corpus, entrée de synthèse de clôture portant le critère de sortie §4 du plan, et arbitrage des points ouverts ci-dessus). L'écart au §9 signalé au lot précédent (séquence 1 ouverte par anticipation, séquence 0 non formellement close faute de re-test d'onboarding par un tiers indépendant) reste en l'état, ni aggravé ni résolu par ce lot.
+
+---
+
 *Journal v1.0 — édité le 17 mai 2026. Prochaine révision attendue après extension M03 à 4 acteurs et nouvelles analyses substantielles. Document de mémoire institutionnelle, pas de récit. Pour la doctrine, lire charte et gabarit. Pour les analyses, lire les fichiers correspondants.*
