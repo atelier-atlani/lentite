@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: Apache-2.0
 """
 L'Entité — Schémas Pydantic v2 pour le gabarit v2.1.
 

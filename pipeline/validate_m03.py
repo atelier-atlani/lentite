@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
 """
 L'Entité — Validateur CLI des analyses M03-M selon le gabarit v2.1.
 
