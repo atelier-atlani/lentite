@@ -486,7 +486,21 @@ refs: [plan_action_002]
 
 *Constat.* Test d'onboarding à froid exécuté (clone propre de `atelier-atlani/lentite`, lecture du seul README, tentative de validation d'une analyse YAML en suivant uniquement ses instructions — critère de sortie de la séquence 0, `plan_action_002.md` §3). Résultat — **échec**. Deux blocages distincts. (1) La commande d'installation documentée (`pip install --break-system-packages pydantic pyyaml`) échoue — `pip` n'existe pas comme commande sur macOS (seul `pip3`), et l'option `--break-system-packages` n'est pas reconnue par la version de pip installée. (2) Une fois l'installation improvisée, la commande de validation documentée échoue avec une traceback opaque (`TypeError: unsupported operand type(s) for |: 'type' and 'NoneType'`) — cause réelle : le `python3` par défaut sur macOS (Xcode Command Line Tools) est 3.9.6, incompatible avec la syntaxe d'union `X | None` (PEP 604) utilisée par `schemas.py`, alors que le README annonce « Python 3.11+ » sans indiquer de vérification préalable ni de conduite à tenir si `python3` résout vers une version insuffisante.
 
-*Conséquence.* Correctif immédiat — lot 0-bis. `requirements.txt` ajouté à la racine (versions épinglées, confirmées fonctionnelles — `pydantic==2.13.4`, `PyYAML==6.0.3`). Section README réécrite (§6.1 Environnement) — vérification préalable `python3 --version`, branche explicite si < 3.10 (interpréteur nommé ou venv), installation via `python -m pip install -r requirements.txt` (élimine l'ambiguïté pip/pip3 et le flag non portable), commande de vérification rapide, et triage d'erreur explicite pour la traceback `TypeError ... 'type' and 'NoneType'`. Toutes les commandes revérifiées end-to-end après réécriture. `conventions.md` §6.7 amendé pour admettre `requirements.txt` à la racine minimale. Le test d'onboarding à froid n'a pas été rejoué intégralement après correctif (pas de nouveau clone tiers) — statut de la séquence 0 sur ce critère précis : correctif appliqué et vérifié localement, revalidation externe encore à faire.
+*Conséquence.* Correctif immédiat — lot 0-bis. `requirements.txt` ajouté à la racine (versions épinglées, confirmées fonctionnelles — `pydantic==2.13.4`, `PyYAML==6.0.3`). Section README réécrite (§6.1 Environnement) — vérification préalable `python3 --version`, branche explicite si < 3.10 (interpréteur nommé ou venv), installation via `python -m pip install -r requirements.txt` (élimine l'ambiguïté pip/pip3 et le flag non portable), commande de vérification rapide, et triage d'erreur explicite pour la traceback `TypeError ... 'type' and 'NoneType'`. `conventions.md` §6.7 amendé pour admettre `requirements.txt` à la racine minimale.
+
+---
+
+```yaml
+date: 2026-07-03
+type: audit
+refs: [plan_action_002]
+```
+
+### Revalidation du test d'onboarding à froid — succès
+
+*Constat.* Après le correctif ci-dessus poussé sur `origin/main`, le test d'onboarding à froid a été rejoué intégralement — nouveau clone de `https://github.com/atelier-atlani/lentite.git` (répertoire de travail distinct, pas de réutilisation du clone précédent), suivi exact de la séquence documentée en README §6.1 (a) `python3 --version` → 3.9.6 constaté, (b) branche « < 3.10 » suivie, interpréteur `python3.11` nommé explicitement, (c) `python3.11 -m pip install -r requirements.txt`, (d) commande de vérification rapide. Les quatre étapes réussissent sans improvisation. Validation finale — `python3.11 pipeline/validate_m03.py pipeline/analyses/m03_retraites_octobre_2025_4acteurs_v2_1.yaml` → succès.
+
+*Conséquence.* Le critère de sortie de la séquence 0 relatif à l'onboarding (`plan_action_002.md` §3) est satisfait pour la première fois sur cette revalidation. Statut nuancé — la revalidation a été exécutée par la même instance ayant produit le correctif, pas par un tiers réellement indépendant ; elle confirme la reproductibilité technique des commandes, pas l'absence de biais de connaissance préalable du rédacteur. Une revalidation par un tiers humain ou une instance véritablement vierge reste recommandée avant de considérer le critère d'onboarding définitivement clos.
 
 ---
 
