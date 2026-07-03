@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: CC-BY-SA-4.0
 method_id: M01_ANALYSE_RHETORIQUE
 method_version: "2.1"
+gabarit_version: "2.1-durci-seq1"
 analysis_id: M01_CAS_JOUET_1_SIMPLE_FICTIF_v2_1
 execution_date: 2026-05-17
 execution_mode: applicable_complete
