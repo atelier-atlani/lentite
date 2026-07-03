@@ -253,7 +253,7 @@ Les cinq décisions structurantes de codage (orchestration, persistance graphe, 
 
 **Catégories d'entrée canoniques au journal** (gabarit section 16, étendu par v2.1.1) — `method_evolution`, `case_execution`, `failure_pattern`, `typology_audit`, `intentionality_bias_audit`, `hypothesis_gap_audit`.
 
-**Journal — persistance et front matter** (décision 003). Le journal méthodologique général et les journaux de méthodes sont des fichiers markdown versionnés dans git, en régime append-only physique. Chaque entrée porte un front matter YAML minimal (`date`, `type`, `refs`). Voir `conventions.md` §7 pour la convention complète et `.claude/decisions/decision_003_persistance_journal.md`.
+**Journal — persistance et front matter** (décision 003). Le journal méthodologique général et les journaux de méthodes sont des fichiers markdown versionnés dans git, en régime append-only physique. Chaque entrée porte un front matter YAML minimal (`date`, `type`, `refs`). Voir `conventions.md` §6.9 pour la convention complète et `.claude/decisions/decision_003_persistance_journal.md`.
 
 **Discipline de séparation sortie humaine / journal méthodologique** (gabarit v2.1 section 9.0). La sortie humaine M01-H est conçue pour lecteur informé non-analyste, allégée du méta-discours.
 

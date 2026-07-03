@@ -101,6 +101,8 @@ Exemples —
 - `docs(README): update analyses count to 7 M01`
 - `refactor(validate): split CLI logic from validation logic`
 
+*Traçabilité vers un plan d'action.* Quand un commit exécute une tâche d'un plan d'action (`.claude/plans/plan_action_XXX.md`), le corps du message référence la tâche (par exemple — « Tâche 0.3, plan_action_002.md. »). Un commit par opération logique — pas de commit fourre-tout regroupant plusieurs tâches sans rapport.
+
 ### 3.3 Pull requests
 
 - *Une PR par feature ou correction*.
@@ -194,13 +196,40 @@ Exemples —
 - Pas de partage d'identité entre agents dans l'architecture multi-agents future.
 - Cohérent avec l'autonomie épistémique du projet.
 
+### 6.7 Discipline de racine minimale
+
+- *Seuls admis à la racine du dépôt* — le README (`lentite_README_projet.md`), `LICENSE`, `LICENSES/` et des répertoires. Aucun document de travail, aucune copie, aucun fichier orphelin.
+- *Tout nouveau document* trouve sa place dans un répertoire existant selon sa nature (doctrine, analyse, code, gouvernance, coordination, journal, archive) — jamais à la racine par défaut ou par facilité.
+- *Introduite* le 3 juillet 2026 (tâche 0.7 de `plan_action_002.md`, addendum d) à la suite de l'audit d'arborescence ayant constaté des copies et fichiers orphelins accumulés à la racine.
+
+### 6.8 Discipline « une séquence close = une entrée journal »
+
+- *Chaque séquence d'un plan d'action* (au sens de `plan_action_XXX.md` — par exemple séquence 0, séquence 1) donne lieu, à sa clôture, à une entrée au journal méthodologique général documentant ce qui a été fait, les écarts au plan et leurs motifs.
+- *Ne se substitue pas* aux entrées de friction ou de décision produites en cours de séquence — celles-ci restent inscrites au fil de l'exécution (discipline append-only, §6.9).
+- *Critère de clôture* — défini par le plan d'action lui-même (par exemple, pour la séquence 0 de `plan_action_002.md` — test d'onboarding à froid réussi). Une séquence n'est pas close tant que son critère de sortie documenté n'est pas satisfait et vérifié.
+
+### 6.9 Front matter du journal méthodologique (décision 003)
+
+- *Chaque nouvelle entrée* du journal méthodologique général et des journaux de méthodes porte un front matter YAML minimal en bloc de code, immédiatement avant le titre de l'entrée :
+
+  ```yaml
+  date: AAAA-MM-JJ
+  type: décision | révision doctrinale | friction | audit | reprise
+  refs: [decision_00X, plan_action_00X, ...]
+  ```
+
+- *Régime append-only physique* — les entrées s'ajoutent exclusivement en fin de fichier, dans l'ordre chronologique d'écriture. La numérotation logique (par exemple 8.6-8.10) n'autorise aucune insertion ni réordonnancement dans le corps existant ; un numéro logique peut être écrit hors ordre, jamais inséré.
+- *Les entrées antérieures* à l'adoption de cette convention (avant le 3 juillet 2026) ne sont pas rétrofittées.
+- *Seul le Dirigeant*, ou un processus explicitement validé par lui, écrit au journal — les agents de l'orchestration n'y ont pas accès en écriture.
+- Référence complète — `.claude/decisions/decision_003_persistance_journal.md`.
+
 ---
 
 ## 7. Conventions du workflow collaboratif IA
 
 ### 7.1 Référence
 
-Méthode complète dans `dev/methodologie_workflow_collaboratif_ia_v1.md`.
+Méthode complète dans `dev/lentite_methodologie_workflow_collaboratif_ia_v1.md`.
 
 ### 7.2 Discipline minimale opérationnelle
 
@@ -210,4 +239,4 @@ Méthode complète dans `dev/methodologie_workflow_collaboratif_ia_v1.md`.
 
 ---
 
-*Conventions v1.0 — créé le 17 mai 2026. À mettre à jour aux évolutions des bonnes pratiques (par exemple migration vers Python 3.13, adoption de uv pour gestion d'environnement, etc.). Document de référence opérationnelle, à lire en début de toute session de code.*
+*Conventions v1.1 — créé le 17 mai 2026, révisé le 3 juillet 2026 (ajout §3.2 traçabilité commit, §6.7-6.9 racine minimale / séquence-journal / front matter, tâche 0.7 de `plan_action_002.md`). À mettre à jour aux évolutions des bonnes pratiques (par exemple migration vers Python 3.13, adoption de uv pour gestion d'environnement, etc.). Document de référence opérationnelle, à lire en début de toute session de code.*
