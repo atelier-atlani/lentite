@@ -208,10 +208,19 @@ Confidence = Annotated[float, Field(ge=0.0, le=1.0)]
 
 
 NON_RENSEIGNE: Literal["non_renseigne"] = "non_renseigne"
-"""Sentinelle explicite de bitemporalité non renseignée (tâche 1.2, plan_action_002 séquence 1)."""
+"""Sentinelle de défaut schéma — champ non adressé (analyse antérieure au durcissement,
+tâche 1.2, plan_action_002 séquence 1). Seule valeur qui fait échouer la validation
+conditionnelle sous gabarit_version=2.1-durci-seq1."""
 
-BitemporalDate = date | Literal["non_renseigne"]
-"""Type d'un champ bitemporel — date réelle ou sentinelle `non_renseigne`."""
+NON_DOCUMENTE: Literal["non_documente"] = "non_documente"
+"""Sentinelle d'amendement — champ explicitement recherché dans les sources disponibles
+(document d'analyse markdown ou document source) sans y être trouvé (tâche 1.5,
+plan_action_002 séquence 1). Constat documenté, distinct du défaut non_renseigne :
+satisfait la validation conditionnelle sous gabarit_version=2.1-durci-seq1."""
+
+BitemporalDate = date | Literal["non_renseigne"] | Literal["non_documente"]
+"""Type d'un champ bitemporel — date réelle, ou l'une des deux sentinelles explicites
+non_renseigne (non adressé) / non_documente (recherché, absent des sources)."""
 
 
 class BorrowedTerm(BaseModel):
@@ -754,8 +763,9 @@ __all__ = [
     "NullResults",
     "CharityReconstruction",
     "BorrowedTerm",
-    # Bitemporalité (tâche 1.2)
+    # Bitemporalité (tâches 1.2, 1.5)
     "NON_RENSEIGNE",
+    "NON_DOCUMENTE",
     "BitemporalDate",
     # Racine
     "M01Analysis",
