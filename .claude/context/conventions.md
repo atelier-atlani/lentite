@@ -198,9 +198,9 @@ Exemples —
 
 ### 6.7 Discipline de racine minimale
 
-- *Seuls admis à la racine du dépôt* — le README (`lentite_README_projet.md`), `LICENSE`, `LICENSES/` et des répertoires. Aucun document de travail, aucune copie, aucun fichier orphelin.
-- *Tout nouveau document* trouve sa place dans un répertoire existant selon sa nature (doctrine, analyse, code, gouvernance, coordination, journal, archive) — jamais à la racine par défaut ou par facilité.
-- *Introduite* le 3 juillet 2026 (tâche 0.7 de `plan_action_002.md`, addendum d) à la suite de l'audit d'arborescence ayant constaté des copies et fichiers orphelins accumulés à la racine.
+- *Seuls admis à la racine du dépôt* — le README (`lentite_README_projet.md`), `LICENSE`, `LICENSES/`, `requirements.txt` et des répertoires. Aucun document de travail, aucune copie, aucun fichier orphelin.
+- *Tout nouveau document* trouve sa place dans un répertoire existant selon sa nature (doctrine, analyse, code, gouvernance, coordination, journal, archive) — jamais à la racine par défaut ou par facilité. `requirements.txt` est une exception délibérée — convention Python standard, attendue à la racine par l'outillage (`pip install -r requirements.txt`).
+- *Introduite* le 3 juillet 2026 (tâche 0.7 de `plan_action_002.md`, addendum d) à la suite de l'audit d'arborescence ayant constaté des copies et fichiers orphelins accumulés à la racine. *Amendée* le 3 juillet 2026 (lot 0-bis, correctif onboarding) pour admettre `requirements.txt`.
 
 ### 6.8 Discipline « une séquence close = une entrée journal »
 
