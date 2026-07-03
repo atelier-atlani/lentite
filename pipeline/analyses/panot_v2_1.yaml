@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: CC-BY-SA-4.0
 method_id: M01_ANALYSE_RHETORIQUE
 method_version: "2.1"
+gabarit_version: "2.1-durci-seq1"
 analysis_id: M01_PANOT_REPONSE_DPG_LECORNU_20251014_v2_1
 execution_date: 2026-05-17
 execution_mode: applicable_vigilance_adversariale
@@ -218,28 +219,42 @@ discourse_action_gaps_on_thematic_objects:
     observation_window: "13-16 octobre 2025 (fenêtre close)"
     observation: "Motion votée le 16 octobre 2025 avec 271 voix pour, manquant de 18 voix pour les 289 requises. Procédure tenue, objectif politique non atteint. Gouvernement maintenu à mai 2026."
     source_reference: "vote AN 16 octobre 2025"
+    date_fait: 2025-10-16
+    date_connaissance: 2026-05-17
   - thematic_object_id: OT2
     declared: "démission ou destitution du Président de la République"
     pattern_type: not_yet_observed
     observation_window: "mandat présidentiel 2022-2027 (non clos à la date d'analyse)"
     observation: "Macron en fonction à mai 2026. Aucune procédure de destitution aboutie. Motion de destitution précédente irrecevable. Pas de nouvelle motion déposée à la connaissance de l'analyste dans la fenêtre observable. Pattern peut basculer en never_observed après élection présidentielle 2027 si aucune destitution n'aboutit d'ici là."
+    date_fait: non_documente  # amendement 1.5 — pattern not_yet_observed, fenêtre ouverte par construction, pas de fait daté
+    date_connaissance: 2026-05-17
 
 observable_effects_on_targeted_objects:
   - targeted_object_id: OV1
     effect_type: amplification_limitee_avec_contestation
     description: "revendication exclusive contestée par PS qui revendique aussi la fissure dans le dogme macroniste"
+    date_fait: non_documente  # amendement 1.5 — pas de jour précis dans l'analyse source
+    date_connaissance: 2026-05-17
   - targeted_object_id: OV2
     effect_type: amplification
     description: "narration sauveur de Macron diffusée largement dans camp gauche radicale post-16 octobre ; sept députés PS ont voté contre la consigne"
+    date_fait: non_documente  # amendement 1.5 — diffusion "post-16 octobre", pas un jour unique documenté
+    date_connaissance: 2026-05-17
   - targeted_object_id: OV3
     effect_type: ignorement
     description: "RN a voté la motion LFI - disqualification rhétorique ignorée par convergence d'objet visé sur OV_F"
+    date_fait: 2025-10-16
+    date_connaissance: 2026-05-17
   - targeted_object_id: OV5
     effect_type: amplification_partielle
     description: "motion à 271 voix dépasse le périmètre strict LFI ; tensions internes documentées (5 défections Verts/communistes)"
+    date_fait: 2025-10-16
+    date_connaissance: 2026-05-17
   - targeted_object_id: OV6
     effect_type: amplification_partielle
     description: "narration compte à rebours diffusée dans gauche radicale, Macron en fonction à mai 2026, calendrier 2027 non modifié par dramatisation"
+    date_fait: non_documente  # amendement 1.5 — narration continue, pas de jour précis
+    date_connaissance: 2026-05-17
 
 historiographies:
   - mobilized: "tradition radicale de la rupture institutionnelle"
