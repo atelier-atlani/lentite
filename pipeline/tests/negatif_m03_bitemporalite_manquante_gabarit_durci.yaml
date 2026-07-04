@@ -1,0 +1,50 @@
+# SPDX-License-Identifier: Apache-2.0
+method_id: M03_ANALYSE_COMPARATIVE_MULTI_ACTEURS
+method_version: "2.1"
+gabarit_version: "2.1-durci-seq1"
+analysis_id: M03_TEST_NEGATIF_BITEMPORALITE_MANQUANTE_GABARIT_DURCI
+execution_date: 2026-07-04
+execution_mode: applicable_complete
+
+controversy:
+  object: "controverse test — fixture de test volontairement défaillante"
+  temporal_sequence: "fenêtre test"
+  date_range: [2025-01-01, 2025-12-31]
+
+actors:
+  - actor_id: ACTEUR_TEST_1
+    name: "Acteur Test 1"
+    role_at_date: "fonction test 1"
+    m01_analysis_id: M01_TEST_ACTEUR_1
+    execution_mode_on_m01: applicable_complete
+  - actor_id: ACTEUR_TEST_2
+    name: "Acteur Test 2"
+    role_at_date: "fonction test 2"
+    m01_analysis_id: M01_TEST_ACTEUR_2
+    execution_mode_on_m01: applicable_complete
+  - actor_id: ACTEUR_TEST_3
+    name: "Acteur Test 3"
+    role_at_date: "fonction test 3"
+    m01_analysis_id: M01_TEST_ACTEUR_3
+    execution_mode_on_m01: applicable_complete
+
+structuring_propositions:
+  - {proposition_id: P1, label: "proposition structurante test 1"}
+  - {proposition_id: P2, label: "proposition structurante test 2"}
+  - {proposition_id: P3, label: "proposition structurante test 3"}
+
+# CONTRAINTE 2.0 VIOLÉE — gabarit_version=2.1-durci-seq1 mais date_fait/date_connaissance
+# laissés à leur défaut non_renseigne sur une cellule de la matrice épistémique.
+epistemic_position_matrix:
+  - {actor: ACTEUR_TEST_1, proposition: P1, regime: Asserts, confidence: 0.70}
+  # date_fait / date_connaissance : NON RENSEIGNÉS — devrait déclencher erreur
+  # sous gabarit_version=2.1-durci-seq1 (plan_action_002 séquence 2 tâche 2.0)
+
+targeted_objects_matrix:
+  - {actor: ACTEUR_TEST_1, object: OV_TEST, status: aimed, confidence: 0.70, date_fait: 2025-06-01, date_connaissance: 2026-07-04}
+
+cross_matrix_salient_cases:
+  - type: tactical_coalition
+    actors_involved: [ACTEUR_TEST_1, ACTEUR_TEST_2]
+    description: "cas saillant test"
+    analytical_reading: "lecture test"
