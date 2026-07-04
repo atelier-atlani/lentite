@@ -23,7 +23,7 @@ Version courte, usage oral : *« Un enquêteur outillé par IA qui remet des dos
 
 **La douve n'est pas technique, elle est incitative** : chacun de ces mondes peut copier la stack en trois semaines ; aucun ne peut adopter la discipline sans contredire son modèle de revenus. La discipline de L'Entité est coûteuse *pour eux* structurellement. C'est pourquoi la singularité, bien que fragile en interne (elle ne tient qu'à la liste des éléments fermes de la charte), est défendable en externe.
 
-**La preuve de discipline comme promesse de marque** : chaque dossier publié permet à un tiers de vérifier mécaniquement que la méthode a été tenue (defeaters présents, clôture de corpus déclarée, chemin rejouable, validateurs publics avec leurs tests négatifs). Phrase de marque : *« N'importe qui peut vérifier que nous avons tenu notre méthode. »* Aucun des quatre mondes ne peut la prononcer.
+**La preuve de discipline comme promesse de marque** : chaque dossier publié permet à un tiers de vérifier mécaniquement que la méthode a été tenue (defeaters présents, clôture de corpus déclarée, chemin rejouable, validateurs publics avec leurs tests négatifs). Phrase de marque : *« N'importe qui peut vérifier que nous avons tenu notre méthode. »* Aucun des quatre mondes ne peut la prononcer. Engagement effectif au jalon 2 : avant le passage public du cœur et le premier dossier Mode 1, cette phrase est une promesse documentée, pas encore une preuve publique.
 
 ## 3. Publics et usages, par mode
 

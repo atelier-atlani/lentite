@@ -159,4 +159,4 @@ La pile de discipline (quadripartition, omission formelle, réfutabilité mécan
 
 ---
 
-*Document maître v1.0 — 4 juillet 2026. Emplacement cible : `communication/00_document_maitre.md`. Documents frères : 01_positionnement_usages, 02_stack_technique, 03_communication_marketing, 04_exploitation_actifs.*
+*Document maître v1.1 — 4 juillet 2026. Emplacement cible : `communication/00_document_maitre.md`. Documents frères : 01_positionnement_usages, 02_stack_technique, 03_communication_marketing, 04_exploitation_actifs.*
