@@ -24,6 +24,9 @@ from schemas import (
     ExecutionMode,
     Hypothesis,
     Confidence,
+    GabaritVersion,
+    NON_RENSEIGNE,
+    BitemporalDate,
 )
 
 
@@ -146,6 +149,8 @@ class EpistemicCell(BaseModel):
     confidence: Confidence
     confidence_applies_to: Literal[ConfidenceAppliesTo.INFERENCE] = ConfidenceAppliesTo.INFERENCE
     note: str | None = None
+    date_fait: BitemporalDate = NON_RENSEIGNE
+    date_connaissance: BitemporalDate = NON_RENSEIGNE
 
 
 class TargetedObjectCell(BaseModel):
@@ -164,6 +169,8 @@ class TargetedObjectCell(BaseModel):
     efficiency: EfficiencyStatus | None = None
     note: str | None = None
     grounded_in: list[str] = Field(default_factory=list)
+    date_fait: BitemporalDate = NON_RENSEIGNE
+    date_connaissance: BitemporalDate = NON_RENSEIGNE
 
 
 # ----------------------------------------------------------------------------
@@ -219,6 +226,8 @@ class ActorObservableEffect(BaseModel):
     object: str
     effect: str  # référence au ObservableEffectType ou type étendu
     description: str
+    date_fait: BitemporalDate = NON_RENSEIGNE
+    date_connaissance: BitemporalDate = NON_RENSEIGNE
 
 
 class ActorDownstreamChain(BaseModel):
@@ -250,6 +259,8 @@ class InvalidatedPrediction(BaseModel):
     observation_to_date: str
     pattern_type: str | None = None
     source_citation: str | None = None
+    date_fait: BitemporalDate = NON_RENSEIGNE
+    date_connaissance: BitemporalDate = NON_RENSEIGNE
 
 
 # ----------------------------------------------------------------------------
@@ -322,6 +333,7 @@ class M03Analysis(BaseModel):
 
     method_id: str
     method_version: str
+    gabarit_version: GabaritVersion = GabaritVersion.V2_1
     analysis_id: str
     execution_date: date
     execution_mode: ExecutionMode
@@ -378,6 +390,44 @@ class M03Analysis(BaseModel):
             raise ValueError(
                 "At least one cross_matrix_salient_case required "
                 "(gabarit M03 v2.1 section 13 — critère présence de cas saillant identifié)"
+            )
+        return self
+
+    @model_validator(mode="after")
+    def validate_bitemporal_when_durci(self) -> "M03Analysis":
+        """Bitemporalité minimale étendue à M03 (tâche 2.0, plan_action_002 séquence 2).
+
+        Si gabarit_version=2.1-durci-seq1, date_fait et date_connaissance sont
+        obligatoires (différents de la sentinelle non_renseigne) sur les
+        assertions couvertes — cellules des deux matrices, effets observables
+        par acteur, prédictions invalidées. Le bloc omission M03 est hors
+        scope (question doctrinale renvoyée au Reviewer, tâche 2.0 §arbitrage).
+        """
+        if self.gabarit_version != GabaritVersion.V2_1_DURCI_SEQ1:
+            return self
+
+        missing: list[str] = []
+        for i, cell in enumerate(self.epistemic_position_matrix):
+            if NON_RENSEIGNE in (cell.date_fait, cell.date_connaissance):
+                missing.append(f"epistemic_position_matrix[{i}] ({cell.actor}/{cell.proposition})")
+        for i, cell in enumerate(self.targeted_objects_matrix):
+            if NON_RENSEIGNE in (cell.date_fait, cell.date_connaissance):
+                missing.append(f"targeted_objects_matrix[{i}] ({cell.actor}/{cell.object})")
+        for chain in self.comparative_downstream_chains:
+            for i, effect in enumerate(chain.observable_effects):
+                if NON_RENSEIGNE in (effect.date_fait, effect.date_connaissance):
+                    missing.append(
+                        f"comparative_downstream_chains[{chain.actor}].observable_effects[{i}]"
+                    )
+        for i, pred in enumerate(self.invalidated_predictions):
+            if NON_RENSEIGNE in (pred.date_fait, pred.date_connaissance):
+                missing.append(f"invalidated_predictions[{i}] ({pred.actor})")
+
+        if missing:
+            raise ValueError(
+                "gabarit_version=2.1-durci-seq1 requires date_fait and date_connaissance "
+                "on every covered assertion (plan_action_002 séquence 2 tâche 2.0) — "
+                f"non_renseigne left on: {missing}"
             )
         return self
 
