@@ -132,6 +132,18 @@ def add_m01_analysis(g: nx.MultiDiGraph, analysis: M01Analysis) -> None:
             source=effect.source_reference, method=analysis.method_id,
         )
 
+    if analysis.epistemic_synthesis:
+        s = analysis.epistemic_synthesis
+        _add_node(
+            g, aid,
+            hypothesis_gap=s.hypothesis_gap, hypothesis_status=s.hypothesis_status.value,
+        )
+        for i, hyp in enumerate(s.competing_hypotheses):
+            hid = f"{aid}::hyp::{i}"
+            _add_node(g, hid, kind="hypothesis", hyp_type=hyp.type.value,
+                       confidence=hyp.confidence, label=hyp.label[:150])
+            _add_edge(g, aid, hid, "HYPOTHESE", method=analysis.method_id)
+
 
 def add_m03_analysis(g: nx.MultiDiGraph, analysis: M03Analysis) -> None:
     """Nœuds et arêtes pour une analyse M03 — extension M03 v2.1 section 11."""
@@ -201,6 +213,18 @@ def add_m03_analysis(g: nx.MultiDiGraph, analysis: M03Analysis) -> None:
             date_fait=str(pred.date_fait), date_connaissance=str(pred.date_connaissance),
             source=pred.source_citation, method=analysis.method_id,
         )
+
+    if analysis.epistemic_synthesis:
+        s = analysis.epistemic_synthesis
+        _add_node(
+            g, aid,
+            hypothesis_gap=s.hypothesis_gap, hypothesis_status=s.hypothesis_status.value,
+        )
+        for i, hyp in enumerate(s.competing_hypotheses):
+            hid = f"{aid}::hyp::{i}"
+            _add_node(g, hid, kind="hypothesis", hyp_type=hyp.type.value,
+                       confidence=hyp.confidence, label=hyp.label[:150])
+            _add_edge(g, aid, hid, "HYPOTHESE", method=analysis.method_id)
 
 
 def _levenshtein(a: str, b: str) -> int:
