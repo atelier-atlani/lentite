@@ -95,9 +95,13 @@ class AnthropicAgentCaller:
         self._client = anthropic.Anthropic(api_key=api_key)
 
     def __call__(self, model: str, prompt: str) -> tuple[str, dict]:
+        # 8192 s'est révélé insuffisant à l'exécution réelle (tâche 2.7) — l'agent
+        # Synthèse recopie l'intégralité des fragments précédents, ce qui tronque
+        # la réponse en fin de YAML sur un discours de taille réelle. Relevé à
+        # 16000 (valeur empirique constatée suffisante, pas une limite doctrinale).
         response = self._client.messages.create(
             model=model,
-            max_tokens=8192,
+            max_tokens=16000,
             messages=[{"role": "user", "content": prompt}],
         )
         text = "".join(block.text for block in response.content if block.type == "text")
@@ -287,7 +291,16 @@ def run_pipeline(
             agent_name, version, model, horodatage, 1, full_prompt, reponse_brute, usage
         )
         log_paths.append(write_agent_log(analysis_dir, n, record))
-        fragments[agent_name] = parse_yaml_fragment(reponse_brute)
+        try:
+            fragments[agent_name] = parse_yaml_fragment(reponse_brute)
+        except yaml.YAMLError as e:
+            # Aucune boucle de réinjection pour les trois premiers agents
+            # (seul Synthèse en dispose, plan_action_002 tâche 2.4) — échec
+            # propre immédiat avec logs plutôt qu'un plantage non contrôlé.
+            return OrchestrationResult(
+                False, None, {}, 1, log_paths,
+                f"YAML mal formé produit par l'agent {agent_name} : {e}",
+            )
 
     synthese_name, synthese_file = SYNTHESE_AGENT
     synthese_prompt_content, synthese_version = load_prompt(synthese_file)
@@ -307,23 +320,35 @@ def run_pipeline(
         )
         log_paths.append(write_agent_log(analysis_dir, n, record))
 
-        synthese_fragment = parse_yaml_fragment(reponse_brute)
-        candidate = merge_fragments(
-            fragments.get("charite", {}),
-            fragments.get("vulnerabilites", {}),
-            fragments.get("chaines_causales", {}),
-            synthese_fragment,
-        )
-        candidate.setdefault("method_id", "M01_ANALYSE_RHETORIQUE")
-        candidate.setdefault("method_version", "2.1")
-        candidate.setdefault("gabarit_version", "2.1-durci-seq1")
-        candidate.setdefault("analysis_id", analysis_id)
-        candidate.setdefault("execution_date", date.today().isoformat())
-        candidate.setdefault("source", source_metadata)
-
         try:
+            synthese_fragment = parse_yaml_fragment(reponse_brute)
+            candidate = merge_fragments(
+                fragments.get("charite", {}),
+                fragments.get("vulnerabilites", {}),
+                fragments.get("chaines_causales", {}),
+                synthese_fragment,
+            )
+            candidate.setdefault("method_id", "M01_ANALYSE_RHETORIQUE")
+            candidate.setdefault("method_version", "2.1")
+            candidate.setdefault("gabarit_version", "2.1-durci-seq1")
+            candidate.setdefault("analysis_id", analysis_id)
+            candidate.setdefault("execution_date", date.today().isoformat())
+            candidate.setdefault("source", source_metadata)
+
             analysis = M01Analysis.model_validate(candidate)
             return OrchestrationResult(True, analysis, candidate, iteration, log_paths)
+        except yaml.YAMLError as e:
+            # Un YAML mal formé (souvent une réponse tronquée par max_tokens,
+            # constaté à l'exécution réelle tâche 2.7) est traité comme un
+            # échec réinjectable à Synthèse, au même titre qu'une erreur de
+            # validation Pydantic — l'agent peut corriger sur la base du
+            # message d'erreur, dans la même limite de deux itérations.
+            failure_report = f"YAML mal formé ou tronqué produit par Synthèse : {e}"
+            candidate = {}
+            if iteration == MAX_ITERATIONS:
+                return OrchestrationResult(
+                    False, None, candidate, iteration, log_paths, failure_report
+                )
         except ValidationError as e:
             failure_report = format_validation_errors(e)
             if iteration == MAX_ITERATIONS:
