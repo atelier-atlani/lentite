@@ -578,4 +578,24 @@ refs: [plan_action_002]
 
 ---
 
+```yaml
+date: 2026-07-04
+type: étape
+refs: [plan_action_002]
+```
+
+### Création de la couche communication — documents dérivés de pilotage
+
+*Constat.* Micro-lot hors séquence, classement uniquement (pas d'exécution de tâche numérotée de `plan_action_002.md`). Répertoire `communication/` créé à la racine (admis par la discipline de racine minimale, `conventions.md` §6.7, qui autorise tout répertoire). Trois documents dérivés y sont classés, licence CC BY 4.0 (même régime que la doctrine, décision 004) — `00_document_maitre.md` (v1.1, identité à deux étages noyau/instance, ADN, architecture, état réel, trajectoire), `01_positionnement_usages.md` (v1.0, positionnement, anti-positionnement, objections, messages par interlocuteur), `04_exploitation_actifs.md` (v1.0, inventaire des actifs et canaux d'exploitation par horizon de jalon). Les trois portent déjà, tels que fournis, un en-tête déclarant leur statut de document dérivé et la préséance de la doctrine et des décisions structurantes en cas de divergence — vérifié avant classement, aucune modification de contenu apportée.
+
+*Règle de resynchronisation actée.* Toute révision doctrinale (couche A/B/C, `.claude/decisions/`) déclenche la mise à jour des documents de `communication/` ; jamais l'inverse — ces documents ne sont pas une source de vérité et n'ont aucune autorité normative sur la doctrine ou les décisions. Cette règle, déjà inscrite dans l'en-tête de chacun des trois documents, est actée ici au niveau du projet et reflétée dans le README racine (§3, ligne « Vues dérivées de pilotage et communication — jamais source de vérité »).
+
+*Observation, non corrigée (classement uniquement).* `00_document_maitre.md` porte une incohérence de version interne — l'en-tête annonce « Version 1.1 » quand le colophon final indique « Document maître v1.0 ». Signalé ici plutôt que corrigé silencieusement ; correction relevant du producteur du document, pas du classement.
+
+*Nouveau type de front matter.* `étape` ajouté à `conventions.md` §6.9 (instruction Dirigeant) — jalon de classement ou de structuration hors séquence d'un plan d'action, distinct de `reprise` (réservée à l'avancement d'une tâche déjà numérotée).
+
+*Conséquence.* Aucun impact sur la séquence 2 en cours (lot {2.0–2.2}, distinct et non touché par ce micro-lot). Documents `communication/` disponibles pour usage interne immédiat (pilotage, onboarding co-dirigeant, préparation pédagogique) — toute diffusion externe reste soumise aux mêmes jalons de la décision 005 que le reste du projet.
+
+---
+
 *Journal v1.0 — édité le 17 mai 2026. Prochaine révision attendue après extension M03 à 4 acteurs et nouvelles analyses substantielles. Document de mémoire institutionnelle, pas de récit. Pour la doctrine, lire charte et gabarit. Pour les analyses, lire les fichiers correspondants.*

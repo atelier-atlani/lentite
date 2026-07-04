@@ -65,12 +65,16 @@ lentite/
 ├── archives/                          ← strates génétiques datées, non canoniques
 │   ├── observatrice_complet_2026-05/  ← prototype antérieur, prompts cannibalisés vers pipeline/agents/
 │   └── structure_lentite_2026-07-01.rtf
+├── communication/                     ← documents dérivés de pilotage et communication — CC BY 4.0
+│   ├── 00_document_maitre.md
+│   ├── 01_positionnement_usages.md
+│   └── 04_exploitation_actifs.md
 ├── coordination/                      ← documents de coordination (peu nombreux)
 ├── journal/                           ← journal méthodologique général
 └── .claude/                           ← workflow collaboratif IA (plans, décisions, contexte de session)
 ```
 
-Couches distinctes — doctrine, analyses, pipeline, dev, gouvernance, coordination/journal, archives. Chacune avec sa discipline propre. La doctrine est versionnée par majeure et mineure ; les analyses référencent la doctrine sans la dupliquer ; le pipeline est code Python + YAML, isolable et exécutable ; le journal trace les évolutions ; les archives conservent les strates génétiques du projet sans les faire concourir avec le canon courant.
+Couches distinctes — doctrine, analyses, pipeline, dev, gouvernance, coordination/journal, archives, communication. Chacune avec sa discipline propre. La doctrine est versionnée par majeure et mineure ; les analyses référencent la doctrine sans la dupliquer ; le pipeline est code Python + YAML, isolable et exécutable ; le journal trace les évolutions ; les archives conservent les strates génétiques du projet sans les faire concourir avec le canon courant. **Vues dérivées de pilotage et communication — jamais source de vérité.** Les documents de `communication/` (document maître, positionnement, exploitation des actifs) présupposent et résument la doctrine et les décisions structurantes ; en cas de divergence, `doctrine/V2.1/` et `.claude/decisions/` font foi, et toute révision doctrinale déclenche la resynchronisation des dérivés — jamais l'inverse.
 
 **Racine minimale.** Depuis la tâche 0.7 de `plan_action_002.md`, seuls `README`, `LICENSE`, `LICENSES/`, `requirements.txt` et des répertoires sont admis à la racine — convention inscrite à `conventions.md` §6.7 (exception `requirements.txt` ajoutée au lot 0-bis, correctif onboarding). Aucun document de travail, aucune copie, aucun fichier orphelin n'y séjourne.
 
