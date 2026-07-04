@@ -71,6 +71,16 @@
 - Unités argumentatives — `U1`, `U2`, `U3`, etc.
 - Propositions structurantes (M03) — `P1`, `P2`, `P3`, etc.
 
+### 2.5 Identifiants d'acteur/locuteur (`speaker.id` en M01, `actor_id` en M03)
+
+*Ajouté le 4 juillet 2026, arbitrage Architecte préliminaire à la tâche 2.3 de `plan_action_002.md` — motivé par `graph_builder.py` (tâche 2.2), où un même identifiant fusionne le nœud M01 et les apparitions M03 d'une même personne (pont M01↔M03, arête `M01_LIE`). Une divergence de graphie casserait silencieusement cette fusion.*
+
+- **Format unique** — `PRENOM_NOM` en majuscules, caractères ASCII (pas d'accents), séparateur `_` unique entre prénom et nom (ex. `MICHEL_BARNIER`, `FRANCOIS_BAYROU`, `LAURENT_FABIUS`). Les cas-jouets fictifs suffixent `_FICTIF` (ex. `ANNE_DURANT_FICTIF`) pour exclure toute confusion avec une personne réelle homonyme.
+- **Identifiant global, pas namespacé par analyse** — un même `PRENOM_NOM` désigne la même personne physique à travers tout le corpus M01 et M03. C'est la condition de la fusion de nœuds dans le graphe cognitif ; namespacer cet identifiant par analyse (contrairement aux objets thématiques/visés, §2.4) romprait le pont M01↔M03.
+- **Règle de désambiguïsation des homonymes** — si deux personnes distinctes du corpus partagent le même `PRENOM_NOM`, suffixer par un troisième élément stable et documenté (initiale du second prénom, fonction abrégée, ou année de naissance) — jamais un compteur arbitraire (`_2`, `_3`) sans signification hors contexte. Le suffixe retenu et son motif sont documentés en commentaire dans le YAML et, si l'homonymie est découverte a posteriori sur un identifiant déjà utilisé, au journal méthodologique.
+- **Vérification à chaque nouvelle analyse** — confirmer qu'aucun identifiant déjà présent au corpus ne désigne, sous une graphie légèrement différente (faute de frappe, ordre prénom/nom inversé, variante d'accent), la même personne. Le rapport de quasi-doublons de `graph_builder.py` (distance d'édition entre identifiants de type `person`) est le filet de sécurité mécanique de cette vérification, pas un substitut à elle.
+- **Conformité vérifiée sur le corpus au 4 juillet 2026** — dix identifiants distincts (`MICHEL_BARNIER`, `FRANCOIS_BAYROU`, `LAURENT_FABIUS`, `SEBASTIEN_LECORNU`, `ERIC_CIOTTI`, `BORIS_VALLAUD`, `MATHILDE_PANOT`, `ANNE_DURANT_FICTIF`, `MARC_LEVEQUE_FICTIF`, `CLAIRE_RENARD_FICTIF`), tous conformes au format, aucun homonyme ni quasi-doublon détecté.
+
 ---
 
 ## 3. Conventions Git
@@ -241,4 +251,4 @@ Méthode complète dans `dev/lentite_methodologie_workflow_collaboratif_ia_v1.md
 
 ---
 
-*Conventions v1.3 — créé le 17 mai 2026, révisé le 3 juillet 2026 (ajout §3.2 traçabilité commit, §6.7-6.9 racine minimale / séquence-journal / front matter, tâche 0.7 de `plan_action_002.md`), révisé le 4 juillet 2026 (ajout du type `extension_corpus` §6.9, tâche 1.5 de `plan_action_002.md` ; ajout du type `étape` §6.9, micro-lot communication). À mettre à jour aux évolutions des bonnes pratiques (par exemple migration vers Python 3.13, adoption de uv pour gestion d'environnement, etc.). Document de référence opérationnelle, à lire en début de toute session de code.*
+*Conventions v1.4 — créé le 17 mai 2026, révisé le 3 juillet 2026 (ajout §3.2 traçabilité commit, §6.7-6.9 racine minimale / séquence-journal / front matter, tâche 0.7 de `plan_action_002.md`), révisé le 4 juillet 2026 (ajout du type `extension_corpus` §6.9, tâche 1.5 de `plan_action_002.md` ; ajout du type `étape` §6.9, micro-lot communication ; ajout §2.5 identifiants d'acteur/locuteur, arbitrage préliminaire à la tâche 2.3). À mettre à jour aux évolutions des bonnes pratiques (par exemple migration vers Python 3.13, adoption de uv pour gestion d'environnement, etc.). Document de référence opérationnelle, à lire en début de toute session de code.*
