@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: CC-BY-SA-4.0
 method_id: M03_ANALYSE_COMPARATIVE_MULTI_ACTEURS
 method_version: "2.1"
+gabarit_version: "2.1-durci-seq1"
 analysis_id: M03_RETRAITES_OCTOBRE_2025_LECORNU_CIOTTI_VALLAUD_PANOT_v2_1
 execution_date: 2026-05-17
 execution_mode: applicable_complete
@@ -54,64 +55,64 @@ structuring_propositions:
   - {proposition_id: P6, label: "La sortie de la Vème République est une issue démocratique légitime"}
 
 epistemic_position_matrix:
-  - {actor: SEBASTIEN_LECORNU, proposition: P1, regime: Asserts, confidence: 0.90}
-  - {actor: SEBASTIEN_LECORNU, proposition: P2, regime: Asserts, confidence: 0.90, note: "rompu en janvier 2026"}
-  - {actor: SEBASTIEN_LECORNU, proposition: P3, regime: Asserts, confidence: 0.85}
-  - {actor: SEBASTIEN_LECORNU, proposition: P4, regime: refutes_implicitly, confidence: 0.80}
-  - {actor: SEBASTIEN_LECORNU, proposition: P5, regime: Asserts, confidence: 0.85}
-  - {actor: SEBASTIEN_LECORNU, proposition: P6, regime: refutes_implicitly, confidence: 0.85}
-  - {actor: ERIC_CIOTTI, proposition: P1, regime: silent, confidence: 0.85}
-  - {actor: ERIC_CIOTTI, proposition: P2, regime: silent, confidence: 0.80}
-  - {actor: ERIC_CIOTTI, proposition: P3, regime: refutes, confidence: 0.85}
-  - {actor: ERIC_CIOTTI, proposition: P4, regime: ClaimsToKnow, confidence: 0.80, note: "Prétend_savoir Bardella imminent"}
-  - {actor: ERIC_CIOTTI, proposition: P5, regime: silent, confidence: 0.75}
-  - {actor: ERIC_CIOTTI, proposition: P6, regime: silent, confidence: 0.80, note: "UDR mobilise gaullisme orthodoxe pas refondation"}
-  - {actor: BORIS_VALLAUD, proposition: P1, regime: Asserts_with_K_claim, confidence: 0.85}
-  - {actor: BORIS_VALLAUD, proposition: P2, regime: Asserts, confidence: 0.80}
-  - {actor: BORIS_VALLAUD, proposition: P3, regime: ambiguous_B_silent, confidence: 0.70}
-  - {actor: BORIS_VALLAUD, proposition: P4, regime: silent, confidence: 0.65}
-  - {actor: BORIS_VALLAUD, proposition: P5, regime: Asserts_with_K_claim, confidence: 0.85}
-  - {actor: BORIS_VALLAUD, proposition: P6, regime: refutes_implicitly, confidence: 0.75}
-  - {actor: MATHILDE_PANOT, proposition: P1, regime: refutes, confidence: 0.85, note: "qualification leurre"}
-  - {actor: MATHILDE_PANOT, proposition: P2, regime: Asserts, confidence: 0.80}
-  - {actor: MATHILDE_PANOT, proposition: P3, regime: refutes, confidence: 0.90}
-  - {actor: MATHILDE_PANOT, proposition: P4, regime: refutes, confidence: 0.80, note: "préfère destitution"}
-  - {actor: MATHILDE_PANOT, proposition: P5, regime: silent, confidence: 0.80, note: "LFI ne mobilise pas le paritarisme"}
-  - {actor: MATHILDE_PANOT, proposition: P6, regime: Asserts_with_K_claim, confidence: 0.85}
+  - {actor: SEBASTIEN_LECORNU, proposition: P1, regime: Asserts, confidence: 0.90, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: SEBASTIEN_LECORNU, proposition: P2, regime: Asserts, confidence: 0.90, note: "rompu en janvier 2026", date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: SEBASTIEN_LECORNU, proposition: P3, regime: Asserts, confidence: 0.85, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: SEBASTIEN_LECORNU, proposition: P4, regime: refutes_implicitly, confidence: 0.80, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: SEBASTIEN_LECORNU, proposition: P5, regime: Asserts, confidence: 0.85, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: SEBASTIEN_LECORNU, proposition: P6, regime: refutes_implicitly, confidence: 0.85, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: ERIC_CIOTTI, proposition: P1, regime: silent, confidence: 0.85, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: ERIC_CIOTTI, proposition: P2, regime: silent, confidence: 0.80, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: ERIC_CIOTTI, proposition: P3, regime: refutes, confidence: 0.85, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: ERIC_CIOTTI, proposition: P4, regime: ClaimsToKnow, confidence: 0.80, note: "Prétend_savoir Bardella imminent", date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: ERIC_CIOTTI, proposition: P5, regime: silent, confidence: 0.75, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: ERIC_CIOTTI, proposition: P6, regime: silent, confidence: 0.80, note: "UDR mobilise gaullisme orthodoxe pas refondation", date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: BORIS_VALLAUD, proposition: P1, regime: Asserts_with_K_claim, confidence: 0.85, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: BORIS_VALLAUD, proposition: P2, regime: Asserts, confidence: 0.80, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: BORIS_VALLAUD, proposition: P3, regime: ambiguous_B_silent, confidence: 0.70, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: BORIS_VALLAUD, proposition: P4, regime: silent, confidence: 0.65, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: BORIS_VALLAUD, proposition: P5, regime: Asserts_with_K_claim, confidence: 0.85, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: BORIS_VALLAUD, proposition: P6, regime: refutes_implicitly, confidence: 0.75, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: MATHILDE_PANOT, proposition: P1, regime: refutes, confidence: 0.85, note: "qualification leurre", date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: MATHILDE_PANOT, proposition: P2, regime: Asserts, confidence: 0.80, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: MATHILDE_PANOT, proposition: P3, regime: refutes, confidence: 0.90, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: MATHILDE_PANOT, proposition: P4, regime: refutes, confidence: 0.80, note: "préfère destitution", date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: MATHILDE_PANOT, proposition: P5, regime: silent, confidence: 0.80, note: "LFI ne mobilise pas le paritarisme", date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: MATHILDE_PANOT, proposition: P6, regime: Asserts_with_K_claim, confidence: 0.85, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
 
 targeted_objects_matrix:
-  - {actor: SEBASTIEN_LECORNU, object: OV_A, label: "survie immédiate du gouvernement", status: aimed, confidence: 0.85, efficiency: efficient_partiel, grounded_in: [M01_LECORNU_DPG_20251014_v2_1]}
-  - {actor: SEBASTIEN_LECORNU, object: OV_B, label: "positionnement pré-présidentiel 2027", status: aimed, confidence: 0.55, efficiency: efficient_partiel, grounded_in: [M01_LECORNU_DPG_20251014_v2_1]}
-  - {actor: SEBASTIEN_LECORNU, object: OV_C, status: not_aimed, confidence: 0.85}
-  - {actor: SEBASTIEN_LECORNU, object: OV_D, status: not_aimed, confidence: 0.85}
-  - {actor: SEBASTIEN_LECORNU, object: OV_E, label: "alliance CFDT/syndicats", status: aimed, confidence: 0.70, efficiency: efficient_partiel, grounded_in: [M01_LECORNU_DPG_20251014_v2_1]}
-  - {actor: SEBASTIEN_LECORNU, object: OV_F, status: not_aimed, confidence: 0.90}
-  - {actor: SEBASTIEN_LECORNU, object: OV_G, label: "préservation socle macroniste", status: aimed, confidence: 0.70, efficiency: efficient_partiel, grounded_in: [M01_LECORNU_DPG_20251014_v2_1]}
-  - {actor: SEBASTIEN_LECORNU, object: OV_H, status: not_aimed, confidence: 0.95}
-  - {actor: ERIC_CIOTTI, object: OV_A, status: not_aimed_inverse, confidence: 0.90}
-  - {actor: ERIC_CIOTTI, object: OV_B, label: "positionnement pré-présidentiel 2027", status: aimed, confidence: 0.80, efficiency: efficient, grounded_in: [M01_CIOTTI_REPONSE_DPG_LECORNU_20251014_v2_1]}
-  - {actor: ERIC_CIOTTI, object: OV_C, label: "consolidation alliance d'extrême droite UDR-RN", status: aimed, confidence: 0.75, efficiency: efficient_partiel, grounded_in: [M01_CIOTTI_REPONSE_DPG_LECORNU_20251014_v2_1]}
-  - {actor: ERIC_CIOTTI, object: OV_D, status: not_aimed, confidence: 0.90}
-  - {actor: ERIC_CIOTTI, object: OV_E, status: not_aimed, confidence: 0.85}
-  - {actor: ERIC_CIOTTI, object: OV_F, label: "fragilisation gouvernement Lecornu", status: aimed, confidence: 0.55, efficiency: non_efficient, grounded_in: [M01_CIOTTI_REPONSE_DPG_LECORNU_20251014_v2_1]}
-  - {actor: ERIC_CIOTTI, object: OV_G, status: not_aimed_inverse, confidence: 0.85}
-  - {actor: ERIC_CIOTTI, object: OV_H, status: not_aimed, confidence: 0.85, note: "gaullisme orthodoxe vs rupture institutionnelle"}
-  - {actor: BORIS_VALLAUD, object: OV_A, status: ambiguous, confidence: 0.65, note: "non-censure mais non adhésion"}
-  - {actor: BORIS_VALLAUD, object: OV_B, status: aimed, confidence: 0.60, efficiency: non_efficient, grounded_in: [M01_VALLAUD_REPONSE_DPG_LECORNU_20251014_v2_1]}
-  - {actor: BORIS_VALLAUD, object: OV_C, status: not_aimed, confidence: 0.85}
-  - {actor: BORIS_VALLAUD, object: OV_D, label: "positionnement PS pivot", status: aimed, confidence: 0.80, efficiency: efficient, grounded_in: [M01_VALLAUD_REPONSE_DPG_LECORNU_20251014_v2_1]}
-  - {actor: BORIS_VALLAUD, object: OV_E, status: aimed, confidence: 0.75, efficiency: efficient, grounded_in: [M01_VALLAUD_REPONSE_DPG_LECORNU_20251014_v2_1]}
-  - {actor: BORIS_VALLAUD, object: OV_F, status: ambiguous_fractured, confidence: 0.60, note: "direction not_aimed, 7 frondeurs aimed"}
-  - {actor: BORIS_VALLAUD, object: OV_G, status: not_aimed, confidence: 0.85}
-  - {actor: BORIS_VALLAUD, object: OV_H, status: not_aimed, confidence: 0.85}
-  - {actor: MATHILDE_PANOT, object: OV_A, status: not_aimed_inverse, confidence: 0.90}
-  - {actor: MATHILDE_PANOT, object: OV_B, status: aimed, confidence: 0.55, efficiency: non_efficient, grounded_in: [M01_PANOT_REPONSE_DPG_LECORNU_20251014_v2_1]}
-  - {actor: MATHILDE_PANOT, object: OV_C, status: not_aimed, confidence: 0.90}
-  - {actor: MATHILDE_PANOT, object: OV_D, status: ambiguous, confidence: 0.75, note: "vise l'inverse - délégitimation PS pivot", grounded_in: [M01_PANOT_REPONSE_DPG_LECORNU_20251014_v2_1]}
-  - {actor: MATHILDE_PANOT, object: OV_E, status: not_aimed, confidence: 0.85, note: "gauche radicale critique du paritarisme"}
-  - {actor: MATHILDE_PANOT, object: OV_F, status: aimed, confidence: 0.75, efficiency: non_efficient, grounded_in: [M01_PANOT_REPONSE_DPG_LECORNU_20251014_v2_1]}
-  - {actor: MATHILDE_PANOT, object: OV_G, status: not_aimed_inverse, confidence: 0.85}
-  - {actor: MATHILDE_PANOT, object: OV_H, label: "rupture institutionnelle / sortie Vème République", status: aimed, confidence: 0.80, efficiency: non_efficient, grounded_in: [M01_PANOT_REPONSE_DPG_LECORNU_20251014_v2_1]}
+  - {actor: SEBASTIEN_LECORNU, object: OV_A, label: "survie immédiate du gouvernement", status: aimed, confidence: 0.85, efficiency: efficient_partiel, grounded_in: [M01_LECORNU_DPG_20251014_v2_1], date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: SEBASTIEN_LECORNU, object: OV_B, label: "positionnement pré-présidentiel 2027", status: aimed, confidence: 0.55, efficiency: efficient_partiel, grounded_in: [M01_LECORNU_DPG_20251014_v2_1], date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: SEBASTIEN_LECORNU, object: OV_C, status: not_aimed, confidence: 0.85, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: SEBASTIEN_LECORNU, object: OV_D, status: not_aimed, confidence: 0.85, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: SEBASTIEN_LECORNU, object: OV_E, label: "alliance CFDT/syndicats", status: aimed, confidence: 0.70, efficiency: efficient_partiel, grounded_in: [M01_LECORNU_DPG_20251014_v2_1], date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: SEBASTIEN_LECORNU, object: OV_F, status: not_aimed, confidence: 0.90, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: SEBASTIEN_LECORNU, object: OV_G, label: "préservation socle macroniste", status: aimed, confidence: 0.70, efficiency: efficient_partiel, grounded_in: [M01_LECORNU_DPG_20251014_v2_1], date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: SEBASTIEN_LECORNU, object: OV_H, status: not_aimed, confidence: 0.95, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: ERIC_CIOTTI, object: OV_A, status: not_aimed_inverse, confidence: 0.90, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: ERIC_CIOTTI, object: OV_B, label: "positionnement pré-présidentiel 2027", status: aimed, confidence: 0.80, efficiency: efficient, grounded_in: [M01_CIOTTI_REPONSE_DPG_LECORNU_20251014_v2_1], date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: ERIC_CIOTTI, object: OV_C, label: "consolidation alliance d'extrême droite UDR-RN", status: aimed, confidence: 0.75, efficiency: efficient_partiel, grounded_in: [M01_CIOTTI_REPONSE_DPG_LECORNU_20251014_v2_1], date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: ERIC_CIOTTI, object: OV_D, status: not_aimed, confidence: 0.90, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: ERIC_CIOTTI, object: OV_E, status: not_aimed, confidence: 0.85, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: ERIC_CIOTTI, object: OV_F, label: "fragilisation gouvernement Lecornu", status: aimed, confidence: 0.55, efficiency: non_efficient, grounded_in: [M01_CIOTTI_REPONSE_DPG_LECORNU_20251014_v2_1], date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: ERIC_CIOTTI, object: OV_G, status: not_aimed_inverse, confidence: 0.85, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: ERIC_CIOTTI, object: OV_H, status: not_aimed, confidence: 0.85, note: "gaullisme orthodoxe vs rupture institutionnelle", date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: BORIS_VALLAUD, object: OV_A, status: ambiguous, confidence: 0.65, note: "non-censure mais non adhésion", date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: BORIS_VALLAUD, object: OV_B, status: aimed, confidence: 0.60, efficiency: non_efficient, grounded_in: [M01_VALLAUD_REPONSE_DPG_LECORNU_20251014_v2_1], date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: BORIS_VALLAUD, object: OV_C, status: not_aimed, confidence: 0.85, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: BORIS_VALLAUD, object: OV_D, label: "positionnement PS pivot", status: aimed, confidence: 0.80, efficiency: efficient, grounded_in: [M01_VALLAUD_REPONSE_DPG_LECORNU_20251014_v2_1], date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: BORIS_VALLAUD, object: OV_E, status: aimed, confidence: 0.75, efficiency: efficient, grounded_in: [M01_VALLAUD_REPONSE_DPG_LECORNU_20251014_v2_1], date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: BORIS_VALLAUD, object: OV_F, status: ambiguous_fractured, confidence: 0.60, note: "direction not_aimed, 7 frondeurs aimed", date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: BORIS_VALLAUD, object: OV_G, status: not_aimed, confidence: 0.85, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: BORIS_VALLAUD, object: OV_H, status: not_aimed, confidence: 0.85, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: MATHILDE_PANOT, object: OV_A, status: not_aimed_inverse, confidence: 0.90, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: MATHILDE_PANOT, object: OV_B, status: aimed, confidence: 0.55, efficiency: non_efficient, grounded_in: [M01_PANOT_REPONSE_DPG_LECORNU_20251014_v2_1], date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: MATHILDE_PANOT, object: OV_C, status: not_aimed, confidence: 0.90, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: MATHILDE_PANOT, object: OV_D, status: ambiguous, confidence: 0.75, note: "vise l'inverse - délégitimation PS pivot", grounded_in: [M01_PANOT_REPONSE_DPG_LECORNU_20251014_v2_1], date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: MATHILDE_PANOT, object: OV_E, status: not_aimed, confidence: 0.85, note: "gauche radicale critique du paritarisme", date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: MATHILDE_PANOT, object: OV_F, status: aimed, confidence: 0.75, efficiency: non_efficient, grounded_in: [M01_PANOT_REPONSE_DPG_LECORNU_20251014_v2_1], date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: MATHILDE_PANOT, object: OV_G, status: not_aimed_inverse, confidence: 0.85, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: MATHILDE_PANOT, object: OV_H, label: "rupture institutionnelle / sortie Vème République", status: aimed, confidence: 0.80, efficiency: non_efficient, grounded_in: [M01_PANOT_REPONSE_DPG_LECORNU_20251014_v2_1], date_fait: 2025-10-14, date_connaissance: 2026-05-17}
 
 cross_matrix_salient_cases:
   - type: tactical_coalition
@@ -186,27 +187,27 @@ arena_structure:
 comparative_downstream_chains:
   - actor: SEBASTIEN_LECORNU
     observable_effects:
-      - {object: OV_A, effect: confirmation_institutionnelle, description: "Motion rejetée, gouvernement maintenu à mai 2026"}
-      - {object: OV_E, effect: amplification, description: "Suspension votée 12 nov 2025"}
-      - {object: OV_G, effect: amplification_avec_rupture_methodologique, description: "PLF adopté février 2026 par 49.3 - broken_explicitly"}
+      - {object: OV_A, effect: confirmation_institutionnelle, description: "Motion rejetée, gouvernement maintenu à mai 2026", date_fait: 2025-10-16, date_connaissance: 2026-05-17}  # rejet motion 16 octobre 2025, sourcé m01 lecornu_v2_1.yaml EFFECT OV1
+      - {object: OV_E, effect: amplification, description: "Suspension votée 12 nov 2025", date_fait: 2025-11-12, date_connaissance: 2026-05-17}
+      - {object: OV_G, effect: amplification_avec_rupture_methodologique, description: "PLF adopté février 2026 par 49.3 - broken_explicitly", date_fait: non_documente, date_connaissance: 2026-05-17}  # "février 2026" sans jour précis (rupture initiale du 49.3 datée 19/01/2026 par ailleurs, mais l'adoption finale ici décrite n'a pas de jour documenté)
   - actor: ERIC_CIOTTI
     observable_effects:
-      - {object: OV_B, effect: amplification, description: "Visibilité médiatique"}
-      - {object: OV_C, effect: contestation, description: "Vote conjoint motion mais rejetée"}
-      - {object: OV_F, effect: contestation_forte, description: "Motion rejetée, Bardella non nommé"}
+      - {object: OV_B, effect: amplification, description: "Visibilité médiatique", date_fait: non_documente, date_connaissance: 2026-05-17}
+      - {object: OV_C, effect: contestation, description: "Vote conjoint motion mais rejetée", date_fait: 2025-10-16, date_connaissance: 2026-05-17}
+      - {object: OV_F, effect: contestation_forte, description: "Motion rejetée, Bardella non nommé", date_fait: 2025-10-16, date_connaissance: 2026-05-17}
   - actor: BORIS_VALLAUD
     observable_effects:
-      - {object: OV_D, effect: amplification, description: "PS pivot toute la séquence"}
-      - {object: OV_E, effect: confirmation_institutionnelle, description: "CFDT a reconnu la suspension"}
-      - {object: cohesion_groupe, effect: amplification_partielle_avec_tension, description: "7 frondeurs, Faure a dû intervenir"}
-      - {object: revendication_victoire, effect: amplification_limitee_avec_contestation, description: "contestée par Mélenchon, Bompard, Bardella, Retailleau, Panot"}
+      - {object: OV_D, effect: amplification, description: "PS pivot toute la séquence", date_fait: non_documente, date_connaissance: 2026-05-17}  # constat continu sur toute la séquence
+      - {object: OV_E, effect: confirmation_institutionnelle, description: "CFDT a reconnu la suspension", date_fait: 2025-11-12, date_connaissance: 2026-05-17}
+      - {object: cohesion_groupe, effect: amplification_partielle_avec_tension, description: "7 frondeurs, Faure a dû intervenir", date_fait: 2025-10-16, date_connaissance: 2026-05-17}  # défections lors du vote du 16 octobre 2025
+      - {object: revendication_victoire, effect: amplification_limitee_avec_contestation, description: "contestée par Mélenchon, Bompard, Bardella, Retailleau, Panot", date_fait: non_documente, date_connaissance: 2026-05-17}
   - actor: MATHILDE_PANOT
     observable_effects:
-      - {object: OV_B, effect: amplification, description: "visibilité médiatique acquise"}
-      - {object: delegitimation_PS_pivot, effect: amplification, description: "narration sauveur de Macron diffusée, 7 frondeurs PS validation partielle"}
-      - {object: OV_F, effect: contestation_forte, description: "motion à 271 voix manque 18"}
-      - {object: OV_H, effect: amplification_partielle_contestee, description: "narration compte à rebours circule, Macron en fonction à mai 2026"}
-      - {object: cohesion_bloc_co-signataire, effect: amplification_partielle_avec_tension, description: "5 Verts/communistes ne votent pas"}
+      - {object: OV_B, effect: amplification, description: "visibilité médiatique acquise", date_fait: non_documente, date_connaissance: 2026-05-17}
+      - {object: delegitimation_PS_pivot, effect: amplification, description: "narration sauveur de Macron diffusée, 7 frondeurs PS validation partielle", date_fait: non_documente, date_connaissance: 2026-05-17}
+      - {object: OV_F, effect: contestation_forte, description: "motion à 271 voix manque 18", date_fait: 2025-10-16, date_connaissance: 2026-05-17}
+      - {object: OV_H, effect: amplification_partielle_contestee, description: "narration compte à rebours circule, Macron en fonction à mai 2026", date_fait: non_documente, date_connaissance: 2026-05-17}
+      - {object: cohesion_bloc_co-signataire, effect: amplification_partielle_avec_tension, description: "5 Verts/communistes ne votent pas", date_fait: 2025-10-16, date_connaissance: 2026-05-17}  # défections lors du même vote du 16 octobre 2025
 
 asymmetries_of_benefit:
   - effect_label: "suspension retraites votée 12 nov 2025"
@@ -230,11 +231,11 @@ asymmetries_of_benefit:
     note: "validation partielle préemption symbolique Panot - cohésion PS fissurée"
 
 invalidated_predictions:
-  - {actor: ERIC_CIOTTI, predicted: "remplacement par Bardella imminent", observation_to_date: "Bardella non nommé à mai 2026", pattern_type: never_observed}
-  - {actor: BORIS_VALLAUD, predicted: "sanction du gouvernement tout au long du débat budgétaire", observation_to_date: "Sanction par votes critiques et amendements pas par censure", pattern_type: observed_otherwise}
-  - {actor: MATHILDE_PANOT, predicted: "chute du gouvernement Lecornu II par motion", observation_to_date: "motion à 271 voix manque 18", pattern_type: never_observed}
-  - {actor: MATHILDE_PANOT, predicted: "démission ou destitution Macron", observation_to_date: "Macron en fonction à mai 2026", pattern_type: not_yet_observed}
-  - {actor: MATHILDE_PANOT, predicted: "séparation publique LFI-RN sur motion précédente", observation_to_date: "RN a voté motion LFI", pattern_type: observed_otherwise}
+  - {actor: ERIC_CIOTTI, predicted: "remplacement par Bardella imminent", observation_to_date: "Bardella non nommé à mai 2026", pattern_type: never_observed, date_fait: non_documente, date_connaissance: 2026-05-17}
+  - {actor: BORIS_VALLAUD, predicted: "sanction du gouvernement tout au long du débat budgétaire", observation_to_date: "Sanction par votes critiques et amendements pas par censure", pattern_type: observed_otherwise, date_fait: non_documente, date_connaissance: 2026-05-17}
+  - {actor: MATHILDE_PANOT, predicted: "chute du gouvernement Lecornu II par motion", observation_to_date: "motion à 271 voix manque 18", pattern_type: never_observed, date_fait: 2025-10-16, date_connaissance: 2026-05-17}
+  - {actor: MATHILDE_PANOT, predicted: "démission ou destitution Macron", observation_to_date: "Macron en fonction à mai 2026", pattern_type: not_yet_observed, date_fait: non_documente, date_connaissance: 2026-05-17}
+  - {actor: MATHILDE_PANOT, predicted: "séparation publique LFI-RN sur motion précédente", observation_to_date: "RN a voté motion LFI", pattern_type: observed_otherwise, date_fait: 2025-10-16, date_connaissance: 2026-05-17}
 
 epistemic_synthesis:
   competing_hypotheses:
