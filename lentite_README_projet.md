@@ -24,7 +24,7 @@ Pour la doctrine complète, lire `doctrine/V2.1/lentite_charte_v2_1.md`. Le pré
 | Cas-jouets canoniques | 6/6 instanciés |
 | Analyses M01 sur cas réels | 7 produites (Fabius, Ciotti, Lecornu, Vallaud, Panot, Bayrou, Barnier) |
 | Applications M03 sur cas réels | 2 produites (retraites octobre 2025 à 4 acteurs, Bayrou-Barnier-Lecornu) |
-| Pipeline de validation | Pydantic v2 — validateur M03-M opérationnel ; validateur M01-M **à restaurer** (séquence 2, tâche 2.1) |
+| Pipeline de validation | Pydantic v2 — validateurs M01-M et M03-M tous deux opérationnels en CLI (`validate.py`, `validate_m03.py`, tâche 2.1) |
 | Tests négatifs pipeline | 3/3 confirment que les contraintes mordent |
 | Décisions structurantes Phase 0 (codage) | 5/5 prises le 3 juillet 2026 — voir `.claude/decisions/` |
 | Dépôt git | initialisé le 3 juillet 2026 — jalon 1 (dépôt privé) de la décision 005 |
@@ -52,11 +52,11 @@ lentite/
 │   └── m03/                           ← applications comparatives
 ├── pipeline/                          ← couche d'exécution opérationnelle
 │   ├── schemas.py + schemas_m03.py    ← Apache 2.0
-│   ├── validate_m03.py                ← Apache 2.0 (validate.py M01 à restaurer)
+│   ├── validate.py + validate_m03.py  ← Apache 2.0
 │   ├── agents/                        ← prompts d'agents versionnés — AGPL-3.0-only
 │   ├── analyses/*.yaml                ← YAML M01-M/M03-M validés — CC BY-SA 4.0
 │   ├── tests/*.yaml                   ← tests négatifs — Apache 2.0
-│   └── lentite_README_projet.md (pipeline)
+│   └── lentite_README_projet.md (pointeur vers le présent README §6, tâche 2.1)
 ├── dev/                                ← méthodologie de développement du projet lui-même
 │   ├── lentite_methodologie_codage_v1.md
 │   └── lentite_methodologie_workflow_collaboratif_ia_v1.md
@@ -129,7 +129,7 @@ Le YAML M03-M correspondant à la version 3 acteurs a été retiré de `pipeline
 
 ## 6. Pipeline opérationnel
 
-**Localisation.** `pipeline/`. Lire `pipeline/lentite_README_projet.md` pour usage détaillé (document hérité, non encore resynchronisé — voir avertissement en section 9).
+**Localisation.** `pipeline/`. Usage détaillé ci-dessous — `pipeline/lentite_README_projet.md` est désormais un pointeur vers cette section (fusionné tâche 2.1 de `plan_action_002.md`, il dupliquait et avait divergé de ce README ; voir §9 pour l'historique).
 
 ### 6.1 Environnement
 
@@ -182,7 +182,7 @@ TypeError: unsupported operand type(s) for |: 'type' and 'NoneType'
 
 — `schemas.py` (modèles Pydantic v2 selon gabarit v2.1 section 11) + `schemas_m03.py` (extension M03 v2.1 section 11). Licence Apache 2.0.
 
-— `validate_m03.py` (CLI validateur M03). Licence Apache 2.0. **`validate.py` (validateur M01) n'existe pas encore** — restauration prévue tâche 2.1 de `plan_action_002.md`, par dérivation de `validate_m03.py` sur `schemas.py`.
+— `validate.py` (CLI validateur M01, restauré tâche 2.1 par dérivation de `validate_m03.py` sur `schemas.py`) + `validate_m03.py` (CLI validateur M03). Licence Apache 2.0 pour les deux. Interface homogène — rapport structuré (succès détaillé ou erreurs Pydantic ciblées) et code retour exploitable (0 succès, 1 échec).
 
 — `agents/` — cinq prompts cannibalisés du prototype `lentite_observatrice_complet/` (contradicteur, analyste discours, économiste, juriste, sociologue). Non encore adaptés à la doctrine v2.1.1 ni aux schémas durcis (tâche 2.5). Licence AGPL-3.0-only.
 
@@ -191,13 +191,16 @@ TypeError: unsupported operand type(s) for |: 'type' and 'NoneType'
 ### 6.3 Usage actuellement disponible
 
 ```bash
-# Validation d'une analyse M03 (seul validateur CLI opérationnel à ce jour)
+# Validation d'une analyse M01
+python3.11 pipeline/validate.py pipeline/analyses/lecornu_v2_1.yaml
+
+# Validation d'une analyse M03
 python3.11 pipeline/validate_m03.py pipeline/analyses/m03_retraites_octobre_2025_4acteurs_v2_1.yaml
 ```
 
 (Remplacer `python3.11` par `python3` si l'étape 6.1(a) a confirmé une version ≥ 3.10, ou par l'interpréteur du venv actif.)
 
-Il n'existe à ce jour ni option `--all` ni validateur M01 CLI — ces capacités sont prévues en séquence 2 de `plan_action_002.md` (`validate.py`, `graph_builder.py`, audits en CLI, orchestrateur).
+Il n'existe à ce jour aucune option `--all` (validation transversale de tous les fichiers de `pipeline/analyses/` en un seul appel) ni orchestrateur — ces capacités restent prévues en séquence 2 de `plan_action_002.md` (audits en CLI, orchestrateur).
 
 **Contraintes validées par tests négatifs.**
 
@@ -245,13 +248,15 @@ Le Mode 3 (chat public) reste hors scope de cette décision, report doctrinal ma
 
 ### Séquence 0 (hygiène et fondation) — en cours
 
-Exécution de `plan_action_002.md` séquence 0 — git init, purge des doublons, cannibalisation d'`observatrice_complet/`, licences, README, CLA, conventions. **Non fait à ce stade** — resynchronisation de `pipeline/lentite_README_projet.md` (document hérité, distinct du présent fichier, décrivant encore l'état de mai 2026) ; test d'onboarding à froid (tiers clone et valide une analyse sans autre aide) non encore mené.
+Exécution de `plan_action_002.md` séquence 0 — git init, purge des doublons, cannibalisation d'`observatrice_complet/`, licences, README, CLA, conventions. La resynchronisation de `pipeline/lentite_README_projet.md` a été traitée par fusion (tâche 2.1, séquence 2) plutôt que par mise à jour parallèle — voir note ci-dessous. **Reste non fait** — test d'onboarding à froid (tiers clone et valide une analyse sans autre aide) par une instance ou un opérateur véritablement indépendant (écart signalé au journal, `journal/lentite_journal.md`).
+
+**Note sur `pipeline/lentite_README_projet.md`.** Ce document dupliquait partiellement le présent README et avait dérivé de l'état réel du dépôt (chemins obsolètes datant de mai 2026, `validate.py` annoncé absent, licences non mentionnées). Plutôt que de le resynchroniser (ce qui aurait recréé deux documents vivants sur le même sujet, avec le même risque de dérive), il a été réduit à un pointeur vers la présente section — discipline anti-cumul, `conventions.md` §6.1. Choix signalé, alternative examinée — resynchronisation intégrale du document, écartée pour ne pas entretenir durablement deux sources sur l'usage du pipeline.
 
 ### Séquences suivantes
 
-**Séquence 1 — durcissement du gabarit couche B.** Bloc omission durci, bitemporalité minimale, politique de corpus v1, grille de calibration. Revalidation du corpus (douze YAML) sous le gabarit durci.
+**Séquence 1 — durcissement du gabarit couche B (close).** Bloc omission durci, bitemporalité minimale, politique de corpus v1, grille de calibration, revalidation du corpus (douze YAML) sous le gabarit durci. Critère de sortie satisfait — voir `journal/lentite_journal.md`.
 
-**Séquence 2 — prototype pipeline.** `validate.py` M01 restauré, `graph_builder.py` (YAML → NetworkX → exports), trois audits du gabarit en CLI, orchestrateur minimal (texte source → 4 agents → YAML → validation), test de bout en bout étalonné sur un texte source réel.
+**Séquence 2 — prototype pipeline (en cours).** `validate.py` M01 restauré et `schemas_m03.py` étendu à la bitemporalité minimale (tâches 2.0-2.1). Restent — `graph_builder.py` (YAML → NetworkX → exports), trois audits du gabarit en CLI, orchestrateur minimal (texte source → 4 agents → YAML → validation), test de bout en bout étalonné sur un texte source réel.
 
 ### Audits en cours d'accumulation
 
@@ -283,7 +288,7 @@ Les cinq décisions structurantes de codage (orchestration, persistance graphe, 
 
 **Si vous voulez voir des analyses concrètes** — commencer par `analyses/m01/lentite_analyse_fabius_v2_1.md` (cas sobre) pour la lisibilité, puis `analyses/cas_jouets/lentite_cas_jouet_4_ciotti_v2_1.md` (cas adversarial) pour la complexité, puis `analyses/m03/lentite_m03_application_retraites_octobre_2025_4acteurs_v2_1.md` pour l'application comparative.
 
-**Si vous voulez exécuter le pipeline** — vérifier d'abord `python3 --version` (≥ 3.10 requis, voir §6.1), installer les dépendances (`python3.11 -m pip install -r requirements.txt`), puis valider une analyse M03 (`python3.11 pipeline/validate_m03.py pipeline/analyses/<fichier>.yaml`). Le validateur M01 n'est pas encore disponible.
+**Si vous voulez exécuter le pipeline** — vérifier d'abord `python3 --version` (≥ 3.10 requis, voir §6.1), installer les dépendances (`python3.11 -m pip install -r requirements.txt`), puis valider une analyse M01 (`python3.11 pipeline/validate.py pipeline/analyses/<fichier>.yaml`) ou M03 (`python3.11 pipeline/validate_m03.py pipeline/analyses/<fichier>.yaml`).
 
 **Si vous voulez critiquer la doctrine** — examiner les fixtures `analyses/cas_jouets/` et les tests négatifs `pipeline/tests/`. Les contraintes mordantes sont documentées dans le pipeline.
 
