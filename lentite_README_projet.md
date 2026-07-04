@@ -24,8 +24,8 @@ Pour la doctrine complète, lire `doctrine/V2.1/lentite_charte_v2_1.md`. Le pré
 | Cas-jouets canoniques | 6/6 instanciés |
 | Analyses M01 sur cas réels | 7 produites (Fabius, Ciotti, Lecornu, Vallaud, Panot, Bayrou, Barnier) |
 | Applications M03 sur cas réels | 2 produites (retraites octobre 2025 à 4 acteurs, Bayrou-Barnier-Lecornu) |
-| Pipeline de validation | Pydantic v2 — validateurs M01-M et M03-M tous deux opérationnels en CLI (`validate.py`, `validate_m03.py`, tâche 2.1) |
-| Tests négatifs pipeline | 3/3 confirment que les contraintes mordent |
+| Pipeline de validation | Pydantic v2 — validateurs M01-M et M03-M opérationnels en CLI, gabarit durci (`2.1-durci-seq1`) sur les deux schémas, `graph_builder.py` opérationnel (tâches 2.0-2.2) |
+| Tests négatifs pipeline | 6/6 confirment que les contraintes mordent |
 | Décisions structurantes Phase 0 (codage) | 5/5 prises le 3 juillet 2026 — voir `.claude/decisions/` |
 | Dépôt git | initialisé le 3 juillet 2026 — jalon 1 (dépôt privé) de la décision 005 |
 | Licence | tri-partition posée (décision 004) — `LICENSE`, `LICENSES/`, en-têtes SPDX, voir section 6 |
@@ -42,7 +42,7 @@ lentite/
 ├── lentite_README_projet.md           ← ce fichier
 ├── LICENSE                            ← AGPL-3.0 (licence par défaut du dépôt)
 ├── LICENSES/                          ← AGPL-3.0, Apache-2.0, CC-BY-SA-4.0 (textes intégraux)
-├── requirements.txt                   ← dépendances Python épinglées (pydantic, PyYAML)
+├── requirements.txt                   ← dépendances Python épinglées (pydantic, PyYAML, networkx)
 ├── doctrine/                          ← couches A, B, C
 │   ├── V2/                            ← obsolète, conservée par discipline du journal
 │   └── V2.1/                          ← canonique courante
@@ -184,9 +184,11 @@ TypeError: unsupported operand type(s) for |: 'type' and 'NoneType'
 
 — `validate.py` (CLI validateur M01, restauré tâche 2.1 par dérivation de `validate_m03.py` sur `schemas.py`) + `validate_m03.py` (CLI validateur M03). Licence Apache 2.0 pour les deux. Interface homogène — rapport structuré (succès détaillé ou erreurs Pydantic ciblées) et code retour exploitable (0 succès, 1 échec).
 
+— `graph_builder.py` (tâche 2.2) — ingestion de tous les YAML valides de `pipeline/analyses/` en un graphe NetworkX (nœuds et arêtes typés, attributs épistémiques sur les arêtes : source, confiance, méthode, dates), export `exports/graphe.graphml` + `exports/graphe.json` (non versionnés, `.gitignore`), reconstruction intégrale à chaque exécution — pas d'état incrémental (décision 002). Licence AGPL-3.0-only (moteur d'orchestration/dérivation, distinct de la spécification).
+
 — `agents/` — cinq prompts cannibalisés du prototype `lentite_observatrice_complet/` (contradicteur, analyste discours, économiste, juriste, sociologue). Non encore adaptés à la doctrine v2.1.1 ni aux schémas durcis (tâche 2.5). Licence AGPL-3.0-only.
 
-— `analyses/*.yaml` (douze YAML d'analyses M01-M/M03-M validés, CC BY-SA 4.0) + `tests/*.yaml` (trois YAML défaillants délibérément, Apache 2.0, validation que les contraintes mordent).
+— `analyses/*.yaml` (douze YAML d'analyses M01-M/M03-M validés sous le gabarit durci `2.1-durci-seq1`, CC BY-SA 4.0) + `tests/*.yaml` (six YAML défaillants délibérément, Apache 2.0, validation que les contraintes mordent).
 
 ### 6.3 Usage actuellement disponible
 
@@ -196,11 +198,14 @@ python3.11 pipeline/validate.py pipeline/analyses/lecornu_v2_1.yaml
 
 # Validation d'une analyse M03
 python3.11 pipeline/validate_m03.py pipeline/analyses/m03_retraites_octobre_2025_4acteurs_v2_1.yaml
+
+# Construction du graphe cognitif à partir de tout le corpus validé
+python3.11 pipeline/graph_builder.py
 ```
 
 (Remplacer `python3.11` par `python3` si l'étape 6.1(a) a confirmé une version ≥ 3.10, ou par l'interpréteur du venv actif.)
 
-Il n'existe à ce jour aucune option `--all` (validation transversale de tous les fichiers de `pipeline/analyses/` en un seul appel) ni orchestrateur — ces capacités restent prévues en séquence 2 de `plan_action_002.md` (audits en CLI, orchestrateur).
+Il n'existe à ce jour aucune option `--all` sur les validateurs (validation transversale de tous les fichiers de `pipeline/analyses/` en un seul appel) ni orchestrateur, ni audits du gabarit en CLI — ces capacités restent prévues en séquence 2 de `plan_action_002.md` (tâches 2.3-2.7).
 
 **Contraintes validées par tests négatifs.**
 
@@ -256,7 +261,7 @@ Exécution de `plan_action_002.md` séquence 0 — git init, purge des doublons,
 
 **Séquence 1 — durcissement du gabarit couche B (close).** Bloc omission durci, bitemporalité minimale, politique de corpus v1, grille de calibration, revalidation du corpus (douze YAML) sous le gabarit durci. Critère de sortie satisfait — voir `journal/lentite_journal.md`.
 
-**Séquence 2 — prototype pipeline (en cours).** `validate.py` M01 restauré et `schemas_m03.py` étendu à la bitemporalité minimale (tâches 2.0-2.1). Restent — `graph_builder.py` (YAML → NetworkX → exports), trois audits du gabarit en CLI, orchestrateur minimal (texte source → 4 agents → YAML → validation), test de bout en bout étalonné sur un texte source réel.
+**Séquence 2 — prototype pipeline (en cours).** Fait — `schemas_m03.py` étendu à la bitemporalité minimale et les 2 YAML M03 revalidés (tâche 2.0), `validate.py` M01 restauré (tâche 2.1), `graph_builder.py` opérationnel sur les 12 YAML du corpus (tâche 2.2). Restent — trois audits du gabarit en CLI, orchestrateur minimal (texte source → 4 agents → YAML → validation), test de bout en bout étalonné sur un texte source réel (tâches 2.3-2.7).
 
 ### Audits en cours d'accumulation
 
@@ -318,10 +323,10 @@ Les cinq décisions structurantes de codage (orchestration, persistance graphe, 
 
 ## Métadonnées du README
 
-- *Version du README* : 2.0
-- *Date d'édition* : 3 juillet 2026 (resynchronisation, tâche 0.5 de `plan_action_002.md`)
-- *État du projet à la date* : cinq décisions structurantes de codage prises, dépôt git initialisé, séquence 0 (hygiène) en cours d'exécution, 7 analyses M01 + 2 applications M03 + 6 cas-jouets canoniques
-- *Prochaine révision attendue* : à la clôture de la séquence 0 (test d'onboarding à froid) ou après la séquence 1 (durcissement du gabarit)
+- *Version du README* : 2.1
+- *Date d'édition* : 4 juillet 2026 (tâche 2.1 de `plan_action_002.md` — restauration de `validate.py`, fusion de `pipeline/lentite_README_projet.md`)
+- *État du projet à la date* : séquence 1 close (gabarit durci sur M01 et M03), séquence 2 en cours — `validate.py`, `schemas_m03.py` durci, `graph_builder.py` opérationnels (tâches 2.0-2.2) ; 7 analyses M01 + 2 applications M03 + 6 cas-jouets canoniques, 12/12 sous gabarit `2.1-durci-seq1`
+- *Prochaine révision attendue* : après les tâches 2.3-2.7 (audits CLI, orchestrateur, étalonnage) ou à la clôture du test d'onboarding à froid par un tiers indépendant (séquence 0 restant ouverte, voir journal)
 
 ---
 
