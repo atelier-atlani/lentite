@@ -6,6 +6,8 @@
 SPDX-License-Identifier: AGPL-3.0-only
 Origine : lentite_observatrice_complet/etape_3_prompt_sociologue_v1_0.md (14 mai 2026)
 Cannibalisé vers pipeline/agents/ le 3 juillet 2026 — plan_action_002.md, tâche 0.3.
+
+Statut v2.1.1 (4 juillet 2026, plan_action_002.md tâche 2.5) : poste disciplinaire réservé à l'architecture multi-postes post-moratoire (communication/00_document_maitre.md §3, axe « postes d'observation multiples »). NON utilisé par le pipeline linéaire v1 (orchestrateur, tâche 2.4) — celui-ci mobilise quatre agents fonctionnels distincts (Charité, Vulnérabilités, Chaînes causales, Synthèse), versionnés séparément dans pipeline/agents/fonctionnels/.
 -->
 
 ---
