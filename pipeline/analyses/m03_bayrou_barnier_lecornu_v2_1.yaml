@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: CC-BY-SA-4.0
 method_id: M03_ANALYSE_COMPARATIVE_MULTI_ACTEURS
 method_version: "2.1"
+gabarit_version: "2.1-durci-seq1"
 analysis_id: M03_BAYROU_BARNIER_LECORNU_v2_1
 execution_date: 2026-05-17
 execution_mode: applicable_complete
@@ -45,47 +46,47 @@ structuring_propositions:
   - {proposition_id: P6, label: "La fermeté immigration et sécurité est une concession structurelle au RN pour éviter convergence avec gauche"}
 
 epistemic_position_matrix:
-  - {actor: MICHEL_BARNIER, proposition: P1, regime: refutes, confidence: 0.80, note: "aménagements ciblés sans suspension"}
-  - {actor: MICHEL_BARNIER, proposition: P2, regime: refutes_implicitly, confidence: 0.85, note: "recours au 49.3 sur PLFSS"}
-  - {actor: MICHEL_BARNIER, proposition: P3, regime: Asserts, confidence: 0.85}
-  - {actor: MICHEL_BARNIER, proposition: P4, regime: Asserts, confidence: 0.65, note: "mobilisation déclarative sans procédure formalisée"}
-  - {actor: MICHEL_BARNIER, proposition: P5, regime: Asserts_with_K_claim, confidence: 0.85}
-  - {actor: MICHEL_BARNIER, proposition: P6, regime: Asserts, confidence: 0.80}
-  - {actor: FRANCOIS_BAYROU, proposition: P1, regime: refutes, confidence: 0.80, note: "procédure sans suspension"}
-  - {actor: FRANCOIS_BAYROU, proposition: P2, regime: silent, confidence: 0.80}
-  - {actor: FRANCOIS_BAYROU, proposition: P3, regime: ambiguous_B_silent, confidence: 0.70}
-  - {actor: FRANCOIS_BAYROU, proposition: P4, regime: Asserts, confidence: 0.85, note: "mobilisation procédurale par conclave 4 mois"}
-  - {actor: FRANCOIS_BAYROU, proposition: P5, regime: Asserts, confidence: 0.75, note: "avec aménagements"}
-  - {actor: FRANCOIS_BAYROU, proposition: P6, regime: silent, confidence: 0.80}
-  - {actor: SEBASTIEN_LECORNU, proposition: P1, regime: Asserts_with_K_claim, confidence: 0.90, note: "suspension annoncée et votée"}
-  - {actor: SEBASTIEN_LECORNU, proposition: P2, regime: Asserts, confidence: 0.90, note: "rompu broken_explicitly 19 janvier 2026"}
-  - {actor: SEBASTIEN_LECORNU, proposition: P3, regime: refutes, confidence: 0.80, note: "concession substantielle annoncée"}
-  - {actor: SEBASTIEN_LECORNU, proposition: P4, regime: refutes, confidence: 0.70, note: "court-circuit législatif sans paritarisme structurant"}
-  - {actor: SEBASTIEN_LECORNU, proposition: P5, regime: ambiguous_B_silent, confidence: 0.65, note: "concession sur retraites pèse"}
-  - {actor: SEBASTIEN_LECORNU, proposition: P6, regime: silent, confidence: 0.80}
+  - {actor: MICHEL_BARNIER, proposition: P1, regime: refutes, confidence: 0.80, note: "aménagements ciblés sans suspension", date_fait: 2024-10-01, date_connaissance: 2026-05-17}
+  - {actor: MICHEL_BARNIER, proposition: P2, regime: refutes_implicitly, confidence: 0.85, note: "recours au 49.3 sur PLFSS", date_fait: 2024-10-01, date_connaissance: 2026-05-17}
+  - {actor: MICHEL_BARNIER, proposition: P3, regime: Asserts, confidence: 0.85, date_fait: 2024-10-01, date_connaissance: 2026-05-17}
+  - {actor: MICHEL_BARNIER, proposition: P4, regime: Asserts, confidence: 0.65, note: "mobilisation déclarative sans procédure formalisée", date_fait: 2024-10-01, date_connaissance: 2026-05-17}
+  - {actor: MICHEL_BARNIER, proposition: P5, regime: Asserts_with_K_claim, confidence: 0.85, date_fait: 2024-10-01, date_connaissance: 2026-05-17}
+  - {actor: MICHEL_BARNIER, proposition: P6, regime: Asserts, confidence: 0.80, date_fait: 2024-10-01, date_connaissance: 2026-05-17}
+  - {actor: FRANCOIS_BAYROU, proposition: P1, regime: refutes, confidence: 0.80, note: "procédure sans suspension", date_fait: 2025-01-14, date_connaissance: 2026-05-17}
+  - {actor: FRANCOIS_BAYROU, proposition: P2, regime: silent, confidence: 0.80, date_fait: 2025-01-14, date_connaissance: 2026-05-17}
+  - {actor: FRANCOIS_BAYROU, proposition: P3, regime: ambiguous_B_silent, confidence: 0.70, date_fait: 2025-01-14, date_connaissance: 2026-05-17}
+  - {actor: FRANCOIS_BAYROU, proposition: P4, regime: Asserts, confidence: 0.85, note: "mobilisation procédurale par conclave 4 mois", date_fait: 2025-01-14, date_connaissance: 2026-05-17}
+  - {actor: FRANCOIS_BAYROU, proposition: P5, regime: Asserts, confidence: 0.75, note: "avec aménagements", date_fait: 2025-01-14, date_connaissance: 2026-05-17}
+  - {actor: FRANCOIS_BAYROU, proposition: P6, regime: silent, confidence: 0.80, date_fait: 2025-01-14, date_connaissance: 2026-05-17}
+  - {actor: SEBASTIEN_LECORNU, proposition: P1, regime: Asserts_with_K_claim, confidence: 0.90, note: "suspension annoncée et votée", date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: SEBASTIEN_LECORNU, proposition: P2, regime: Asserts, confidence: 0.90, note: "rompu broken_explicitly 19 janvier 2026", date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: SEBASTIEN_LECORNU, proposition: P3, regime: refutes, confidence: 0.80, note: "concession substantielle annoncée", date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: SEBASTIEN_LECORNU, proposition: P4, regime: refutes, confidence: 0.70, note: "court-circuit législatif sans paritarisme structurant", date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: SEBASTIEN_LECORNU, proposition: P5, regime: ambiguous_B_silent, confidence: 0.65, note: "concession sur retraites pèse", date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: SEBASTIEN_LECORNU, proposition: P6, regime: silent, confidence: 0.80, date_fait: 2025-10-14, date_connaissance: 2026-05-17}
 
 targeted_objects_matrix:
-  - {actor: MICHEL_BARNIER, object: OV_A, label: "survie immédiate du gouvernement", status: aimed, confidence: 0.85, efficiency: non_efficient, grounded_in: [M01_BARNIER_DPG_20241001_v2_1]}
-  - {actor: MICHEL_BARNIER, object: OV_B, label: "positionnement pré-présidentiel 2027", status: aimed, confidence: 0.75, efficiency: efficient_partiel, grounded_in: [M01_BARNIER_DPG_20241001_v2_1]}
-  - {actor: MICHEL_BARNIER, object: OV_C, label: "maîtrise budgétaire et crédibilité Commission européenne", status: aimed, confidence: 0.80, efficiency: efficient_partiel, grounded_in: [M01_BARNIER_DPG_20241001_v2_1]}
-  - {actor: MICHEL_BARNIER, object: OV_D, label: "cohésion coalition LR-macroniste", status: aimed, confidence: 0.80, efficiency: efficient, grounded_in: [M01_BARNIER_DPG_20241001_v2_1]}
-  - {actor: MICHEL_BARNIER, object: OV_E, label: "détacher PS de motion censure par concession", status: aimed, confidence: 0.75, efficiency: non_efficient, grounded_in: [M01_BARNIER_DPG_20241001_v2_1]}
-  - {actor: MICHEL_BARNIER, object: OV_F, label: "alliance/concertation syndicats CFDT pivot", status: aimed, confidence: 0.55, efficiency: efficient_partiel, grounded_in: [M01_BARNIER_DPG_20241001_v2_1]}
-  - {actor: MICHEL_BARNIER, object: OV_G, label: "disqualification implicite positions rupture", status: aimed, confidence: 0.55, efficiency: non_efficient, grounded_in: [M01_BARNIER_DPG_20241001_v2_1]}
-  - {actor: FRANCOIS_BAYROU, object: OV_A, status: aimed, confidence: 0.85, efficiency: efficient_partiel, grounded_in: [M01_BAYROU_DPG_20250114_v2_1]}
-  - {actor: FRANCOIS_BAYROU, object: OV_B, status: aimed, confidence: 0.65, efficiency: efficient_partiel, grounded_in: [M01_BAYROU_DPG_20250114_v2_1]}
-  - {actor: FRANCOIS_BAYROU, object: OV_C, status: aimed, confidence: 0.75, efficiency: efficient_partiel, grounded_in: [M01_BAYROU_DPG_20250114_v2_1]}
-  - {actor: FRANCOIS_BAYROU, object: OV_D, status: aimed, confidence: 0.70, efficiency: efficient_partiel, grounded_in: [M01_BAYROU_DPG_20250114_v2_1]}
-  - {actor: FRANCOIS_BAYROU, object: OV_E, status: aimed, confidence: 0.80, efficiency: efficient_partiel, grounded_in: [M01_BAYROU_DPG_20250114_v2_1]}
-  - {actor: FRANCOIS_BAYROU, object: OV_F, status: aimed, confidence: 0.75, efficiency: efficient_partiel, grounded_in: [M01_BAYROU_DPG_20250114_v2_1]}
-  - {actor: FRANCOIS_BAYROU, object: OV_G, status: aimed, confidence: 0.55, efficiency: non_efficient, grounded_in: [M01_BAYROU_DPG_20250114_v2_1]}
-  - {actor: SEBASTIEN_LECORNU, object: OV_A, status: aimed, confidence: 0.85, efficiency: efficient_partiel, grounded_in: [M01_LECORNU_DPG_20251014_v2_1]}
-  - {actor: SEBASTIEN_LECORNU, object: OV_B, status: aimed, confidence: 0.55, efficiency: efficient_partiel, grounded_in: [M01_LECORNU_DPG_20251014_v2_1]}
-  - {actor: SEBASTIEN_LECORNU, object: OV_C, status: aimed, confidence: 0.65, efficiency: efficient_partiel, grounded_in: [M01_LECORNU_DPG_20251014_v2_1]}
-  - {actor: SEBASTIEN_LECORNU, object: OV_D, status: aimed, confidence: 0.70, efficiency: efficient_partiel, grounded_in: [M01_LECORNU_DPG_20251014_v2_1]}
-  - {actor: SEBASTIEN_LECORNU, object: OV_E, status: aimed, confidence: 0.85, efficiency: efficient, grounded_in: [M01_LECORNU_DPG_20251014_v2_1]}
-  - {actor: SEBASTIEN_LECORNU, object: OV_F, status: aimed, confidence: 0.70, efficiency: efficient, grounded_in: [M01_LECORNU_DPG_20251014_v2_1]}
-  - {actor: SEBASTIEN_LECORNU, object: OV_G, status: aimed, confidence: 0.55, efficiency: non_efficient, grounded_in: [M01_LECORNU_DPG_20251014_v2_1]}
+  - {actor: MICHEL_BARNIER, object: OV_A, label: "survie immédiate du gouvernement", status: aimed, confidence: 0.85, efficiency: non_efficient, grounded_in: [M01_BARNIER_DPG_20241001_v2_1], date_fait: 2024-10-01, date_connaissance: 2026-05-17}
+  - {actor: MICHEL_BARNIER, object: OV_B, label: "positionnement pré-présidentiel 2027", status: aimed, confidence: 0.75, efficiency: efficient_partiel, grounded_in: [M01_BARNIER_DPG_20241001_v2_1], date_fait: 2024-10-01, date_connaissance: 2026-05-17}
+  - {actor: MICHEL_BARNIER, object: OV_C, label: "maîtrise budgétaire et crédibilité Commission européenne", status: aimed, confidence: 0.80, efficiency: efficient_partiel, grounded_in: [M01_BARNIER_DPG_20241001_v2_1], date_fait: 2024-10-01, date_connaissance: 2026-05-17}
+  - {actor: MICHEL_BARNIER, object: OV_D, label: "cohésion coalition LR-macroniste", status: aimed, confidence: 0.80, efficiency: efficient, grounded_in: [M01_BARNIER_DPG_20241001_v2_1], date_fait: 2024-10-01, date_connaissance: 2026-05-17}
+  - {actor: MICHEL_BARNIER, object: OV_E, label: "détacher PS de motion censure par concession", status: aimed, confidence: 0.75, efficiency: non_efficient, grounded_in: [M01_BARNIER_DPG_20241001_v2_1], date_fait: 2024-10-01, date_connaissance: 2026-05-17}
+  - {actor: MICHEL_BARNIER, object: OV_F, label: "alliance/concertation syndicats CFDT pivot", status: aimed, confidence: 0.55, efficiency: efficient_partiel, grounded_in: [M01_BARNIER_DPG_20241001_v2_1], date_fait: 2024-10-01, date_connaissance: 2026-05-17}
+  - {actor: MICHEL_BARNIER, object: OV_G, label: "disqualification implicite positions rupture", status: aimed, confidence: 0.55, efficiency: non_efficient, grounded_in: [M01_BARNIER_DPG_20241001_v2_1], date_fait: 2024-10-01, date_connaissance: 2026-05-17}
+  - {actor: FRANCOIS_BAYROU, object: OV_A, status: aimed, confidence: 0.85, efficiency: efficient_partiel, grounded_in: [M01_BAYROU_DPG_20250114_v2_1], date_fait: 2025-01-14, date_connaissance: 2026-05-17}
+  - {actor: FRANCOIS_BAYROU, object: OV_B, status: aimed, confidence: 0.65, efficiency: efficient_partiel, grounded_in: [M01_BAYROU_DPG_20250114_v2_1], date_fait: 2025-01-14, date_connaissance: 2026-05-17}
+  - {actor: FRANCOIS_BAYROU, object: OV_C, status: aimed, confidence: 0.75, efficiency: efficient_partiel, grounded_in: [M01_BAYROU_DPG_20250114_v2_1], date_fait: 2025-01-14, date_connaissance: 2026-05-17}
+  - {actor: FRANCOIS_BAYROU, object: OV_D, status: aimed, confidence: 0.70, efficiency: efficient_partiel, grounded_in: [M01_BAYROU_DPG_20250114_v2_1], date_fait: 2025-01-14, date_connaissance: 2026-05-17}
+  - {actor: FRANCOIS_BAYROU, object: OV_E, status: aimed, confidence: 0.80, efficiency: efficient_partiel, grounded_in: [M01_BAYROU_DPG_20250114_v2_1], date_fait: 2025-01-14, date_connaissance: 2026-05-17}
+  - {actor: FRANCOIS_BAYROU, object: OV_F, status: aimed, confidence: 0.75, efficiency: efficient_partiel, grounded_in: [M01_BAYROU_DPG_20250114_v2_1], date_fait: 2025-01-14, date_connaissance: 2026-05-17}
+  - {actor: FRANCOIS_BAYROU, object: OV_G, status: aimed, confidence: 0.55, efficiency: non_efficient, grounded_in: [M01_BAYROU_DPG_20250114_v2_1], date_fait: 2025-01-14, date_connaissance: 2026-05-17}
+  - {actor: SEBASTIEN_LECORNU, object: OV_A, status: aimed, confidence: 0.85, efficiency: efficient_partiel, grounded_in: [M01_LECORNU_DPG_20251014_v2_1], date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: SEBASTIEN_LECORNU, object: OV_B, status: aimed, confidence: 0.55, efficiency: efficient_partiel, grounded_in: [M01_LECORNU_DPG_20251014_v2_1], date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: SEBASTIEN_LECORNU, object: OV_C, status: aimed, confidence: 0.65, efficiency: efficient_partiel, grounded_in: [M01_LECORNU_DPG_20251014_v2_1], date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: SEBASTIEN_LECORNU, object: OV_D, status: aimed, confidence: 0.70, efficiency: efficient_partiel, grounded_in: [M01_LECORNU_DPG_20251014_v2_1], date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: SEBASTIEN_LECORNU, object: OV_E, status: aimed, confidence: 0.85, efficiency: efficient, grounded_in: [M01_LECORNU_DPG_20251014_v2_1], date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: SEBASTIEN_LECORNU, object: OV_F, status: aimed, confidence: 0.70, efficiency: efficient, grounded_in: [M01_LECORNU_DPG_20251014_v2_1], date_fait: 2025-10-14, date_connaissance: 2026-05-17}
+  - {actor: SEBASTIEN_LECORNU, object: OV_G, status: aimed, confidence: 0.55, efficiency: non_efficient, grounded_in: [M01_LECORNU_DPG_20251014_v2_1], date_fait: 2025-10-14, date_connaissance: 2026-05-17}
 
 cross_matrix_salient_cases:
   - type: convergence_proposition_divergence_aim
@@ -158,19 +159,19 @@ arena_structure:
 comparative_downstream_chains:
   - actor: MICHEL_BARNIER
     observable_effects:
-      - {object: OV_A, effect: contestation_forte, description: "censure 4 décembre 2024 par 331 voix - première censure depuis 1962"}
-      - {object: OV_E, effect: contestation_forte, description: "convergence PS-RN sur censure - échec stratégique calcul division oppositions"}
-      - {object: OV_F, effect: confirmation_institutionnelle, description: "mobilisation déclarative paritarisme tenue mais non actualisée"}
+      - {object: OV_A, effect: contestation_forte, description: "censure 4 décembre 2024 par 331 voix - première censure depuis 1962", date_fait: 2024-12-04, date_connaissance: 2026-05-17}
+      - {object: OV_E, effect: contestation_forte, description: "convergence PS-RN sur censure - échec stratégique calcul division oppositions", date_fait: 2024-12-04, date_connaissance: 2026-05-17}  # même vote que OV_A
+      - {object: OV_F, effect: confirmation_institutionnelle, description: "mobilisation déclarative paritarisme tenue mais non actualisée", date_fait: non_documente, date_connaissance: 2026-05-17}
   - actor: FRANCOIS_BAYROU
     observable_effects:
-      - {object: OV_A, effect: amplification_partielle, description: "8 mois de gouvernement puis censure 9 septembre 2025"}
-      - {object: OV_E, effect: amplification_partielle, description: "PS non-censure jusqu'en mai 2025 puis durcissement progressif jusqu'à sortie septembre 2025"}
-      - {object: OV_F, effect: confirmation_institutionnelle, description: "CFDT a accepté conclave - procédure aboutie même sans accord formel"}
+      - {object: OV_A, effect: amplification_partielle, description: "8 mois de gouvernement puis censure 9 septembre 2025", date_fait: 2025-09-09, date_connaissance: 2026-05-17}
+      - {object: OV_E, effect: amplification_partielle, description: "PS non-censure jusqu'en mai 2025 puis durcissement progressif jusqu'à sortie septembre 2025", date_fait: non_documente, date_connaissance: 2026-05-17}  # processus continu, pas un fait daté unique
+      - {object: OV_F, effect: confirmation_institutionnelle, description: "CFDT a accepté conclave - procédure aboutie même sans accord formel", date_fait: 2025-06-26, date_connaissance: 2026-05-17}  # sourcé dans analyses/bayrou_v2_1.yaml (amendement 1.5, bilan conclave 26/06/2025)
   - actor: SEBASTIEN_LECORNU
     observable_effects:
-      - {object: OV_A, effect: confirmation_institutionnelle, description: "en fonction à mai 2026 - 7+ mois"}
-      - {object: OV_E, effect: confirmation_institutionnelle, description: "suspension votée 255 voix 12 novembre 2025 - PS non-censure malgré broken_explicitly 49.3 janvier 2026"}
-      - {object: OV_F, effect: confirmation_institutionnelle, description: "CFDT a accepté suspension - concession substantielle satisfaisante"}
+      - {object: OV_A, effect: confirmation_institutionnelle, description: "en fonction à mai 2026 - 7+ mois", date_fait: non_documente, date_connaissance: 2026-05-17}  # statut continu, pas un jour unique
+      - {object: OV_E, effect: confirmation_institutionnelle, description: "suspension votée 255 voix 12 novembre 2025 - PS non-censure malgré broken_explicitly 49.3 janvier 2026", date_fait: 2025-11-12, date_connaissance: 2026-05-17}
+      - {object: OV_F, effect: confirmation_institutionnelle, description: "CFDT a accepté suspension - concession substantielle satisfaisante", date_fait: 2025-11-12, date_connaissance: 2026-05-17}  # même vote de suspension que OV_E
 
 asymmetries_of_benefit:
   - effect_label: "Censure Barnier 4 décembre 2024"
@@ -193,12 +194,12 @@ asymmetries_of_benefit:
     actors_not_benefiting: [doctrine_frontalite_substantive_invalidee, doctrine_proceduralisation_pure_invalidee]
 
 invalidated_predictions:
-  - {actor: MICHEL_BARNIER, predicted: "calcul de division PS-RN par concessions ciblées", observation_to_date: "convergence PS-RN sur censure 4 décembre 2024", pattern_type: never_observed}
-  - {actor: MICHEL_BARNIER, predicted: "adoption PLF 2025 avec trajectoire déficit 5%", observation_to_date: "PLF 2025 adopté sous Bayrou avec trajectoire modifiée", pattern_type: never_observed}
-  - {actor: FRANCOIS_BAYROU, predicted: "déficit caché à 55 milliards révélé par Cour des comptes", observation_to_date: "Cour valide estimation COR à 15 Mds en 2035", pattern_type: never_observed}
-  - {actor: FRANCOIS_BAYROU, predicted: "conclave aboutissant à accord paritaire", observation_to_date: "bilan 26 juin 2025 sans accord formel", pattern_type: observed_otherwise}
-  - {actor: FRANCOIS_BAYROU, predicted: "évolution constitutionnelle Corse fin 2025", observation_to_date: "pas de révision aboutie à mai 2026", pattern_type: never_observed}
-  - {actor: SEBASTIEN_LECORNU, predicted: "renoncement au 49.3 sur PLF 2026", observation_to_date: "rupture explicite 19 janvier 2026 avec motivation publique 350h débat", pattern_type: broken_explicitly}
+  - {actor: MICHEL_BARNIER, predicted: "calcul de division PS-RN par concessions ciblées", observation_to_date: "convergence PS-RN sur censure 4 décembre 2024", pattern_type: never_observed, date_fait: 2024-12-04, date_connaissance: 2026-05-17}
+  - {actor: MICHEL_BARNIER, predicted: "adoption PLF 2025 avec trajectoire déficit 5%", observation_to_date: "PLF 2025 adopté sous Bayrou avec trajectoire modifiée", pattern_type: never_observed, date_fait: non_documente, date_connaissance: 2026-05-17}
+  - {actor: FRANCOIS_BAYROU, predicted: "déficit caché à 55 milliards révélé par Cour des comptes", observation_to_date: "Cour valide estimation COR à 15 Mds en 2035", pattern_type: never_observed, date_fait: 2025-02-20, date_connaissance: 2026-05-17}
+  - {actor: FRANCOIS_BAYROU, predicted: "conclave aboutissant à accord paritaire", observation_to_date: "bilan 26 juin 2025 sans accord formel", pattern_type: observed_otherwise, date_fait: 2025-06-26, date_connaissance: 2026-05-17}
+  - {actor: FRANCOIS_BAYROU, predicted: "évolution constitutionnelle Corse fin 2025", observation_to_date: "pas de révision aboutie à mai 2026", pattern_type: never_observed, date_fait: non_documente, date_connaissance: 2026-05-17}
+  - {actor: SEBASTIEN_LECORNU, predicted: "renoncement au 49.3 sur PLF 2026", observation_to_date: "rupture explicite 19 janvier 2026 avec motivation publique 350h débat", pattern_type: broken_explicitly, date_fait: 2026-01-19, date_connaissance: 2026-05-17}
 
 epistemic_synthesis:
   competing_hypotheses:
