@@ -203,6 +203,35 @@ def add_m03_analysis(g: nx.MultiDiGraph, analysis: M03Analysis) -> None:
         )
 
 
+def _levenshtein(a: str, b: str) -> int:
+    """Distance d'édition simple (insertion/suppression/substitution, coût 1)."""
+    if a == b:
+        return 0
+    prev = list(range(len(b) + 1))
+    for i, ca in enumerate(a, start=1):
+        curr = [i] + [0] * len(b)
+        for j, cb in enumerate(b, start=1):
+            cost = 0 if ca == cb else 1
+            curr[j] = min(prev[j] + 1, curr[j - 1] + 1, prev[j - 1] + cost)
+        prev = curr
+    return prev[-1]
+
+
+def report_near_duplicate_identifiers(g: nx.MultiDiGraph, threshold: int = 2) -> list[str]:
+    """Convention §2.5 (conventions.md) — identifiants d'acteur/locuteur globaux,
+    non namespacés par analyse. Une divergence de graphie (typo, variante) casse
+    silencieusement la fusion de nœuds M01/M03 dans le graphe. Signale toute paire
+    d'identifiants `person` distincts à distance d'édition <= threshold."""
+    person_ids = sorted(n for n, attrs in g.nodes(data=True) if attrs.get("kind") == "person")
+    findings = []
+    for i, a in enumerate(person_ids):
+        for b in person_ids[i + 1 :]:
+            d = _levenshtein(a, b)
+            if 0 < d <= threshold:
+                findings.append(f"  • {a!r} ~ {b!r} (distance d'édition = {d})")
+    return findings
+
+
 def build_graph(analyses_dir: Path) -> nx.MultiDiGraph:
     """Ingère tous les YAML de analyses_dir. Les fichiers qui ne valident
     pas contre leur schéma sont ignorés et signalés — seuls les YAML
@@ -254,6 +283,14 @@ def main() -> int:
     print(f"Graphe reconstruit — {g.number_of_nodes()} nœuds, {g.number_of_edges()} arêtes")
     print(f"Export GraphML : {graphml_path}")
     print(f"Export JSON    : {json_path}")
+
+    near_duplicates = report_near_duplicate_identifiers(g)
+    print()
+    if near_duplicates:
+        print("⚠ Quasi-doublons d'identifiants d'acteur détectés (conventions.md §2.5) :")
+        print("\n".join(near_duplicates))
+    else:
+        print("✓ Aucun quasi-doublon d'identifiant d'acteur détecté (conventions.md §2.5).")
     return 0
 
 
