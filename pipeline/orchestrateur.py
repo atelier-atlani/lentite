@@ -95,15 +95,34 @@ class AnthropicAgentCaller:
         self._client = anthropic.Anthropic(api_key=api_key)
 
     def __call__(self, model: str, prompt: str) -> tuple[str, dict]:
-        # 8192 s'est révélé insuffisant à l'exécution réelle (tâche 2.7) — l'agent
-        # Synthèse recopie l'intégralité des fragments précédents, ce qui tronque
-        # la réponse en fin de YAML sur un discours de taille réelle. Relevé à
-        # 16000 (valeur empirique constatée suffisante, pas une limite doctrinale).
-        response = self._client.messages.create(
+        # thinking désactivé explicitement : sur claude-sonnet-5, omettre le
+        # paramètre active le raisonnement étendu adaptatif par défaut (à la
+        # différence d'Opus 4.7/4.8). Constaté à l'exécution réelle tâche 2.7 —
+        # sur le prompt Charité (long, discours source intégral inclus), le
+        # modèle a consacré la totalité du budget de sortie au bloc de
+        # raisonnement interne, laissant zéro token pour le YAML attendu
+        # (stop_reason="max_tokens", un seul bloc type="thinking", aucun bloc
+        # "text"). Les agents fonctionnels sont des tâches d'extraction
+        # déterministe suivant une procédure prescrite par le prompt — le
+        # raisonnement du modèle n'apporte rien ici, seul le YAML de sortie
+        # compte, donc thinking est coupé plutôt que budgété.
+        #
+        # max_tokens=64000 en streaming : 16000 (puis 8192) se sont révélés
+        # insuffisants à l'exécution réelle (tâche 2.7) même une fois thinking
+        # coupé — la réponse Charité seule sur le discours réel a atteint
+        # stop_reason="max_tokens" à 16000 tokens de texte, tronquée en plein
+        # YAML (l'agent Synthèse, qui recopie l'intégralité des fragments
+        # précédents, est structurellement plus long encore). Le streaming est
+        # requis par le SDK au-delà d'environ 16000 tokens de sortie en mode
+        # non-streaming (garde-fou contre les timeouts HTTP) — get_final_message()
+        # restitue la réponse complète sans traitement événementiel.
+        with self._client.messages.stream(
             model=model,
-            max_tokens=16000,
+            max_tokens=64000,
+            thinking={"type": "disabled"},
             messages=[{"role": "user", "content": prompt}],
-        )
+        ) as stream:
+            response = stream.get_final_message()
         text = "".join(block.text for block in response.content if block.type == "text")
         usage = {
             "input_tokens": response.usage.input_tokens,
