@@ -150,3 +150,57 @@ Deux appels supplémentaires (Diag. 1, contrôle trivial ; Diag. 2, non re-captu
 ## 6. Conclusion pour le Mode Reviewer
 
 Le prototype technique est **architecturalement complet** : gabarit durci et testé, pipeline de validation et de graphe opérationnel, trois audits produisant des résultats réels et interprétables, orchestrateur avec boucle de réinjection fonctionnant exactement comme spécifié. Ce qui reste ouvert n'est pas une pièce manquante mais une démonstration non aboutie : aucune exécution réelle de l'orchestrateur n'a encore produit de YAML M01-M validé, pour une cause de génération (discipline de guillemetage YAML) diagnostiquée avec précision mais non corrigée dans ce plan (hors mandat du lot {2.7}, qui portait sur l'exécution, pas la révision des prompts). Trois décisions structurantes attendent l'arbitrage du Reviewer/Architecte : le choix entre quotage renforcé et sortie JSON structurée (§4.1), le statut de clôture formelle de la séquence 2 (§4.4, §1), et la disposition à prendre sur l'écart §9 de la séquence 0 (onboarding par un tiers réellement indépendant).
+
+---
+
+## 7. Addendum — lot {2.8}, correctif structurel et comptabilité API complète
+
+*Ajouté le 5 juillet 2026, en exécution de `.claude/reviews/revue_002.md` §4. Append-only — n'amende aucun constat des sections 1 à 6 ci-dessus, qui restent l'état de fin de lot {2.7}.*
+
+### 7.1 Correctif structurel appliqué
+
+Les quatre agents fonctionnels produisent désormais une sortie JSON structurée, contrainte côté API par `output_config.format` du SDK Anthropic (`anthropic==0.116.0`, version épinglée) — schémas dérivés mécaniquement des modèles Pydantic déjà normatifs (`pipeline/agent_schemas.py`, nouveau), jamais redéfinis en parallèle. L'orchestrateur assemble et convertit désormais seul le JSON en YAML (`dump_yaml_forcing_quotes`, sérialiseur forçant le quotage des chaînes ambiguës) — le modèle n'écrit plus lui-même de YAML. L'agent Synthèse ne recopie plus les sorties des trois agents précédents (changement de périmètre de son schéma de sortie, prompts v2.0 pour les quatre agents). Dix-neuf tests unitaires nouveaux (`pipeline/tests/test_orchestrateur.py`) couvrent l'assemblage (`merge_fragments`, `units` inclus) et la conversion JSON→YAML, verts sans appel réseau ; aucune régression sur la suite existante (12/12 YAML positifs, 6/6 négatifs).
+
+**Deux défauts réels, non anticipés, trouvés et corrigés en cours de lot — uniquement par l'exécution réelle :**
+
+1. **Virgule finale avant crochet/accolade fermante.** `output_config.format` réduit fortement mais n'élimine pas en pratique le risque de JSON syntaxiquement malformé — observé deux fois indépendamment sur l'agent Charité, à chaque fois en fin de liste `speech_acts`, avec un volume de sortie très inférieur au plafond de tokens (donc pas une troncature). Corrigé par une réparation mécanique ciblée (`parse_json_fragment`, expression régulière retirant les virgules immédiatement suivies d'un crochet ou d'une accolade fermante) — une classe d'erreur strictement syntaxique et non ambiguë, sans invention de contenu. Confirme la piste de repli anticipée par `revue_002.md` §4 point 1 (« sinon consigne de format stricte + parsing »).
+2. **Référence circulaire de schéma.** `schemas.InferredFunction` est auto-référent (`alternative_functions: list["InferredFunction"]`), légitime pour la validation Pydantic finale mais rejeté par l'API pour `output_config.format` (« Circular reference detected... InferredFunction -> InferredFunction »). Corrigé par un modèle de sortie structurée plafonnant la récursion à un niveau (`InferredFunctionOutput`/`InferredFunctionAlternative`, `pipeline/agent_schemas.py`) — le schéma de validation finale n'est pas affecté.
+
+**Une limite d'infrastructure non corrigée, documentée telle quelle.** Une tentative sur cinq a échoué avec `Grammar compilation timed out` sur le schéma de l'agent Chaînes causales (9030 caractères) — après qu'un schéma plus grand (Vulnérabilités, 9535 caractères) a réussi dans la même tentative, ce qui exclut une limite déterministe de taille et pointe vers une variabilité d'infrastructure côté API plutôt qu'un défaut du schéma. Un nouvel essai complet a réussi sans aucune erreur d'infrastructure. Non retenu comme un échec structurel au sens de `revue_002.md` §4 point 3 — traité comme une flakiness d'infrastructure, résolue par un ré-essai, pas par une révision d'architecture.
+
+### 7.2 Ré-exécution 2.7 sur le corpus Lecornu — échec documenté recevable
+
+La cinquième tentative a exécuté le pipeline complet sans aucune erreur d'infrastructure ou de format — Charité, Vulnérabilités, Chaînes causales, puis Synthèse sur ses deux itérations autorisées. Échec final à la validation Pydantic, pas à la génération : certaines omissions produites par l'agent Vulnérabilités ont laissé `date_fait`/`date_connaissance` à la sentinelle par défaut `non_renseigne` plutôt qu'à `non_documente` (recherché, absent des sources) — violation du validateur de bitemporalité durcie (tâche 1.2, séquence 1). L'erreur porte sur des champs de l'agent Vulnérabilités, pas de Synthèse ; conformément à la conception du prompt Synthèse v2.0, la réinjection à la deuxième itération n'a pas pu corriger un champ hors de son périmètre — comportement attendu, pas un dysfonctionnement de la boucle de réinjection elle-même, qui a fonctionné exactement comme conçue (rapport d'erreurs lu, deux itérations consommées, échec propre avec logs complets).
+
+C'est un échec de contenu ordinaire (compliance incomplète d'un agent aux sentinelles prescrites), catégoriquement différent des trois défauts structurels ci-dessus (tous résolus) et du conflit prose-riche/YAML-nu du lot 2.7 (éliminé par la sortie JSON structurée — zéro occurrence sur les cinq tentatives de ce lot). Conformément à l'instruction du lot 2.8 (« échec documenté recevable »), ce résultat est le livrable de la tâche 3. `exports/etalonnage_001.md` n'est donc pas produit — condition explicite de la tâche 4 non remplie (pas de YAML validé).
+
+### 7.3 Comptabilité API complète du lot {2.8}
+
+Modèle : `claude-sonnet-5`. Tarification intro en vigueur (jusqu'au 2026-08-31) : $2,00 / 1M tokens d'entrée, $10,00 / 1M tokens de sortie — même méthode que l'addendum du lot {2.7} (§5 ci-dessus).
+
+| Appel | Contexte | Entrée | Sortie | Coût |
+|---|---|---:|---:|---:|
+| Test de fumée (schéma trivial, hors pipeline) | Validation du mécanisme `output_config.format` + `transform_schema` avant intégration | 324 | 33 | 0,0010 $ |
+| Tentative 1 — Charité | Virgule finale (avant correctif) | 17 844 | 7 796 | 0,1136 $ |
+| Tentative 2 — Charité | Virgule finale (avant correctif) | 17 844 | 5 984 | 0,0955 $ |
+| Tentative 3 — Charité | Réussi (après correctif virgule finale) | 17 844 | 7 999 | 0,1157 $ |
+| Tentative 3 — Vulnérabilités | Rejeté avant génération — référence circulaire de schéma | `non_documente` (400, aucun token facturé) | `non_documente` | 0,0000 $ |
+| Tentative 4 — Charité | Réussi | 17 844 | 6 656 | 0,1022 $ |
+| Tentative 4 — Vulnérabilités | Réussi (après correctif référence circulaire) | 26 835 | 7 546 | 0,1291 $ |
+| Tentative 4 — Chaînes causales | Rejeté avant génération — timeout de compilation de grammaire | `non_documente` (400, aucun token facturé) | `non_documente` | 0,0000 $ |
+| Tentative 5 — Charité | Réussi | 17 844 | 5 312 | 0,0888 $ |
+| Tentative 5 — Vulnérabilités | Réussi | 25 343 | 6 852 | 0,1192 $ |
+| Tentative 5 — Chaînes causales | Réussi | 32 918 | 4 672 | 0,1126 $ |
+| Tentative 5 — Synthèse (itération 1) | Réussi (échec de validation subséquent, hors périmètre Synthèse) | 35 772 | 2 667 | 0,0982 $ |
+| Tentative 5 — Synthèse (itération 2) | Réussi (échec de validation confirmé, hors périmètre Synthèse) | 35 951 | 2 422 | 0,0961 $ |
+| **Total mesuré (11 appels facturés)** | | **246 363** | **57 939** | **1,0721 $** |
+
+Deux appels rejetés avant génération (référence circulaire, timeout de grammaire) ne portent aucun token facturé — la sentinelle `non_documente` est retenue plutôt qu'une estimation, cohérente avec la discipline déjà appliquée à l'addendum du lot {2.7}.
+
+### 7.4 Cumul lot {2.7} + lot {2.8}
+
+| | Entrée | Sortie | Coût |
+|---|---:|---:|---:|
+| Lot {2.7} (§5, quatre exécutions orchestrateur + diagnostics mesurés) | 377 159 | 205 315 | 2,8075 $ |
+| Lot {2.8} (§7.3, cinq tentatives + test de fumée) | 246 363 | 57 939 | 1,0721 $ |
+| **Cumul séquence 2 — étalonnage et correctif structurel** | **623 522** | **263 254** | **3,8796 $** |
