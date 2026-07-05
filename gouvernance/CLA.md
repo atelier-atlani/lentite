@@ -17,13 +17,33 @@ Ce CLA est donc une condition bloquante, explicitement posée par la décision 0
 
 ## 3. Mécanisme retenu
 
-**Licence non exclusive, cession du droit d'exploiter en double licence.** Le contributeur conserve la titularité de son droit d'auteur sur sa contribution. Il concède au Porteur :
+**Cession exclusive irrévocable des droits d'exploitation, avec licence de retour non concurrente (modèle CLA fort, type Harmony CA — variante « assignment »).**
 
-1. Une licence irrévocable, mondiale, gratuite, non exclusive d'utiliser, reproduire, modifier, distribuer et sous-licencier sa contribution — y compris sous une licence commerciale distincte de l'AGPL-3.0, pour les besoins du Mode 2 (décision 005, jalon 3).
-2. La garantie que la contribution est une œuvre originale du contributeur, ou que celui-ci dispose des droits nécessaires pour la soumettre sous les termes du présent CLA (pas de code tiers incompatible introduit sans déclaration).
-3. L'acceptation que la contribution reste, par ailleurs, distribuée sous AGPL-3.0 dans le dépôt public (jalon 2 de la décision 005) — le CLA n'exclusive pas d'AGPL, il s'y ajoute pour permettre la double licence côté Porteur.
+### 3.1 Cession et licence de retour
 
-**Motif du choix.** Ce mécanisme (licence non exclusive plutôt que cession intégrale du droit d'auteur) est le standard documenté des projets AGPL à double licence commerciale (modèle historique de MongoDB, MySQL, Grafana pré-relicensing) — il préserve la reconnaissance d'auteur du contributeur tout en garantissant au Porteur la liberté d'exploitation commerciale nécessaire au Mode 2.
+Le contributeur cède au Porteur, à titre exclusif, irrévocable, mondial et pour la durée légale de protection du droit d'auteur, l'intégralité des droits patrimoniaux d'exploitation sur sa contribution — reproduction, représentation, adaptation, traduction, distribution et sous-licence — pour tout mode d'exploitation connu ou inconnu à la date de la cession, y compris l'exploitation sous licence commerciale distincte de l'AGPL-3.0 pour les besoins du Mode 2 (décision 005, jalon 3).
+
+En contrepartie, le Porteur concède au contributeur une licence de retour (« license-back ») mondiale, gratuite, non exclusive et perpétuelle, l'autorisant à utiliser, reproduire et modifier sa propre contribution originale, **à l'exclusion de tout usage concurrent** de l'exploitation du Porteur — notamment la commercialisation, la mise à disposition à des tiers ou l'intégration dans un produit ou service se substituant à celui opéré par le Porteur sous licence commerciale (Mode 2). Cette licence de retour ne restreint pas l'usage de la contribution par le contributeur dans le cadre de la distribution publique sous AGPL-3.0 (voir 3.3).
+
+### 3.2 Garanties du contributeur
+
+Le contributeur garantit :
+1. que sa contribution est une œuvre originale, ou qu'il dispose des droits nécessaires pour la soumettre sous les termes du présent CLA (pas de code tiers incompatible introduit sans déclaration) ;
+2. qu'aucun employeur, donneur d'ordre, ou tiers au titre d'un contrat de travail, de prestation ou de commande, ne détient de droit sur la contribution qui ferait obstacle à la cession prévue au 3.1 — ou, à défaut, que l'accord exprès de ce tiers a été obtenu préalablement à la contribution et peut être produit sur demande du Porteur.
+
+### 3.3 Maintien de la distribution AGPL
+
+La cession prévue au 3.1 n'exclut pas la distribution de la contribution sous AGPL-3.0 dans le dépôt public (jalon 2 de la décision 005) : elle s'y ajoute, précisément pour permettre au Porteur d'opérer une double licence sans dépendre du consentement individuel de chaque contributeur à chaque nouvel usage commercial.
+
+### 3.4 Cessibilité du bénéfice du CLA
+
+Le bénéfice du présent CLA — y compris la cession prévue au 3.1 — est cessible par le Porteur à toute structure (société, association, ou autre entité juridique) qu'il contrôle directement ou indirectement, sans qu'un accord supplémentaire du contributeur soit requis. Le contributeur en est informé a posteriori si une telle cession intervient.
+
+### 3.5 Droits moraux
+
+Conformément au droit d'auteur français, les droits moraux (paternité, respect de l'intégrité de l'œuvre, droit de divulgation, droit de retrait) sont incessibles et demeurent la propriété du contributeur, y compris après la cession des droits patrimoniaux prévue au 3.1. Le contributeur s'engage toutefois à ne pas exercer ces droits d'une manière qui ferait obstacle à l'exploitation convenue par le présent CLA — notamment il ne s'opposera pas aux modifications, adaptations ou intégrations de sa contribution réalisées par le Porteur dans le cadre normal du projet, ni à la coexistence de la distribution AGPL-3.0 et de l'exploitation commerciale Mode 2 prévues au présent CLA.
+
+**Motif du choix.** Ce mécanisme (cession exclusive avec licence de retour non concurrente, plutôt qu'une licence non exclusive simple) correspond à la variante forte des modèles de CLA de type Harmony (Harmony Contributor Agreements — Harmony CA), qui propose alternativement une cession avec licence de retour et une licence non exclusive seule. La variante forte a été retenue ici pour asseoir plus solidement la titularité exclusive du Porteur sur le périmètre moteur, condition posée par la décision 004 §7 pour la viabilité juridique de la double licence Mode 2 — au prix d'un engagement contributeur plus exigeant que le modèle initial (v0.1), compensé par la licence de retour non concurrente qui préserve l'usage personnel et non commercial de la contribution par son auteur, et par le maintien des droits moraux (3.5).
 
 ## 4. Procédure de signature
 
@@ -39,4 +59,4 @@ Ce texte est un projet de CLA produit par l'Implementer en exécution de la tâc
 
 ---
 
-*CLA v0.1 — projet, produit le 3 juillet 2026. Non signé, non validé juridiquement. Voir `.claude/decisions/decision_004_licence.md` §7 et `.claude/decisions/decision_005_modele_distribution.md` §5 (jalon 1).*
+*CLA v0.2 — projet, amendé le 5 juillet 2026 (v0.1 du 3 juillet 2026 : mécanisme de licence non exclusive, remplacé au §3 par une cession exclusive avec licence de retour non concurrente ; ajout des clauses de cessibilité du bénéfice du CLA, de droits moraux, et de garantie d'absence de droits d'employeur/donneur d'ordre). Non signé, non validé juridiquement. Voir `.claude/decisions/decision_004_licence.md` §7 et `.claude/decisions/decision_005_modele_distribution.md` §5 (jalon 1).*
