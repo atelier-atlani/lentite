@@ -612,4 +612,22 @@ refs: [decision_004, plan_action_002]
 
 ---
 
+---
+
+```yaml
+date: 2026-07-05
+type: étape
+refs: [plan_action_002]
+```
+
+### Revue de Phase 0 reçue — lot 2.8 prescrit, clôture conditionnelle
+
+*Constat.* `revue_002.md` (Mode Reviewer, 5 juillet 2026) reçue et classée dans `.claude/reviews/`. Verdict — Phase 0 substantiellement réussie, non close : sur les huit critères d'acceptation de `plan_action_002.md`, trois satisfaits (licences, gabarit durci + corpus revalidé, pipeline outillé), trois partiels (repo/onboarding, gouvernance/CLA, journal), deux non satisfaits (YAML automatique validé, étalonnage). **Lot correctif 2.8 prescrit** — sortie structurée JSON des quatre agents fonctionnels, conversion mécanique JSON→YAML dans l'orchestrateur (avec test unitaire sur l'assemblage `units`), ré-exécution du lot 2.7 sur `corpus/lecornu_dpg_20251014.md`, production de `exports/etalonnage_001.md` si YAML valide, comptabilité API complète en addendum au rapport 002.
+
+*Autres arbitrages de la revue* — alerte intentionnalité (80–83%) gelée en l'état, réexamen inscrit d'office à la revue du dossier zéro ; écart §9 séquence 0 (trace onboarding tiers) tranché — sans trace de re-test indépendant, le test est réputé non fait, dix minutes en session vierge avant la première session du co-dirigeant ; CLA v0.2 bloquante pour la première PR du co-dirigeant, non pour le lot 2.8.
+
+*Conséquence.* Clôture de la Phase 0 conditionnelle à l'exécution du lot 2.8 et à la résolution des critères partiels (§4 de `revue_002.md`) — entrée de clôture de séquence 2 et de Phase 0 à produire une fois ce lot exécuté. Voir `.claude/reviews/revue_002.md`.
+
+---
+
 *Journal v1.0 — édité le 17 mai 2026. Prochaine révision attendue après extension M03 à 4 acteurs et nouvelles analyses substantielles. Document de mémoire institutionnelle, pas de récit. Pour la doctrine, lire charte et gabarit. Pour les analyses, lire les fichiers correspondants.*
