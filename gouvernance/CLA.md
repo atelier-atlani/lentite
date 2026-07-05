@@ -55,7 +55,7 @@ Conformément au droit d'auteur français, les droits moraux (paternité, respec
 
 Ce texte est un projet de CLA produit par l'Implementer en exécution de la tâche 0.6. **Il n'a pas fait l'objet d'une relecture juridique** et ne doit pas être présenté à un contributeur externe pour signature effective sans cette relecture — en particulier sur la validité du mécanisme de cession exclusive avec license-back en droit français — en particulier le formalisme de l'article L.131-3 CPI (mentions d'étendue, destination, lieu, durée) (régime du droit d'auteur, distinct du copyright anglo-saxon dont ce type de CLA est historiquement issu), et sur la clarté de la garantie d'originalité (point 3.2) au regard du droit de la contrefaçon.
 
-**Validation requise avant tout usage effectif** — le Dirigeant (Seb) valide ce texte avant merge dans le dépôt, conformément à la note de méta-information de `plan_action_002.md` §5 tâche 0.6.
+**Validation du Dirigeant — obtenue.** Le Dirigeant (Seb) a validé le présent texte, dans sa version v0.2.1, le 5 juillet 2026, conformément à la note de méta-information de `plan_action_002.md` §5 tâche 0.6 et à la décision 004 (licence, §7). Cette validation porte sur l'adéquation du mécanisme retenu aux besoins de gouvernance du projet ; elle ne se substitue pas à la relecture juridique mentionnée ci-dessus, toujours requise avant toute signature effective par un contributeur externe.
 
 ---
 

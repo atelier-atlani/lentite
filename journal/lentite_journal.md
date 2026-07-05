@@ -598,4 +598,18 @@ refs: [plan_action_002]
 
 ---
 
+```yaml
+date: 2026-07-05
+type: décision
+refs: [decision_004, plan_action_002]
+```
+
+### Validation du Dirigeant — CLA v0.2.1
+
+*Constat.* Le Dirigeant (Seb) a validé `gouvernance/CLA.md` dans sa version v0.2.1 le 5 juillet 2026, conformément à la note de méta-information de `plan_action_002.md` §5 tâche 0.6 et à la décision 004 (licence, §7). La version validée porte le mécanisme de cession exclusive irrévocable avec licence de retour non concurrente (v0.2, modèle CLA fort type Harmony CA — remplace la licence non exclusive de v0.1), les clauses de cessibilité du bénéfice du CLA à toute structure contrôlée par le Porteur, de droits moraux, et de garantie d'absence de droits d'employeur/donneur d'ordre, ainsi que le correctif ciblé du §5 (v0.2.1) référençant le formalisme de l'article L.131-3 CPI.
+
+*Conséquence.* La validation du Dirigeant porte sur l'adéquation du mécanisme aux besoins de gouvernance du projet — elle ne se substitue pas à la relecture juridique, toujours non effectuée et toujours requise avant toute signature effective par un contributeur externe (§5 du CLA, inchangé sur ce point). Le CLA reste donc un projet de document, validé pour usage interne et pour orienter une éventuelle relecture juridique, non prêt pour signature par un tiers.
+
+---
+
 *Journal v1.0 — édité le 17 mai 2026. Prochaine révision attendue après extension M03 à 4 acteurs et nouvelles analyses substantielles. Document de mémoire institutionnelle, pas de récit. Pour la doctrine, lire charte et gabarit. Pour les analyses, lire les fichiers correspondants.*
