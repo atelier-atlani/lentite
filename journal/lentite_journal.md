@@ -630,4 +630,53 @@ refs: [plan_action_002]
 
 ---
 
+```yaml
+date: 2026-07-06
+type: audit
+refs: [plan_action_002]
+```
+
+### Clôture de la séquence 2 (prototype pipeline) — critère de sortie satisfait
+
+*Constat.* Le critère de sortie de la séquence 2 (`plan_action_002.md` §4 — « critères d'acceptation §3 lignes pipeline, orchestrateur et étalonnage satisfaites ») est satisfait au lot {2.9}. Bilan de la séquence :
+
+- **2.0-2.3** — `validate.py` M01 restauré par dérivation de `validate_m03.py` ; `graph_builder.py` opérationnel (corpus complet ingéré, 121 nœuds, 291 arêtes) ; trois audits du gabarit implémentés comme parcours de graphe (`intentionality_bias_audit` — alerte réelle à 80-83% ; `hypothesis_gap_audit` — 92% du corpus en zone d'indétermination ; `typology_audit` — recensement sans anomalie).
+- **2.4-2.6** — orchestrateur hexagonal à quatre agents fonctionnels (Charité, Vulnérabilités, Chaînes causales, Synthèse), prompts versionnés dérivés de la méthode M01 v2.1 §6, format de log JSON à huit champs par appel d'agent. Plomberie vérifiée par substitution sans appel réseau.
+- **2.7** — premier test de bout en bout sur `corpus/lecornu_dpg_20251014.md`. Deux défauts d'intégration réels diagnostiqués et corrigés par l'exécution réelle (raisonnement étendu non désactivé consommant tout le budget de sortie ; `max_tokens` insuffisant même une fois corrigé). Échec final structurel — conflit prose-riche/YAML-nu, trois occurrences indépendantes d'une même classe d'erreur (deux-points/citations rompant la syntaxe de scalaires YAML non guillemetés). Échec documenté avec logs, conformément à l'instruction du lot (« ne force pas »).
+- **2.8** (`revue_002.md` §4, correctif structurel prescrit en Mode Reviewer) — bascule des quatre agents fonctionnels en sortie JSON structurée (`output_config.format`, schémas dérivés mécaniquement de `schemas.py`), conversion JSON→YAML mécanique dans l'orchestrateur (sérialiseur forçant le quotage des chaînes ambiguës). Deux défauts réels supplémentaires trouvés et corrigés par l'exécution réelle (virgule finale JSON avant crochet/accolade fermante ; référence circulaire de schéma sur `InferredFunction`). Cinq tentatives ; la cinquième exécute le pipeline complet sans aucune erreur d'infrastructure — échec final documenté sur un point de contenu ordinaire (bitemporalité incomplète produite par Vulnérabilités), hors périmètre de correction de l'agent Synthèse dans l'architecture de réinjection alors en vigueur.
+- **2.9** (correctif final Phase 0, prescrit en Mode Reviewer) — champs bitemporels requis dans les schémas de sortie agent (`date_fait`/`date_connaissance`, sans `non_renseigne`), règle sémantique explicite dans les prompts v2.1, réinjection routée vers l'agent propriétaire du champ fautif (budget global de trois réinjections par passe, plus systématiquement à Synthèse). **Succès dès la première tentative** — quatre appels d'agent, aucune réinjection nécessaire, première production automatique complète et validée du prototype. `exports/etalonnage_001.md` produit — comparaison factuelle contre l'analyse manuelle canonique du même texte, sans jugement de conformité.
+
+La chaîne d'échecs des lots 2.7→2.8→2.9 est elle-même une donnée instructive, pas seulement un obstacle résolu en cours de route : six défauts distincts (raisonnement non désactivé, `max_tokens`, conflit YAML nu, virgule finale JSON, référence circulaire de schéma, bitemporalité incomplète) ont tous été diagnostiqués par l'exécution réelle plutôt qu'anticipés par la conception, et documentés avec logs complets à chaque étape — seize exécutions ou tentatives cumulées sur les trois lots, comptabilité API intégrale dans `.claude/logs/rapport_implementation_002.md` (§5, §7, §8).
+
+*Conséquence.* Séquence 2 close. Les huit critères d'acceptation §3 du plan sont revisités un à un dans l'entrée de clôture de Phase 0 ci-après.
+
+---
+
+```yaml
+date: 2026-07-06
+type: décision
+refs: [plan_action_001, plan_action_002, decision_001, decision_002, decision_003, decision_004, decision_005]
+```
+
+### Clôture de la Phase 0 (`plan_action_002.md`) — huit critères d'acceptation revisités
+
+*Constat.* Les huit critères d'acceptation de `plan_action_002.md` §3 sont revisités un à un à la lumière de la clôture de la séquence 2 (entrée ci-dessus) et de la validation du Dirigeant sur le CLA (entrée « Validation du Dirigeant — CLA v0.2.1 » du 5 juillet 2026) :
+
+1. **Repo** (privé, arborescence assainie, onboarding à froid par un tiers vierge) — **Partiel.** Repo et arborescence conformes. Trace du re-test d'onboarding par un tiers réellement indépendant : **pendante** — sans cette trace, `revue_002.md` §3.2 réputait déjà le test non fait. Non bloquant pour la clôture de Phase 0 ; requis avant la première session du co-dirigeant.
+2. **Licences** — **Satisfait.**
+3. **Gabarit durci** (quatre chantiers couche B + tests négatifs + corpus revalidé) — **Satisfait.**
+4. **Pipeline** (`validate.py`, `graph_builder.py`, trois audits en CLI) — **Satisfait.**
+5. **Orchestrateur** (YAML M01-M validé sur texte réel, retry borné, logs complets) — **Satisfait** depuis le lot {2.9} — non satisfait à la clôture des lots {2.7} et {2.8}.
+6. **Étalonnage** (sortie automatique comparée à l'analyse manuelle, écarts documentés) — **Satisfait** depuis le lot {2.9} (`exports/etalonnage_001.md`).
+7. **Gouvernance** (CLA rédigé et versionné avant toute PR externe) — **Satisfait pour la clôture de Phase 0.** CLA v0.2.1 rédigé, versionné, validé par le Dirigeant le 5 juillet 2026. Relecture juridique toujours non faite : **pendante** — non bloquante pour la clôture de Phase 0, bloquante pour la première PR externe du co-dirigeant (`revue_002.md` §3.3).
+8. **Journal** (chaque séquence close = une entrée journal) — Séquence 1 close (entrée du 4 juillet 2026) ; séquence 2 close (entrée ci-dessus) ; séquence 0 reste non formellement close (point 1) — écart assumé et tracé, pas dissimulé, reporté au-delà de la clôture de Phase 0 conformément à l'arbitrage de `revue_002.md`.
+
+*Synthèse.* Six critères sur huit pleinement satisfaits (2, 3, 4, 5, 6, 7) ; deux points de gouvernance explicitement reportés, non bloquants pour cette clôture :
+- **Trace du re-test onboarding par un tiers indépendant** — pendante, requise avant la première session du co-dirigeant.
+- **Relecture juridique du CLA** — pendante, requise avant la première PR externe (la validation du Dirigeant, elle, est faite).
+
+*Conséquence.* **Phase 0 (`plan_action_002.md`) close.** `plan_action_003.md` (dossier zéro rétrospectif) peut être produit en Mode Architecte, conformément à `revue_002.md` §5 — cadrage déjà fixé par la revue (choix du cas sur grille, mesures embarquées incluant le chiffrage de la boucle humaine amorcé par la comptabilité API des lots 2.7-2.9, protocole inter-annotateurs exécuté par la calibration du co-dirigeant, réexamen de l'alerte intentionnalité). Les deux points de gouvernance reportés ci-dessus restent des actions dues du Dirigeant, indépendantes de l'avancement de plan_action_003.md, à solder avant leurs jalons respectifs (première session du co-dirigeant ; première PR externe).
+
+---
+
 *Journal v1.0 — édité le 17 mai 2026. Prochaine révision attendue après extension M03 à 4 acteurs et nouvelles analyses substantielles. Document de mémoire institutionnelle, pas de récit. Pour la doctrine, lire charte et gabarit. Pour les analyses, lire les fichiers correspondants.*

@@ -11,3 +11,6 @@ venv/
 
 # Graph derived exports (décision 002 — vues dérivées non versionnées)
 exports/
+# Livrables d'étalonnage versionnés (plan_action_002 §6) — distincts des
+# vues dérivées du graphe ci-dessus, pas mécaniquement régénérables.
+!exports/etalonnage_*.md
