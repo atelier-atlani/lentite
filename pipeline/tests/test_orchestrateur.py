@@ -12,14 +12,17 @@ import json
 
 import pytest
 import yaml
+from pydantic import ValidationError
 
 from orchestrateur import (
     assemble_prompt,
     dump_yaml_forcing_quotes,
     merge_fragments,
     parse_json_fragment,
+    route_validation_errors,
 )
 from agent_schemas import AGENT_OUTPUT_MODELS
+from schemas import M01Analysis
 
 
 # ============================================================================
@@ -39,6 +42,201 @@ def test_all_agent_output_schemas_transform_without_circular_reference():
     for name, model in AGENT_OUTPUT_MODELS.items():
         schema = transform_schema(model)
         assert schema["type"] == "object", name
+
+
+def test_bitemporal_fields_required_without_non_renseigne_in_output_schemas():
+    """Lot 2.9 — les schémas de sortie agent (Vulnérabilités, Chaînes
+    causales) rendent `date_fait`/`date_connaissance` requis et retirent
+    `non_renseigne` de leur type, contrairement au schéma de validation
+    finale (schemas.py) qui reste inchangé pour le corpus existant."""
+    from agent_schemas import (
+        VulnerabilityOutput,
+        OmissionOutput,
+        DiscourseActGapOutput,
+        ObservableEffectOutput,
+    )
+
+    for model in (VulnerabilityOutput, OmissionOutput, DiscourseActGapOutput, ObservableEffectOutput):
+        schema = model.model_json_schema()
+        assert "date_fait" in schema["required"], model.__name__
+        assert "date_connaissance" in schema["required"], model.__name__
+        for field_name in ("date_fait", "date_connaissance"):
+            field_schema = json.dumps(schema["properties"][field_name])
+            assert "non_renseigne" not in field_schema, f"{model.__name__}.{field_name}"
+            assert "non_documente" in field_schema, f"{model.__name__}.{field_name}"
+
+
+# ============================================================================
+# route_validation_errors — routage des erreurs vers l'agent propriétaire
+# (lot 2.9, revue_002.md §4 point 3)
+# ============================================================================
+
+
+def _minimal_valid_candidate() -> dict:
+    return {
+        "method_id": "M01_ANALYSE_RHETORIQUE",
+        "method_version": "2.1",
+        "gabarit_version": "2.1",
+        "analysis_id": "TEST",
+        "execution_date": "2026-07-05",
+        "execution_mode": "applicable_complete",
+        "source": {"text_id": "TEST", "provenance": "test", "integrity_status": "uncertain"},
+        "enonciation": {
+            "speaker": {"id": "X", "name": "X", "role_at_date": "X"},
+            "date": "2026-07-05",
+            "place": "X",
+            "primary_audience": "X",
+            "channel": "X",
+            "genre": "X",
+            "affective_charge": "low",
+            "ethical_charge": "low",
+            "thematic_objects": [
+                {
+                    "object_id": "OT1",
+                    "label": "X",
+                    "efficiency_status": "efficient",
+                    "efficiency_justification": "X",
+                }
+            ],
+            "targeted_objects": [],
+        },
+        "units": [
+            {
+                "unit_id": "U1",
+                "text_span": "X",
+                "speech_acts": [],
+                "presuppositions": [],
+                "argumentative_vulnerabilities": [],
+                "omissions": [],
+            }
+        ],
+        "discourse_action_gaps_on_thematic_objects": [],
+        "observable_effects_on_targeted_objects": [],
+        "epistemic_synthesis": {
+            "competing_hypotheses": [
+                {"label": "H1", "type": "non_intentional", "confidence": 0.5, "grounded_in": []},
+                {"label": "H2", "type": "non_intentional", "confidence": 0.3, "grounded_in": []},
+                {"label": "H3", "type": "intentional", "confidence": 0.1, "grounded_in": []},
+            ],
+            "hypothesis_gap": 0.2,
+            "hypothesis_status": "zone_of_indetermination",
+        },
+        "null_results": {},
+    }
+
+
+def _validation_error(mutate) -> ValidationError:
+    candidate = _minimal_valid_candidate()
+    mutate(candidate)
+    with pytest.raises(ValidationError) as exc_info:
+        M01Analysis.model_validate(candidate)
+    return exc_info.value
+
+
+def test_routes_top_level_charite_field_to_charite():
+    e = _validation_error(lambda c: c.__setitem__("execution_mode", "invalide"))
+    routed, unroutable = route_validation_errors(e)
+    assert not unroutable
+    assert "charite" in routed
+    assert list(routed.keys()) == ["charite"]
+
+
+def test_routes_unit_text_span_error_to_charite():
+    e = _validation_error(lambda c: c["units"][0].pop("text_span"))
+    routed, unroutable = route_validation_errors(e)
+    assert not unroutable
+    assert "charite" in routed
+
+
+def test_routes_unit_vulnerability_field_to_vulnerabilites():
+    def mutate(c):
+        c["units"][0]["argumentative_vulnerabilities"] = [
+            {"type": "x", "level": "invalide", "confidence": 0.5, "confidence_applies_to": "inference"}
+        ]
+
+    e = _validation_error(mutate)
+    routed, unroutable = route_validation_errors(e)
+    assert not unroutable
+    assert "vulnerabilites" in routed
+    assert "charite" not in routed
+
+
+def test_routes_discourse_action_gap_field_to_chaines_causales():
+    def mutate(c):
+        c["discourse_action_gaps_on_thematic_objects"] = [
+            {
+                "thematic_object_id": "OT1",
+                "declared": "X",
+                "pattern_type": "invalide",
+                "observation_window": "X",
+                "observation": "X",
+            }
+        ]
+
+    e = _validation_error(mutate)
+    routed, unroutable = route_validation_errors(e)
+    assert not unroutable
+    assert "chaines_causales" in routed
+
+
+def test_routes_epistemic_synthesis_field_to_synthese():
+    e = _validation_error(lambda c: c["epistemic_synthesis"].__setitem__("hypothesis_gap", 2.0))
+    routed, unroutable = route_validation_errors(e)
+    assert not unroutable
+    assert "synthese" in routed
+
+
+def test_unroutable_field_stops_without_blaming_an_agent():
+    """`method_version` est défaulté par l'orchestrateur lui-même — une
+    erreur sur ce champ indique un bug de code, jamais un défaut d'agent.
+    Elle doit rester non routable plutôt que d'être attribuée à un agent
+    au hasard."""
+    e = _validation_error(lambda c: c.__setitem__("method_version", "1.0"))
+    routed, unroutable = route_validation_errors(e)
+    assert unroutable
+    assert not routed
+
+
+def test_root_level_bitemporal_error_splits_across_two_agents():
+    """Reproduit l'échec réel du lot 2.8 — `validate_bitemporal_when_durci`
+    lève une seule erreur racine qui peut référencer à la fois des champs de
+    Vulnérabilités (omissions) et de Chaînes causales (discourse_action_gaps)
+    dans le même message. Le routage doit filtrer et distribuer les deux."""
+
+    def mutate(c):
+        c["gabarit_version"] = "2.1-durci-seq1"
+        c["units"][0]["omissions"] = [
+            {
+                "missing_element": "X",
+                "level": "structural",
+                "why_expected": "X",
+                "confidence": 0.5,
+                "pouvoir_agir": "X",
+                "opportunite": {"description": "X", "date": "2026-01-01"},
+                "cloture_corpus": {"corpus_declare": "X", "date_cloture": "2026-01-01"},
+                "explications_innocentes": [{"description": "X", "statut": "examinee"}],
+                # date_fait/date_connaissance omis — défaut non_renseigne
+            }
+        ]
+        c["enonciation"]["thematic_objects"][0]["efficiency_status"] = "efficient"
+        c["discourse_action_gaps_on_thematic_objects"] = [
+            {
+                "thematic_object_id": "OT1",
+                "declared": "X",
+                "pattern_type": "never_observed",
+                "observation_window": "X",
+                "observation": "X",
+                # date_fait/date_connaissance omis — défaut non_renseigne
+            }
+        ]
+
+    e = _validation_error(mutate)
+    routed, unroutable = route_validation_errors(e)
+    assert not unroutable
+    assert "vulnerabilites" in routed
+    assert "chaines_causales" in routed
+    assert "units[U1].omissions[0]" in routed["vulnerabilites"][0]
+    assert "discourse_action_gaps_on_thematic_objects[OT1]" in routed["chaines_causales"][0]
 
 
 # ============================================================================

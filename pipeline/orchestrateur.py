@@ -11,11 +11,19 @@ de langage est isolé derrière le port `AgentCaller` — l'adaptateur concret
 de tester la plomberie de retry/log sans appel réseau réel.
 
 Pipeline linéaire à quatre agents fonctionnels (pipeline/agents/fonctionnels/,
-tâche 2.5, prompts v2.0 depuis le lot 2.8) : Charité → Vulnérabilités →
-Chaînes causales → Synthèse → assemblage YAML → validation
-(schemas.M01Analysis, cœur de validate.py). En cas d'échec de validation, le
-rapport d'erreurs est réinjecté à l'agent Synthèse, deux itérations maximum,
-puis échec propre avec logs.
+tâche 2.5) : Charité → Vulnérabilités → Chaînes causales → Synthèse →
+assemblage YAML → validation (schemas.M01Analysis, cœur de validate.py).
+
+Réinjection routée par agent propriétaire (lot 2.9, correctif final Phase 0
+prescrit en Reviewer, complète revue_002.md §4) — en cas d'échec de
+validation, chaque erreur est attribuée à l'agent dont le fragment contient
+le champ fautif (`route_validation_errors`) et réinjectée à cet agent
+seulement, jamais systématiquement à Synthèse comme au lot 2.8. Budget
+global de trois appels de réinjection par passe, partagé entre les agents
+qui en ont besoin (pas trois par agent) — au-delà, échec propre avec logs.
+Une erreur dont le chemin ne correspond à aucun agent connu (bug
+d'orchestrateur, jamais un défaut d'agent) interrompt immédiatement la
+passe sans consommer le budget de réinjection.
 
 Sortie structurée JSON par agent (lot 2.8, correctif structurel prescrit par
 `.claude/reviews/revue_002.md` §4 point 1) — chaque agent produit un JSON
@@ -68,19 +76,49 @@ from schemas import M01Analysis
 from agent_schemas import AGENT_OUTPUT_MODELS
 
 DEFAULT_MODEL = "claude-sonnet-5"
-MAX_ITERATIONS = 2
+REINJECTION_BUDGET = 3
 AGENTS_DIR = Path(__file__).parent / "agents" / "fonctionnels"
 
-# Ordre du pipeline linéaire — les trois premiers agents s'exécutent une
-# fois ; l'agent Synthèse boucle jusqu'à MAX_ITERATIONS sur échec de
-# validation (réinjection du rapport d'erreurs). Prompts v2.0 (lot 2.8) —
-# sortie JSON structurée, schéma de sortie dans pipeline/agent_schemas.py.
-PRIOR_AGENTS = [
-    ("charite", "prompt_charite_v2_0.md"),
-    ("vulnerabilites", "prompt_vulnerabilites_v2_0.md"),
-    ("chaines_causales", "prompt_chaines_causales_v2_0.md"),
-]
-SYNTHESE_AGENT = ("synthese", "prompt_synthese_v2_0.md")
+# Ordre du pipeline linéaire — chaque agent voit les fragments des agents
+# qui le précèdent dans cet ordre, jamais ceux qui le suivent (y compris en
+# réinjection — la réinjection rejoue le même contexte que l'appel initial
+# de l'agent, plus le rapport d'erreurs qui lui est propre). Prompts v2.1
+# pour Vulnérabilités et Chaînes causales depuis le lot 2.9 (champs
+# bitemporels requis, cf. pipeline/agent_schemas.py) ; v2.0 inchangés pour
+# Charité et Synthèse (aucun champ bitemporel dans leur périmètre).
+PIPELINE_ORDER = ["charite", "vulnerabilites", "chaines_causales", "synthese"]
+AGENT_PROMPT_FILES = {
+    "charite": "prompt_charite_v2_0.md",
+    "vulnerabilites": "prompt_vulnerabilites_v2_1.md",
+    "chaines_causales": "prompt_chaines_causales_v2_1.md",
+    "synthese": "prompt_synthese_v2_0.md",
+}
+
+# Table de routage des erreurs de validation vers l'agent propriétaire du
+# champ fautif (lot 2.9, revue_002.md §4 point 3) — voir route_validation_errors.
+_CHARITE_TOP_FIELDS = {"execution_mode", "execution_mode_note", "enonciation", "charity_reconstruction"}
+_CHARITE_UNIT_FIELDS = {"unit_id", "text_span", "speech_acts", "presuppositions"}
+_VULNERABILITES_UNIT_FIELDS = {"argumentative_vulnerabilities", "omissions", "inferred_function"}
+_CHAINES_CAUSALES_TOP_FIELDS = {
+    "upstream_causal_chain",
+    "downstream_causal_chains",
+    "discourse_action_gaps_on_thematic_objects",
+    "observable_effects_on_targeted_objects",
+    "historiographies",
+}
+_SYNTHESE_TOP_FIELDS = {"epistemic_synthesis", "null_results"}
+
+# Erreur racine (model_validator sur M01Analysis, `loc` vide) — le chemin
+# précis du champ fautif n'est pas structuré par Pydantic, il est encodé en
+# texte dans le message de `validate_bitemporal_when_durci` (schemas.py).
+# Cette expression en extrait chaque chemin entre guillemets pour permettre
+# le routage par agent, plutôt que de réinjecter le message brut à un agent
+# arbitraire.
+_BITEMPORAL_MISSING_PATH = re.compile(
+    r"'((?:units\[[^\]]+\]\.(?:argumentative_vulnerabilities|omissions)\[\d+\])"
+    r"|(?:discourse_action_gaps_on_thematic_objects\[[^\]]+\])"
+    r"|(?:observable_effects_on_targeted_objects\[[^\]]+\]))'"
+)
 
 
 # ============================================================================
@@ -236,7 +274,8 @@ def assemble_prompt(
     prompt + texte source + sorties déjà produites par les agents
     précédents (en JSON depuis le lot 2.8 — format d'échange machine natif,
     cf. revue_002.md §2.3) + rapport d'erreurs le cas échéant (réinjection
-    Synthèse). Déterministe et intégralement journalisé (tâche 2.6) — rien
+    routée par agent propriétaire depuis le lot 2.9, jamais systématiquement
+    à Synthèse). Déterministe et intégralement journalisé (tâche 2.6) — rien
     de ce que reçoit l'agent n'est implicite."""
     parts = [prompt_content, "\n\n---\n\n## TEXTE SOURCE\n\n", source_text]
     for name, frag in fragments.items():
@@ -246,7 +285,8 @@ def assemble_prompt(
         )
     if failure_report:
         parts.append(
-            "\n\n---\n\n## RAPPORT D'ERREURS validate.py (itération précédente)\n\n"
+            "\n\n---\n\n## RAPPORT D'ERREURS validate.py (te concernant, "
+            "réinjecté après une tentative précédente)\n\n"
             f"{failure_report}\n"
         )
     return "".join(parts)
@@ -317,6 +357,94 @@ def format_validation_errors(e: ValidationError) -> str:
         loc = ".".join(str(x) for x in err["loc"])
         lines.append(f"[{err['type']}] {loc}: {err['msg']}")
     return "\n".join(lines)
+
+
+def route_validation_errors(e: ValidationError) -> tuple[dict[str, list[str]], list[str]]:
+    """Attribue chaque erreur de `M01Analysis.model_validate` à l'agent
+    propriétaire du champ fautif (lot 2.9, revue_002.md §4 point 3).
+
+    Retourne (routées, non_routables) — `routées` associe un nom d'agent à
+    la liste des lignes d'erreur (formatées comme `format_validation_errors`)
+    qui lui reviennent ; `non_routables` liste les erreurs dont le chemin ne
+    correspond à aucun agent connu (bug d'orchestrateur — champ défaulté par
+    `run_pipeline` lui-même, ou validateur imprévu — jamais un défaut d'agent
+    à corriger par réinjection). Un appelant qui reçoit une liste
+    `non_routables` non vide doit arrêter la passe immédiatement, sans
+    consommer de budget de réinjection sur une hypothèse de routage non
+    fondée.
+
+    Deux cas de figure par erreur :
+    - `loc` non vide (erreur de champ standard) — routée par le premier
+      segment du chemin, avec un traitement spécial pour `units[i].<champ>`
+      (le sous-champ à l'index 2 distingue Charité de Vulnérabilités).
+    - `loc` vide (erreur racine — `model_validator` sur `M01Analysis`) — le
+      chemin précis n'est pas structuré par Pydantic dans ce cas ; extrait du
+      texte du message pour les validateurs connus (`validate_bitemporal_
+      when_durci`, qui peut référencer des champs de Vulnérabilités ET de
+      Chaînes causales dans un seul message — d'où le double routage
+      possible d'une même erreur brute)."""
+    routed: dict[str, list[str]] = {}
+    unroutable: list[str] = []
+
+    def add(owner: str, line: str) -> None:
+        routed.setdefault(owner, []).append(line)
+
+    for err in e.errors():
+        loc = err["loc"]
+        line = f"[{err['type']}] {'.'.join(str(x) for x in loc)}: {err['msg']}"
+
+        if loc:
+            first = loc[0]
+            if first == "units":
+                subfield = loc[2] if len(loc) >= 3 else None
+                if subfield in _VULNERABILITES_UNIT_FIELDS:
+                    add("vulnerabilites", line)
+                else:
+                    # Sous-champ de Charité (text_span, speech_acts, ...), ou
+                    # erreur au niveau de l'unité entière (unit_id manquant,
+                    # etc.) — dans les deux cas, c'est Charité qui produit la
+                    # structure de l'unité elle-même.
+                    add("charite", line)
+            elif first in _CHARITE_TOP_FIELDS:
+                add("charite", line)
+            elif first in _CHAINES_CAUSALES_TOP_FIELDS:
+                add("chaines_causales", line)
+            elif first in _SYNTHESE_TOP_FIELDS:
+                add("synthese", line)
+            else:
+                # Champs défaultés par l'orchestrateur (method_id, source,
+                # ...) ou tout autre chemin imprévu — aucun agent à blâmer.
+                unroutable.append(line)
+            continue
+
+        # Erreur racine — extraire les chemins embarqués dans le message.
+        msg = err["msg"]
+        paths = _BITEMPORAL_MISSING_PATH.findall(msg)
+        if paths:
+            by_owner: dict[str, list[str]] = {}
+            for p in paths:
+                if "argumentative_vulnerabilities" in p or ".omissions[" in p:
+                    by_owner.setdefault("vulnerabilites", []).append(p)
+                elif (
+                    "discourse_action_gaps_on_thematic_objects" in p
+                    or "observable_effects_on_targeted_objects" in p
+                ):
+                    by_owner.setdefault("chaines_causales", []).append(p)
+            for owner, owner_paths in by_owner.items():
+                add(
+                    owner,
+                    "[value_error] bitemporalité manquante (gabarit_version="
+                    "2.1-durci-seq1) sur : " + ", ".join(owner_paths),
+                )
+        elif "v.3" in msg.lower() or "discourse_action_gaps" in msg.lower():
+            # validate_v3_efficiency_block_coherence — le correctif porte sur
+            # discourse_action_gaps_on_thematic_objects, produit par Chaînes
+            # causales.
+            add("chaines_causales", f"[value_error] : {msg}")
+        else:
+            unroutable.append(f"[value_error] : {msg}")
+
+    return routed, unroutable
 
 
 # ============================================================================
@@ -399,9 +527,57 @@ class OrchestrationResult:
     success: bool
     analysis: M01Analysis | None
     candidate: dict
-    iterations_used: int
+    agent_calls_used: int
     log_paths: list[Path] = field(default_factory=list)
     failure_report: str | None = None
+
+
+def _prior_fragments(fragments: dict[str, dict], agent_name: str) -> dict[str, dict]:
+    """Fragments des agents qui précèdent `agent_name` dans l'ordre linéaire
+    (`PIPELINE_ORDER`), déjà produits. Utilisé aussi bien pour l'appel
+    initial d'un agent que pour sa réinjection — un agent réinjecté revoit
+    exactement le même contexte amont que lors de son appel initial, jamais
+    les fragments des agents qui le suivent (pipeline toujours linéaire,
+    lot 2.9, revue_002.md §4 point 3)."""
+    idx = PIPELINE_ORDER.index(agent_name)
+    return {name: fragments[name] for name in PIPELINE_ORDER[:idx] if name in fragments}
+
+
+def _call_agent(
+    agent_name: str,
+    source_text: str,
+    fragments: dict[str, dict],
+    agent_caller: AgentCaller,
+    model: str,
+    analysis_dir: Path,
+    log_paths: list[Path],
+    n: int,
+    call_index: int,
+    failure_report: str | None,
+) -> tuple[dict | None, str | None]:
+    """Appelle un agent (initial ou réinjection), journalise l'appel, parse
+    sa réponse JSON. Retourne (fragment, None) en cas de succès,
+    (None, message_erreur) sinon — jamais les deux à la fois."""
+    prompt_content, version = load_prompt(AGENT_PROMPT_FILES[agent_name])
+    full_prompt = assemble_prompt(
+        prompt_content, source_text, _prior_fragments(fragments, agent_name), failure_report
+    )
+    horodatage = datetime.now(timezone.utc).isoformat()
+    reponse_brute, usage = agent_caller(model, full_prompt, AGENT_OUTPUT_MODELS[agent_name])
+    record = AgentCallRecord(
+        agent_name, version, model, horodatage, call_index, full_prompt, reponse_brute, usage
+    )
+    log_paths.append(write_agent_log(analysis_dir, n, record))
+    try:
+        return parse_json_fragment(reponse_brute), None
+    except json.JSONDecodeError as e:
+        # Défense en profondeur — output_config.format (lot 2.8) réduit
+        # fortement le risque de JSON malformé, il ne l'élimine pas
+        # complètement (cf. parse_json_fragment). Échec propre immédiat pour
+        # cet appel plutôt qu'un plantage non contrôlé ; ne consomme pas le
+        # budget de réinjection différemment d'un échec de validation — les
+        # deux sont des échecs d'appel d'agent au même titre.
+        return None, f"JSON mal formé produit par l'agent {agent_name} : {e}"
 
 
 def run_pipeline(
@@ -420,90 +596,94 @@ def run_pipeline(
     agent : c'est une métadonnée sur l'entrée de l'orchestrateur lui-même,
     pas un contenu inféré du texte. Paramètre obligatoire plutôt que
     silencieusement défaulté, pour que l'appelant assume explicitement
-    cette responsabilité."""
+    cette responsabilité.
+
+    Réinjection routée par agent (lot 2.9) — après la passe initiale (un
+    appel par agent, dans l'ordre linéaire), toute erreur de validation est
+    attribuée à son agent propriétaire (`route_validation_errors`) et
+    réinjectée à cet agent seul, jamais systématiquement à Synthèse. Budget
+    global de `REINJECTION_BUDGET` appels de réinjection par passe, partagé
+    entre tous les agents qui en ont besoin — si un tour nécessite de
+    corriger deux agents, il consomme deux unités de budget, pas une par
+    agent. Une erreur non routable (chemin ne correspondant à aucun agent
+    connu) interrompt la passe immédiatement, sans consommer de budget."""
     log_paths: list[Path] = []
     fragments: dict[str, dict] = {}
+    call_counts: dict[str, int] = dict.fromkeys(PIPELINE_ORDER, 0)
     n = 0
 
-    for agent_name, prompt_file in PRIOR_AGENTS:
+    # Passe initiale — un appel par agent, dans l'ordre linéaire.
+    for agent_name in PIPELINE_ORDER:
         n += 1
-        prompt_content, version = load_prompt(prompt_file)
-        full_prompt = assemble_prompt(prompt_content, source_text, fragments)
-        horodatage = datetime.now(timezone.utc).isoformat()
-        reponse_brute, usage = agent_caller(model, full_prompt, AGENT_OUTPUT_MODELS[agent_name])
-        record = AgentCallRecord(
-            agent_name, version, model, horodatage, 1, full_prompt, reponse_brute, usage
+        call_counts[agent_name] += 1
+        fragment, err = _call_agent(
+            agent_name, source_text, fragments, agent_caller, model,
+            analysis_dir, log_paths, n, call_counts[agent_name], None,
         )
-        log_paths.append(write_agent_log(analysis_dir, n, record))
-        try:
-            fragments[agent_name] = parse_json_fragment(reponse_brute)
-        except json.JSONDecodeError as e:
-            # Aucune boucle de réinjection pour les trois premiers agents
-            # (seul Synthèse en dispose, plan_action_002 tâche 2.4) — échec
-            # propre immédiat avec logs plutôt qu'un plantage non contrôlé.
-            # Ce chemin reste atteignable en pratique (lot 2.8, cf. la note
-            # de parse_json_fragment — virgule finale non couverte par la
-            # réparation automatique, ou toute autre malformation JSON) —
-            # output_config.format réduit fortement le risque, il ne
-            # l'élimine pas complètement.
+        if err:
+            return OrchestrationResult(False, None, {}, n, log_paths, err)
+        fragments[agent_name] = fragment
+
+    def build_candidate() -> dict:
+        candidate = merge_fragments(
+            fragments.get("charite", {}),
+            fragments.get("vulnerabilites", {}),
+            fragments.get("chaines_causales", {}),
+            fragments.get("synthese", {}),
+        )
+        candidate.setdefault("method_id", "M01_ANALYSE_RHETORIQUE")
+        candidate.setdefault("method_version", "2.1")
+        candidate.setdefault("gabarit_version", "2.1-durci-seq1")
+        candidate.setdefault("analysis_id", analysis_id)
+        candidate.setdefault("execution_date", date.today().isoformat())
+        candidate.setdefault("source", source_metadata)
+        return candidate
+
+    candidate = build_candidate()
+    try:
+        analysis = M01Analysis.model_validate(candidate)
+        return OrchestrationResult(True, analysis, candidate, n, log_paths)
+    except ValidationError as e:
+        last_error = e
+
+    budget = REINJECTION_BUDGET
+    while budget > 0:
+        routed, unroutable = route_validation_errors(last_error)
+        if unroutable:
             return OrchestrationResult(
-                False, None, {}, 1, log_paths,
-                f"JSON mal formé produit par l'agent {agent_name} : {e}",
+                False, None, candidate, n, log_paths,
+                "Erreur(s) non routable(s) vers un agent propriétaire — échec "
+                "immédiat, budget de réinjection non consommé (bug "
+                "d'orchestrateur probable, pas un défaut d'agent) :\n"
+                + "\n".join(unroutable),
             )
+        for agent_name, error_lines in routed.items():
+            if budget <= 0:
+                break
+            n += 1
+            call_counts[agent_name] += 1
+            fragment, err = _call_agent(
+                agent_name, source_text, fragments, agent_caller, model,
+                analysis_dir, log_paths, n, call_counts[agent_name],
+                "\n".join(error_lines),
+            )
+            budget -= 1
+            if err:
+                return OrchestrationResult(False, None, candidate, n, log_paths, err)
+            fragments[agent_name] = fragment
 
-    synthese_name, synthese_file = SYNTHESE_AGENT
-    synthese_prompt_content, synthese_version = load_prompt(synthese_file)
-    failure_report: str | None = None
-    candidate: dict = {}
-
-    for iteration in range(1, MAX_ITERATIONS + 1):
-        n += 1
-        full_prompt = assemble_prompt(
-            synthese_prompt_content, source_text, fragments, failure_report
-        )
-        horodatage = datetime.now(timezone.utc).isoformat()
-        reponse_brute, usage = agent_caller(model, full_prompt, AGENT_OUTPUT_MODELS[synthese_name])
-        record = AgentCallRecord(
-            synthese_name, synthese_version, model, horodatage, iteration,
-            full_prompt, reponse_brute, usage,
-        )
-        log_paths.append(write_agent_log(analysis_dir, n, record))
-
+        candidate = build_candidate()
         try:
-            synthese_fragment = parse_json_fragment(reponse_brute)
-            candidate = merge_fragments(
-                fragments.get("charite", {}),
-                fragments.get("vulnerabilites", {}),
-                fragments.get("chaines_causales", {}),
-                synthese_fragment,
-            )
-            candidate.setdefault("method_id", "M01_ANALYSE_RHETORIQUE")
-            candidate.setdefault("method_version", "2.1")
-            candidate.setdefault("gabarit_version", "2.1-durci-seq1")
-            candidate.setdefault("analysis_id", analysis_id)
-            candidate.setdefault("execution_date", date.today().isoformat())
-            candidate.setdefault("source", source_metadata)
-
             analysis = M01Analysis.model_validate(candidate)
-            return OrchestrationResult(True, analysis, candidate, iteration, log_paths)
-        except json.JSONDecodeError as e:
-            # Défense en profondeur — voir la note équivalente ci-dessus pour
-            # les trois premiers agents. Traité comme réinjectable à Synthèse
-            # au même titre qu'une erreur de validation Pydantic.
-            failure_report = f"JSON mal formé produit par Synthèse : {e}"
-            candidate = {}
-            if iteration == MAX_ITERATIONS:
-                return OrchestrationResult(
-                    False, None, candidate, iteration, log_paths, failure_report
-                )
+            return OrchestrationResult(True, analysis, candidate, n, log_paths)
         except ValidationError as e:
-            failure_report = format_validation_errors(e)
-            if iteration == MAX_ITERATIONS:
-                return OrchestrationResult(
-                    False, None, candidate, iteration, log_paths, failure_report
-                )
+            last_error = e
 
-    raise AssertionError("unreachable — MAX_ITERATIONS couvre toutes les itérations de la boucle")
+    return OrchestrationResult(
+        False, None, candidate, n, log_paths,
+        f"Budget de réinjection ({REINJECTION_BUDGET}) épuisé. Dernier rapport :\n"
+        + format_validation_errors(last_error),
+    )
 
 
 def main() -> int:
@@ -539,11 +719,11 @@ def main() -> int:
     if result.success:
         yaml_path = analysis_dir / f"{args.analysis_id}.yaml"
         yaml_path.write_text(dump_yaml_forcing_quotes(result.candidate), encoding="utf-8")
-        print(f"✓ Validation réussie en {result.iterations_used} itération(s) — {yaml_path}")
+        print(f"✓ Validation réussie en {result.agent_calls_used} appel(s) d'agent — {yaml_path}")
         return 0
 
     print(
-        f"❌ Échec après {result.iterations_used} itération(s). Logs : "
+        f"❌ Échec après {result.agent_calls_used} appel(s) d'agent. Logs : "
         f"{', '.join(str(p) for p in result.log_paths)}",
         file=sys.stderr,
     )

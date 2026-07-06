@@ -22,9 +22,26 @@ l'API rejette les schémas JSON auto-référents pour `output_config.format`
 InferredFunction -> InferredFunction »). Voir la note de `InferredFunctionAlternative`
 ci-dessous — la validation finale reste `schemas.InferredFunction`, récursive
 sans limite, inchangée.
+
+Lot 2.9 (correctif final Phase 0, prescrit en Reviewer) — les champs
+bitemporels (`date_fait`/`date_connaissance`) des quatre modèles d'assertion
+(Vulnerability, Omission, DiscourseActGap, ObservableEffect) deviennent
+REQUIS dans les schémas de sortie agent, avec un type restreint à
+`date | "non_documente"` (la sentinelle `non_renseigne` — défaut silencieux
+du schéma de validation finale — est retirée du schéma de sortie agent
+uniquement). Un agent ne peut donc plus omettre ces deux champs ni laisser
+un défaut silencieux s'appliquer ; il doit soit dater réellement le fait,
+soit affirmer explicitement `non_documente`. Le schéma de validation finale
+(`schemas.py`, qui accepte encore `non_renseigne` pour le corpus existant
+antérieur au durcissement) est inchangé — cette contrainte ne s'applique
+qu'à la génération, pas à la validation rétroactive du corpus. Implémenté
+par sous-classement (`VulnerabilityOutput(Vulnerability)`, etc.) qui
+redéfinit uniquement les deux champs de date, hérite tout le reste tel quel.
 """
 
 from __future__ import annotations
+from typing import Literal
+from datetime import date
 from pydantic import BaseModel, ConfigDict, Field
 
 from schemas import (
@@ -43,6 +60,12 @@ from schemas import (
     EpistemicSynthesis,
     NullResults,
 )
+
+# Type bitemporel de sortie agent (lot 2.9) — date réelle ou sentinelle
+# `non_documente` uniquement. `non_renseigne` (défaut silencieux du schéma
+# de validation finale) est délibérément absent : un agent doit toujours
+# choisir explicitement entre les deux options restantes.
+RequiredBitemporalDate = date | Literal["non_documente"]
 
 
 class InferredFunctionAlternative(BaseModel):
@@ -104,6 +127,26 @@ class ChariteOutput(BaseModel):
     units: list[CharitePartialUnit] = Field(default_factory=list)
 
 
+class VulnerabilityOutput(Vulnerability):
+    """`schemas.Vulnerability` avec `date_fait`/`date_connaissance` requis et
+    sans `non_renseigne` (lot 2.9) — voir la note de module."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    date_fait: RequiredBitemporalDate
+    date_connaissance: RequiredBitemporalDate
+
+
+class OmissionOutput(Omission):
+    """`schemas.Omission` avec `date_fait`/`date_connaissance` requis et sans
+    `non_renseigne` (lot 2.9) — voir la note de module."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    date_fait: RequiredBitemporalDate
+    date_connaissance: RequiredBitemporalDate
+
+
 class VulnerabilitesPartialUnit(BaseModel):
     """Complément d'unité produit par l'agent Vulnérabilités — identifié par
     `unit_id` (déjà attribué par Charité), fusionné dans l'unité correspondante
@@ -112,30 +155,50 @@ class VulnerabilitesPartialUnit(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     unit_id: str
-    argumentative_vulnerabilities: list[Vulnerability] = Field(default_factory=list)
-    omissions: list[Omission] = Field(default_factory=list)
+    argumentative_vulnerabilities: list[VulnerabilityOutput] = Field(default_factory=list)
+    omissions: list[OmissionOutput] = Field(default_factory=list)
     inferred_function: InferredFunctionOutput | None = None
 
 
 class VulnerabilitesOutput(BaseModel):
-    """Fragment produit par l'agent Vulnérabilités (étapes 9-10, prompt v2.0)."""
+    """Fragment produit par l'agent Vulnérabilités (étapes 9-10, prompt v2.1)."""
 
     model_config = ConfigDict(extra="forbid")
 
     units: list[VulnerabilitesPartialUnit] = Field(default_factory=list)
 
 
+class DiscourseActGapOutput(DiscourseActGap):
+    """`schemas.DiscourseActGap` avec `date_fait`/`date_connaissance` requis
+    et sans `non_renseigne` (lot 2.9) — voir la note de module."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    date_fait: RequiredBitemporalDate
+    date_connaissance: RequiredBitemporalDate
+
+
+class ObservableEffectOutput(ObservableEffect):
+    """`schemas.ObservableEffect` avec `date_fait`/`date_connaissance` requis
+    et sans `non_renseigne` (lot 2.9) — voir la note de module."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    date_fait: RequiredBitemporalDate
+    date_connaissance: RequiredBitemporalDate
+
+
 class ChainesCausalesOutput(BaseModel):
-    """Fragment produit par l'agent Chaînes causales (étape 11 + 12, prompt v2.0)."""
+    """Fragment produit par l'agent Chaînes causales (étape 11 + 12, prompt v2.1)."""
 
     model_config = ConfigDict(extra="forbid")
 
     upstream_causal_chain: UpstreamCausalChain | None = None
     downstream_causal_chains: list[DownstreamCausalChain] = Field(default_factory=list)
-    discourse_action_gaps_on_thematic_objects: list[DiscourseActGap] = Field(
+    discourse_action_gaps_on_thematic_objects: list[DiscourseActGapOutput] = Field(
         default_factory=list
     )
-    observable_effects_on_targeted_objects: list[ObservableEffect] = Field(
+    observable_effects_on_targeted_objects: list[ObservableEffectOutput] = Field(
         default_factory=list
     )
     historiographies: list[Historiography] = Field(default_factory=list)
@@ -169,12 +232,17 @@ AGENT_OUTPUT_MODELS: dict[str, type[BaseModel]] = {
 
 
 __all__ = [
+    "RequiredBitemporalDate",
     "CharitePartialUnit",
     "ChariteOutput",
     "InferredFunctionAlternative",
     "InferredFunctionOutput",
+    "VulnerabilityOutput",
+    "OmissionOutput",
     "VulnerabilitesPartialUnit",
     "VulnerabilitesOutput",
+    "DiscourseActGapOutput",
+    "ObservableEffectOutput",
     "ChainesCausalesOutput",
     "SyntheseOutput",
     "AGENT_OUTPUT_MODELS",

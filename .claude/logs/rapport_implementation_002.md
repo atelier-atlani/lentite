@@ -204,3 +204,43 @@ Deux appels rejetés avant génération (référence circulaire, timeout de gram
 | Lot {2.7} (§5, quatre exécutions orchestrateur + diagnostics mesurés) | 377 159 | 205 315 | 2,8075 $ |
 | Lot {2.8} (§7.3, cinq tentatives + test de fumée) | 246 363 | 57 939 | 1,0721 $ |
 | **Cumul séquence 2 — étalonnage et correctif structurel** | **623 522** | **263 254** | **3,8796 $** |
+
+---
+
+## 8. Addendum — lot {2.9}, correctif final Phase 0 et première réussite de bout en bout
+
+*Ajouté le 6 juillet 2026, en exécution du lot {2.9} (correctif final Phase 0, prescrit en Reviewer, complète `revue_002.md` §4). Append-only — n'amende aucun constat des sections 1 à 7 ci-dessus.*
+
+### 8.1 Corrections appliquées
+
+Trois changements, tous motivés par l'échec de contenu ordinaire documenté à la fin du lot {2.8} (bitemporalité incomplète sur des omissions Vulnérabilités) :
+
+1. **Champs bitemporels requis dans les schémas de sortie agent.** `date_fait`/`date_connaissance` deviennent des champs requis (type `date | "non_documente"`, sans `non_renseigne`) dans les schémas de sortie de Vulnérabilités et Chaînes causales (`VulnerabilityOutput`, `OmissionOutput`, `DiscourseActGapOutput`, `ObservableEffectOutput`, nouveaux dans `pipeline/agent_schemas.py`, par sous-classement des modèles normatifs de `schemas.py` — celui-ci reste inchangé pour le corpus existant). L'API rejette désormais toute sortie qui omet ces champs, plutôt que de laisser un défaut silencieux s'appliquer.
+2. **Règle sémantique explicite dans les prompts.** Les prompts Vulnérabilités et Chaînes causales (v2.0 → v2.1) ajoutent une règle dédiée : « si la source ne documente pas la valeur, affirme `non_documente` ; ne laisse jamais un champ en défaut », avec une section « comportement en cas de réinjection » nouvelle (absente en v2.0, où seul Synthèse pouvait être réinjecté).
+3. **Routage de réinjection par agent propriétaire.** `route_validation_errors` (nouveau, `pipeline/orchestrateur.py`) attribue chaque erreur de validation à l'agent dont le fragment contient le champ fautif — y compris les erreurs racine (`validate_bitemporal_when_durci`), dont le message texte est analysé pour en extraire les chemins et les répartir, une même erreur brute pouvant se scinder entre Vulnérabilités et Chaînes causales. Budget global de 3 réinjections par passe, partagé entre les agents qui en ont besoin (pas 3 par agent). Une erreur non routable (champ défaulté par l'orchestrateur, jamais par un agent) interrompt la passe immédiatement sans consommer de budget. Huit tests unitaires nouveaux couvrent le routage (champs de premier niveau, sous-champs de `units`, erreurs racine scindées entre deux agents, cas non routable) ; suite complète à 27 tests, aucune régression sur le corpus existant (12/12 positifs, 6/6 négatifs).
+
+### 8.2 Résultat — succès dès la première tentative
+
+La ré-exécution sur `corpus/lecornu_dpg_20251014.md` a produit un YAML M01-M validé **en quatre appels d'agent, sans aucune réinjection** — Charité, Vulnérabilités, Chaînes causales, Synthèse, chacun une seule fois, validation Pydantic réussie du premier coup. C'est la première production automatique complète et validée du prototype, sur les six tentatives cumulées des lots {2.7}, {2.8} et {2.9}. `exports/etalonnage_001.md` a été produit en conséquence — comparaison factuelle contre `pipeline/analyses/lecornu_v2_1.yaml` (analyse manuelle canonique du même texte), sans jugement de conformité.
+
+Constat notable de la comparaison (détail complet dans `etalonnage_001.md`) : l'automatique n'a reçu aucun contexte documentaire sur les suites du discours (contrairement à la manuelle, rédigée sept mois plus tard avec recherche documentaire sur les événements survenus depuis) — il a en conséquence correctement assigné `not_yet_observed` aux quatre engagements V.3 qu'il documente et laissé le bloc des effets observables vide, plutôt que d'inventer des suites qu'il ne pouvait pas connaître. C'est un résultat épistémique positif (aucune invention détectée sur ce point), pas un défaut de couverture.
+
+### 8.3 Comptabilité API du lot {2.9}
+
+Modèle : `claude-sonnet-5`, tarification intro ($2,00 / $10,00 par 1M tokens), même méthode que les lots {2.7}/{2.8}.
+
+| Appel | Entrée | Sortie | Coût |
+|---|---:|---:|---:|
+| Charité | 17 844 | 7 847 | 0,1142 $ |
+| Vulnérabilités | 28 737 | 9 219 | 0,1497 $ |
+| Chaînes causales | 39 280 | 4 862 | 0,1272 $ |
+| Synthèse | 41 520 | 2 443 | 0,1075 $ |
+| **Total (4 appels, aucune réinjection)** | **127 381** | **24 371** | **0,4985 $** |
+
+### 8.4 Cumul lots {2.7} + {2.8} + {2.9}
+
+| | Entrée | Sortie | Coût |
+|---|---:|---:|---:|
+| Cumul lots {2.7} + {2.8} (§7.4) | 623 522 | 263 254 | 3,8796 $ |
+| Lot {2.9} (§8.3) | 127 381 | 24 371 | 0,4985 $ |
+| **Cumul séquence 2 — étalonnage complet jusqu'à réussite** | **750 903** | **287 625** | **4,3781 $** |
