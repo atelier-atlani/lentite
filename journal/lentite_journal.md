@@ -693,4 +693,18 @@ refs: [plan_action_002]
 
 ---
 
+```yaml
+date: 2026-07-07
+type: étape
+refs: [revue_002, plan_action_002, plan_action_003]
+```
+
+### plan_action_003 reçu — Phase 1 ouverte, première étape décision 006
+
+*Constat.* `plan_action_003.md` (Phase 1 — dossier zéro rétrospectif), produit en Mode Architecte le 5 juillet 2026 sur le cadre fixé par `revue_002.md` §5, retrouvé dans `~/Downloads/` (déposé par le Dirigeant, non détecté au premier passage du micro-lot de rangement précédent) et classé dans `.claude/plans/plan_action_003.md`. Intégrité vérifiée avant classement — colophon « Plan d'action 003 v1.0 — produit le 5 juillet 2026 par Mode Architecte », cohérent avec la clôture de Phase 0 actée à l'entrée précédente.
+
+*Conséquence.* Phase 1 ouverte. Première étape : décision 006 (choix du cas du dossier zéro, sur grille de sélection) par le Dirigeant — non tranchée par cette entrée, revient explicitement au Dirigeant conformément à `plan_action_003.md` et à la discipline « l'Implementer ne décide rien de structurant ».
+
+---
+
 *Journal v1.0 — édité le 17 mai 2026. Prochaine révision attendue après extension M03 à 4 acteurs et nouvelles analyses substantielles. Document de mémoire institutionnelle, pas de récit. Pour la doctrine, lire charte et gabarit. Pour les analyses, lire les fichiers correspondants.*
