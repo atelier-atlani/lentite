@@ -679,4 +679,18 @@ refs: [plan_action_001, plan_action_002, decision_001, decision_002, decision_00
 
 ---
 
+```yaml
+date: 2026-07-07
+type: étape
+refs: [plan_action_002]
+```
+
+### Kit communication complété — 02 stack technique
+
+*Constat.* Micro-lot de rangement. `02_stack_technique.md` (v1.0, 4 juillet 2026, licence CC BY 4.0, en-tête « document dérivé » vérifié) classé dans `communication/`, déposé par le Dirigeant depuis `~/Downloads/`. Aucun fichier existant de `communication/` modifié — `00_document_maitre.md` (v1.1), `01_positionnement_usages.md` et `04_exploitation_actifs.md` restent en l'état, conformément au garde-fou explicite de ce lot (les versions du dépôt font foi, jamais remplacées par une version externe déposée par ailleurs).
+
+*Conséquence.* Kit communication technique complet : 00 (document maître), 01 (positionnement/usages), 02 (stack technique), 04 (exploitation actifs). Disponible pour usage interne immédiat (onboarding co-dirigeant, pilotage) — toute diffusion externe reste soumise aux mêmes jalons de la décision 005 que le reste du projet.
+
+---
+
 *Journal v1.0 — édité le 17 mai 2026. Prochaine révision attendue après extension M03 à 4 acteurs et nouvelles analyses substantielles. Document de mémoire institutionnelle, pas de récit. Pour la doctrine, lire charte et gabarit. Pour les analyses, lire les fichiers correspondants.*
