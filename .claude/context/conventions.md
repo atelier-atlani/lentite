@@ -235,6 +235,12 @@ Exemples —
 - *Type `étape`* (ajouté le 4 juillet 2026, instruction Dirigeant, micro-lot communication) — jalon de classement ou de structuration hors séquence d'un plan d'action (par exemple la création d'une nouvelle couche documentaire) : ni une décision structurante, ni une friction, ni un audit de critère, ni une reprise de tâche planifiée. Distinct de `reprise`, réservé à l'avancement d'une tâche déjà numérotée dans un plan d'action.
 - Référence complète — `.claude/decisions/decision_003_persistance_journal.md`.
 
+### 6.10 Discipline de recomptage des synthèses
+
+- *Tout décompte présenté dans une section de synthèse* (total de sources, de champs, d'occurrences, etc.) *est recompté au moment de l'écriture* — jamais reporté par mémoire ou par addition informelle depuis un brouillon antérieur. La synthèse s'écrit après le corps du document qu'elle résume, en relisant ce corps.
+- *Motif* (ajouté le 8 juillet 2026, friction lot B.1 de `plan_action_003.md`) — la première version de `corpus/dossier_zero/candidats_T0_lot_B1.md` annonçait 29 sources et 6 dates à vérifier en synthèse, pour un total réel de 32 sources et 13 dates à vérifier constaté au recomptage. L'erreur portait sur la synthèse, jamais sur le contenu du corps du document (les entrées elles-mêmes étaient correctes) — un décompte annoncé sans être vérifié contre son propre contenu est un abus de confiance sur un document dont la fonction est précisément de compter.
+- *Application* — vaut pour toute liste, tableau ou inventaire produit par une instance IA dans ce dépôt, pas seulement les documents de corpus.
+
 ---
 
 ## 7. Conventions du workflow collaboratif IA
@@ -251,4 +257,4 @@ Méthode complète dans `dev/lentite_methodologie_workflow_collaboratif_ia_v1.md
 
 ---
 
-*Conventions v1.4 — créé le 17 mai 2026, révisé le 3 juillet 2026 (ajout §3.2 traçabilité commit, §6.7-6.9 racine minimale / séquence-journal / front matter, tâche 0.7 de `plan_action_002.md`), révisé le 4 juillet 2026 (ajout du type `extension_corpus` §6.9, tâche 1.5 de `plan_action_002.md` ; ajout du type `étape` §6.9, micro-lot communication ; ajout §2.5 identifiants d'acteur/locuteur, arbitrage préliminaire à la tâche 2.3). À mettre à jour aux évolutions des bonnes pratiques (par exemple migration vers Python 3.13, adoption de uv pour gestion d'environnement, etc.). Document de référence opérationnelle, à lire en début de toute session de code.*
+*Conventions v1.5 — créé le 17 mai 2026, révisé le 3 juillet 2026 (ajout §3.2 traçabilité commit, §6.7-6.9 racine minimale / séquence-journal / front matter, tâche 0.7 de `plan_action_002.md`), révisé le 4 juillet 2026 (ajout du type `extension_corpus` §6.9, tâche 1.5 de `plan_action_002.md` ; ajout du type `étape` §6.9, micro-lot communication ; ajout §2.5 identifiants d'acteur/locuteur, arbitrage préliminaire à la tâche 2.3), révisé le 8 juillet 2026 (ajout §6.10 discipline de recomptage des synthèses, friction lot B.1 de `plan_action_003.md`). À mettre à jour aux évolutions des bonnes pratiques (par exemple migration vers Python 3.13, adoption de uv pour gestion d'environnement, etc.). Document de référence opérationnelle, à lire en début de toute session de code.*
