@@ -117,7 +117,7 @@ charity_reconstruction:
   - term: concertation étendue
     handling: attributed
   - term: carrières hachées
-    handling: quoted
+    handling: attributed
   - term: disposition favorable
     handling: attributed
 units:
