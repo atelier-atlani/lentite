@@ -12,17 +12,13 @@ Document de 175 pages, lecture **partielle et explicitement signalée** : introd
 
 **Point notable pour l'analyse en aval** : le rendement chiffré officiel de l'article 7 (7,5 Md€ à l'horizon 2026) est du même ordre de grandeur que la part que la note CAEPS (T0-CAEPS-2023-07) attribue elle-même au relèvement d'âge (« 8 à 10 Md€ à l'horizon 2030 ») — alors que la note CAEPS présente ce chiffre comme dérisoire face à son estimation du déficit total (148 Md€). La comparaison n'est pas tranchée ici, volontairement laissée à l'analyse en aval (M01/M03).
 
-## 2. Verbatim du 49.3 de Borne (16 mars 2023) — **BLOQUÉ, non intégré, ne rien forcer**
+## 2. Verbatim du 49.3 de Borne (16 mars 2023) — **repris et intégré après correction du fichier**
 
-`Ajout du dirigeant/verbatim_493_borne_20230316.pdf` a été lu intégralement (26 pages, en deux passes). **Ce document n'est pas le verbatim de la déclaration du 49.3.** C'est le compte rendu intégral de la **3e séance du jeudi 16 mars 2023** de l'Assemblée nationale, qui porte exclusivement sur un débat totalement différent : le projet de loi relatif à l'accélération des procédures liées à la construction de nouvelles installations nucléaires. La séance se déroule de 21h30 à 00h02, couvre des amendements sur le nucléaire (fermeture de Fessenheim, EPR, radioprotection, etc.), et se termine sur l'annonce de la séance suivante portant sur les Jeux olympiques 2024 — **aucune mention de Borne, du 49.3, de la réforme des retraites ou du PLFRSS nulle part dans les 26 pages.**
+Premier dépôt bloqué (voir constat initial ci-dessous, conservé pour traçabilité) : `verbatim_493_borne_20230316.pdf` contenait par erreur le compte rendu de la 3e séance du 16 mars 2023 (débat sur un projet de loi nucléaire, sans rapport). Le Dirigeant a redéposé le bon fichier le 11 juillet — compte rendu intégral de la **2e séance du jeudi 16 mars 2023** (Journal officiel n°33 [2] A.N.), qui contient bien la déclaration d'engagement de responsabilité.
 
-Je n'ai ni inventé un contenu de remplacement, ni supprimé la source existante (`2023-03-16_borne-declaration-49-3.md`, T0-ADOPTION-04, sourcée en B.2 via LCP avec ses limites déjà documentées — citations rendues en anglais par l'outil de récupération). **L'ancienne source reste en l'état, le remplacement n'a pas eu lieu.**
+**Remplacement effectué** : `corpus/dossier_zero/T0/2023-03-16_borne-declaration-49-3.md` (T0-ADOPTION-04) réécrit intégralement à partir d'une lecture directe des 31 pages du document officiel — citation de Michel Rocard reprise par Borne, justification du recours au 49.3 (incertitude du vote, risque pour le compromis de CMP), formule d'engagement de responsabilité, confirmation procédurale de la présidente de séance, réactions immédiates en hémicycle. Remplace la version LCP (citations retraduites en anglais par l'outil de récupération). Intégrité relevée `uncertain` → `certified` (transcription directe d'un document officiel, pas de résumé par un outil intermédiaire).
 
-Deux hypothèses possibles, non tranchées ici — décision du Dirigeant nécessaire :
-- **Mauvais fichier déposé par erreur** (confusion entre deux comptes rendus de séance du même jour — l'Assemblée a tenu plusieurs séances le 16 mars 2023, dont probablement une où le 49.3 a été annoncé, distincte de cette 3e séance).
-- **Fichier intentionnel** (test de vigilance) — je n'ai pas de moyen de trancher entre les deux hypothèses et je ne dois pas présumer laquelle est la bonne.
-
-**Action recommandée** : le Dirigeant peut redéposer le bon fichier (probablement un compte rendu d'une séance antérieure du même jour, ou une source `assemblee-nationale.fr` distincte couvrant spécifiquement l'annonce du 49.3), ou confirmer que la source LCP actuelle doit être conservée telle quelle.
+*Constat initial (premier dépôt, avant correction) : le fichier lu ne contenait, sur ses 26 pages, aucune mention de Borne, du 49.3 ou des retraites — c'était le compte rendu d'une séance ultérieure du même jour, portant sur un tout autre texte. Signalé au Dirigeant plutôt que forcé ; correction reçue et traitée le jour même.*
 
 ## 3. Saisines du Conseil constitutionnel — contradiction résolue
 
@@ -40,7 +36,7 @@ Intégrité relevée `uncertain` → `partial` (deux sources indépendantes conc
 
 **26 sources** dans `corpus/dossier_zero/T0/` : 25 issues de B.2, +1 nouvelle (étude d'impact, T0-ADOPTION-11). La correction des saisines (T0-ADOPTION-07) modifie une source existante sans en ajouter — total net +1 par rapport à la clôture de B.2.
 
-Couverture des 30 candidats de `candidats_T0_lot_B1.md` : 17/30 désormais couverts avec un degré de confiance raisonnable (16 précédemment + B5, étude d'impact). B10 (49.3) reste comptée comme couverte au même niveau qu'à la fin de B.2 (source LCP, `uncertain`, limites déjà documentées) — **pas améliorée par ce lot**, le fichier destiné à la remplacer ne convenait pas.
+Couverture des 30 candidats de `candidats_T0_lot_B1.md` : 17/30 désormais couverts avec un degré de confiance raisonnable (B5 étude d'impact ajoutée). B10 (49.3) reste comptée comme couverte, mais sa qualité de sourcing est nettement améliorée (`uncertain` → `certified`), désormais l'une des sources les plus fiables du corpus.
 
 Gap inchangé pour le reste (13 candidats non couverts, cf. `log_session_003_lot_B2_final.md` pour le détail complet) — non repris ici pour éviter la duplication.
 
@@ -48,7 +44,7 @@ Gap inchangé pour le reste (13 candidats non couverts, cf. `log_session_003_lot
 
 - `corpus/dossier_zero/T0/2023-01-23_etude-impact-plfrss-2023.md` — nouveau.
 - `corpus/dossier_zero/T0/2023-03-21_2023-03-23_saisines-conseil-constitutionnel.md` — remplace et renomme `2023-03-20_2023-03-23_saisines-conseil-constitutionnel.md`.
-- `corpus/dossier_zero/T0/2023-03-16_borne-declaration-49-3.md` — **inchangé**, remplacement non effectué faute de matériau valide.
+- `corpus/dossier_zero/T0/2023-03-16_borne-declaration-49-3.md` — réécrit intégralement, verbatim officiel remplace la version LCP.
 - `.claude/logs/log_session_003_lot_B2bis.md` — cette note.
 
-Lot B.2-bis clos sur cet état : 2 des 3 demandes traitées, 1 bloquée et signalée plutôt que forcée. Arrêt conforme à l'instruction — décision du Dirigeant nécessaire sur le point 2 avant toute nouvelle tentative.
+Lot B.2-bis clos sur cet état : les 3 demandes traitées (2 dès la première passe, la 3e après correction du fichier par le Dirigeant). Arrêt conforme à l'instruction.
