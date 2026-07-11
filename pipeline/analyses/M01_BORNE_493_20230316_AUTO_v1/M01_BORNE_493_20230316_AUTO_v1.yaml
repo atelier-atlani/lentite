@@ -878,4 +878,4 @@ execution_date: '2026-07-11'
 source:
   text_id: M01_BORNE_493_20230316_AUTO_v1
   provenance: source_texts/borne_20230316_493.txt
-  integrity_status: uncertain
+  integrity_status: certified
