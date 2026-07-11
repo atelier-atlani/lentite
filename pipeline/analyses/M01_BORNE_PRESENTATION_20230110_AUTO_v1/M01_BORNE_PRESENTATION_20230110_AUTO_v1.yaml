@@ -1,0 +1,680 @@
+execution_mode: applicable_degraded
+execution_mode_note: Le texte source n'est pas une transcription verbatim mais un
+  résumé de couverture journalistique (France Bleu/ici.fr), la source officielle (info.gouv.fr)
+  étant inaccessible. L'avertissement explicite invite à la prudence sur toute analyse
+  de formulation exacte, choix lexicaux ou figures de style précises. L'analyse ci-dessous
+  se limite donc au contenu factuel des annonces et aux termes effectivement rapportés
+  par le résumé, sans inférence sur la rhétorique fine (intonation, emphase, tournures
+  exactes) qui ne peut être vérifiée.
+enonciation:
+  speaker:
+    id: borne_elisabeth
+    name: Élisabeth Borne
+    role_at_date: Première ministre
+  date: '2023-01-10'
+  place: France (lieu précis non spécifié dans le résumé disponible)
+  primary_audience: Journalistes présents à la conférence de presse
+  secondary_audiences:
+  - Opinion publique française
+  - Partenaires sociaux (syndicats et organisations patronales)
+  - Parlementaires appelés à examiner le projet de loi
+  channel: Conférence de presse
+  political_sequence: Présentation du projet de réforme des retraites, en amont de
+    son examen parlementaire
+  genre: Discours institutionnel gouvernemental d'annonce de réforme
+  communication_contract: Présentation officielle et pédagogique d'un projet de loi
+    gouvernemental, engageant la parole de l'exécutif sur le contenu précis des mesures
+    annoncées
+  affective_charge: medium
+  ethical_charge: medium
+  thematic_objects:
+  - object_id: obj_age_depart
+    label: Relèvement de l'âge légal de départ à la retraite à 64 ans
+    efficiency_status: efficient
+    efficiency_justification: Le texte fournit un objectif chiffré précis (64 ans),
+      un calendrier (d'ici 2030), un rythme de mise en œuvre (trois mois par génération)
+      et une date de bascule (1er septembre 2023), ce qui constitue une annonce opérationnalisable
+      et vérifiable.
+  - object_id: obj_duree_cotisation
+    label: Accélération de la durée de cotisation à 43 annuités
+    efficiency_status: efficient
+    efficiency_justification: Le texte précise le nombre d'annuités requis (43) et
+      le nouveau calendrier d'application (échéance avancée de 2035 à 2027), rendant
+      la mesure vérifiable et datée.
+  - object_id: obj_petites_pensions
+    label: Revalorisation du minimum de pension pour carrière complète
+    efficiency_status: efficient
+    efficiency_justification: Le texte donne un seuil chiffré (85% du SMIC net), un
+      montant approximatif (1200€ bruts mensuels), une estimation de l'augmentation
+      (~100€/mois) et une population cible chiffrée (deux millions de bénéficiaires),
+      ce qui rend la mesure évaluable.
+  - object_id: obj_carrieres_longues
+    label: Élargissement du dispositif de départ anticipé pour carrières longues
+    efficiency_status: efficient
+    efficiency_justification: Le texte détaille des seuils d'âge de début de carrière
+      et les âges de départ anticipé correspondants (58, 60, 62 ans), ainsi qu'une
+      extension aux périodes de congé parental, ce qui constitue une description opérationnelle
+      précise.
+  - object_id: obj_penibilite
+    label: Renforcement de la prise en compte de la pénibilité au travail
+    efficiency_status: efficient_partiel
+    efficiency_justification: Le texte cite des facteurs de risque supplémentaires
+      et un fonds doté d'un milliard d'euros sur cinq ans, mais ne précise pas les
+      modalités concrètes d'accès au compte professionnel de prévention ni les critères
+      d'attribution, laissant la portée opérationnelle partiellement indéterminée.
+  - object_id: obj_regimes_speciaux
+    label: Extinction progressive de la plupart des régimes spéciaux
+    efficiency_status: efficient_partiel
+    efficiency_justification: Le principe de la clause du grand-père et son application
+      aux nouveaux entrants sont énoncés clairement, mais la liste exhaustive des
+      régimes concernés au-delà de RATP et EDF n'est pas précisée dans le résumé disponible,
+      ce qui limite la vérifiabilité complète de la portée de la mesure.
+  targeted_objects:
+  - object_id: tgt_proposition_65_ans
+    label: Proposition initiale de report à 65 ans, implicitement mise en contraste
+      par la Première ministre
+    inference_confidence: 0.7
+    grounded_in:
+    - Présenté par la Première ministre comme le résultat d'une concertation étendue,
+      en retrait par rapport à une proposition initiale à 65 ans.
+    efficiency_status: efficient_partiel
+    efficiency_justification: Le texte mentionne explicitement l'existence d'une proposition
+      initiale à 65 ans et son retrait, mais ne précise pas qui a porté cette proposition
+      ni les modalités de la concertation invoquée, ce qui limite la vérifiabilité
+      complète du positionnement rhétorique visé.
+  - object_id: tgt_calendrier_initial_2035
+    label: Calendrier initial de 2035 pour l'accélération de la durée de cotisation,
+      présenté comme dépassé par la nouvelle échéance de 2027
+    inference_confidence: 0.75
+    grounded_in:
+    - avec accélération du calendrier (l'échéance de 2035 initialement prévue avancée
+      à 2027)
+    efficiency_status: efficient
+    efficiency_justification: Le texte identifie précisément l'échéance antérieure
+      (2035) et la nouvelle échéance annoncée (2027), permettant une comparaison chiffrée
+      claire de l'objet visé par le changement.
+charity_reconstruction:
+  content: "L'argument central reconstitué à partir du résumé disponible est le suivant\
+    \ : face à un déséquilibre financier du système de retraites (déséquilibre non\
+    \ chiffré dans ce résumé mais présupposé par la nécessité de réforme), le gouvernement\
+    \ propose un ensemble de mesures visant à la fois à augmenter les ressources du\
+    \ système (report de l'âge légal à 64 ans, allongement de la durée de cotisation\
+    \ à 43 annuités) et à en corriger certains effets jugés inéquitables pour des\
+    \ catégories spécifiques de travailleurs (relèvement du minimum de pension pour\
+    \ les carrières complètes modestes, élargissement du dispositif carrières longues\
+    \ incluant désormais les périodes de congé parental, renforcement de la prise\
+    \ en compte de la pénibilité via des facteurs de risque supplémentaires et un\
+    \ fonds dédié, extinction progressive des régimes spéciaux au nom d'une équité\
+    \ entre régimes). La présentation de la mesure sur l'âge de départ comme un compromis\
+    \ obtenu par la concertation, en retrait par rapport à un projet initial plus\
+    \ dur à 65 ans, vise à inscrire la réforme dans un processus de dialogue social\
+    \ plutôt que dans une décision unilatérale. La disposition sur le taux plein automatique\
+    \ à 67 ans indépendamment de la durée cotisée est présentée par le gouvernement\
+    \ comme un filet de sécurité pour les carrières incomplètes ou hachées, ce qui\
+    \ doit être restitué comme argument favorable invoqué par la locutrice, sans présumer\
+    \ à ce stade de sa suffisance réelle pour cette population."
+  borrowed_terms_handled:
+  - term: concertation étendue
+    handling: attributed
+  - term: carrières hachées
+    handling: quoted
+  - term: disposition favorable
+    handling: attributed
+units:
+- unit_id: u1
+  text_span: Âge de départ — relèvement progressif à 64 ans d'ici 2030, à raison de
+    trois mois par génération à partir du 1er septembre 2023 ; les personnes nées
+    après le 1er septembre 1961 sont les premières concernées.
+  speech_acts:
+  - assertion factuelle
+  - annonce normative (fixation d'une règle applicable)
+  presuppositions:
+  - Le système de retraites actuel nécessite un ajustement de l'âge légal de départ.
+  - Un relèvement progressif (par paliers) est possible et praticable administrativement.
+  argumentative_vulnerabilities: []
+  omissions:
+  - missing_element: Chiffrage du déficit ou déséquilibre financier du système de
+      retraites justifiant le relèvement de l'âge légal.
+    level: strategic_probable
+    why_expected: Une annonce gouvernementale de réforme structurelle de cette ampleur,
+      présentée en conférence de presse officielle par la Première ministre, est attendue
+      comme accompagnée des données chiffrées justifiant la nécessité de la mesure,
+      ces données étant en possession de l'exécutif via les rapports du Conseil d'orientation
+      des retraites.
+    evidence_of_expected_knowledge: Fonction officielle de Première ministre présentant
+      un projet de loi gouvernemental s'appuyant nécessairement sur des travaux préparatoires
+      internes (rapports COR, études d'impact).
+    confidence: 0.55
+    confidence_applies_to: inference
+    pouvoir_agir: La Première ministre disposait du pouvoir de citer les projections
+      financières du COR dans son discours de présentation.
+    opportunite:
+      description: Conférence de presse de présentation de la réforme du 10 janvier
+        2023, moment naturel pour justifier la nécessité de la mesure par des données
+        chiffrées.
+      date: '2023-01-10'
+    cloture_corpus:
+      corpus_declare: Résumé de couverture journalistique France Bleu/ici.fr portant
+        sur la conférence de presse du 10 janvier 2023
+      date_cloture: '2023-01-10'
+    explications_innocentes:
+    - description: Le résumé journalistique a pu simplement omettre cette donnée par
+        souci de concision sans que la locutrice l'ait elle-même omise à l'oral.
+      statut: retenue
+    date_fait: '2023-01-10'
+    date_connaissance: non_documente
+  inferred_function: null
+- unit_id: u2
+  text_span: Présenté par la Première ministre comme le résultat d'une concertation
+    étendue, en retrait par rapport à une proposition initiale à 65 ans.
+  speech_acts:
+  - assertion rapportée (discours attribué à la locutrice sur sa propre décision)
+  - justification implicite de la mesure par la procédure suivie
+  presuppositions:
+  - Une concertation a effectivement eu lieu avant l'annonce.
+  - Une proposition initiale à 65 ans existait et a été discutée avant d'être révisée.
+  argumentative_vulnerabilities:
+  - type: appel à la procédure comme validation de fond (argumentum ad procedurum)
+    level: possible
+    evidence_span: Présenté par la Première ministre comme le résultat d'une concertation
+      étendue, en retrait par rapport à une proposition initiale à 65 ans.
+    confidence: 0.4
+    confidence_applies_to: inference
+    charitable_alternative: La mention de la concertation peut viser simplement à
+      informer sur le processus décisionnel plutôt qu'à démontrer la validité substantielle
+      de la mesure retenue.
+    hidden_premises:
+    - Le fait qu'une mesure résulte d'une concertation et constitue un compromis par
+      rapport à une proposition plus dure suffit à établir sa légitimité ou son bien-fondé.
+    defeaters:
+    - Une concertation peut être menée de façon formelle sans réelle prise en compte
+      des positions exprimées par les partenaires sociaux.
+    - Le simple retrait par rapport à une proposition plus dure (65 ans) ne démontre
+      pas que 64 ans constitue en soi une mesure juste ou adaptée.
+    date_fait: '2023-01-10'
+    date_connaissance: non_documente
+  omissions:
+  - missing_element: Identité des acteurs ayant porté la proposition initiale à 65
+      ans et modalités précises de la concertation invoquée (participants, durée,
+      points d'accord/désaccord).
+    level: strategic_probable
+    why_expected: La locutrice invoque explicitement une concertation comme fondement
+      de la légitimité de la mesure ; l'agent Charité a lui-même noté (grounded_in,
+      confidence 0.7) que la source de la proposition à 65 ans et les modalités de
+      concertation ne sont pas précisées, alors que la Première ministre en tant que
+      pilote du processus dispose nécessairement de cette information.
+    evidence_of_expected_knowledge: En tant que Première ministre ayant piloté les
+      concertations avec les partenaires sociaux préalables à l'annonce, elle a un
+      accès direct et documenté à l'identité des participants et au déroulement des
+      discussions.
+    confidence: 0.5
+    confidence_applies_to: inference
+    pouvoir_agir: Elle pouvait nommer les organisations consultées et détailler le
+      calendrier de la concertation dans son discours.
+    opportunite:
+      description: Conférence de presse du 10 janvier 2023, occasion où la légitimité
+        procédurale de la réforme était directement invoquée.
+      date: '2023-01-10'
+    cloture_corpus:
+      corpus_declare: Résumé de couverture journalistique France Bleu/ici.fr portant
+        sur la conférence de presse du 10 janvier 2023
+      date_cloture: '2023-01-10'
+    explications_innocentes:
+    - description: Le détail des modalités de concertation a pu être fourni oralement
+        mais non repris par le résumé journalistique disponible, qui n'est pas exhaustif.
+      statut: retenue
+    - description: La concertation ayant été médiatisée par ailleurs (autres conférences,
+        communiqués), la Première ministre a pu juger la répétition inutile lors de
+        cette présentation synthétique.
+      statut: examinee
+    date_fait: '2023-01-10'
+    date_connaissance: non_documente
+  inferred_function:
+    label: Légitimation procédurale de la mesure par inscription dans un processus
+      de dialogue social plutôt que dans une décision unilatérale
+    confidence: 0.6
+    epistemic_regime: asserts
+    alternative_functions:
+    - label: Communication factuelle neutre sur le déroulement du processus décisionnel,
+        sans intention stratégique de légitimation
+      confidence: 0.3
+      epistemic_regime: believes
+- unit_id: u3
+  text_span: Durée de cotisation — 43 annuités requises pour une pension à taux plein,
+    avec accélération du calendrier (l'échéance de 2035 initialement prévue avancée
+    à 2027).
+  speech_acts:
+  - assertion factuelle
+  - annonce normative
+  presuppositions:
+  - Un calendrier antérieur prévoyant l'échéance de 2035 existait et faisait référence
+    avant cette annonce.
+  - L'accélération du calendrier est présentée comme une caractéristique notable de
+    la réforme, distincte de la seule fixation du nombre d'annuités.
+  argumentative_vulnerabilities: []
+  omissions: []
+  inferred_function: null
+- unit_id: u4
+  text_span: Toute personne partant à 67 ans bénéficie automatiquement du taux plein
+    indépendamment de la durée cotisée — disposition présentée comme favorable aux
+    carrières hachées.
+  speech_acts:
+  - assertion factuelle
+  - annonce normative
+  - qualification évaluative attribuée (présentation de la mesure comme favorable)
+  presuppositions:
+  - Il existe une catégorie de travailleurs à 'carrières hachées' pour qui la durée
+    de cotisation requise pose un problème spécifique.
+  - L'âge de 67 ans constitue un seuil suffisamment tardif pour garantir le taux plein
+    sans condition de durée.
+  argumentative_vulnerabilities:
+  - type: généralisation implicite sur la suffisance d'une mesure pour une population
+      hétérogène
+    level: possible
+    evidence_span: disposition présentée comme favorable aux carrières hachées
+    confidence: 0.4
+    confidence_applies_to: inference
+    charitable_alternative: La disposition peut être présentée comme un filet de sécurité
+      parmi d'autres mesures, sans prétendre résoudre à elle seule la situation de
+      toutes les carrières hachées, comme le retient explicitement la reconstruction
+      charitable.
+    hidden_premises:
+    - Un seuil de 67 ans avec taux plein automatique constitue une réponse adéquate
+      à la diversité des situations de carrières hachées, indépendamment de l'ampleur
+      des trous de carrière ou du niveau de pension obtenu à cet âge.
+    defeaters:
+    - Un départ à 67 ans avec taux plein sur une carrière très hachée peut aboutir
+      à une pension très faible, le taux plein ne garantissant pas un montant de pension
+      suffisant.
+    - Certaines personnes aux carrières hachées ne peuvent physiquement pas prolonger
+      leur activité jusqu'à 67 ans, ce qui limite la portée réelle du filet de sécurité
+      annoncé.
+    date_fait: '2023-01-10'
+    date_connaissance: non_documente
+  omissions:
+  - missing_element: Estimation du nombre de personnes concernées par cette disposition
+      et du niveau de pension moyen qu'elles percevraient effectivement à 67 ans avec
+      taux plein.
+    level: structural
+    why_expected: Une mesure présentée comme favorable à une catégorie de travailleurs
+      (carrières hachées) appelle usuellement une quantification de son effet, comme
+      cela a été fourni pour la mesure sur les petites pensions (deux millions de
+      bénéficiaires, ~100€/mois) dans la même conférence de presse.
+    evidence_of_expected_knowledge: La même conférence de presse fournit des chiffrages
+      précis pour d'autres mesures (u5), ce qui indique que l'exécutif disposait de
+      méthodes de chiffrage disponibles et mobilisées pour des dispositifs comparables.
+    confidence: 0.45
+    confidence_applies_to: inference
+    pouvoir_agir: La Première ministre pouvait produire ou faire produire une estimation
+      chiffrée de la population concernée et de l'effet moyen sur les pensions.
+    opportunite:
+      description: Conférence de presse du 10 janvier 2023, même occasion où un chiffrage
+        a été fourni pour la mesure sur les petites pensions.
+      date: '2023-01-10'
+    cloture_corpus:
+      corpus_declare: Résumé de couverture journalistique France Bleu/ici.fr portant
+        sur la conférence de presse du 10 janvier 2023
+      date_cloture: '2023-01-10'
+    explications_innocentes:
+    - description: Le chiffrage a pu être fourni à l'oral ou dans le dossier de presse
+        complet sans être repris par le résumé journalistique disponible, qui n'est
+        pas exhaustif.
+      statut: retenue
+    date_fait: '2023-01-10'
+    date_connaissance: non_documente
+  inferred_function:
+    label: Présentation d'une mesure technique comme geste de compensation sociale
+      envers une catégorie de travailleurs désavantagés par les autres mesures de
+      la réforme
+    confidence: 0.5
+    epistemic_regime: asserts
+    alternative_functions:
+    - label: Simple description d'une règle technique préexistante ou logiquement
+        nécessaire, sans intention de compensation stratégique
+      confidence: 0.3
+      epistemic_regime: believes
+- unit_id: u5
+  text_span: Petites pensions — relèvement du minimum de pension à 85% du SMIC net
+    pour une carrière complète, soit environ 1 200 € bruts mensuels (~100 €/mois d'augmentation),
+    pour environ deux millions de bénéficiaires actuels.
+  speech_acts:
+  - assertion factuelle
+  - annonce normative
+  presuppositions:
+  - Il existe actuellement des retraités percevant une pension inférieure à ce nouveau
+    seuil malgré une carrière complète.
+  - Le nombre de bénéficiaires concernés est estimable et a été estimé à environ deux
+    millions.
+  argumentative_vulnerabilities: []
+  omissions: []
+  inferred_function: null
+- unit_id: u6
+  text_span: "Carrières longues — élargissement du dispositif de départ anticipé :\
+    \ début de carrière avant 16 ans → départ possible à 58 ans ; entre 16 et 18 ans\
+    \ → 60 ans ; entre 18 et 20 ans → 62 ans."
+  speech_acts:
+  - assertion factuelle
+  - annonce normative
+  presuppositions:
+  - Un dispositif de départ anticipé pour carrières longues existait déjà avant cette
+    réforme et fait l'objet d'un élargissement.
+  - L'âge de début de carrière est un critère mesurable et vérifiable pour l'éligibilité
+    au dispositif.
+  argumentative_vulnerabilities: []
+  omissions: []
+  inferred_function: null
+- unit_id: u7
+  text_span: Les périodes de congé parental sont désormais prises en compte dans l'éligibilité.
+  speech_acts:
+  - assertion factuelle
+  - annonce normative
+  presuppositions:
+  - Les périodes de congé parental n'étaient pas prises en compte dans l'éligibilité
+    au dispositif carrières longues avant cette réforme.
+  argumentative_vulnerabilities: []
+  omissions: []
+  inferred_function: null
+- unit_id: u8
+  text_span: Pénibilité — facteurs de risques professionnels supplémentaires (port
+    de charges lourdes, postures pénibles, vibrations mécaniques) ouvrant droit au
+    compte professionnel de prévention.
+  speech_acts:
+  - assertion factuelle
+  - annonce normative
+  presuppositions:
+  - Un compte professionnel de prévention existait déjà et certains facteurs de risque
+    en étaient jusqu'ici exclus.
+  - Les trois facteurs cités constituent une extension par rapport à une liste antérieure
+    plus restreinte.
+  argumentative_vulnerabilities: []
+  omissions:
+  - missing_element: Modalités concrètes d'accès au compte professionnel de prévention
+      et critères précis d'attribution des points liés aux nouveaux facteurs de risque.
+    level: structural
+    why_expected: L'agent Charité a lui-même qualifié cet objet thématique d'efficient_partiel
+      en notant l'absence des modalités concrètes d'accès, alors qu'une annonce normative
+      créant un droit nouveau appelle usuellement la description du mécanisme d'application
+      pour être opérationnalisable.
+    evidence_of_expected_knowledge: La conception du compte professionnel de prévention
+      relève de l'administration sous l'autorité du gouvernement, qui dispose donc
+      des textes réglementaires ou projets de décret définissant ces modalités au
+      moment de l'annonce.
+    confidence: 0.4
+    confidence_applies_to: inference
+    pouvoir_agir: La Première ministre ou les services concernés pouvaient détailler
+      les seuils d'exposition et le barème de points ouvrant droit au compte.
+    opportunite:
+      description: Conférence de presse de présentation de la réforme du 10 janvier
+        2023.
+      date: '2023-01-10'
+    cloture_corpus:
+      corpus_declare: Résumé de couverture journalistique France Bleu/ici.fr portant
+        sur la conférence de presse du 10 janvier 2023
+      date_cloture: '2023-01-10'
+    explications_innocentes:
+    - description: Les modalités techniques précises relèvent normalement de décrets
+        d'application postérieurs à l'annonce politique et n'étaient donc pas encore
+        stabilisées au moment de cette conférence de presse.
+      statut: retenue
+    date_fait: '2023-01-10'
+    date_connaissance: non_documente
+  inferred_function: null
+- unit_id: u9
+  text_span: Fonds de prévention de l'usure professionnelle doté d'un milliard d'euros
+    sur cinq ans.
+  speech_acts:
+  - assertion factuelle
+  - annonce normative
+  presuppositions:
+  - Ce fonds constitue une création ou un renforcement par rapport à un dispositif
+    antérieur non précisé dans ce résumé.
+  argumentative_vulnerabilities: []
+  omissions: []
+  inferred_function: null
+- unit_id: u10
+  text_span: Régimes spéciaux — extinction progressive par clause du grand-père pour
+    la plupart des régimes spéciaux existants, dont la RATP et EDF, applicable aux
+    seuls nouveaux entrants.
+  speech_acts:
+  - assertion factuelle
+  - annonce normative
+  presuppositions:
+  - Des régimes spéciaux existent actuellement pour un ensemble de professions incluant
+    RATP et EDF.
+  - La clause du grand-père garantit que les personnes déjà affiliées à ces régimes
+    ne sont pas concernées par l'extinction, seuls les nouveaux entrants l'étant.
+  argumentative_vulnerabilities: []
+  omissions:
+  - missing_element: Liste exhaustive des régimes spéciaux concernés par l'extinction,
+      au-delà des exemples cités (RATP, EDF).
+    level: structural
+    why_expected: L'agent Charité a qualifié cet objet thématique d'efficient_partiel
+      en relevant explicitement l'absence de liste exhaustive, alors qu'une annonce
+      normative affectant la structure des régimes de retraite appelle la précision
+      de son périmètre d'application pour être vérifiable.
+    evidence_of_expected_knowledge: Le projet de loi gouvernemental présenté nécessairement
+      s'appuie sur un texte juridique définissant précisément les régimes concernés,
+      information dont dispose l'exécutif au moment de l'annonce.
+    confidence: 0.4
+    confidence_applies_to: inference
+    pouvoir_agir: La Première ministre pouvait énumérer ou faire annexer la liste
+      complète des régimes spéciaux visés par la mesure.
+    opportunite:
+      description: Conférence de presse de présentation de la réforme du 10 janvier
+        2023.
+      date: '2023-01-10'
+    cloture_corpus:
+      corpus_declare: Résumé de couverture journalistique France Bleu/ici.fr portant
+        sur la conférence de presse du 10 janvier 2023
+      date_cloture: '2023-01-10'
+    explications_innocentes:
+    - description: La liste complète des régimes spéciaux a pu être fournie dans le
+        dossier de presse écrit accompagnant la conférence sans être reprise intégralement
+        par le résumé journalistique disponible.
+      statut: retenue
+    - description: Citer RATP et EDF comme exemples emblématiques plutôt que la liste
+        complète peut relever d'un choix pédagogique de simplification orale sans
+        intention de dissimuler le périmètre réel.
+      statut: examinee
+    date_fait: '2023-01-10'
+    date_connaissance: non_documente
+  inferred_function: null
+upstream_causal_chain:
+  elements:
+  - element_label: Déséquilibre financier projeté du système de retraites (rapports
+      du Conseil d'orientation des retraites), invoqué implicitement pour justifier
+      la nécessité d'une réforme
+    type: context
+    source_reference: Contexte documentaire externe non fourni par le texte source
+      ; inférence à partir de la nature même de l'annonce gouvernementale
+    confidence: 0.5
+  - element_label: Proposition initiale de report de l'âge légal à 65 ans, écartée
+      au profit de 64 ans à l'issue d'une concertation présentée comme étendue
+    type: prior_negotiation
+    source_reference: Présenté par la Première ministre comme le résultat d'une concertation
+      étendue, en retrait par rapport à une proposition initiale à 65 ans.
+    confidence: 0.6
+  - element_label: Calendrier antérieur prévoyant l'atteinte de 43 annuités en 2035,
+      remplacé par une échéance accélérée à 2027
+    type: prior_position
+    source_reference: avec accélération du calendrier (l'échéance de 2035 initialement
+      prévue avancée à 2027)
+    confidence: 0.65
+  - element_label: Mobilisations syndicales et contestation sociale anticipée autour
+      du relèvement de l'âge de départ, contexte politique de la présentation
+    type: context
+    source_reference: Contexte documentaire externe non fourni explicitement par le
+      texte source ; connaissance générale de la séquence politique de janvier 2023
+      non vérifiable dans le corpus fourni
+    confidence: 0.3
+downstream_causal_chains:
+- targeted_object_id: tgt_proposition_65_ans
+  plausible_consequences:
+  - consequence_label: Le retrait de la proposition à 65 ans au profit de 64 ans est
+      mobilisé comme preuve de l'écoute gouvernementale envers les partenaires sociaux,
+      alimentant un discours de légitimation par le compromis
+    confidence: 0.5
+    confidence_applies_to: inference
+    defeaters:
+    - Les organisations syndicales opposées à la réforme peuvent contester que le
+      retrait de 65 à 64 ans constitue un compromis réel, le considérant comme insuffisant
+      ou cosmétique
+    - Le débat parlementaire et la mobilisation sociale ultérieure peuvent démentir
+      l'efficacité de cet argument de légitimation, indépendamment de sa formulation
+      initiale
+    observable_to_date: "Non observable à partir du corpus fourni : aucune source\
+      \ sur la réception de cet argument après le 10 janvier 2023 n'est disponible\
+      \ dans le texte ou le contexte documentaire transmis."
+- targeted_object_id: tgt_calendrier_initial_2035
+  plausible_consequences:
+  - consequence_label: L'accélération du calendrier de 2035 à 2027 est présentée comme
+      une preuve de fermeté gouvernementale sur l'équilibrage financier, pouvant être
+      utilisée pour contrer les critiques d'insuffisance de la réforme
+    confidence: 0.45
+    confidence_applies_to: inference
+    defeaters:
+    - Des opposants peuvent au contraire souligner que cette accélération alourdit
+      la contrainte sur les assurés et nourrit la contestation plutôt que de renforcer
+      la légitimité de la réforme
+    - L'absence de données chiffrées sur le déficit dans le résumé disponible limite
+      la possibilité de vérifier que cette accélération répond effectivement à une
+      urgence financière réelle et n'est pas seulement présentée comme telle
+    observable_to_date: "Non observable à partir du corpus fourni : aucune source\
+      \ sur la réception de cet argument après le 10 janvier 2023 n'est disponible\
+      \ dans le texte ou le contexte documentaire transmis."
+discourse_action_gaps_on_thematic_objects: []
+observable_effects_on_targeted_objects: []
+historiographies: []
+epistemic_synthesis:
+  established_facts:
+  - La conférence de presse de présentation de la réforme des retraites par Élisabeth
+    Borne, alors Première ministre, a eu lieu le 10 janvier 2023.
+  - Le texte source disponible n'est pas une transcription verbatim mais un résumé
+    de couverture journalistique (France Bleu/ici.fr), la source officielle info.gouv.fr
+    étant inaccessible.
+  - Un dispositif de départ anticipé pour carrières longues et un compte professionnel
+    de prévention existaient antérieurement à cette réforme, cette dernière modifiant
+    leurs paramètres plutôt que les créant ex nihilo.
+  inferences:
+  - label: La mention d'une concertation étendue et du retrait par rapport à une proposition
+      initiale à 65 ans vise à légitimer procéduralement la mesure retenue (64 ans)
+      en l'inscrivant dans un processus de dialogue social plutôt qu'une décision
+      unilatérale.
+    confidence: 0.6
+    confidence_applies_to: inference
+    premise: Présenté par la Première ministre comme le résultat d'une concertation
+      étendue, en retrait par rapport à une proposition initiale à 65 ans (u2) ; absence
+      de détail sur les modalités précises de cette concertation malgré l'accès de
+      la locutrice à cette information (omission u2).
+  - label: La disposition du taux plein automatique à 67 ans est présentée comme un
+      geste de compensation sociale envers les carrières hachées, sans que sa suffisance
+      réelle pour cette population soit établie ni chiffrée.
+    confidence: 0.5
+    confidence_applies_to: inference
+    premise: disposition présentée comme favorable aux carrières hachées (u4) ; absence
+      de chiffrage de la population concernée et du niveau de pension effectivement
+      obtenu à 67 ans (omission u4), alors qu'un chiffrage comparable est fourni pour
+      la mesure sur les petites pensions (u5).
+  - label: L'accélération du calendrier de la durée de cotisation (2035 à 2027) est
+      mobilisée comme signal de fermeté gouvernementale sur l'équilibrage financier
+      du système, en l'absence de tout chiffrage du déséquilibre invoqué.
+    confidence: 0.45
+    confidence_applies_to: inference
+    premise: avec accélération du calendrier (l'échéance de 2035 initialement prévue
+      avancée à 2027) (u3) ; omission du chiffrage du déficit du système de retraites
+      (omission u1, confidence 0.55) qui aurait justifié objectivement cette accélération.
+  competing_hypotheses:
+  - label: La locutrice sélectionne stratégiquement les éléments de justification
+      procédurale (concertation, retrait de 65 à 64 ans, accélération du calendrier)
+      et de compensation sociale (taux plein à 67 ans, petites pensions chiffrées)
+      pour maximiser l'acceptabilité politique de mesures par ailleurs contraignantes,
+      tout en omettant systématiquement les données qui permettraient de vérifier
+      la suffisance ou la nécessité réelle de ces mesures.
+    type: intentional
+    confidence: 0.45
+    grounded_in:
+    - Omission u1 (chiffrage du déficit, confidence 0.55)
+    - Omission u2 (modalités de concertation, confidence 0.5)
+    - Omission u4 (chiffrage carrières hachées à 67 ans, confidence 0.45)
+    - Vulnérabilité u2 (appel à la procédure comme validation de fond, confidence
+      0.4)
+    - Vulnérabilité u4 (généralisation implicite sur la suffisance d'une mesure, confidence
+      0.4)
+  - label: Les omissions constatées (chiffrage du déficit, modalités de concertation,
+      chiffrage des carrières hachées à 67 ans, modalités du compte de prévention,
+      liste des régimes spéciaux) résultent des contraintes de format d'une conférence
+      de presse orale synthétique et de la répartition des informations entre communication
+      orale et dossier de presse écrit, sans intention de dissimulation.
+    type: non_intentional
+    confidence: 0.55
+    grounded_in:
+    - Explication innocente retenue pour l'omission u1 (résumé journalistique non
+      exhaustif)
+    - Explication innocente retenue pour l'omission u2 (détail fourni oralement mais
+      non repris par le résumé)
+    - Explication innocente retenue pour l'omission u4 (chiffrage possiblement fourni
+      dans le dossier de presse complet)
+    - Explication innocente retenue pour l'omission u10 (liste complète possiblement
+      dans le dossier de presse écrit)
+  - label: Les omissions relatives aux modalités techniques (compte de prévention,
+      liste exhaustive des régimes spéciaux) reflètent un état d'avancement réglementaire
+      encore incomplet au moment de l'annonce politique, les décrets d'application
+      n'étant pas encore stabilisés, plutôt qu'une intention de dissimulation ou une
+      simple contrainte de format oral.
+    type: non_intentional_or_moderate
+    confidence: 0.4
+    grounded_in:
+    - Explication innocente retenue pour l'omission u8 (modalités techniques relevant
+      de décrets d'application postérieurs)
+    - Efficiency_status efficient_partiel pour obj_penibilite et obj_regimes_speciaux
+      (agent Charité)
+  - label: La présentation du taux plein automatique à 67 ans et de la concertation
+      comme éléments favorables constitue une communication factuelle neutre sur des
+      dispositifs et processus réels, sans stratégie de légitimation ou de compensation
+      calculée, la locutrice croyant sincèrement à la pertinence de ces mesures.
+    type: non_intentional
+    confidence: 0.35
+    grounded_in:
+    - Alternative function u2 (communication factuelle neutre, confidence 0.3, epistemic_regime
+      believes)
+    - Alternative function u4 (description d'une règle technique préexistante, confidence
+      0.3, epistemic_regime believes)
+  hypothesis_gap: 0.0
+  hypothesis_status: zone_of_indetermination
+  red_team_objections:
+  - L'hypothèse de sélection stratégique intentionnelle repose sur l'accumulation
+    de plusieurs omissions et vulnérabilités de confiance individuellement modérée
+    (0.4 à 0.55) ; leur addition ne constitue pas mécaniquement une preuve d'intention
+    coordonnée, et l'agent Vulnérabilités qualifie lui-même chacune de ces omissions
+    de niveau structurel ou stratégique_probable seulement, jamais de niveau certain
+    — l'hypothèse dominante surinterprète potentiellement un faisceau d'indices convergents
+    en une stratégie unifiée alors qu'ils peuvent relever de causes disjointes.
+  - Le texte source est explicitement un résumé journalistique dégradé et non une
+    transcription verbatim ; toute hypothèse imputant une intention de sélection stratégique
+    à la locutrice repose sur un texte dont on ne peut garantir qu'il restitue fidèlement
+    la structure complète et l'ordre des justifications effectivement données à l'oral
+    — l'omission peut être un artefact du résumé et non du discours source, ce qui
+    fragilise structurellement toute inférence intentionnelle construite sur ces mêmes
+    omissions.
+  - Les explications innocentes retenues par l'agent Vulnérabilités pour la quasi-totalité
+    des omissions détectées (résumé non exhaustif, dossier de presse écrit complémentaire,
+    décrets d'application non stabilisés) sont documentées comme statut 'retenue'
+    et non simplement 'examinee' — ce qui indique que l'agent chargé de leur évaluation
+    a lui-même jugé plausible l'absence d'intention pour chaque omission prise isolément,
+    affaiblissant la cohérence de l'hypothèse dominante qui les regroupe en un pattern
+    intentionnel global.
+null_results:
+  fallacies_certain: 0
+  fallacies_probable_or_possible: 2
+  intentional_omissions_proved: 0
+  modal_shifts_detected: []
+  ethical_content_not_neutralized: null
+method_id: M01_ANALYSE_RHETORIQUE
+method_version: "2.1"
+gabarit_version: 2.1-durci-seq1
+analysis_id: M01_BORNE_PRESENTATION_20230110_AUTO_v1
+execution_date: '2026-07-11'
+source:
+  text_id: M01_BORNE_PRESENTATION_20230110_AUTO_v1
+  provenance: source_texts/borne_20230110.txt
+  integrity_status: uncertain
