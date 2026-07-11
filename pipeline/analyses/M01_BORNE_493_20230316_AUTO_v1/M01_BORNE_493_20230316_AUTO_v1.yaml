@@ -1,0 +1,881 @@
+execution_mode: applicable_complete
+execution_mode_note: null
+enonciation:
+  speaker:
+    id: elisabeth_borne_2023
+    name: Élisabeth Borne
+    role_at_date: Première ministre
+  date: '2023-03-16'
+  place: Assemblée nationale, hémicycle, Paris
+  primary_audience: Députés de l'Assemblée nationale
+  secondary_audiences:
+  - Organisations syndicales et patronales
+  - Opinion publique française via retransmission
+  - Presse et médias
+  channel: Discours oral en séance publique, compte rendu intégral au Journal officiel
+  political_sequence: Réforme des retraites 2023 — adoption du projet de loi de financement
+    rectificative de la sécurité sociale par engagement de responsabilité (article
+    49.3)
+  genre: Déclaration d'engagement de responsabilité gouvernementale (discours institutionnel
+    contraint par le cadre constitutionnel de l'article 49, alinéa 3)
+  communication_contract: Discours de justification politique et procédurale, énoncé
+    dans un cadre constitutionnel formel, adressé à une assemblée en partie hostile,
+    visant à légitimer le recours à une procédure sans vote plutôt qu'à convaincre
+    par le contenu législatif lui-même
+  affective_charge: high
+  ethical_charge: high
+  thematic_objects:
+  - object_id: obj_them_1
+    label: La réforme des retraites (projet de loi de financement rectificative de
+      la sécurité sociale pour 2023)
+    efficiency_status: efficient_partiel
+    efficiency_justification: La réforme est présentée comme nécessaire et équilibrée
+      (« Cette réforme est nécessaire », « réforme enrichie, améliorée, mais toujours
+      équilibrée ») mais son contenu concret n'est jamais détaillé dans le discours,
+      qui se concentre sur la procédure et la légitimation du 49.3 plutôt que sur
+      la substance de la réforme.
+  - object_id: obj_them_2
+    label: Le processus de concertation et de compromis parlementaire
+    efficiency_status: efficient
+    efficiency_justification: "Le discours développe de façon substantielle et répétée\
+      \ la description du processus : concertation depuis l'automne, temps de débat\
+      \ comparé aux réformes précédentes, rôle de la CMP composée de sensibilités\
+      \ diverses, adoption au Sénat — l'objet est traité avec précision et abondance\
+      \ de détails vérifiables dans le texte."
+  - object_id: obj_them_3
+    label: Le recours à l'article 49, alinéa 3, de la Constitution
+    efficiency_status: efficient
+    efficiency_justification: "L'objet est traité de façon centrale et explicite :\
+      \ justification par le risque d'incertitude du vote (« l'incertitude plane,\
+      \ à quelques voix près »), invocation de l'attachement à la démocratie parlementaire,\
+      \ citation de Rocard en 1990 pour créer un précédent légitimant — l'objet est\
+      \ au cœur de l'énoncé performatif final."
+  targeted_objects:
+  - object_id: obj_target_1
+    label: Les oppositions parlementaires contestant la légitimité du compromis ou
+      de la procédure
+    inference_confidence: 0.7
+    grounded_in:
+    - "Interpellée par une interjection (Mme Emeline K/Bidi : « Avec un 49.3 par exemple\
+      \ ? »), elle poursuit : « Le temps, passé à dialoguer... »"
+    - « Ce compromis, je n'en partage pas tous les points, mais c'est le vôtre, enrichi
+      de propositions de la majorité et des oppositions des deux assemblées. »
+    efficiency_status: efficient_partiel
+    efficiency_justification: La Première ministre répond implicitement à l'objection
+      sur le 49.3 en poursuivant son argumentaire sur le dialogue, et reconnaît la
+      contribution des oppositions au compromis, mais ne traite pas frontalement la
+      contestation de la légitimité démocratique du recours au 49.3 lui-même, sujet
+      pourtant central des protestations en séance.
+  - object_id: obj_target_2
+    label: Les électeurs et l'opinion publique inquiets de la réforme (notamment via
+      la référence au vote hypothétique de 1990)
+    inference_confidence: 0.55
+    grounded_in:
+    - "« Dans un scrutin où chacun voterait selon sa conscience, permettez-moi de\
+      \ dire que je suis sûr que ces dispositions réuniraient une majorité, peut-être\
+      \ même une large majorité. » Elle ajoute : « Ces mots, aujourd'hui, je les fais\
+      \ miens. »"
+    efficiency_status: ambiguous
+    efficiency_justification: La citation de Rocard vise à suggérer une adhésion majoritaire
+      de conscience malgré l'absence de vote formel, mais le texte ne permet pas de
+      déterminer si cette stratégie rhétorique atteint effectivement son public visé
+      (l'opinion) ou reste un argument interne à l'hémicycle ; le degré de ciblage
+      réel de l'opinion publique par ce passage est incertain.
+charity_reconstruction:
+  content: "L'argument principal de la Première ministre peut être reconstruit ainsi\
+    \ : (1) une concertation approfondie et prolongée a eu lieu depuis l'automne avec\
+    \ les partenaires sociaux et les parlementaires, engagement pris devant l'Assemblée\
+    \ lors de sa déclaration de politique générale ; (2) cette concertation a permis\
+    \ d'aboutir, via la commission mixte paritaire composée de sensibilités parlementaires\
+    \ diverses où la majorité gouvernementale n'est pas majoritaire, à un compromis\
+    \ qui n'est plus le projet initial du Gouvernement mais le texte du Parlement,\
+    \ déjà adopté par le Sénat ; (3) ce compromis est fragile et son adoption par\
+    \ un vote à l'Assemblée est incertaine (« à quelques voix près ») ; (4) le risque\
+    \ politique de voir ce compromis parlementaire rejeté ou les 175 heures de débat\
+    \ rendues vaines est jugé par la locutrice supérieur au risque démocratique de\
+    \ recourir à une procédure sans vote ; (5) elle en conclut, en invoquant à la\
+    \ fois son attachement au modèle social et sa foi dans la démocratie parlementaire\
+    \ (dont la CMP serait une expression), la nécessité d'engager la responsabilité\
+    \ du Gouvernement sur ce texte plutôt que de le soumettre à un vote dont l'issue\
+    \ est incertaine. La citation de Rocard sert à appuyer l'idée qu'une majorité\
+    \ de conscience, distincte d'une majorité de vote effectif, existerait en faveur\
+    \ du texte. Cette reconstruction restitue la logique interne de l'argument (compromis\
+    \ parlementaire fragile + risque d'échec + valeur du contenu du texte justifieraient\
+    \ le contournement du vote) sans en préjuger la validité, qui relève de l'étape\
+    \ suivante du pipeline."
+  borrowed_terms_handled:
+  - term: compromis
+    handling: reformulated_neutral
+  - term: coconstruction parlementaire
+    handling: quoted
+  - term: réforme enrichie, améliorée, mais toujours équilibrée
+    handling: quoted
+  - term: nécessaire
+    handling: attributed
+  - term: démocratie parlementaire
+    handling: quoted
+  - term: attachée à notre modèle social
+    handling: attributed
+units:
+- unit_id: u1
+  text_span: "« Dans un scrutin où chacun voterait selon sa conscience, permettez-moi\
+    \ de dire que je suis sûr que ces dispositions réuniraient une majorité, peut-être\
+    \ même une large majorité. » Elle ajoute : « Ces mots, aujourd'hui, je les fais\
+    \ miens. »"
+  speech_acts:
+  - citer (acte rapporté d'un tiers, Rocard 1990)
+  - s'approprier/endosser (« je les fais miens »)
+  - affirmer implicitement l'existence d'une majorité de conscience favorable
+  presuppositions:
+  - Il existe une différence pertinente entre un vote de conscience hypothétique et
+    le vote parlementaire réel
+  - La situation de 1990 (CSG, Rocard) est suffisamment analogue à la situation présente
+    (retraites, 2023) pour que la citation soit pertinente
+  - Les mots de Rocard, prononcés dans un autre contexte, peuvent être valablement
+    transposés à la présente réforme
+  argumentative_vulnerabilities:
+  - type: fausse analogie / transposition abusive d'un précédent historique
+    level: probable
+    evidence_span: « Dans un scrutin où chacun voterait selon sa conscience... » /
+      « Ces mots, aujourd'hui, je les fais miens. »
+    confidence: 0.65
+    confidence_applies_to: inference
+    charitable_alternative: La citation peut viser simplement à évoquer un précédent
+      rhétorique connu de recours à une procédure similaire, sans prétendre à une
+      analogie de fond stricte entre les deux réformes.
+    hidden_premises:
+    - Le contexte politique et social de 1990 (CSG) est suffisamment comparable à
+      celui de 2023 (retraites) pour que l'argument de Rocard s'applique
+    - Une majorité de conscience hypothétique équivaut à une légitimité démocratique
+      suffisante
+    defeaters:
+    - La CSG et la réforme des retraites de 2023 diffèrent fortement en termes de
+      contexte parlementaire, de mobilisation sociale et de rapport de force politique
+    - Rien dans le texte ne permet de vérifier que la majorité de conscience invoquée
+      par Rocard en 1990 s'est confirmée empiriquement, ce qui affaiblit la valeur
+      du précédent
+    date_fait: '1990-11-15'
+    date_connaissance: '2023-03-16'
+  - type: affirmation invérifiable présentée comme certitude (majorité de conscience
+      hypothétique)
+    level: possible
+    evidence_span: « je suis sûr que ces dispositions réuniraient une majorité, peut-être
+      même une large majorité »
+    confidence: 0.55
+    confidence_applies_to: inference
+    charitable_alternative: Il peut s'agir d'une expression rhétorique de conviction
+      personnelle plutôt que d'une affirmation factuelle vérifiable.
+    hidden_premises:
+    - Une conviction subjective de majorité de conscience a une valeur probante substituable
+      à un vote effectif
+    defeaters: []
+    date_fait: non_documente
+    date_connaissance: '2023-03-16'
+  omissions: []
+  inferred_function:
+    label: Légitimation anticipée du recours à une procédure sans vote par invocation
+      d'un précédent historique favorable
+    confidence: 0.6
+    epistemic_regime: asserts
+    alternative_functions:
+    - label: Simple hommage rhétorique à une figure politique respectée sans fonction
+        stratégique de légitimation
+      confidence: 0.25
+      epistemic_regime: believes
+- unit_id: u2
+  text_span: "« Ce que je retiens de ces dernières semaines, c'est que nous nous sommes\
+    \ donné les moyens de la discussion et que vous avez passé plus de temps de débat\
+    \ sur cette réforme des retraites que sur chacune des deux précédentes. […] Ce\
+    \ que je retiens, c'est l'engagement que j'ai pris devant vous lors de ma déclaration\
+    \ de politique générale et lors de la présentation du projet du Gouvernement pour\
+    \ les retraites : toujours rechercher des compromis."
+  speech_acts:
+  - affirmer (bilan de la concertation)
+  - rappeler un engagement antérieur pris devant l'Assemblée
+  - se présenter comme fidèle à un engagement de méthode (recherche de compromis)
+  presuppositions:
+  - Le temps de débat parlementaire est un indicateur pertinent de la qualité ou de
+    la légitimité de la concertation
+  - Un engagement de « toujours rechercher des compromis » a été effectivement pris
+    et est vérifiable par l'Assemblée
+  - Les deux réformes des retraites précédentes constituent un point de comparaison
+    valide
+  argumentative_vulnerabilities:
+  - type: critère de mesure non pertinent érigé en preuve de qualité (temps de débat
+      = qualité de concertation)
+    level: probable
+    evidence_span: « vous avez passé plus de temps de débat sur cette réforme des
+      retraites que sur chacune des deux précédentes »
+    confidence: 0.7
+    confidence_applies_to: inference
+    charitable_alternative: La comparaison du temps de débat peut être un indicateur
+      parmi d'autres, mentionné pour contextualiser l'ampleur de la discussion, sans
+      prétendre à elle seule établir la qualité de la concertation.
+    hidden_premises:
+    - Le temps de débat est proportionnel à la qualité ou à la légitimité démocratique
+      de la concertation
+    - Une durée de débat supérieure aux réformes précédentes suffit à démontrer un
+      examen suffisant du texte actuel
+    defeaters:
+    - Un temps de débat plus long peut résulter d'obstruction parlementaire ou de
+      proliferation d'amendements sans rapport avec la qualité substantielle des échanges
+    - Le texte ne fournit aucune donnée sur le contenu ou la nature des échanges pendant
+      ce temps, seulement sur sa durée
+    date_fait: non_documente
+    date_connaissance: '2023-03-16'
+  omissions:
+  - missing_element: Le contenu précis des compromis obtenus lors de la concertation
+      avec les organisations syndicales et patronales n'est pas détaillé
+    level: strategic_probable
+    why_expected: En tant que Première ministre ayant personnellement conduit et suivi
+      la concertation « depuis l'automne dernier » selon ses propres termes, elle
+      dispose nécessairement d'un accès direct et documenté au contenu des échanges
+      avec les organisations syndicales et patronales.
+    evidence_of_expected_knowledge: « Elle revient sur la concertation menée depuis
+      l'automne dernier avec le ministre du travail Olivier Dussopt, les organisations
+      syndicales et patronales et les groupes parlementaires »
+    confidence: 0.55
+    confidence_applies_to: inference
+    pouvoir_agir: La Première ministre pouvait détailler le contenu substantiel des
+      concessions ou désaccords exprimés par les organisations syndicales lors de
+      la concertation, disposant des comptes rendus de ces échanges via son cabinet
+      et le ministère du travail.
+    opportunite:
+      description: La déclaration d'engagement de responsabilité du 16 mars 2023 constituait
+        l'occasion de détailler le contenu de la concertation avec les partenaires
+        sociaux avant de justifier le recours au 49.3
+      date: '2023-03-16'
+    cloture_corpus:
+      corpus_declare: Transcription verbatim intégrale du compte rendu officiel de
+        la séance du 16 mars 2023 (Journal officiel, Compte rendu intégral)
+      date_cloture: '2023-03-16'
+    explications_innocentes:
+    - description: Le format oral d'une déclaration d'engagement de responsabilité,
+        contraint par le temps de parole en séance, ne permet pas d'entrer dans le
+        détail technique de chaque point de concertation
+      statut: examinee
+    - description: Le contenu de la concertation avec les organisations syndicales
+        relève de discussions confidentielles non destinées à être rendues publiques
+        dans leur détail
+      statut: examinee
+    date_fait: non_documente
+    date_connaissance: '2023-03-16'
+  inferred_function: null
+- unit_id: u3
+  text_span: « Le temps, passé à dialoguer avec les partenaires sociaux et les parlementaires
+    attachés comme nous à garantir l'avenir de notre système de retraite par répartition,
+    nous a permis de converger autour de propositions nouvelles […] et d'une réforme
+    enrichie, améliorée, mais toujours équilibrée. »
+  speech_acts:
+  - répondre implicitement à une interpellation (sur le 49.3)
+  - affirmer un résultat positif du dialogue (convergence)
+  - qualifier positivement la réforme (enrichie, améliorée, équilibrée)
+  presuppositions:
+  - Les parlementaires interlocuteurs partagent l'objectif de « garantir l'avenir
+    du système de retraite par répartition »
+  - Il y a eu une convergence réelle et non seulement formelle autour de « propositions
+    nouvelles »
+  - La réforme, dans sa version actuelle, est équilibrée — ce terme est présenté comme
+    un constat plutôt qu'une évaluation contestable
+  argumentative_vulnerabilities:
+  - type: présupposition non fondée d'un objectif commun (garantir le système par
+      répartition) prêté aux interlocuteurs
+    level: possible
+    evidence_span: « dialoguer avec les partenaires sociaux et les parlementaires
+      attachés comme nous à garantir l'avenir de notre système de retraite par répartition
+      »
+    confidence: 0.5
+    confidence_applies_to: inference
+    charitable_alternative: Il peut s'agir d'une formule de courtoisie diplomatique
+      reconnaissant un objectif partagé de principe (pérennité du système par répartition),
+      sans nier les désaccords sur les moyens d'y parvenir.
+    hidden_premises:
+    - Tous les interlocuteurs de la concertation partagent effectivement et au même
+      degré l'objectif énoncé
+    - Le désaccord sur les moyens (âge de départ, etc.) n'affecte pas la validité
+      de l'attribution d'un objectif commun
+    defeaters: []
+    date_fait: non_documente
+    date_connaissance: '2023-03-16'
+  - type: qualification évaluative présentée comme un fait établi (réforme « équilibrée
+      »)
+    level: probable
+    evidence_span: « une réforme enrichie, améliorée, mais toujours équilibrée »
+    confidence: 0.6
+    confidence_applies_to: inference
+    charitable_alternative: Le terme « équilibrée » peut être compris comme un jugement
+      politique explicitement assumé par la locutrice plutôt qu'une prétention à l'objectivité
+      factuelle.
+    hidden_premises:
+    - L'équilibre de la réforme est un caractère intrinsèque au texte plutôt qu'une
+      appréciation politique contestée par les oppositions présentes en séance
+    defeaters: []
+    date_fait: non_documente
+    date_connaissance: '2023-03-16'
+  omissions: []
+  inferred_function: null
+- unit_id: u4
+  text_span: « Hier, la commission mixte paritaire, cœur même de la coconstruction
+    parlementaire […] composée de députés et de sénateurs de toutes les sensibilités,
+    et où les soutiens du Gouvernement ne sont pas majoritaires, a construit un compromis.
+    Ce compromis n'est pas le projet du Gouvernement, mais le texte du Parlement […]
+    et [il a été] adopté au Sénat ce matin. […] Ce compromis, je n'en partage pas
+    tous les points, mais c'est le vôtre, enrichi de propositions de la majorité et
+    des oppositions des deux assemblées. »
+  speech_acts:
+  - décrire/qualifier la CMP comme instance légitime
+  - affirmer une distinction entre le projet du Gouvernement et le texte issu de la
+    CMP
+  - concéder un désaccord partiel personnel avec le compromis
+  - attribuer la paternité du texte au Parlement plutôt qu'au Gouvernement
+  presuppositions:
+  - La composition plurielle de la CMP et la non-majorité gouvernementale en son sein
+    suffisent à établir la légitimité démocratique du compromis obtenu
+  - Le fait que le compromis ne soit « pas le projet du Gouvernement » renforce sa
+    légitimité et son acceptabilité pour l'Assemblée
+  - L'adoption au Sénat ce matin constitue un argument d'autorité pertinent pour l'Assemblée
+    nationale
+  argumentative_vulnerabilities:
+  - type: argument d'autorité procédural substitué à un examen de légitimité démocratique
+      substantielle
+    level: probable
+    evidence_span: « composée de députés et de sénateurs de toutes les sensibilités,
+      et où les soutiens du Gouvernement ne sont pas majoritaires, a construit un
+      compromis »
+    confidence: 0.65
+    confidence_applies_to: inference
+    charitable_alternative: La composition plurielle de la CMP peut être mentionnée
+      comme un élément parmi d'autres de contexte procédural, sans prétendre clore
+      le débat sur la légitimité démocratique du recours ultérieur au 49.3.
+    hidden_premises:
+    - La pluralité de la composition d'un organe restreint (CMP) suffit à transférer
+      sa légitimité procédurale au texte final sans qu'un vote de l'Assemblée plénière
+      soit nécessaire
+    - La non-majorité gouvernementale au sein de la CMP garantit l'absence d'influence
+      disproportionnée du Gouvernement sur le résultat
+    defeaters:
+    - La CMP est une commission restreinte (14 membres) dont la représentativité proportionnelle
+      de l'ensemble de l'Assemblée est structurellement limitée par sa taille et sa
+      composition
+    - Le fait que le Gouvernement n'y soit pas majoritaire en nombre ne garantit pas
+      l'absence d'influence sur le contenu du compromis obtenu, notamment via les
+      échanges antérieurs avec les rapporteurs
+    date_fait: '2023-03-15'
+    date_connaissance: '2023-03-16'
+  - type: argument d'autorité par transfert (adoption au Sénat comme validation implicite
+      pour l'Assemblée)
+    level: possible
+    evidence_span: « [il a été] adopté au Sénat ce matin »
+    confidence: 0.5
+    confidence_applies_to: inference
+    charitable_alternative: La mention de l'adoption au Sénat peut simplement informer
+      l'Assemblée de l'état d'avancement de la procédure législative bicamérale, sans
+      viser à substituer cette adoption à un vote de l'Assemblée elle-même.
+    hidden_premises:
+    - L'adoption par une chambre du Parlement constitue un argument pertinent pour
+      anticiper ou orienter le résultat attendu dans l'autre chambre
+    defeaters: []
+    date_fait: '2023-03-16'
+    date_connaissance: '2023-03-16'
+  omissions:
+  - missing_element: Les points précis de désaccord personnel de la Première ministre
+      avec le compromis (« je n'en partage pas tous les points ») ne sont pas identifiés
+    level: strategic_probable
+    why_expected: La Première ministre affirme explicitement disposer d'une opinion
+      différenciée sur certains points du compromis (« je n'en partage pas tous les
+      points »), ce qui suppose qu'elle les a identifiés et pourrait les nommer.
+    evidence_of_expected_knowledge: « Ce compromis, je n'en partage pas tous les points,
+      mais c'est le vôtre »
+    confidence: 0.6
+    confidence_applies_to: inference
+    pouvoir_agir: En tant que chef du Gouvernement ayant suivi les travaux de la CMP
+      et disposant des comptes rendus de ses délibérations via ses services, elle
+      pouvait préciser les points de désaccord qu'elle mentionne explicitement.
+    opportunite:
+      description: La déclaration du 16 mars 2023 constituait l'occasion de préciser
+        la nature du désaccord partiel évoqué, avant de demander à l'Assemblée de
+        s'en tenir responsable via le 49.3
+      date: '2023-03-16'
+    cloture_corpus:
+      corpus_declare: Transcription verbatim intégrale du compte rendu officiel de
+        la séance du 16 mars 2023 (Journal officiel, Compte rendu intégral)
+      date_cloture: '2023-03-16'
+    explications_innocentes:
+    - description: Détailler des désaccords internes au compromis en séance publique
+        pourrait fragiliser politiquement l'unité de façade nécessaire à la défense
+        du texte devant une opposition hostile
+      statut: retenue
+    - description: Le format contraint du discours ne laisse pas de place à l'énumération
+        technique de points de désaccord mineurs
+      statut: examinee
+    date_fait: non_documente
+    date_connaissance: '2023-03-16'
+  inferred_function:
+    label: Transfert de la paternité et donc de la responsabilité politique du texte
+      vers le Parlement plutôt que le Gouvernement, en anticipation de la justification
+      du 49.3
+    confidence: 0.65
+    epistemic_regime: asserts
+    alternative_functions:
+    - label: Reconnaissance sincère et non stratégique du travail parlementaire accompli
+        en CMP
+      confidence: 0.3
+      epistemic_regime: believes
+- unit_id: u5
+  text_span: « Aujourd'hui, sur le texte du Parlement, l'incertitude plane, à quelques
+    voix près. On ne peut pas prendre le risque de voir 175 heures de débats parlementaires
+    anéanties. […] On ne peut pas prendre le risque de voir le compromis, bâti par
+    les deux assemblées, écarté. […] On ne peut pas faire de pari sur l'avenir de
+    nos retraites. Cette réforme est nécessaire. »
+  speech_acts:
+  - affirmer l'existence d'un risque d'échec du vote
+  - justifier le recours à une procédure évitant le vote par le risque décrit
+  - affirmer la nécessité de la réforme (jugement de valeur présenté comme un fait)
+  presuppositions:
+  - L'issue incertaine d'un vote constitue en soi une raison suffisante pour éviter
+    ce vote plutôt que de le tenir
+  - Les « 175 heures de débats parlementaires » seraient rendues vaines par un rejet,
+    plutôt que d'avoir rempli leur fonction démocratique même en cas de rejet
+  - La nécessité de la réforme est un fait établi et non un jugement de valeur à débattre
+    davantage
+  argumentative_vulnerabilities:
+  - type: faux dilemme (vote incertain vs. procédure sans vote, sans exploration d'alternatives)
+    level: probable
+    evidence_span: « l'incertitude plane, à quelques voix près. On ne peut pas prendre
+      le risque de voir 175 heures de débats parlementaires anéanties »
+    confidence: 0.7
+    confidence_applies_to: inference
+    charitable_alternative: L'argument peut être compris comme une pesée de risques
+      politiques légitime dans un contexte d'urgence perçue, sans prétendre nécessairement
+      qu'aucune autre option n'existait.
+    hidden_premises:
+    - Il n'existait pas d'alternative praticable entre tenir le vote avec son incertitude
+      et recourir au 49.3
+    - Un rejet du texte par un vote légitime constitue un échec à éviter plutôt qu'un
+      résultat démocratique normal du processus parlementaire
+    defeaters:
+    - Le règlement de l'Assemblée et la Constitution offrent d'autres voies procédurales
+      (report, nouvelle lecture, retrait de dispositions contestées) non mentionnées
+      comme alternatives envisagées
+    - "Un vote rejetant le texte n'anéantit pas les 175 heures de débat au sens fonctionnel\
+      \ : ces heures auraient rempli leur fonction démocratique de délibération même\
+      \ en cas de rejet"
+    date_fait: non_documente
+    date_connaissance: '2023-03-16'
+  - type: glissement d'un jugement de valeur (nécessité de la réforme) présenté comme
+      fait établi
+    level: certain
+    evidence_span: « Cette réforme est nécessaire. »
+    confidence: 0.75
+    confidence_applies_to: inference
+    charitable_alternative: null
+    hidden_premises:
+    - La nécessité de la réforme, contestée par une partie substantielle de l'Assemblée
+      et par les mobilisations sociales évoquées en contexte de séance, est un fait
+      objectif plutôt qu'une position politique parmi d'autres
+    defeaters: []
+    date_fait: non_documente
+    date_connaissance: '2023-03-16'
+  - type: appel à la peur / au risque comme substitut à l'argumentation sur le fond
+    level: probable
+    evidence_span: « On ne peut pas faire de pari sur l'avenir de nos retraites »
+    confidence: 0.6
+    confidence_applies_to: inference
+    charitable_alternative: L'invocation du risque peut être un raccourci rhétorique
+      légitime dans un discours de clôture procédurale, s'appuyant sur des arguments
+      de fond déjà développés antérieurement dans le débat parlementaire plus large.
+    hidden_premises:
+    - L'absence de réforme immédiate équivaut nécessairement à un « pari » risqué
+      plutôt qu'à une politique alternative possible
+    defeaters: []
+    date_fait: non_documente
+    date_connaissance: '2023-03-16'
+  omissions:
+  - missing_element: Les alternatives procédurales au 49.3 (report du vote, retrait
+      de dispositions contestées, nouvelle négociation) ne sont pas mentionnées ni
+      écartées explicitement
+    level: strategic_probable
+    why_expected: En sa qualité de Première ministre disposant de l'appui des services
+      juridiques de Matignon et de la connaissance du règlement de l'Assemblée, elle
+      a nécessairement connaissance des voies procédurales alternatives au 49.3 avant
+      de le présenter comme seule option face au risque décrit.
+    evidence_of_expected_knowledge: « On ne peut pas prendre le risque de voir 175
+      heures de débats parlementaires anéanties »
+    confidence: 0.55
+    confidence_applies_to: inference
+    pouvoir_agir: La Première ministre, en tant que chef du Gouvernement disposant
+      des services juridiques et constitutionnels de Matignon, pouvait mentionner
+      et écarter explicitement les alternatives procédurales envisageables avant de
+      recourir au 49.3.
+    opportunite:
+      description: La déclaration du 16 mars 2023 constituait le moment procédural
+        où la justification du choix du 49.3 plutôt que d'une alternative devait être
+        exposée à l'Assemblée
+      date: '2023-03-16'
+    cloture_corpus:
+      corpus_declare: Transcription verbatim intégrale du compte rendu officiel de
+        la séance du 16 mars 2023 (Journal officiel, Compte rendu intégral)
+      date_cloture: '2023-03-16'
+    explications_innocentes:
+    - description: Le genre du discours d'engagement de responsabilité au titre du
+        49.3 est procéduralement centré sur la justification de ce choix précis et
+        n'a pas vocation à discuter des alternatives non retenues
+      statut: retenue
+    - description: Les alternatives procédurales avaient pu être discutées antérieurement
+        en conférence des présidents ou en coulisses, rendant leur rappel en séance
+        redondant
+      statut: examinee
+    date_fait: non_documente
+    date_connaissance: '2023-03-16'
+  inferred_function:
+    label: Construction d'une urgence décisionnelle justifiant le contournement du
+      vote par la mise en avant exclusive du risque d'échec
+    confidence: 0.65
+    epistemic_regime: asserts
+    alternative_functions:
+    - label: Expression sincère d'une inquiétude politique réelle quant au sort du
+        texte, sans intention stratégique de fermer le débat sur les alternatives
+      confidence: 0.3
+      epistemic_regime: believes
+- unit_id: u6
+  text_span: « Aussi, parce que je suis attachée à notre modèle social […] et parce
+    que je crois en la démocratie parlementaire […] sur le fondement de l'article
+    49, alinéa 3, de la Constitution […] j'engage la responsabilité de mon Gouvernement
+    […] sur l'ensemble du projet de loi de financement rectificative de la sécurité
+    sociale pour 2023, modifié par l'amendement de coordination communiqué à l'Assemblée
+    nationale. »
+  speech_acts:
+  - "engager formellement (acte performatif constitutionnel : engagement de responsabilité\
+    \ du Gouvernement au titre de l'article 49.3)"
+  - justifier cet acte par deux motifs déclarés (attachement au modèle social, foi
+    dans la démocratie parlementaire)
+  presuppositions:
+  - Le recours au 49.3, procédure qui évite le vote direct du texte, est compatible
+    avec — et même l'expression de — la « foi en la démocratie parlementaire »
+  - L'attachement au « modèle social » et le recours à cette procédure constitutionnelle
+    spécifique sont présentés comme cohérents entre eux
+  argumentative_vulnerabilities:
+  - type: paradoxe non résolu / contradiction apparente entre les motifs déclarés
+      et l'acte performatif accompli
+    level: probable
+    evidence_span: « parce que je crois en la démocratie parlementaire […] j'engage
+      la responsabilité de mon Gouvernement […] » (recours à une procédure qui évite
+      le vote direct)
+    confidence: 0.7
+    confidence_applies_to: inference
+    charitable_alternative: La « démocratie parlementaire » invoquée peut renvoyer
+      à l'ensemble du processus délibératif antérieur (concertation, CMP, débats),
+      dont le 49.3 ne serait que l'aboutissement procédural légal et non une négation,
+      l'article 49.3 étant lui-même une disposition constitutionnelle prévue par le
+      cadre démocratique.
+    hidden_premises:
+    - Recourir à une procédure constitutionnelle qui évite le vote direct de l'Assemblée
+      est un acte compatible avec, voire une expression de, la foi dans la démocratie
+      parlementaire
+    - L'article 49.3 fait partie intégrante de la démocratie parlementaire au même
+      titre qu'un vote, sans qu'une hiérarchie de légitimité démocratique soit à établir
+      entre les deux
+    defeaters:
+    - Le 49.3 est explicitement conçu pour permettre l'adoption d'un texte sans vote
+      positif de l'Assemblée, ce qui est en tension directe avec le principe du vote
+      comme expression de la souveraineté parlementaire
+    - Les réactions immédiates en séance (« Aucun respect pour la démocratie ! »,
+      députés scandant « Démocratie ! » en quittant l'hémicycle) manifestent que cette
+      compatibilité n'est pas partagée par une partie significative de l'Assemblée,
+      ce qui affaiblit la prétention à l'évidence de cette compatibilité
+    date_fait: '2023-03-16'
+    date_connaissance: '2023-03-16'
+  omissions: []
+  inferred_function:
+    label: Acte performatif constitutionnel d'engagement de responsabilité visant
+      à faire adopter le texte sans vote positif de l'Assemblée, présenté rhétoriquement
+      comme une expression de la démocratie parlementaire plutôt que comme son contournement
+    confidence: 0.7
+    epistemic_regime: asserts
+    alternative_functions:
+    - label: Acte de gouvernance responsable assumant pleinement, devant l'Assemblée,
+        les conséquences politiques du choix procédural (motion de censure possible)
+      confidence: 0.35
+      epistemic_regime: believes
+upstream_causal_chain:
+  elements:
+  - element_label: Concertation menée depuis l'automne 2022 avec le ministre du travail,
+      les organisations syndicales et patronales et les groupes parlementaires sur
+      la réforme des retraites
+    type: prior_negotiation
+    source_reference: « Elle revient sur la concertation menée depuis l'automne dernier
+      avec le ministre du travail Olivier Dussopt, les organisations syndicales et
+      patronales et les groupes parlementaires »
+    confidence: 0.75
+    confidence_applies_to: inference
+  - element_label: Engagement antérieur pris par la Première ministre devant l'Assemblée
+      lors de sa déclaration de politique générale de rechercher toujours des compromis
+    type: prior_position
+    source_reference: "« l'engagement que j'ai pris devant vous lors de ma déclaration\
+      \ de politique générale et lors de la présentation du projet du Gouvernement\
+      \ pour les retraites : toujours rechercher des compromis »"
+    confidence: 0.7
+    confidence_applies_to: inference
+  - element_label: Adoption du compromis en commission mixte paritaire le 15 mars
+      2023, puis adoption par le Sénat le matin du 16 mars 2023
+    type: trigger_event
+    source_reference: « Hier, la commission mixte paritaire […] a construit un compromis
+      […] et [il a été] adopté au Sénat ce matin »
+    confidence: 0.8
+    confidence_applies_to: inference
+  - element_label: Incertitude sur l'issue d'un vote de l'Assemblée nationale sur
+      le texte issu de la CMP, à quelques voix près
+    type: context
+    source_reference: « Aujourd'hui, sur le texte du Parlement, l'incertitude plane,
+      à quelques voix près »
+    confidence: 0.75
+    confidence_applies_to: inference
+  - element_label: Absence de majorité gouvernementale absolue à l'Assemblée nationale
+      depuis les élections législatives de 2022, rendant tout vote incertain sur des
+      textes contestés
+    type: institutional_constraint
+    source_reference: « où les soutiens du Gouvernement ne sont pas majoritaires »
+      (s'agissant de la CMP, révélateur de la configuration parlementaire générale
+      évoquée en creux)
+    confidence: 0.5
+    confidence_applies_to: inference
+downstream_causal_chains:
+- targeted_object_id: obj_target_1
+  plausible_consequences:
+  - consequence_label: Dépôt d'une motion de censure par les oppositions parlementaires
+      contestant la légitimité du recours au 49.3
+    confidence: 0.6
+    confidence_applies_to: inference
+    defeaters:
+    - Les oppositions peuvent choisir de ne pas déposer de motion de censure si elles
+      estiment son échec certain et préfèrent d'autres formes de contestation (recours
+      au Conseil constitutionnel, mobilisation sociale)
+    - La déclaration prévoit elle-même ce mécanisme comme une simple hypothèse procédurale
+      (« Dans l'hypothèse où une motion de censure serait déposée »), sans que cela
+      présume de la probabilité réelle de son dépôt à ce stade du texte
+    observable_to_date: Les réactions immédiates en séance (« C'est une honte ! »,
+      « Aucun respect pour la démocratie ! », députés RN scandant « Démission ! »,
+      départ des députés LFI-NUPES en chantant La Marseillaise) manifestent une contestation
+      vive compatible avec un dépôt ultérieur de motion de censure, non documenté
+      dans le texte source fourni au-delà de la séance elle-même.
+  - consequence_label: Poursuite ou intensification de la mobilisation sociale contre
+      la réforme des retraites en dehors de l'enceinte parlementaire
+    confidence: 0.5
+    confidence_applies_to: inference
+    defeaters:
+    - Le texte source ne documente aucune mobilisation sociale postérieure à la séance,
+      seule la réaction parlementaire immédiate est attestée
+    - L'adoption du texte par 49.3 pourrait au contraire démobiliser une partie de
+      l'opposition sociale en actant un fait accompli, plutôt que l'intensifier
+- targeted_object_id: obj_target_2
+  plausible_consequences:
+  - consequence_label: Perception par l'opinion publique d'un déni de légitimité démocratique
+      renforçant la défiance envers l'exécutif
+    confidence: 0.45
+    confidence_applies_to: inference
+    defeaters:
+    - Le texte source ne fournit aucune donnée d'opinion publique postérieure à la
+      séance permettant de vérifier cet effet
+    - Une partie de l'opinion peut au contraire percevoir favorablement l'aboutissement
+      d'une réforme jugée nécessaire, indépendamment du procédé utilisé
+discourse_action_gaps_on_thematic_objects:
+- thematic_object_id: obj_them_2
+  declared: Engagement de « toujours rechercher des compromis », concertation menée
+    depuis l'automne avec les partenaires sociaux et les parlementaires, aboutissant
+    à un compromis obtenu en CMP puis adopté au Sénat
+  pattern_type: observed_as_announced
+  observation_window: De l'automne 2022 (déclaration de politique générale) au 16
+    mars 2023 (séance d'engagement de responsabilité)
+  observation: Le texte source atteste que la démarche de concertation et de recherche
+    de compromis annoncée s'est concrétisée par l'obtention d'un compromis en CMP
+    le 15 mars 2023 et son adoption par le Sénat le 16 mars au matin, conformément
+    à l'engagement déclaré de rechercher des compromis — la trajectoire déclarée et
+    l'acte observé coïncident dans le texte disponible.
+  constraint_named: null
+  public_motivation_invoked: null
+  source_reference: « Hier, la commission mixte paritaire […] a construit un compromis
+    […] et [il a été] adopté au Sénat ce matin »
+  date_fait: '2023-03-16'
+  date_connaissance: '2023-03-16'
+- thematic_object_id: obj_them_3
+  declared: Recours au 49.3 présenté comme compatible avec, et expression de, la foi
+    dans la démocratie parlementaire, motivé par le risque d'échec du vote sur un
+    texte jugé fragile
+  pattern_type: broken_explicitly
+  observation_window: Séance du 16 mars 2023, de la déclaration à la suite procédurale
+    immédiate
+  observation: L'acte performatif d'engagement de responsabilité constitue lui-même
+    la rupture explicite avec la tenue d'un vote direct de l'Assemblée sur le texte,
+    rupture assumée et motivée publiquement par la locutrice au moment même où elle
+    l'accomplit — l'écart entre l'idéal du vote parlementaire et l'acte procédural
+    choisi est rendu explicite dans le discours lui-même, sans dissimulation.
+  constraint_named: null
+  public_motivation_invoked: « parce que je suis attachée à notre modèle social […]
+    et parce que je crois en la démocratie parlementaire […] on ne peut pas prendre
+    le risque de voir 175 heures de débats parlementaires anéanties »
+  source_reference: « sur le fondement de l'article 49, alinéa 3, de la Constitution
+    […] j'engage la responsabilité de mon Gouvernement »
+  date_fait: '2023-03-16'
+  date_connaissance: '2023-03-16'
+observable_effects_on_targeted_objects:
+- targeted_object_id: obj_target_1
+  effect_type: contestation_forte
+  description: "Les oppositions parlementaires visées par l'argumentaire de la Première\
+    \ ministre réagissent par une contestation immédiate et vive dès l'annonce de\
+    \ l'engagement de responsabilité : exclamations hostiles (« C'est une honte !\
+    \ », « C'est un scandale ! », « Quel échec ! », « Aucun respect pour la démocratie\
+    \ ! »), scansions (« Démission ! »), reprise du chant de La Marseillaise et départ\
+    \ collectif de l'hémicycle par les députés LFI-NUPES en criant « Démocratie !\
+    \ » — manifestant un rejet explicite de la légitimité procédurale revendiquée\
+    \ par la locutrice."
+  source_reference: « C'est une honte ! » (M. Sébastien Jumel) […] des députés du
+    groupe LFI-NUPES entonnent à nouveau La Marseillaise et quittent l'hémicycle en
+    criant « Démocratie ! »
+  date_fait: '2023-03-16'
+  date_connaissance: '2023-03-16'
+historiographies:
+- reference_in_text: "« Dans un scrutin où chacun voterait selon sa conscience, permettez-moi\
+    \ de dire que je suis sûr que ces dispositions réuniraient une majorité, peut-être\
+    \ même une large majorité. » Elle ajoute : « Ces mots, aujourd'hui, je les fais\
+    \ miens. »"
+  mobilized: Précédent rhétorique de Michel Rocard lors du débat sur la création de
+    la CSG (15 novembre 1990), invoqué comme figure historique de gauche ayant elle-même
+    défendu une réforme contestée en avançant l'existence d'une majorité de conscience
+    distincte du vote formel
+  mobilization_type: thematic_explicit
+  consensus_level_mobilized: contested
+  competing: Lecture critique de l'héritage rocardien consistant à souligner que le
+    précédent de 1990 n'a jamais été confirmé par un vote effectif et que son invocation
+    en 2023 sert surtout à légitimer rétrospectivement le contournement du vote plutôt
+    qu'à établir une continuité de méthode réformiste social-démocrate
+  consensus_level_competing: contested
+  what_competing_would_say: L'historiographie critique soulignerait que la citation
+    de Rocard opère un glissement de l'argument initial (une majorité de conscience
+    existerait malgré les votes contraires) vers une légitimation générale du contournement
+    du vote parlementaire, glissement que le contexte de 1990 ne permettait pas nécessairement
+    d'anticiper ni de cautionner pleinement.
+epistemic_synthesis:
+  established_facts:
+  - La commission mixte paritaire s'est réunie le 15 mars 2023 et a produit un texte
+    de compromis
+  - Le Sénat a adopté le texte issu de la CMP dans la matinée du 16 mars 2023
+  - La Première ministre a engagé la responsabilité du Gouvernement le 16 mars 2023
+    sur le fondement de l'article 49, alinéa 3, de la Constitution, sur le projet
+    de loi de financement rectificative de la sécurité sociale pour 2023
+  - La présidente de l'Assemblée nationale a fixé la date limite de dépôt d'une motion
+    de censure au lendemain 15h20, en application de l'article 49 de la Constitution
+    et de l'article 155, alinéa 1er, du règlement
+  - Des députés de plusieurs groupes (RN, LFI-NUPES, LR, SOC, Écolo-NUPES, GDR-NUPES)
+    ont manifesté une contestation vive immédiatement après l'annonce, incluant des
+    exclamations hostiles, des scansions, un chant de La Marseillaise et le départ
+    de l'hémicycle pour le groupe LFI-NUPES
+  - Michel Rocard a prononcé les propos cités lors du débat sur la création de la
+    CSG le 15 novembre 1990
+  inferences:
+  - label: Le recours au 49.3 a été présenté par la locutrice comme la conséquence
+      d'un calcul de risque politique (incertitude du vote) plutôt que comme un choix
+      de principe indépendant du résultat anticipé
+    confidence: 0.7
+    premise: « l'incertitude plane, à quelques voix près » suivi immédiatement de
+      la justification du 49.3
+  - label: La stratégie discursive globale vise à transférer la responsabilité politique
+      et la légitimité du texte du Gouvernement vers le Parlement (CMP, Sénat) afin
+      de désamorcer la critique du contournement du vote à l'Assemblée
+    confidence: 0.65
+    premise: Insistance répétée sur « le texte du Parlement », la composition plurielle
+      de la CMP, et l'adoption sénatoriale, immédiatement avant l'annonce du 49.3
+  - label: La citation de Rocard fonctionne comme un précédent légitimant destiné
+      à suggérer une adhésion de fond au texte indépendamment de l'issue incertaine
+      d'un vote formel
+    confidence: 0.6
+    premise: Enchaînement direct entre la citation et l'affirmation d'un engagement
+      personnel (« ces mots, je les fais miens »)
+  competing_hypotheses:
+  - label: La Première ministre a délibérément construit une séquence rhétorique (concertation,
+      CMP, adoption sénatoriale, précédent Rocard) visant à préparer et légitimer
+      par anticipation un recours au 49.3 déjà arrêté en amont de la séance, indépendamment
+      de l'issue réelle d'un vote hypothétique
+    type: intentional
+    confidence: 0.45
+    grounded_in:
+    - "u4 (inferred_function: transfert de paternité)"
+    - "u5 (inferred_function: construction d'une urgence décisionnelle)"
+    - "u6 (inferred_function: acte performatif présenté comme expression de la démocratie\
+      \ parlementaire)"
+  - label: La locutrice a sincèrement cherché le compromis parlementaire le plus large
+      possible et n'a recouru au 49.3 qu'en dernier ressort face à une incertitude
+      de vote réelle et tardivement confirmée, sans intention de contourner par principe
+      la légitimité du vote
+    type: non_intentional
+    confidence: 0.4
+    grounded_in:
+    - u2 et u3 (bilan de concertation)
+    - "élément causal amont : engagement antérieur de rechercher des compromis, confidence\
+      \ 0.7"
+    - "élément causal amont : incertitude sur l'issue du vote, confidence 0.75"
+  - label: La locutrice a agi sous une contrainte institutionnelle structurelle (absence
+      de majorité absolue à l'Assemblée depuis 2022) qui rend le recours au 49.3 une
+      réponse quasi mécanique à une configuration parlementaire donnée, plutôt que
+      le produit d'une stratégie de communication spécifiquement pensée pour cette
+      séance
+    type: non_intentional_or_moderate
+    confidence: 0.35
+    grounded_in:
+    - "élément causal amont : absence de majorité gouvernementale absolue, confidence\
+      \ 0.5"
+    - "u4 : non-majorité gouvernementale en CMP également soulignée par la locutrice\
+      \ elle-même"
+  - label: Le discours reflète une tension non résolue et non pleinement maîtrisée
+      par la locutrice elle-même entre deux registres de légitimation (démocratie
+      parlementaire vs procédure évitant le vote), sans que l'on puisse trancher entre
+      une intention stratégique cohérente et une simple difficulty de justification
+      face à une situation politique intrinsèquement contradictoire
+    type: non_intentional_or_moderate
+    confidence: 0.4
+    grounded_in:
+    - "u6 : paradoxe non résolu identifié par l'agent Vulnérabilités, confidence 0.7"
+    - réactions immédiates en séance manifestant que la compatibilité revendiquée
+      n'est pas partagée
+  hypothesis_gap: 0.05
+  hypothesis_status: zone_of_indetermination
+  red_team_objections:
+  - L'hypothèse intentionnelle repose largement sur des inférences de fonction (inferred_function)
+    dont la confidence individuelle ne dépasse jamais 0.7 et dont les alternatives
+    non stratégiques affichent des confidences non négligeables (0.25 à 0.35) — l'attribution
+    d'une intention délibérée et cohérente sur l'ensemble du discours suppose une
+    convergence de plusieurs inférences individuellement incertaines, ce qui affaiblit
+    la solidité cumulative de l'hypothèse dominante.
+  - Le texte source ne fournit aucun élément direct (notes internes, témoignages de
+    conseillers, calendrier de décision antérieur à la séance) permettant de dater
+    le moment où le recours au 49.3 aurait été arrêté ; toute affirmation d'une préparation
+    rhétorique anticipée spécifiquement destinée à légitimer un choix déjà pris reste
+    donc une reconstruction plausible mais non démontrée par le corpus disponible.
+  - L'hypothèse de la contrainte structurelle (absence de majorité absolue) est elle-même
+    fondée sur un élément causal amont à confidence modérée (0.5) et sur une lecture
+    en creux d'une phrase qui, littéralement, ne concerne que la composition de la
+    CMP et non la configuration générale de l'Assemblée — l'extrapolation à la contrainte
+    institutionnelle globale n'est pas explicitement énoncée dans le texte.
+  - La proximité des scores de confiance entre les quatre hypothèses (0.35 à 0.45)
+    suggère que le corpus disponible ne permet pas de trancher entre une lecture stratégique
+    intentionnelle et une lecture plus sincère ou contrainte du choix procédural,
+    et toute présentation de l'hypothèse intentionnelle comme dominante devrait être
+    assortie d'une réserve explicite sur cette faible marge.
+null_results:
+  fallacies_certain: 1
+  fallacies_probable_or_possible: 6
+  intentional_omissions_proved: 0
+  modal_shifts_detected:
+  - Glissement d'un jugement de valeur (nécessité de la réforme) vers une affirmation
+    factuelle non modalisée (« Cette réforme est nécessaire »)
+  - Glissement d'une qualification évaluative contestée (réforme « équilibrée ») vers
+    un énoncé présenté comme descriptif
+  ethical_content_not_neutralized: null
+method_id: M01_ANALYSE_RHETORIQUE
+method_version: "2.1"
+gabarit_version: 2.1-durci-seq1
+analysis_id: M01_BORNE_493_20230316_AUTO_v1
+execution_date: '2026-07-11'
+source:
+  text_id: M01_BORNE_493_20230316_AUTO_v1
+  provenance: source_texts/borne_20230316_493.txt
+  integrity_status: uncertain
