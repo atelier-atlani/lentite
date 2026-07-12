@@ -1,0 +1,687 @@
+execution_mode: applicable_degraded
+execution_mode_note: "Le texte source n'est pas une transcription verbatim intégrale\
+  \ mais un résumé produit par récupération automatisée ; les passages entre guillemets\
+  \ sont présentés comme citations sans garantie de fidélité verbatim à 100%. L'analyse\
+  \ est donc conduite en mode dégradé : les unités et actes de langage s'appuient\
+  \ sur les segments explicitement cités ou paraphrasés fournis, sans extrapolation\
+  \ au-delà de ce corpus restreint."
+enonciation:
+  speaker:
+    id: rn_groupe_an_2023
+    name: Groupe Rassemblement National à l'Assemblée nationale
+    role_at_date: Groupe parlementaire à l'Assemblée nationale
+  date: '2023-05-03'
+  place: Assemblée nationale, France
+  primary_audience: Opinion publique française et électorat du Rassemblement National
+  secondary_audiences:
+  - Médias politiques
+  - Autres groupes parlementaires
+  - Gouvernement et majorité présidentielle
+  channel: Communiqué de presse (groupe parlementaire)
+  political_sequence: Séquence post-promulgation de la réforme des retraites (loi
+    n°2023-270 du 14 avril 2023)
+  genre: Communiqué politique institutionnel
+  communication_contract: Annonce d'une initiative parlementaire (dépôt de proposition
+    de loi) doublée d'une critique de la réforme adoptée et d'un ancrage programmatique
+    électoral
+  affective_charge: medium
+  ethical_charge: high
+  thematic_objects:
+  - object_id: obj_them_1
+    label: Proposition de loi alternative sur l'âge de départ et la durée de cotisation
+    efficiency_status: efficient
+    efficiency_justification: Le communiqué énonce des paramètres chiffrés précis
+      (âge de départ à 60 ans pour les entrées avant 20 ans, relèvement progressif
+      jusqu'à 62 ans, durée de cotisation de 40 à 42 annuités), ce qui rend l'objet
+      thématique clairement identifiable et déterminé dans le texte.
+  - object_id: obj_them_2
+    label: Critique de la réforme des retraites promulguée (loi n°2023-270)
+    efficiency_status: efficient
+    efficiency_justification: La qualification explicite de la réforme comme « injuste,
+      inutile et imposée par Emmanuel Macron malgré le rejet de plus de deux-tiers
+      des citoyens » constitue une caractérisation directe et univoque de l'objet
+      critiqué.
+  - object_id: obj_them_3
+    label: Filiation programmatique avec la candidature présidentielle de Marine Le
+      Pen
+    efficiency_status: efficient
+    efficiency_justification: Le texte relie explicitement la proposition à un programme
+      électoral identifié (« directement issue du programme de Marine Le Pen lors
+      de la dernière présidentielle ») et à une échéance future précise (élection
+      de Marine Le Pen à la présidence), ce qui rend l'objet thématique repérable
+      sans ambiguïté.
+  targeted_objects:
+  - object_id: obj_target_1
+    label: La loi n°2023-270 du 14 avril 2023 (réforme des retraites)
+    inference_confidence: 0.9
+    grounded_in:
+    - ce communiqué est postérieur à la promulgation de la loi n°2023-270 du 14 avril
+      2023 (réforme adoptée)
+    - le groupe RN annonce le dépôt d'une proposition de loi présentée comme alternative
+      à cette loi déjà en vigueur
+    - le communiqué la qualifie d'« injuste, inutile et imposée par Emmanuel Macron
+      malgré le rejet de plus de deux-tiers des citoyens »
+    efficiency_status: efficient
+    efficiency_justification: L'objet visé est identifié par le contexte documentaire
+      fourni (la loi n°2023-270) et directement qualifié dans le texte par des adjectifs
+      à charge, ce qui permet une identification fiable de la cible critique.
+  - object_id: obj_target_2
+    label: Emmanuel Macron, en tant qu'artefact causal désigné de l'adoption de la
+      réforme
+    inference_confidence: 0.85
+    grounded_in:
+    - le communiqué la qualifie d'« injuste, inutile et imposée par Emmanuel Macron
+      malgré le rejet de plus de deux-tiers des citoyens »
+    efficiency_status: efficient
+    efficiency_justification: Le texte désigne nommément Emmanuel Macron comme l'agent
+      de l'imposition de la réforme, ce qui constitue une cible personnalisée explicite
+      et non déduite.
+charity_reconstruction:
+  content: "Le groupe RN soutient que la réforme des retraites promulguée le 14 avril\
+    \ 2023 devrait être remplacée par un dispositif alternatif, plus favorable selon\
+    \ lui aux travailleurs ayant commencé leur carrière tôt, comportant un âge de\
+    \ départ minimum de 60 ans pour les personnes ayant travaillé avant 20 ans, un\
+    \ relèvement progressif jusqu'à 62 ans selon l'âge d'entrée dans la vie active,\
+    \ et une durée de cotisation réduite (40 à 42 annuités contre 43 dans la loi en\
+    \ vigueur). L'argument implicite est double : d'une part, la réforme adoptée serait\
+    \ illégitime au plan procédural et démocratique parce qu'elle aurait été adoptée\
+    \ en dépit d'une opposition majoritaire de l'opinion publique (« rejet de plus\
+    \ de deux-tiers des citoyens ») et malgré un contexte parlementaire contesté (qualifiée\
+    \ d'« imposée »); d'autre part, elle serait illégitime au plan substantiel parce\
+    \ qu'elle produirait des effets jugés injustes (par exemple pour les carrières\
+    \ longues) sans justification d'utilité suffisante (qualifiée d'« inutile »).\
+    \ Le dépôt de la proposition de loi vise ainsi à offrir, dès à présent, une alternative\
+    \ parlementaire concrète, tout en inscrivant cette alternative dans la continuité\
+    \ du programme présidentiel de Marine Le Pen, avec l'intention déclarée de la\
+    \ soumettre au vote du Parlement ou à référendum en cas d'élection de celle-ci\
+    \ à la présidence de la République."
+  borrowed_terms_handled:
+  - term: injuste
+    handling: quoted
+  - term: inutile
+    handling: quoted
+  - term: imposée
+    handling: quoted
+  - term: rejet de plus de deux-tiers des citoyens
+    handling: attributed
+  - term: directement issue du programme de Marine Le Pen
+    handling: quoted
+units:
+- unit_id: u1
+  text_span: Le groupe Rassemblement National dépose une proposition de loi pour empêcher
+    la retraite à 64 ans
+  speech_acts:
+  - Annonce (acte déclaratif d'action parlementaire)
+  - Affirmation implicite d'opposition à l'âge légal de 64 ans
+  presuppositions:
+  - La retraite à 64 ans est présentée comme un fait acquis contre lequel il faut
+    agir
+  - Le dépôt d'une proposition de loi est présenté comme un moyen efficace de contrer
+    cette mesure
+  argumentative_vulnerabilities:
+  - type: Présupposition non fondée / pétition de principe implicite
+    level: probable
+    evidence_span: Le groupe Rassemblement National dépose une proposition de loi
+      pour empêcher la retraite à 64 ans
+    confidence: 0.6
+    confidence_applies_to: inference
+    charitable_alternative: L'annonce peut être lue comme une simple communication
+      d'intention politique sans prétention à l'efficacité causale immédiate, ce qui
+      atténue la charge du présupposé.
+    hidden_premises:
+    - Le dépôt d'une proposition de loi minoritaire à l'Assemblée nationale suffit
+      à 'empêcher' l'application d'une loi déjà promulguée
+    defeaters:
+    - Le groupe RN est minoritaire à l'Assemblée nationale et ne dispose pas de la
+      majorité nécessaire pour faire adopter une proposition de loi contraire à une
+      loi déjà promulguée
+    - Une loi déjà promulguée et en vigueur ne peut être 'empêchée' que par son abrogation
+      ou remplacement, processus non garanti par le simple dépôt d'un texte
+    date_fait: '2023-05-03'
+    date_connaissance: '2023-05-03'
+  omissions:
+  - missing_element: Absence de mention du rapport de force parlementaire (RN minoritaire)
+      rendant l'adoption de la proposition hautement improbable dans le cadre institutionnel
+      actuel
+    level: strategic_probable
+    why_expected: Le groupe RN, en tant qu'acteur parlementaire, dispose d'une connaissance
+      directe et documentée de sa position minoritaire à l'Assemblée nationale issue
+      des résultats des élections législatives de 2022, information publique et officielle
+    evidence_of_expected_knowledge: Composition de l'Assemblée nationale issue des
+      élections législatives de juin 2022, information publique
+    confidence: 0.55
+    pouvoir_agir: Le groupe RN, en tant qu'auteur du communiqué, avait le pouvoir
+      de mentionner explicitement le caractère minoritaire de sa position parlementaire
+      et donc l'incertitude sur l'adoption effective du texte
+    opportunite:
+      description: Le communiqué de presse du 3 mai 2023 constituait l'occasion de
+        préciser le statut probable de la proposition dans le calendrier parlementaire
+      date: '2023-05-03'
+    cloture_corpus:
+      corpus_declare: Texte du communiqué du groupe RN à l'Assemblée nationale daté
+        du 3 mai 2023, tel que restitué par récupération automatisée
+      date_cloture: '2023-05-03'
+    explications_innocentes:
+    - description: Un communiqué de presse politique a pour fonction de communiquer
+        une position et une intention plutôt que de fournir une analyse exhaustive
+        du rapport de force parlementaire
+      statut: retenue
+    date_fait: '2023-05-03'
+    date_connaissance: '2023-05-03'
+  inferred_function:
+    label: Communication d'opposition politique visant à afficher une alternative
+      programmatique plutôt qu'à produire un effet législatif immédiat
+    confidence: 0.55
+    epistemic_regime: believes
+    alternative_functions:
+    - label: Annonce sincère d'une initiative parlementaire avec attente réelle d'adoption
+      confidence: 0.2
+      epistemic_regime: claims_to_know
+- unit_id: u2
+  text_span: âge de départ minimum à 60 ans pour les personnes ayant travaillé avant
+    20 ans, relèvement progressif jusqu'à 62 ans selon l'âge d'entrée dans la vie
+    active ; durée de cotisation requise entre 40 et 42 annuités selon l'âge d'entrée
+    (contre 43 annuités dans la loi promulguée)
+  speech_acts:
+  - Description technique du contenu de la proposition de loi
+  - Comparaison implicite avec la loi promulguée (43 annuités)
+  presuppositions:
+  - La durée de cotisation de 43 annuités de la loi promulguée constitue une référence
+    de comparaison pertinente et négative
+  - L'âge d'entrée dans la vie active est un critère légitime de différenciation du
+    droit à la retraite
+  argumentative_vulnerabilities:
+  - type: Comparaison sélective (cherry picking) sur un seul paramètre
+    level: possible
+    evidence_span: durée de cotisation requise entre 40 et 42 annuités selon l'âge
+      d'entrée (contre 43 annuités dans la loi promulguée)
+    confidence: 0.4
+    confidence_applies_to: inference
+    charitable_alternative: La comparaison sur la durée de cotisation peut être un
+      simple élément descriptif informatif parmi d'autres paramètres du dispositif,
+      sans intention de sélection biaisée.
+    hidden_premises:
+    - La comparaison sur le seul critère de la durée de cotisation est représentative
+      de l'ensemble des effets du dispositif proposé par rapport à la loi promulguée
+    defeaters: []
+    date_fait: '2023-05-03'
+    date_connaissance: '2023-05-03'
+  omissions:
+  - missing_element: Absence de chiffrage de l'impact budgétaire ou de financement
+      du dispositif alternatif proposé (âge de départ abaissé, durée de cotisation
+      réduite)
+    level: strategic_probable
+    why_expected: Toute proposition de loi modifiant les paramètres d'un système de
+      retraite par répartition a, par fonction officielle du groupe parlementaire
+      déposant le texte, une obligation implicite de crédibilité budgétaire attendue
+      dans le débat public sur les retraites depuis 2023
+    evidence_of_expected_knowledge: Débat public documenté sur le financement des
+      retraites lors de la réforme de 2023, connu des groupes parlementaires ayant
+      participé aux débats
+    confidence: 0.5
+    pouvoir_agir: Le groupe RN, en déposant une proposition de loi chiffrée sur les
+      paramètres d'âge et de durée de cotisation, avait le pouvoir de joindre ou mentionner
+      une évaluation de son financement
+    opportunite:
+      description: Le dépôt de la proposition de loi et son communiqué de presse constituaient
+        l'occasion de présenter un chiffrage budgétaire
+      date: '2023-05-03'
+    cloture_corpus:
+      corpus_declare: Texte du communiqué du groupe RN à l'Assemblée nationale daté
+        du 3 mai 2023, tel que restitué par récupération automatisée
+      date_cloture: '2023-05-03'
+    explications_innocentes:
+    - description: Un communiqué de presse synthétique n'a pas vocation à contenir
+        une étude d'impact budgétaire complète, celle-ci pouvant figurer dans l'exposé
+        des motifs de la proposition de loi elle-même, document distinct non fourni
+        ici
+      statut: retenue
+    date_fait: '2023-05-03'
+    date_connaissance: '2023-05-03'
+  inferred_function: null
+- unit_id: u3
+  text_span: directement issue du programme de Marine Le Pen lors de la dernière présidentielle
+  speech_acts:
+  - Attribution de paternité programmatique
+  - Revendication de filiation politique
+  presuppositions:
+  - Le programme présidentiel de Marine Le Pen constitue une source de légitimité
+    pour la proposition de loi
+  - Il existe une continuité programmatique claire entre la campagne présidentielle
+    et l'action parlementaire actuelle du groupe RN
+  argumentative_vulnerabilities:
+  - type: Argument d'autorité programmatique (légitimation par filiation électorale)
+    level: possible
+    evidence_span: directement issue du programme de Marine Le Pen lors de la dernière
+      présidentielle
+    confidence: 0.45
+    confidence_applies_to: inference
+    charitable_alternative: La mention de la filiation programmatique peut simplement
+      viser à informer l'audience de la cohérence politique du groupe, sans viser
+      à substituer l'autorité de la candidate à une justification de fond du dispositif.
+    hidden_premises:
+    - Le fait qu'une mesure soit issue d'un programme électoral constitue en soi un
+      argument en faveur de sa pertinence ou de son bien-fondé
+    defeaters: []
+    date_fait: '2023-05-03'
+    date_connaissance: '2023-05-03'
+  omissions: []
+  inferred_function:
+    label: Ancrage de la proposition parlementaire dans la légitimité électorale de
+      la candidate présidentielle du parti, à des fins de cohérence de marque politique
+    confidence: 0.6
+    epistemic_regime: believes
+    alternative_functions:
+    - label: Simple rappel factuel de l'origine du dispositif sans visée stratégique
+        de légitimation
+      confidence: 0.25
+      epistemic_regime: claims_to_know
+- unit_id: u4
+  text_span: sera soumise au vote du Parlement ou à référendum lorsque Marine Le Pen
+    sera élue présidente
+  speech_acts:
+  - Annonce conditionnelle d'une action future
+  - Promesse électorale conditionnelle
+  presuppositions:
+  - L'élection de Marine Le Pen à la présidence est présentée comme un scénario suffisamment
+    probable ou envisageable pour justifier cette annonce
+  - Le dispositif proposé n'est pas applicable dans le cadre institutionnel actuel
+    sans cette élection, ou son adoption reste incertaine autrement
+  argumentative_vulnerabilities:
+  - type: Présupposition d'un scénario futur incertain présenté comme acquis (glissement
+      modal)
+    level: possible
+    evidence_span: sera soumise au vote du Parlement ou à référendum lorsque Marine
+      Le Pen sera élue présidente
+    confidence: 0.5
+    confidence_applies_to: inference
+    charitable_alternative: La formulation conditionnelle ('lorsque') peut être une
+      simple convention de style politique désignant une hypothèse et non une affirmation
+      de certitude sur l'issue électorale.
+    hidden_premises:
+    - L'élection future de Marine Le Pen à la présidence est un événement suffisamment
+      certain ou attendu pour être évoqué au mode temporel ('lorsque') plutôt qu'au
+      mode hypothétique ('si')
+    defeaters: []
+    date_fait: '2023-05-03'
+    date_connaissance: '2023-05-03'
+  omissions: []
+  inferred_function:
+    label: Promesse électorale conditionnelle visant à mobiliser l'électorat autour
+      d'une perspective présidentielle
+    confidence: 0.55
+    epistemic_regime: asserts
+    alternative_functions: []
+- unit_id: u5
+  text_span: injuste, inutile et imposée par Emmanuel Macron malgré le rejet de plus
+    de deux-tiers des citoyens
+  speech_acts:
+  - Qualification évaluative négative de la réforme adoptée
+  - Attribution causale et personnalisée de responsabilité à Emmanuel Macron
+  - Affirmation d'un fait chiffré sur l'opinion publique (rejet aux deux-tiers)
+  presuppositions:
+  - Il existe une mesure fiable et incontestée du rejet de la réforme par l'opinion
+    publique à hauteur de plus des deux-tiers
+  - La réforme a été adoptée en dépit de, ou sans tenir compte de, ce rejet majoritaire
+  - Emmanuel Macron est l'acteur décisionnel déterminant de l'adoption de la réforme,
+    au-delà du processus parlementaire et gouvernemental formel
+  argumentative_vulnerabilities:
+  - type: Sophisme ad hominem circonstanciel / personnalisation causale excessive
+    level: probable
+    evidence_span: imposée par Emmanuel Macron malgré le rejet de plus de deux-tiers
+      des citoyens
+    confidence: 0.65
+    confidence_applies_to: inference
+    charitable_alternative: La désignation d'Emmanuel Macron peut renvoyer de façon
+      raccourcie à la responsabilité de l'exécutif et du recours à l'article 49.3,
+      sans nier le rôle du Parlement dans le processus formel d'adoption.
+    hidden_premises:
+    - Emmanuel Macron est l'acteur décisionnel déterminant de l'adoption de la réforme,
+      indépendamment du vote parlementaire et du processus institutionnel formel (recours
+      à l'article 47-1, engagement de responsabilité du gouvernement)
+    defeaters:
+    - La réforme a été adoptée par la voie d'un projet de loi de financement rectificative
+      de la sécurité sociale, engageant la responsabilité du gouvernement (article
+      49.3) et non par décision personnelle unilatérale du président de la République
+    - Le Conseil constitutionnel a validé l'essentiel du texte le 14 avril 2023, ce
+      qui atteste d'un processus institutionnel collégial et non d'une simple imposition
+      présidentielle
+    date_fait: '2023-04-14'
+    date_connaissance: '2023-05-03'
+  - type: Affirmation chiffrée non sourcée dans le texte (fait statistique invérifié
+      dans le corpus fourni)
+    level: possible
+    evidence_span: le rejet de plus de deux-tiers des citoyens
+    confidence: 0.5
+    confidence_applies_to: source_reliability
+    charitable_alternative: Le chiffre des deux-tiers peut renvoyer à des sondages
+      d'opinion publiés durant le mouvement social contre la réforme des retraites
+      en 2023, données existantes mais non citées précisément dans le communiqué tel
+      que restitué.
+    hidden_premises:
+    - Le chiffre de 'plus de deux-tiers' de rejet par les citoyens repose sur une
+      source de mesure fiable et incontestée, identifiable et vérifiable
+    defeaters: []
+    date_fait: non_documente
+    date_connaissance: '2023-05-03'
+  omissions:
+  - missing_element: Absence de citation de la source du chiffre 'plus de deux-tiers
+      des citoyens' rejetant la réforme
+    level: structural
+    why_expected: Une affirmation chiffrée présentée comme un fait dans un communiqué
+      politique officiel est normalement attendue avec une référence à une source
+      de sondage identifiable, pratique habituelle de citation des instituts de sondage
+      dans la communication politique française
+    evidence_of_expected_knowledge: Existence documentée de multiples sondages d'opinion
+      publiés pendant le mouvement social de 2023 contre la réforme des retraites,
+      dont le groupe RN, acteur parlementaire suivant l'actualité du dossier, avait
+      nécessairement connaissance
+    confidence: 0.5
+    pouvoir_agir: Le groupe RN, auteur du communiqué, avait le pouvoir de citer l'institut
+      de sondage et la date de l'enquête à l'appui du chiffre avancé
+    opportunite:
+      description: Le communiqué du 3 mai 2023 constituait l'occasion de sourcer explicitement
+        le chiffre avancé sur le rejet de la réforme par l'opinion publique
+      date: '2023-05-03'
+    cloture_corpus:
+      corpus_declare: Texte du communiqué du groupe RN à l'Assemblée nationale daté
+        du 3 mai 2023, tel que restitué par récupération automatisée
+      date_cloture: '2023-05-03'
+    explications_innocentes:
+    - description: Le résumé fourni par récupération automatisée peut avoir omis une
+        citation de source présente dans le communiqué original, sans que cela reflète
+        une omission du groupe RN lui-même
+      statut: retenue
+    - description: Le chiffre pourrait être d'usage courant et consensuel dans le
+        débat public au point de ne pas nécessiter de citation explicite de source
+        dans un communiqué de presse
+      statut: examinee
+    date_fait: non_documente
+    date_connaissance: '2023-05-03'
+  inferred_function:
+    label: Délégitimation de la réforme adoptée par imputation personnalisée à Emmanuel
+      Macron et invocation d'un rejet populaire majoritaire, à des fins de mobilisation
+      de l'opinion contre le pouvoir exécutif
+    confidence: 0.6
+    epistemic_regime: asserts
+    alternative_functions:
+    - label: Rappel sincère et informatif du contexte politique et social entourant
+        l'adoption de la réforme, sans intention stratégique de personnalisation excessive
+      confidence: 0.2
+      epistemic_regime: believes
+upstream_causal_chain:
+  elements:
+  - element_label: Promulgation de la loi n°2023-270 du 14 avril 2023 portant réforme
+      des retraites, fixant l'âge légal à 64 ans et la durée de cotisation à 43 annuités
+    type: trigger_event
+    source_reference: ce communiqué est postérieur à la promulgation de la loi n°2023-270
+      du 14 avril 2023 (réforme adoptée)
+    confidence: 0.9
+  - element_label: Mouvement social et opposition parlementaire de 2023 contre la
+      réforme des retraites, avec sondages d'opinion défavorables invoqués
+    type: context
+    source_reference: le rejet de plus de deux-tiers des citoyens
+    confidence: 0.55
+  - element_label: Programme présidentiel de Marine Le Pen lors de l'élection présidentielle
+      de 2022, comportant des propositions sur l'âge de départ et la durée de cotisation
+    type: prior_position
+    source_reference: directement issue du programme de Marine Le Pen lors de la dernière
+      présidentielle
+    confidence: 0.75
+  - element_label: Recours du gouvernement à l'article 49.3 et validation partielle
+      par le Conseil constitutionnel le 14 avril 2023
+    type: institutional_constraint
+    source_reference: La réforme a été adoptée par la voie d'un projet de loi de financement
+      rectificative de la sécurité sociale, engageant la responsabilité du gouvernement
+      (article 49.3)... Le Conseil constitutionnel a validé l'essentiel du texte le
+      14 avril 2023
+    confidence: 0.8
+downstream_causal_chains:
+- targeted_object_id: obj_target_1
+  plausible_consequences:
+  - consequence_label: La proposition de loi alternative du RN n'est pas adoptée par
+      l'Assemblée nationale du fait de la position minoritaire du groupe
+    confidence: 0.7
+    confidence_applies_to: inference
+    defeaters:
+    - Une coalition parlementaire inattendue (LR, une partie de la Nupes, ou abstentions
+      ciblées) pourrait former une majorité de circonstance sur ce texte spécifique
+    - Le texte pourrait ne jamais être inscrit à l'ordre du jour et donc ni adopté
+      ni rejeté formellement, rendant la conséquence indéterminée plutôt que confirmée
+    observable_to_date: null
+  - consequence_label: Le débat autour de la proposition alimente une contestation
+      politique persistante de la légitimité de la loi n°2023-270 sans remettre en
+      cause son application effective
+    confidence: 0.55
+    confidence_applies_to: inference
+    defeaters:
+    - Une nouvelle mobilisation sociale de grande ampleur pourrait conduire à une
+      révision de la loi par une autre voie que celle proposée par le RN
+    - L'attention médiatique et politique pourrait se déplacer rapidement vers d'autres
+      sujets, diluant l'effet de contestation avant qu'il ne produise un effet observable
+    observable_to_date: null
+- targeted_object_id: obj_target_2
+  plausible_consequences:
+  - consequence_label: La personnalisation de la critique sur Emmanuel Macron renforce
+      son image de cible privilégiée de l'opposition RN dans la séquence politique
+      post-réforme
+    confidence: 0.5
+    confidence_applies_to: inference
+    defeaters:
+    - D'autres formations d'opposition (Nupes, LR) pourraient personnaliser leur propre
+      critique sur d'autres figures (Premier ministre, ministre du Travail), diluant
+      l'effet spécifique de la personnalisation RN
+    - L'opinion publique pourrait ne pas retenir la personnalisation présidentielle
+      mais l'attribuer plus largement au gouvernement ou au processus parlementaire,
+      neutralisant l'effet recherché
+    observable_to_date: null
+discourse_action_gaps_on_thematic_objects:
+- thematic_object_id: obj_them_1
+  declared: Le groupe RN annonce le dépôt d'une proposition de loi instaurant un âge
+    de départ minimum à 60 ans (pour les entrées avant 20 ans), un relèvement progressif
+    jusqu'à 62 ans, et une durée de cotisation de 40 à 42 annuités, en remplacement
+    de la loi n°2023-270 déjà en vigueur
+  pattern_type: not_yet_observed
+  observation_window: Du 3 mai 2023 (date du communiqué) à la date de clôture du corpus
+    fourni (3 mai 2023)
+  observation: Le corpus fourni ne documente aucune suite législative postérieure
+    au dépôt annoncé ; le communiqué lui-même ne constitue qu'une annonce d'intention
+    à la date de clôture du corpus, sans élément permettant d'observer un vote, une
+    inscription à l'ordre du jour ou un rejet du texte
+  constraint_named: null
+  public_motivation_invoked: null
+  source_reference: Le groupe Rassemblement National dépose une proposition de loi
+    pour empêcher la retraite à 64 ans
+  date_fait: '2023-05-03'
+  date_connaissance: '2023-05-03'
+- thematic_object_id: obj_them_3
+  declared: La proposition sera soumise au vote du Parlement ou à référendum lorsque
+    Marine Le Pen sera élue présidente de la République
+  pattern_type: not_yet_observed
+  observation_window: Du 3 mai 2023 (date du communiqué) à la date de clôture du corpus
+    fourni (3 mai 2023)
+  observation: L'engagement est explicitement conditionné à un événement futur incertain
+    (l'élection de Marine Le Pen à la présidence) qui n'a pas eu lieu à la date de
+    clôture du corpus ; aucune observation de mise en œuvre n'est donc possible dans
+    la fenêtre documentée, la condition suspensive elle-même n'étant pas advenue
+  constraint_named: null
+  public_motivation_invoked: null
+  source_reference: sera soumise au vote du Parlement ou à référendum lorsque Marine
+    Le Pen sera élue présidente
+  date_fait: '2023-05-03'
+  date_connaissance: '2023-05-03'
+observable_effects_on_targeted_objects: []
+historiographies:
+- reference_in_text: injuste, inutile et imposée par Emmanuel Macron malgré le rejet
+    de plus de deux-tiers des citoyens
+  mobilized: Cadre interprétatif contestant la légitimité démocratique et procédurale
+    de la réforme des retraites de 2023, fondé sur l'invocation d'un rejet majoritaire
+    de l'opinion publique et sur la personnalisation présidentielle de la décision,
+    mobilisé par une partie de l'opposition parlementaire (RN, Nupes) durant le mouvement
+    social de 2023
+  mobilization_type: thematic_explicit
+  consensus_level_mobilized: contested
+  competing: Cadre interprétatif institutionnaliste soulignant que la réforme a été
+    adoptée par une voie constitutionnellement prévue (article 49.3, engagement de
+    responsabilité du gouvernement) et validée par le Conseil constitutionnel le 14
+    avril 2023, ce qui en établirait la légitimité procédurale indépendamment de l'impopularité
+    mesurée par sondage
+  consensus_level_competing: contested
+  what_competing_would_say: Ce cadre soutiendrait que la légitimité d'une loi ne se
+    mesure pas à la popularité instantanée mesurée par sondage mais à la conformité
+    du processus d'adoption aux règles constitutionnelles en vigueur, et que le recours
+    à l'article 49.3 ainsi que la validation par le Conseil constitutionnel suffisent
+    à établir la validité de la réforme, indépendamment du degré de contestation sociale
+    qu'elle a suscité
+- reference_in_text: directement issue du programme de Marine Le Pen lors de la dernière
+    présidentielle
+  mobilized: Cadre de légitimation par filiation programmatique électorale, selon
+    lequel une mesure tire sa validité politique de son inscription dans un programme
+    soumis au suffrage lors d'une élection présidentielle antérieure
+  mobilization_type: thematic_explicit
+  consensus_level_mobilized: marginal
+  competing: Cadre selon lequel la légitimité d'une mesure de politique publique doit
+    être évaluée sur ses mérites propres (soutenabilité financière, effets sociaux)
+    indépendamment de son origine programmatique électorale, un programme électoral
+    n'ayant pas en soi valeur de mandat impératif détaillé
+  consensus_level_competing: contested
+  what_competing_would_say: Ce cadre soutiendrait qu'un programme électoral, même
+    soutenu par un score électoral significatif, ne constitue pas une validation démocratique
+    directe de chacune de ses mesures techniques prises isolément, et qu'une évaluation
+    indépendante de la soutenabilité budgétaire et des effets sociaux du dispositif
+    reste nécessaire avant toute mise en œuvre
+epistemic_synthesis:
+  established_facts:
+  - La loi n°2023-270 du 14 avril 2023 portant réforme des retraites a été promulguée
+    et fixe l'âge légal à 64 ans et la durée de cotisation à 43 annuités
+  - La réforme a été adoptée par la voie d'un projet de loi de financement rectificative
+    de la sécurité sociale, engageant la responsabilité du gouvernement (article 49.3)
+  - Le Conseil constitutionnel a validé l'essentiel du texte le 14 avril 2023
+  - Le groupe Rassemblement National est minoritaire à l'Assemblée nationale depuis
+    les élections législatives de juin 2022
+  - Marine Le Pen était candidate à l'élection présidentielle de 2022 et n'a pas été
+    élue
+  inferences:
+  - label: Le dépôt de la proposition de loi par un groupe minoritaire a une probabilité
+      d'adoption effective très faible dans le cadre institutionnel actuel
+    confidence: 0.75
+    premise: Composition de l'Assemblée nationale issue des élections législatives
+      de 2022, absence de majorité RN
+  - label: La formulation « lorsque Marine Le Pen sera élue présidente » opère un
+      glissement modal présentant un scénario électoral incertain comme acquis plutôt
+      qu'hypothétique
+    confidence: 0.55
+    premise: Emploi du connecteur temporel 'lorsque' plutôt que conditionnel 'si'
+      dans u4
+  - label: La personnalisation de la critique sur Emmanuel Macron minimise le rôle
+      du processus parlementaire et institutionnel formel (49.3, Conseil constitutionnel)
+      dans l'adoption de la réforme
+    confidence: 0.6
+    premise: "Défaiseurs identifiés : recours à l'article 49.3 et validation du Conseil\
+      \ constitutionnel le 14 avril 2023"
+  - label: Le chiffre du rejet aux deux-tiers, non sourcé dans le texte restitué,
+      ne peut être vérifié indépendamment dans le corpus fourni
+    confidence: 0.5
+    premise: Absence de citation d'institut de sondage ou de date d'enquête dans le
+      communiqué tel que restitué
+  competing_hypotheses:
+  - label: Le communiqué vise principalement une fonction de positionnement politique
+      et de communication d'opposition, sans attente réelle d'adoption législative
+      à court terme, la proposition servant surtout à afficher une alternative programmatique
+      et à préparer le terrain électoral pour 2027
+    type: non_intentional_or_moderate
+    confidence: 0.45
+    grounded_in:
+    - "inferred_function u1 : Communication d'opposition politique visant à afficher\
+      \ une alternative programmatique plutôt qu'à produire un effet législatif immédiat\
+      \ (confidence 0.55)"
+    - "inferred_function u3 : Ancrage de la proposition parlementaire dans la légitimité\
+      \ électorale de la candidate présidentielle du parti (confidence 0.6)"
+    - "omission u1 : absence de mention du rapport de force parlementaire minoritaire"
+  - label: Le communiqué constitue une annonce sincère d'une initiative parlementaire
+      avec une attente réelle, bien que non garantie, d'un débat ou d'un vote à l'Assemblée,
+      indépendamment de la question présidentielle de 2027
+    type: non_intentional
+    confidence: 0.25
+    grounded_in:
+    - "inferred_function alternative u1 : Annonce sincère d'une initiative parlementaire\
+      \ avec attente réelle d'adoption (confidence 0.2)"
+    - "discourse_action_gap obj_them_1 : pattern not_yet_observed, absence de suite\
+      \ législative documentée à la date de clôture"
+  - label: Le communiqué poursuit intentionnellement une stratégie de délégitimation
+      personnalisée de la réforme et de l'exécutif, en imputant la décision à Emmanuel
+      Macron seul et en invoquant un rejet populaire majoritaire non sourcé, à des
+      fins de mobilisation de l'opinion contre le pouvoir en place
+    type: intentional
+    confidence: 0.55
+    grounded_in:
+    - "inferred_function u5 : Délégitimation de la réforme adoptée par imputation\
+      \ personnalisée à Emmanuel Macron et invocation d'un rejet populaire majoritaire,\
+      \ à des fins de mobilisation de l'opinion contre le pouvoir exécutif (confidence\
+      \ 0.6)"
+    - "vulnérabilité u5 : sophisme ad hominem circonstanciel / personnalisation causale\
+      \ excessive (level probable, confidence 0.65)"
+    - "omission u5 : absence de citation de la source du chiffre des deux-tiers (level\
+      \ structural, confidence 0.5)"
+  - label: Le communiqué relève d'un rappel sincère et informatif du contexte politique
+      et social entourant l'adoption de la réforme, sans intention stratégique de
+      personnalisation excessive, la mention de Macron renvoyant de façon raccourcie
+      et communément admise à la responsabilité de l'exécutif
+    type: non_intentional
+    confidence: 0.3
+    grounded_in:
+    - "inferred_function alternative u5 : Rappel sincère et informatif du contexte\
+      \ politique et social entourant l'adoption de la réforme (confidence 0.2)"
+    - "charitable_alternative u5 : la désignation de Macron peut renvoyer de façon\
+      \ raccourcie à la responsabilité de l'exécutif et du 49.3"
+  hypothesis_gap: 0.1
+  hypothesis_status: zone_of_indetermination
+  red_team_objections:
+  - L'hypothèse de délégitimation intentionnelle (confidence 0.55) repose largement
+    sur l'inférence de fonction de l'agent Vulnérabilités, elle-même qualifiée d'un
+    régime épistémique 'asserts' non 'claims_to_know' ; l'écart avec l'hypothèse concurrente
+    de positionnement stratégique non intentionnel (0.45) est trop faible pour établir
+    une dominance claire, et le calcul même (gap = 0.10) place le statut en zone d'indétermination,
+    ce qui interdit de traiter l'hypothèse intentionnelle comme acquise dans la suite
+    de l'analyse
+  - "La lecture intentionnelle de la personnalisation sur Macron ignore une explication\
+    \ alternative structurellement plausible et documentée par les chaînes causales\
+    \ : le recours à l'article 49.3 constitue un acte gouvernemental engageant spécifiquement\
+    \ la responsabilité de l'exécutif sous l'autorité présidentielle, ce qui rend\
+    \ la désignation de Macron partiellement fondée sur un raccourci institutionnel\
+    \ réel et non purement rhétorique, affaiblissant la qualification de sophisme\
+    \ ad hominem comme seule lecture disponible"
+  - "L'hypothèse de simple positionnement politique sans attente d'adoption est elle-même\
+    \ fragile : elle repose sur une inférence de fonction (confidence 0.55) fondée\
+    \ sur une omission (absence de mention du rapport de force parlementaire) dont\
+    \ l'agent Vulnérabilités reconnaît lui-même une explication innocente retenue\
+    \ (fonction normale d'un communiqué de presse), ce qui affaiblit la force probante\
+    \ de cette omission comme indice d'intentionnalité stratégique et rapproche cette\
+    \ hypothèse d'une lecture non intentionnelle par défaut plutôt que d'un calcul\
+    \ délibéré d'affichage sans substance"
+  - Le chiffre des deux-tiers, bien que non sourcé dans le corpus restitué tel que
+    fourni, pourrait correspondre à des données de sondage réellement publiées et
+    largement diffusées durant le mouvement social de 2023 (explication innocente
+    'examinee' par l'agent Vulnérabilités) ; traiter son absence de sourçage comme
+    un indice fort de stratégie de délégitimation revient à surpondérer une lacune
+    qui peut être imputable au processus de résumé automatisé du corpus plutôt qu'au
+    communiqué original du RN lui-même
+null_results:
+  fallacies_certain: 0
+  fallacies_probable_or_possible: 2
+  intentional_omissions_proved: 0
+  modal_shifts_detected:
+  - "Glissement modal en u4 : 'sera soumise au vote du Parlement ou à référendum lorsque\
+    \ Marine Le Pen sera élue présidente' — emploi du connecteur temporel 'lorsque'\
+    \ présentant un scénario électoral incertain (élection future de Marine Le Pen)\
+    \ comme un futur acquis plutôt que comme une hypothèse conditionnelle ('si')"
+  ethical_content_not_neutralized: null
+method_id: M01_ANALYSE_RHETORIQUE
+method_version: "2.1"
+gabarit_version: 2.1-durci-seq1
+analysis_id: M01_RN_PROPOSITION_20230503_AUTO_v1
+execution_date: '2026-07-12'
+source:
+  text_id: M01_RN_PROPOSITION_20230503_AUTO_v1
+  provenance: source_texts/rn_20230503.txt
+  integrity_status: uncertain
