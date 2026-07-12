@@ -428,14 +428,6 @@ upstream_causal_chain:
     source_reference: directement issue du programme de Marine Le Pen lors de la dernière
       présidentielle
     confidence: 0.75
-  - element_label: Recours du gouvernement à l'article 49.3 et validation partielle
-      par le Conseil constitutionnel le 14 avril 2023
-    type: institutional_constraint
-    source_reference: La réforme a été adoptée par la voie d'un projet de loi de financement
-      rectificative de la sécurité sociale, engageant la responsabilité du gouvernement
-      (article 49.3)... Le Conseil constitutionnel a validé l'essentiel du texte le
-      14 avril 2023
-    confidence: 0.8
 downstream_causal_chains:
 - targeted_object_id: obj_target_1
   plausible_consequences:
@@ -554,13 +546,6 @@ epistemic_synthesis:
   established_facts:
   - La loi n°2023-270 du 14 avril 2023 portant réforme des retraites a été promulguée
     et fixe l'âge légal à 64 ans et la durée de cotisation à 43 annuités
-  - La réforme a été adoptée par la voie d'un projet de loi de financement rectificative
-    de la sécurité sociale, engageant la responsabilité du gouvernement (article 49.3)
-  - Le Conseil constitutionnel a validé l'essentiel du texte le 14 avril 2023
-  - Le groupe Rassemblement National est minoritaire à l'Assemblée nationale depuis
-    les élections législatives de juin 2022
-  - Marine Le Pen était candidate à l'élection présidentielle de 2022 et n'a pas été
-    élue
   inferences:
   - label: Le dépôt de la proposition de loi par un groupe minoritaire a une probabilité
       d'adoption effective très faible dans le cadre institutionnel actuel
