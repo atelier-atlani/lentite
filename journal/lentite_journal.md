@@ -728,4 +728,26 @@ Matière retenue de cette session, versée ici pour mémoire plutôt que perdue 
 
 ---
 
+```yaml
+date: 2026-07-12
+type: mesure
+refs: [plan_action_003]
+```
+
+### Mesure 1 (chiffrage de la boucle humaine) — premier point de données, validation du lot C.1
+
+*Constat.* Validation humaine des deux M01 du lot C.1 (Borne 10 janvier 2023, Borne 49.3 du 16 mars 2023) effectuée par le Dirigeant — lecture attentive en lecteur adverse, **30 minutes par M01**. **Zéro correction de fond** sur les deux analyses (unités, vulnérabilités, chaînes causales, hypothèses de synthèse) — les seules corrections du lot portent sur des champs de métadonnées (`carrières hachées` reclassé `attributed` ; `source.integrity_status` relevé à `certified`), déjà commitées individuellement lors du lot C.1.
+
+Production automatique mesurée par horodatage des logs d'agents (donnée déjà consignée dans `.claude/logs/log_session_003_lot_C1.md`) : **3 min 12 s** (M01 #1) et **2 min 44 s** (M01 #2).
+
+**Ratio production/validation ≈ 1:10** — pour une minute de production machine, environ dix minutes de validation humaine attentive, sur ces deux discours institutionnels structurés.
+
+**Extrapolation dossier complet** — sur cette base, ordre de grandeur de **6 à 10 heures humaines de validation** pour un dossier complet (M01 multiples + M03 + omissions + synthèse), **hors constitution de corpus** (lots B.2/B.2-bis/B.2-ter, non comptés dans cette extrapolation — leur propre temps humain relève d'un autre poste de la mesure 1, à relever séparément).
+
+Marqué comme **quatrième rendement empirique du projet**, aux côtés des trois déjà identifiés en tête de `plan_action_003.md` (asymétrie de datation 21/36 ; alerte intentionnalité 80–83%, gelée, test discriminant sur ce dossier ; discipline `not_yet_observed` observée en production).
+
+*Conséquence.* Premier point de données réel pour C.5 (chiffrage de la boucle humaine) — établi par une validation humaine effective, non simulée (voir la réserve méthodologique explicite posée dans `.claude/logs/log_session_003_lot_C1.md`, qui s'abstenait de chiffrer ce poste faute d'un validateur humain réel à ce moment-là). Un seul point de mesure ne fait pas une distribution — l'extrapolation 6-10h reste un ordre de grandeur, à confirmer ou réviser sur les M01 suivants du dossier zéro. Zéro correction de fond sur deux analyses consécutives est aussi, en soi, une donnée sur la qualité de production automatique du pipeline à ce stade — à surveiller pour distinguer une production réellement solide d'une validation encore insuffisamment adverse.
+
+---
+
 *Journal v1.0 — édité le 17 mai 2026. Prochaine révision attendue après extension M03 à 4 acteurs et nouvelles analyses substantielles. Document de mémoire institutionnelle, pas de récit. Pour la doctrine, lire charte et gabarit. Pour les analyses, lire les fichiers correspondants.*
