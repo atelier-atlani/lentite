@@ -623,11 +623,13 @@ downstream_causal_chains:
       à négocier des ajustements paramétriques.
     - Des divergences au sein de la majorité gouvernementale pourraient conduire à
       des concessions partielles non anticipées par ce texte.
-    observable_to_date: La réforme des retraites de 2023 (relèvement de l'âge légal
-      à 64 ans) a été adoptée par le Parlement en 2023 sans intégrer les sept axes
-      de financement alternatifs proposés par la CGT, selon les informations générales
-      disponibles au-delà du corpus fourni ici — non vérifié dans le texte source
-      lui-même.
+    observable_to_date: "Non observable à partir du corpus fourni : le texte source\
+      \ (communiqué du 2 mars 2023) ne documente aucune suite postérieure à cette\
+      \ date. Cohérent avec le traitement de la même question dans discourse_action_gaps_on_thematic_objects\
+      \ (obj_them_1, obj_them_2, pattern_type: not_yet_observed) — corrigé ici pour\
+      \ lever une incohérence interne au document, la version précédente injectant\
+      \ une connaissance générale du modèle plutôt que le contenu du corpus fourni\
+      \ à cette analyse."
   - consequence_label: Le contre-diagnostic de la CGT nourrit une contestation publique
       et parlementaire de la légitimité du projet gouvernemental
     confidence: 0.45
@@ -725,9 +727,6 @@ epistemic_synthesis:
   - Le texte source analysé est un résumé produit par récupération automatisée, non
     une transcription verbatim intégrale, avec une seule citation directe identifiée
     comme telle.
-  - La réforme des retraites de 2023 relevant l'âge légal à 64 ans a été adoptée par
-    le Parlement en 2023, selon des informations générales postérieures au corpus
-    fourni, non vérifiées dans le texte source lui-même.
   inferences:
   - label: La CGT distingue un horizon de financement immédiat, qu'elle conteste comme
       problématique, d'un déficit projeté à 2030 qu'elle admet et chiffre, sans que
