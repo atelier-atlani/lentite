@@ -750,4 +750,18 @@ Marqué comme **quatrième rendement empirique du projet**, aux côtés des troi
 
 ---
 
+```yaml
+date: 2026-07-12
+type: reprise
+refs: [plan_action_003]
+```
+
+### Pause de session — reprise de contexte préparée
+
+*Constat.* Séquence B close (corpus T0, 30 sources). Séquence C en cours : lot C.1 (2 M01, Borne 10 janvier et 49.3) puis C.1-bis (3 M01, CGT/LFI/RN) ont produit **5 M01 sur les 3-5 discours structurants** ciblés par le plan — fourchette atteinte. Mesure 1 (chiffrage de la boucle humaine) établie sur un premier échantillon par le Dirigeant : 30 min de validation adverse par M01, zéro correction de fond, ratio production/validation ≈1:10, quatrième rendement empirique du projet. `.claude/context/etat_projet.md` réécrit pour refléter cet état (Phase 1, séquence C en cours) — la version précédente datait de la clôture de Phase 0 (17 mai 2026) et avait dérivé sans être mise à jour au fil des lots B et C.
+
+*Conséquence.* Aucun lot de séquence C n'est engagé au-delà de C.1-bis. Prochaine action attendue : instruction du Dirigeant pour C.2 (M03 comparatif multi-acteurs), C.1 ayant atteint sa cible. Reprise directe possible depuis `.claude/context/etat_projet.md`, sans reparcourir l'historique complet de la séquence.
+
+---
+
 *Journal v1.0 — édité le 17 mai 2026. Prochaine révision attendue après extension M03 à 4 acteurs et nouvelles analyses substantielles. Document de mémoire institutionnelle, pas de récit. Pour la doctrine, lire charte et gabarit. Pour les analyses, lire les fichiers correspondants.*
