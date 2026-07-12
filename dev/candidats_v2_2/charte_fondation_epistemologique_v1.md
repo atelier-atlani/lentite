@@ -1,3 +1,5 @@
+> **Document candidat v2.2 — hors canon, non applicable, sous moratoire jusqu'à clôture du dossier zéro (plan_action_003 E.4).**
+
 # L'Entité — Fondation épistémologique
 
 *Section candidate pour la charte (couche A). Nomme les filiations logiques du raisonnement que L'Entité pratique déjà. Document strictement descriptif — il n'ajoute aucune procédure aux méthodes M01/M03 et ne modifie pas le gabarit. Il fonde ce qui existe, il ne prescrit rien de neuf.*

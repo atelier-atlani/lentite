@@ -1,3 +1,5 @@
+> **Document candidat v2.2 — hors canon, non applicable, sous moratoire jusqu'à clôture du dossier zéro (plan_action_003 E.4).**
+
 # L'Entité — Backlog doctrinal pour le pipeline
 
 *Document de liaison entre la couche doctrinale et la couche de développement. Produit en Mode Architecte après exploration d'un corpus épistémologique (abduction, non-monotonie, défaisabilité, raisonnement temporel, causalité, argumentation) et examen d'un champ exploratoire externe.*

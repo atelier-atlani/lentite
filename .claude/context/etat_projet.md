@@ -122,3 +122,5 @@
 ---
 
 *État du projet v1.0 — créé le 17 mai 2026. À mettre à jour à chaque évolution majeure (au moins mensuellement en phase active).*
+
+— Documents candidats v2.2 (fondation épistémologique, backlog doctrinal pipeline) — `dev/candidats_v2_2/`, hors canon, sous moratoire jusqu'à clôture du dossier zéro (`plan_action_003` E.4). Voir `journal/lentite_journal.md`, entrée du 12 juillet 2026, pour la matière retenue (items backlog, refus motivés, notes de vigilance, graphe abductif Phase 3).

@@ -707,4 +707,25 @@ refs: [revue_002, plan_action_002, plan_action_003]
 
 ---
 
+```yaml
+date: 2026-07-12
+type: friction/matière v2.2
+refs: [plan_action_003]
+```
+
+### Session doctrinale (fondation épistémologique + backlog pipeline) — classée hors canon, sous moratoire
+
+*Constat.* Deux documents produits en Mode Architecte à l'issue d'une exploration d'un corpus épistémologique externe (abduction, non-monotonie, défaisabilité, raisonnement temporel, causalité, argumentation) — `charte_fondation_epistemologique_v1.md` (section candidate pour la charte, couche A, strictement descriptive) et `backlog_doctrinal_pipeline_v1.md` (document de liaison doctrine → dev) — avaient été initialement classés dans `doctrine/V2.1/` et `dev/`. Reclassés dans `dev/candidats_v2_2/`, avec mention de moratoire en tête de chacun : la doctrine v2.1 en vigueur (`doctrine/V2.1/lentite_charte_v2_1.md` et le reste de la couche A) reste seule canonique et inchangée. **Aucune modification de schéma (`schemas.py`), aucune modification de doctrine.**
+
+Matière retenue de cette session, versée ici pour mémoire plutôt que perdue avec le déclassement :
+
+- **Deux items prioritaires inscrits au backlog post-moratoire** (`backlog_doctrinal_pipeline_v1.md` §1, révision mineure v2.1.2 candidate, non engagée) — typage des defeaters (`rebutting`/`undercutting`, distinction Pollock 1987 entre attaque frontale de la conclusion et attaque du lien prémisse→conclusion) ; qualification des conditions de révision (`revision`/`update`, distinction Katsuno & Mendelzon 1991 entre croyance fausse et monde ayant changé). Les deux sont optionnels, rétrocompatibles, sans impact sur les YAML existants.
+- **Trois refus motivés ratifiés** (§4, recompté mécaniquement sur le document — `conventions.md` §6.10 — le chiffre initialement retenu de quatre ne correspond pas au décompte des items marqués strictement REFUSÉ) : ontologie OWL/SHACL parallèle (doublon fonctionnel des schémas Pydantic), tableaux sémantiques/solveur logique (aucun besoin réel identifié, hypothèses concurrentes en nombre restreint), vocabulaire logique dans les sorties humaines/publiques (les concepts structurent le travail, ils ne s'exhibent pas dans le produit). Trois items supplémentaires du même §4 sont classés *reportés* et non refusés (moteur de révision non-monotone, connecteurs de corpus externes, gouvernance multi-contributeurs) — distinction que la friction de comptage initiale effaçait, corrigée ici.
+- **Deux notes de vigilance versées aux plans concernés** (§3.1-3.2, table de synthèse §5) — piège de l'agrégation multi-agents (ne pas moyenner des confidences divergentes, les remonter à l'humain), à verser au plan Phase 2 ; asymétrie OWA/CWA à maintenir consciemment entre analyse (monde ouvert) et validation (monde clos), à verser au rôle Reviewer.
+- **Graphe abductif noté comme structure cible Phase 3** (charte §7, backlog §2) — nœuds (faits, inférences, hypothèses), arêtes typées (support, attaque rebutante, attaque sapante, révision), sémantique graduée pour l'acceptabilité. Spécification d'intention seulement, explicitement non engagée avant que la persistance soit décidée et les Phases 1-2 livrées.
+
+*Conséquence.* Les deux documents attendent, sous moratoire, la clôture du dossier zéro (`plan_action_003.md` E.4) avant tout examen d'intégration en doctrine v2.2 ou en code. Aucune décision structurante n'est prise par cette entrée — la friction de comptage (quatre vs trois refus) est actée ici plutôt que silencieusement corrigée sans trace, conformément à la discipline de recomptage mécanique du projet.
+
+---
+
 *Journal v1.0 — édité le 17 mai 2026. Prochaine révision attendue après extension M03 à 4 acteurs et nouvelles analyses substantielles. Document de mémoire institutionnelle, pas de récit. Pour la doctrine, lire charte et gabarit. Pour les analyses, lire les fichiers correspondants.*
